@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+
+    <link rel="stylesheet" type="text/css" href="css/greenhouse.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="/js/plotly.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-div">
+            <span class="subtitle">GOODE ELEMENTARY</span><br>
+            <span class="title-bold">GREENHOUSE</span>
+        </div>
+
+        <div id="nav-list"></div>
+
+        <div class="automation-selection">
+            <span class="automation-option active">HISTORY</span>
+        </div>
+
+        <div class="chart-div">
+            <div id="chart" class="chart"></div>
+        </div>
+
+        <div class="option-div">
+            <div class="title-slider-1"></div>
+            <div class="option-title">&nbsp;GRAPHS </div>
+            <div class="option-title-right"></div>
+        </div>
+
+        <div class="options">
+            <br>
+            <button id="greenhouse-temperature" class="graph-option" >AVERAGE TEMPERATURE</button>
+            <button id="greenhouse-humidity" class="graph-option" >AVERAGE HUMIDITY</button>
+            <button id="greenhouse-light" class="graph-option" >AVERAGE LIGHT</button>
+            <button id="outdoor-temperature" class="graph-option" >OUTDOOR TEMPERATURE</button>
+
+            <button id="zone-temperature" class="graph-option" >ZONE TEMPERATURE</button>
+            <button id="zone-humidity" class="graph-option" >ZONE HUMIDITY</button>
+            <button id="zone-light" class="graph-option" >ZONE LIGHT</button>
+            <button id="zone-moisture" class="graph-option" >ZONE SOIL MOISTURE</button>
+        </div>
+    </div>
+
+    <script src="/js/history.js"></script>
+</body>
+</html>

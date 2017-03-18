@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>Goode Elementary Greenhouse</title>
+
+    <link rel="stylesheet" type="text/css" href="css/greenhouse.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="js/weather.js"></script>
+
+    <!-- 3D Modeling Libraries -->
+    <script src="js/webgl/three.js"></script>
+    <script src="js/webgl/Detector.js"></script>
+    <script src="js/webgl/OrbitControls.js"></script>
+    <script src="js/webgl/OBJLoader.js"></script>
+    <script src="js/webgl/MTLLoader.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="title-div">
+        <span class="subtitle">GOODE ELEMENTARY</span><br>
+        <span class="title-bold">GREENHOUSE</span>
+    </div>
+
+    <div class="nav">
+        <ul>
+            <a href="#"><li class="nav-active">
+                <img width="40" height="40" src="../images/home.png">
+                <span class="nav-item">HOME</span>
+            </li></a>
+            <a href="/settings"><li class="nav-li">
+                <img width="40" height="40" src="../images/gear.png">
+                <span class="nav-item" style="letter-spacing: 1.5px;">SETTINGS</span>
+            </li></a>
+            <a href="/sensors.html"><li class="nav-li">
+                <img width="35" height="35" src="../images/sensors.png">
+                <span class="nav-item">SENSORS</span>
+            </li></a>
+            <a href="history.html"><li class="nav-li">
+                <img width="35" height="35" src="../images/history.png">
+                <span class="nav-item">HISTORY</span>
+            </li></a>
+            <a href="/documentation"><li class="nav-li">
+                <img style="margin-top:22px;" width="40" height="30" src="../images/learn.png">
+                <span class="nav-item">LEARN</span>
+            </li></a>
+        </ul>
+    </div>
+
+    <div class="weather">
+        <div class="weather-icons">
+            <div class="weather-icon" id="weather-icon"></div>
+            <div class="temp-high" id="temp-high"></div>
+            <div class="temp-low" id="temp-low"></div>
+            <div class="current-temperature">
+                <span id="current-temperature"></span>
+            </div>
+        </div>
+
+        <div class="date">
+            <span id="day" class="title-bold"></span><br>
+            <span id="date" class="subtitle" style="margin-top: 5px;"></span>
+        </div>
+    </div>
+
+    <div class="greenhouse-stats">
+        <div class="greenhouse-title-1"></div>
+        <div class="greenhouse-title-2">GREENHOUSE AVERAGES</div>
+        <div class="greenhouse-title-3"></div>
+
+        <div class="greenhouse-averages">
+            <ul>
+                <li>
+                    <div class="greenhouse-value" id="greenhouse-temperature"></div>
+                    <span class="greenhouse-stats-item">TEMP</span>
+                </li>
+                <li>
+                    <div class="greenhouse-value" id="greenhouse-humidity"></div>
+                    <span class="greenhouse-stats-item">HUMIDITY</span>
+                </li>
+                <li>
+                    <div class="greenhouse-light-value" id="greenhouse-light"></div>
+                    <span class="greenhouse-stats-item">LIGHT</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="greenhouse-components">
+                <div class="greenhouse-title-1"></div>
+                <div class="greenhouse-title-4">COMPONENTS</div>
+                <div class="greenhouse-title-5"></div>
+            </div>
+        <div class="greenhouse-component-values">
+
+            <div class="component" style="padding-top: 5px;">
+                <span class="component-label">VENTS</span>
+                <div class="component-status">
+                    <span id="vents-open">OPEN </span>&nbsp;|&nbsp;
+                    <span id="vents-closed">CLOSED</span>
+                </div>
+            </div>
+
+            <div class="component">
+                <span class="component-label">SHADES</span>
+                <div class="component-status">
+                    <span id="shades-open">OPEN </span>&nbsp;|&nbsp;
+                    <span id="shades-closed">CLOSED</span>
+                </div>
+            </div>
+
+            <div class="component">
+                <span class="component-label">LIGHTS</span>
+                <div class="component-status">
+                    <span id="lights-on">ON </span>&nbsp;|&nbsp;
+                    <span id="lights-off">OFF</span>
+                </div>
+            </div>
+
+            <div class="component">
+                <span class="component-label">FANS</span>
+                <div class="component-status">
+                    <span id="fans-on">ON </span>&nbsp;|&nbsp;
+                    <span id="fans-off">OFF</span>
+                </div>
+            </div>
+
+            <div class="component">
+                <span class="component-label">WATER</span>
+                <div class="component-status">
+                    <span id="water-on">ON </span>&nbsp;|&nbsp;
+                    <span id="water-off">OFF</span>
+                </div>
+            </div>
+
+            <div class="component">
+                <span class="component-label">HEATER</span>
+                <div class="component-status">
+                    <span id="heater-on">ON </span>&nbsp;|&nbsp;
+                    <span id="heater-off">OFF</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="greenhouse-div" class="greenhouse-div"></div>
+</div>
+
+<script src="js/greenhouse.js"></script>
+
+</body>
+</html>

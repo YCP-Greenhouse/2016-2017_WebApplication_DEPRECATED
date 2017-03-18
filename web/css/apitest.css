@@ -1,0 +1,122 @@
+.state-div {
+    top: 40;
+    left: 40;
+    position: absolute;
+    width: 120px;
+    line-height: 20px;
+}
+
+.state-span {
+    float: right;
+}
+
+.state-check {
+    float: right;
+
+}
+
+.set-state-div {
+    top: 40;
+    right: 40;
+    position: absolute;
+    width: 150px;
+    line-height: 20px;
+}
+
+.view-sensor-div {
+    left: 40;
+    top: 240;
+    height: 580px;
+    width: 450px;
+    min-width: 400px;
+    position: absolute;
+}
+
+.sensor-div {
+    height: 100px;
+    width: 180px;
+    border: solid 1px black;
+    margin-right: 40px;
+    padding: 5px;
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.sensor-span {
+    float: right;
+}
+
+.sensor-row {
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.set-sensor-div {
+    right: 0;
+    top: 240;
+    height: 500px;
+    width: 450px;
+    min-width: 400px;
+    position: absolute;
+}
+
+.last-time {
+    float: right;
+}
+
+.sensor-submit {
+    float:right;
+    height: 18px;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.automation-div {
+    margin-top: 820px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    width: 180px;
+    display: inline-block;
+}
+
+.set-automation-div {
+    right: 40;
+    position: absolute;
+    width: 350px;
+    line-height: 20px;
+    margin-top: 820px;
+    display: inline-block;
+}
+
+.login-div {
+    top: 40;
+    right: 40;
+    position: absolute;
+    width: 200px;
+}
+
+.username-div {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.error-div {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    width: 180px;
+}
+
+.set-error-div {
+    top: 1100;
+    right: 40;
+    position: absolute;
+    width: 350px;
+    line-height: 20px;
+}
+
