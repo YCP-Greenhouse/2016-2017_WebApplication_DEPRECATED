@@ -1,6 +1,7 @@
 // Threshold Variables
 var light;
-var temperature;
+var templow;
+var temphigh;
 var humidity;
 var moisture;
 
@@ -21,6 +22,7 @@ var slider4;
 
 
 // Query API every 3 seconds
+/*
 window.setInterval( function() {
 
     $.ajax({
@@ -54,7 +56,7 @@ window.setInterval( function() {
 
     updateAutomationValues();
 
-}, 3000 );
+}, 3000 ); */
 
 $(document).ready( function() {
 
@@ -121,8 +123,112 @@ $(document).ready( function() {
         $('#login-form').submit();
     })
 
+    // Temperature button handlers
+    var timeout = 0;
+    $('#temp-low-increase').mousedown(function() {
+        var el = $('#temperature-low');
+        var val = 1;
+        timeout = window.setInterval( function() { tempChange(el,val,0) }, 150);
+
+    }).on('mouseup', function() {
+        clearTimeout(timeout);
+        submitTemperatureValues();
+    });
+
+    $('#temp-low-increase').click(function() {
+        var el = $('#temperature-low');
+        var val = 1;
+        tempChange(el,val,0);
+    });
+
+    $('#temp-low-decrease').mousedown(function() {
+        var el = $('#temperature-low');
+        var val = -1;
+        timeout = window.setInterval( function() { tempChange(el,val,0) }, 150);
+
+    }).on('mouseup', function() {
+        clearTimeout(timeout);
+        submitTemperatureValues();
+    });
+
+    $('#temp-low-decrease').click(function() {
+        var el = $('#temperature-low');
+        var val = -1;
+        tempChange(el,val,0);
+    });
+
+    $('#temp-high-increase').mousedown(function() {
+        var el = $('#temperature-high');
+        var val = 1;
+        timeout = window.setInterval( function() { tempChange(el,val,1) }, 150);
+
+    }).on('mouseup', function() {
+        clearTimeout(timeout);
+        submitTemperatureValues();
+    });
+
+    $('#temp-high-increase').click(function() {
+        var el = $('#temperature-high');
+        var val = 1;
+        tempChange(el,val,1);
+    });
+
+    $('#temp-high-decrease').mousedown(function() {
+        var el = $('#temperature-high');
+        var val = -1;
+        timeout = window.setInterval( function() { tempChange(el,val,1) }, 150);
+
+    }).on('mouseup', function() {
+        clearTimeout(timeout);
+        submitTemperatureValues();
+    });
+
+    $('#temp-high-decrease').click(function() {
+        var el = $('#temperature-high');
+        var val = -1;
+        tempChange(el,val,1);
+    });
+
+
 
 });
+
+
+// Input: element, value to increment/decrement, high or low
+function tempChange(el, val, type) {
+
+        if (parseInt(type) == 1) {
+            if( parseInt(val) == 1 ) {
+                if( temphigh < 120 )
+                    temphigh++;
+
+                el.html('');
+                el.html(temphigh + "&deg;");
+            } else {
+                if( temphigh > 50)
+                    temphigh--;
+
+                el.html('');
+                el.html(temphigh + "&deg;");
+            }
+        } else {
+            if( parseInt(val) == 1 ) {
+                if( templow < temphigh )
+                    templow++;
+
+                el.html('');
+                el.html(templow + "&deg;");
+            } else {
+                if( templow > 50 )
+                    templow--;
+
+                el.html('');
+                el.html(templow + "&deg;");
+            }
+        }
+
+
+}
 
 function updateAutomationValues() {
     $.ajax({
@@ -133,25 +239,24 @@ function updateAutomationValues() {
 
             // Set values
             light = data.light;
-            temperature = data.temperature;
+            templow = data.templow;
+            temphigh = data.temphigh;
             humidity = data.humidity;
             moisture = data.moisture;
 
-            if( parseInt(light) != slider.getValue() ) {
-                slider.setValue(parseInt(light));
-            }
+            $('#temperature-low').html(templow + "&deg;");
+            $('#temperature-high').html(temphigh + "&deg;");
+        }
+    });
+}
 
-            if( parseInt(temperature) != slider2.getValue() ) {
-                slider2.setValue(parseInt(temperature));
-            }
-
-            if( parseInt(humidity) != slider3.getValue() ) {
-                slider3.setValue(parseInt(humidity));
-            }
-
-            if( parseInt(moisture) != slider4.getValue() ) {
-                slider4.setValue(parseInt(moisture));
-            }
+function submitTemperatureValues() {
+    $.ajax({
+        type: 'POST',
+        url: '/api/automation',
+        data: {
+            temphigh: $('#temperature-high').text().replace('°',''),
+            templow: $('#temperature-low').text().replace('°','')
         }
     });
 }
@@ -166,101 +271,14 @@ function getAutomationValues() {
 
             // Set values
             light = data.light;
-            temperature = data.temperature;
+            templow = data.templow;
+            temphigh = data.temphigh;
             humidity = data.humidity;
             moisture = data.moisture;
 
-            // Declare sliders
-            slider = $('#light-slider').CircularSlider({
-                radius: 95,
-                innerCircleRatio: '0.6',
-                handleDist: 100,
-                min: 0,
-                max: 13000,
-                value: parseInt(light),
-                clockwise: true,
-                labelSuffix: "",
-                labelPrefix: "",
-                shape: "Half Circle",
-                touch: true,
-                animate: true,
-                animateDuration : 360,
-                selectable: false,
-                slide: function(ui, value) {},
-                onSlideEnd: function(ui, value) {},
-                formLabel: undefined,
-                title: 'LIGHT',
-                type: 'light',
-                unit: 'lux'
-            });
+            $('#temperature-low').html(templow + "&deg;");
+            $('#temperature-high').html(temphigh + "&deg;");
 
-            slider2 = $('#temperature-slider').CircularSlider({
-                radius: 95,
-                innerCircleRatio: '0.6',
-                handleDist: 200,
-                min: 60,
-                max: 111,
-                value: parseInt(temperature),
-                clockwise: true,
-                labelSuffix: "",
-                labelPrefix: "",
-                shape: "Half Circle",
-                touch: true,
-                animate: true,
-                animateDuration : 360,
-                selectable: false,
-                slide: function(ui, value) {},
-                onSlideEnd: function(ui, value) {},
-                formLabel: undefined,
-                title: 'TEMPERATURE',
-                type: 'temperature',
-                unit: '° F'
-            });
-
-            slider3 = $('#humidity-slider').CircularSlider({
-                radius: 95,
-                innerCircleRatio: '0.6',
-                handleDist: 200,
-                min: 0,
-                max: 101,
-                value: parseInt(humidity),
-                clockwise: true,
-                labelSuffix: "",
-                labelPrefix: "",
-                shape: "Half Circle",
-                touch: true,
-                animate: true,
-                animateDuration : 360,
-                selectable: false,
-                slide: function(ui, value) {},
-                onSlideEnd: function(ui, value) {},
-                formLabel: undefined,
-                title: 'HUMIDITY',
-                type: 'humidity'
-            });
-
-            slider4 = $('#moisture-slider').CircularSlider({
-                radius: 95,
-                innerCircleRatio: '0.6',
-                handleDist: 200,
-                min: 0,
-                max: 101,
-                value: parseInt(moisture),
-                clockwise: true,
-                labelSuffix: "",
-                labelPrefix: "",
-                shape: "Half Circle",
-                touch: true,
-                animate: true,
-                animateDuration : 360,
-                selectable: false,
-                slide: function(ui, value) {},
-                onSlideEnd: function(ui, value) {},
-                formLabel: undefined,
-                title: 'SOIL MOISTURE',
-                type: 'moisture',
-                unit: '%'
-            });
         }
     });
 }

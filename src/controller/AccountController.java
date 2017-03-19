@@ -12,11 +12,11 @@ public class AccountController {
 
     public boolean verifyUser( String userName, String password ) {
 
-        System.out.println("Password: " + password );
+        //System.out.println("Password: " + password );
 
         String hashedPassword = generateHash(password);
 
-        System.out.println("Hashed password" + hashedPassword );
+        //System.out.println("Hashed password" + hashedPassword );
 
         // Connect to database
         Connection conn = null;

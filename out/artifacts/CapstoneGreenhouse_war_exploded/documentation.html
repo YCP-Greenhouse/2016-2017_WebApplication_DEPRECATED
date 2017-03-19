@@ -308,7 +308,8 @@
         </blockquote>
         <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"light"</span><span class="p">:</span><span class="s2">"9999"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"temperature"</span><span class="p">:</span><span class="s2">"80"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"temp-low"</span><span class="p">:</span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"temp-high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"humidity"</span><span class="p">:</span><span class="s2">"70"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"moisture"</span><span class="p">:</span><span class="s2">"60"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -333,7 +334,7 @@
     <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
         <span class="na">type</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
         <span class="na">url</span><span class="p">:</span> <span class="s1">'/api/automation'</span><span class="p">,</span>
-        <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="na">light</span><span class="p">:</span> <span class="s2">"9999"</span><span class="p">,</span> <span class="na">temperature</span><span class="p">:</span> <span class="s2">"80"</span><span class="p">,</span> <span class="na">humidity</span><span class="p">:</span> <span class="s2">"70"</span><span class="p">,</span> <span class="na">moisture</span><span class="p">:</span> <span class="s2">"60"</span><span class="p">,</span> <span class="na">apikey</span><span class="p">:</span> <span class="s1">'Your API key'</span> <span class="p">}</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="na">light</span><span class="p">:</span> <span class="s2">"9999"</span><span class="p">,</span> <span class="nx">temp</span><span class="o">-</span><span class="na">low</span><span class="p">:</span> <span class="s2">"60"</span><span class="p">,</span> <span class="nx">temp</span><span class="o">-</span><span class="na">high</span><span class="p">:</span> <span class="s2">"90"</span><span class="p">,</span> <span class="na">humidity</span><span class="p">:</span> <span class="s2">"70"</span><span class="p">,</span> <span class="na">moisture</span><span class="p">:</span> <span class="s2">"60"</span><span class="p">,</span> <span class="na">apikey</span><span class="p">:</span> <span class="s1">'Your API key'</span> <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">}</span>
 </code></pre>
@@ -342,7 +343,8 @@
         </blockquote>
         <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"light"</span><span class="p">:</span><span class="s2">"9999"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"temperature"</span><span class="p">:</span><span class="s2">"80"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"temp-low"</span><span class="p">:</span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"temp-high"</span><span class="p">:</span><span class="s2">"90"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"humidity"</span><span class="p">:</span><span class="s2">"70"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"moisture"</span><span class="p">:</span><span class="s2">"60"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -414,6 +416,33 @@
         <h3 id="http-request">HTTP Request</h3>
 
         <p><code class="prettyprint">POST http://example.com/api/error</code></p>
+
+        <h1 id="weather">Weather</h1>
+
+        <h2 id="get-weather-data">Get Weather Data</h2>
+        <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">getWeatherValues</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Get sensor data using jQuery</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'api/weather'</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Use data how you want</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+        <blockquote>
+            <p>The HTTP request returns JSON structured like this:</p>
+        </blockquote>
+        <pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="nt">"sampletime"</span><span class="p">:</span><span class="s2">"2017/02/19 23:42:08"</span><span class="p">,</span><span class="nt">"temp"</span><span class="p">:</span><span class="s2">"44.35"</span><span class="p">,</span><span class="nt">"high"</span><span class="p">:</span><span class="s2">"44.35"</span><span class="p">,</span><span class="nt">"low"</span><span class="p">:</span><span class="s2">"44.35"</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+        <p>This endpoint returns all weather data from the database. Weather entries are returned as an array of JSON objects and contain the current temperature, high, low and time sampled.</p>
+
+        <h3 id="http-request">HTTP Request</h3>
+
+        <p><code class="prettyprint">GET http://example.com/api/weather</code></p>
 
     </div>
     <div class="dark-box">

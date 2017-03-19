@@ -49,11 +49,44 @@ public class AutomationAPI extends HttpServlet {
         if( user.equals("admin") || accountController.verifyAPIKey(APIkey) ) {
 
             AutomationModel automationModel = new AutomationModel();
+            AutomationModel currentModel = automationController.getCurrentAutomationSettings();
 
-            //automationModel.setHumidity(Integer.parseInt(req.getParameter("humidity")));
-            automationModel.setLightIntesity(Integer.parseInt(req.getParameter("light")));
-            automationModel.setSoilMoisture(Integer.parseInt(req.getParameter("moisture")));
-            automationModel.setTemperature(Integer.parseInt(req.getParameter("temperature")));
+            try {
+                int light = Integer.parseInt(req.getParameter("light"));
+                automationModel.setLightIntesity(light);
+            } catch( NumberFormatException e ) {
+                automationModel.setLightIntesity( currentModel.getLightIntesity() );
+            }
+
+            try {
+                int humidity = Integer.parseInt(req.getParameter("humidity"));
+                automationModel.setSoilMoisture(humidity);
+            } catch( NumberFormatException e ) {
+                automationModel.setHumidity( currentModel.getHumidity() );
+            }
+
+            try {
+                int moisture = Integer.parseInt(req.getParameter("moisture"));
+                automationModel.setSoilMoisture(moisture);
+            } catch( NumberFormatException e ) {
+                automationModel.setSoilMoisture( currentModel.getSoilMoisture() );
+            }
+
+            try {
+                int templow = Integer.parseInt(req.getParameter("templow"));
+                automationModel.setTempLow(templow);
+            } catch( NumberFormatException e ) {
+                automationModel.setTempLow( currentModel.getTempLow() );
+            }
+
+            try {
+                int temphigh = Integer.parseInt(req.getParameter("temphigh"));
+                automationModel.setTempHigh(temphigh);
+            } catch( NumberFormatException e ) {
+                automationModel.setTempHigh( currentModel.getTempHigh() );
+            }
+
+            System.out.println("AutomationAPI\nTemp low: " + automationModel.getTempLow() + "\nTemp high: " + automationModel.getTempHigh() + "\nMoisture: " + automationModel.getSoilMoisture() + "\nHumidity: " + automationModel.getHumidity() + "\nLight: " + automationModel.getLightIntesity());
 
             automationController.updateAutomationSettings(automationModel);
 

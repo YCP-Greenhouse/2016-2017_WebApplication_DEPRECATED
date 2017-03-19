@@ -1,19 +1,23 @@
 package model;
 
 public class AutomationModel {
-    int temperature, soilMoisture, lightIntesity, humidity;
+    int tempLow, tempHigh, soilMoisture, lightIntesity, humidity;
 
     public AutomationModel() {
 
     }
 
-    public void setTemperature(int temperature) {
-        this.temperature = temperature;
+    public void setTempLow(int tempLow) {
+        this.tempLow = tempLow;
     }
 
-    public int getTemperature() {
-        return temperature;
+    public int getTempLow() {
+        return tempLow;
     }
+
+    public void setTempHigh(int tempHigh ) { this.tempHigh = tempHigh; }
+
+    public int getTempHigh() { return tempHigh; }
 
     public void setSoilMoisture(int soilMoisture) {
         this.soilMoisture = soilMoisture;

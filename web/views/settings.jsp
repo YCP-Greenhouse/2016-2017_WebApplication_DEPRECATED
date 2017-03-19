@@ -60,27 +60,19 @@
         <%
             // If user is logged in, display setting options
         } else {  %>
-        <div class="automation-container">
-            <div class="title-slider-div">
-                <div class="title-slider-1"></div>
-                <div class="title-slider-2">&nbsp;THRESHOLDS </div>
-                <div class="title-slider-3"></div>
+            <div class="top-controls-panel">
+                <div class="manual-panel-1"></div>
+
             </div>
 
-            <div class="slider-div">
-                <div id="light-slider" class="slider"></div>
-                <div id="temperature-slider" class="slider"></div>
-                <!-- <div id="humidity-slider" class="slider"></div> -->
-                <div id="moisture-slider" class="slider"></div>
-            </div>
-
-            <div class="manual-controls">
+            <div class="bottom-controls-panel">
+                <!-- Manual Controls Section -->
                 <div class="manual-panel-1"></div>
                 <div class="manual-panel-2">
-                    <div class="controls-title">MANUAL CONTROLS</div>
+                    <div class="controls-title">CONTROLS</div>
                     <label class="light-switch switch-left-right">
                         <input id="light-check" class="switch-input" type="checkbox" />
-                        <span id="light-switch" class="switch-label" data-on="On" data-off="Off"></span>
+                        <span id="light-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
                         <span class="switch-handle"></span>
                     </label>
                     <div class="control-caption">LIGHTS</div>
@@ -88,7 +80,7 @@
                 <div class="manual-panel-3">
                     <label class="switch switch-left-right">
                         <input id="shade-check" class="switch-input" name="shade-switch" type="checkbox" />
-                        <span id="shade-switch" class="switch-label" data-on="On" data-off="Off"></span>
+                        <span id="shade-switch" class="switch-label" data-on="Open" data-off="Closed"></span>
                         <span class="switch-handle"></span>
                         <div class="control-caption">SHADES</div>
                     </label>
@@ -96,20 +88,55 @@
 
                     <label class="switch switch-left-right">
                         <input id="fan-check" class="switch-input" type="checkbox" />
-                        <span id="fan-switch" class="switch-label" data-on="On" data-off="Off"></span>
+                        <span id="fan-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
                         <span class="switch-handle"></span>
                         <div class="control-caption">FANS</div>
                     </label>
 
                     <label class="switch switch-left-right">
                         <input id="water-check" class="switch-input" type="checkbox" />
-                        <span id="water-switch" class="switch-label" data-on="On" data-off="Off"></span>
+                        <span id="water-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
                         <span class="switch-handle"></span>
                         <div class="control-caption">WATER</div>
                     </label>
                 </div>
+                <!-- End Manual Controls Section -->
+
+                <!-- Temperature Section -->
+                <div class="manual-panel-1"></div>
+                <div class="manual-panel-5">
+                    <div class="controls-title">TEMPERATURE</div>
+                    <div class="temperature-label">
+                        <span class="temperature-value" id="temperature-low"></span>
+                        <span class="temp-f">F</span>
+                        <div class="control-caption-2">LOW</div>
+                    </div>
+
+                    <div class="temperature-buttons">
+                        <div class="temperature-button" id="temp-low-increase">+</div>
+                        <div class="temperature-button" id="temp-low-decrease">-</div>
+                    </div>
+                </div>
+                <div class="manual-panel-4">
+                    <div class="temperature-label">
+                        <span class="temperature-value" id="temperature-high"></span>
+                        <span class="temp-f">F</span>
+                        <div class="control-caption-2">HIGH</div>
+                    </div>
+
+                    <div class="temperature-buttons">
+                        <div class="temperature-button" id="temp-high-increase">+</div>
+                        <div class="temperature-button" id="temp-high-decrease">-</div>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!-- End Temperature Section -->
             </div>
-        </div>
         <% } %>
 
     </div>
