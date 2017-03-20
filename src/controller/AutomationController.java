@@ -111,7 +111,7 @@ public class AutomationController {
 
     public void updateAutomationSettings(AutomationModel automationModel) {
 
-        System.out.println("Temp low: " + automationModel.getTempLow() + "\nTemp high: " + automationModel.getTempHigh() + "\nMoisture: " + automationModel.getSoilMoisture() + "\nHumidity: " + automationModel.getHumidity() + "\nLight: " + automationModel.getLightIntesity());
+        //System.out.println("Temp low: " + automationModel.getTempLow() + "\nTemp high: " + automationModel.getTempHigh() + "\nMoisture: " + automationModel.getSoilMoisture() + "\nHumidity: " + automationModel.getHumidity() + "\nLight: " + automationModel.getLightIntesity());
 
         // Connect to database
         Connection conn = null;

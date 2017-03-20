@@ -13,14 +13,6 @@ var waterSwitch;
 var vents;
 var heater;
 
-// Sliders
-var slider;
-var slider2;
-var slider3;
-var slider4;
-
-
-
 // Query API every 3 seconds
 /*
 window.setInterval( function() {
@@ -105,7 +97,7 @@ $(document).ready( function() {
 
     getAutomationValues();
 
-    // Button click handlers
+    // Login button click handlers
     $('.touch-button').click( function() {
         var id = $(this)[0].id;
         var pw = $('#password').val();
@@ -132,13 +124,14 @@ $(document).ready( function() {
 
     }).on('mouseup', function() {
         clearTimeout(timeout);
-        submitTemperatureValues();
+        submitAutomationValues();
     });
 
     $('#temp-low-increase').click(function() {
         var el = $('#temperature-low');
         var val = 1;
         tempChange(el,val,0);
+        submitAutomationValues();
     });
 
     $('#temp-low-decrease').mousedown(function() {
@@ -148,13 +141,14 @@ $(document).ready( function() {
 
     }).on('mouseup', function() {
         clearTimeout(timeout);
-        submitTemperatureValues();
+        submitAutomationValues();
     });
 
     $('#temp-low-decrease').click(function() {
         var el = $('#temperature-low');
         var val = -1;
         tempChange(el,val,0);
+        submitAutomationValues();
     });
 
     $('#temp-high-increase').mousedown(function() {
@@ -164,13 +158,14 @@ $(document).ready( function() {
 
     }).on('mouseup', function() {
         clearTimeout(timeout);
-        submitTemperatureValues();
+        submitAutomationValues();
     });
 
     $('#temp-high-increase').click(function() {
         var el = $('#temperature-high');
         var val = 1;
         tempChange(el,val,1);
+        submitAutomationValues();
     });
 
     $('#temp-high-decrease').mousedown(function() {
@@ -180,20 +175,90 @@ $(document).ready( function() {
 
     }).on('mouseup', function() {
         clearTimeout(timeout);
-        submitTemperatureValues();
+        submitAutomationValues();
     });
 
     $('#temp-high-decrease').click(function() {
         var el = $('#temperature-high');
         var val = -1;
         tempChange(el,val,1);
+        submitAutomationValues();
     });
 
 
 
+    // State button click handler
+    // jQuery fires this multiple times on 'click' event.
+    // .off changes number of firings from 4 to 2
+    // First fire is of values before click
+    // Second fire is new values
+    // Do all this to submit only the updated values one time.
+    $('.bottom-controls-panel').off('click').on('click', function () {
+        // If values haven't changed
+        if ($('#light-check').is(":checked") == lightSwitch && $('#shade-check').is(":checked") == shadeSwitch && $('#fan-check').is(":checked") == fanSwitch && $('#water-check').is(":checked") == waterSwitch) {
+            // Do nothing
+        } else if (lightSwitch != undefined && shadeSwitch != undefined && fanSwitch != undefined && waterSwitch != undefined) {
+            $.ajax({
+                type: 'POST',
+                url: '/api/state',
+                data: {
+                    lights: $('#light-check').is(":checked"),
+                    shades: $('#shade-check').is(":checked"),
+                    fans: $('#fan-check').is(":checked"),
+                    pump: $('#water-check').is(":checked"),
+                    vents: vents,
+                    heater: heater
+                }
+            });
+
+            // Set current values
+            lightSwitch = $('#light-check').is(":checked");
+            shadeSwitch = $('#shade-check').is(":checked");
+            fanSwitch = $('#fan-check').is(":checked");
+            waterSwitch = $('#water-check').is(":checked");
+        }
+    });
+
+    // Zone modal click events
+    /*
+    $('#zone-1').click(function() {
+        $('#container').css("transform", "scale(1.02)");
+        $('#container').css("filter","blur(4px)");
+
+        $('#zone-modal').css("display", "block");
+    });
+
+    $('#zone-2').click(function() {
+        //$('#zone-modal').css("display", "block");
+        $('#container').css("transform", "scale(1)");
+        $('#container').css("filter","blur(0px)");
+
+        $('#zone-modal').css("display", "none");
+
+    });*/
+
+    $('.big-table, .small-table, .zone-modal-close').click(function() {
+        $('.container').toggleClass('blur');
+        $('.zone-modal').toggleClass('close');
+        $('.zone-modal-close').toggleClass('close');
+
+        $('#zone-title').text($(this).text());
+        drawScheduleTable($('#water-schedule-table'));
+    });
 });
 
+function drawScheduleTable(el) {
+    var data = el.html();
+    el.append
 
+}
+
+// Update light slider bar
+function updateOutput(el, val) {
+    el.textContent = val;
+}
+
+// Changes the high and low temperature values
 // Input: element, value to increment/decrement, high or low
 function tempChange(el, val, type) {
 
@@ -226,8 +291,6 @@ function tempChange(el, val, type) {
                 el.html(templow + "&deg;");
             }
         }
-
-
 }
 
 function updateAutomationValues() {
@@ -250,13 +313,14 @@ function updateAutomationValues() {
     });
 }
 
-function submitTemperatureValues() {
+function submitAutomationValues() {
     $.ajax({
         type: 'POST',
         url: '/api/automation',
         data: {
             temphigh: $('#temperature-high').text().replace('°',''),
-            templow: $('#temperature-low').text().replace('°','')
+            templow: $('#temperature-low').text().replace('°',''),
+            light: $('#light-val').val()
         }
     });
 }
@@ -278,7 +342,25 @@ function getAutomationValues() {
 
             $('#temperature-low').html(templow + "&deg;");
             $('#temperature-high').html(temphigh + "&deg;");
+            $('#light-val').html(light);
+            $('#light-slider').val(light);
 
+
+            // Light slider
+            var $element = $('input[type="range"]');
+            var $output = $('output');
+
+            $element
+                .rangeslider({
+                    polyfill: false,
+                    onInit: function() {
+                        updateOutput($output[0], this.value);
+                    }
+                })
+                .on('input', function() {
+                    updateOutput($output[0], this.value);
+                    submitAutomationValues();
+                });
         }
     });
 }

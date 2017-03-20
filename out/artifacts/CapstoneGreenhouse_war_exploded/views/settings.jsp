@@ -5,16 +5,17 @@
     <title>Greenhouse Settings</title>
 
     <link rel="stylesheet" type="text/css" href="../css/greenhouse.css">
-    <link rel="stylesheet" type="text/css" href="../css/circular-slider.css">
+    <link rel="stylesheet" type="text/css" href="../css/rangeslider.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
 
     <script src="../js/automation.js"></script>
-    <script src="../js/circular-slider.js"></script>
+    <script src="../js/rangeslider.js"></script>
+
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div class="title-div">
             <span class="subtitle">GOODE ELEMENTARY</span><br>
             <span class="title-bold">GREENHOUSE</span>
@@ -61,8 +62,40 @@
             // If user is logged in, display setting options
         } else {  %>
             <div class="top-controls-panel">
-                <div class="manual-panel-1"></div>
+                <div class="top-panel-1"></div>
+                <div class="top-panel-title">GREENHOUSE</div>
+                <div class="top-panel-2"></div>
+                <div class="top-panel-3">
+                    <!-- Top table row -->
+                    <div class="big-table" id="zone-1">ZONE 1</div>
+                    <div class="big-table" id="zone-2">ZONE 2</div>
 
+                    <!-- Middle table row -->
+                    <div class="middle-table-div">
+                        <div class="small-table" style="margin-right: 20px;" id="zone-3">ZONE 3</div>
+                        <div class="small-table" id="zone-4">ZONE 4</div>
+                    </div>
+
+                    <!-- Bottom table row -->
+                    <div class="bottom-table-div">
+                        <div class="small-table" style="margin-right: 20px;" id="zone-5">ZONE 5</div>
+                        <div class="small-table" id="zone-6">ZONE 6</div>
+                    </div>
+                </div>
+
+                <div class="light-control-panel">
+                    <div class="light-left-corner"></div>
+                    <div class="light-title">LIGHT</div>
+                    <div class="light-right-corner"></div>
+                    <div class="light-body">
+                        <div class="light-val">
+                            <output id="light-val"></output>&nbsp;
+                            <span class="fahrenheit">lux</span>
+                        </div>
+
+                        <input id="light-slider" type="range" step="100" min="0" max="65000" data-orientation="vertical">
+                    </div>
+                </div>
             </div>
 
             <div class="bottom-controls-panel">
@@ -130,15 +163,37 @@
                     </div>
 
                 </div>
-
-
-
-
-
                 <!-- End Temperature Section -->
             </div>
-        <% } %>
 
+
+        <% } %>
     </div>
+
+    <div id="zone-modal" class="zone-modal close">
+        <div class="zone-modal-content">
+            <span class="zone-title" id="zone-title"></span>
+            <div class="modal-title">WATER SCHEDULE</div>
+            <!--<table class="modal-table" id="water-schedule-table">
+                <thead>
+                    <tr>
+                        <th> </th>
+                        <th>SUNDAY</th>
+                        <th>MONDAY</th>
+                        <th>TUESDAY</th>
+                        <th>WEDNESDAY</th>
+                        <th>THURSDAY</th>
+                        <th>FRIDAY</th>
+                        <th>SATURDAY</th>
+                    </tr>
+                </thead>
+
+
+
+            </table> -->
+
+        </div>
+    </div>
+    <div id="zone-modal-close" class="zone-modal-close close"></div>
 </body>
 </html>

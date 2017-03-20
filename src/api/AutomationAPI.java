@@ -86,7 +86,7 @@ public class AutomationAPI extends HttpServlet {
                 automationModel.setTempHigh( currentModel.getTempHigh() );
             }
 
-            System.out.println("AutomationAPI\nTemp low: " + automationModel.getTempLow() + "\nTemp high: " + automationModel.getTempHigh() + "\nMoisture: " + automationModel.getSoilMoisture() + "\nHumidity: " + automationModel.getHumidity() + "\nLight: " + automationModel.getLightIntesity());
+            //System.out.println("AutomationAPI\nTemp low: " + automationModel.getTempLow() + "\nTemp high: " + automationModel.getTempHigh() + "\nMoisture: " + automationModel.getSoilMoisture() + "\nHumidity: " + automationModel.getHumidity() + "\nLight: " + automationModel.getLightIntesity());
 
             automationController.updateAutomationSettings(automationModel);
 
