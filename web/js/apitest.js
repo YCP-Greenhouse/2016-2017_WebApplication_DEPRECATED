@@ -7,7 +7,6 @@ $(document).ready( function() {
 });
 
 // Query APIs every 3 seconds
-
 window.setInterval( function() {
 
     // Get state values
@@ -79,7 +78,9 @@ function getSensorValues() {
                 $("#lights" + i).text( data[i-1].light );
                 $("#temperature" + i).text( data[i-1].temperature );
                 $("#humidity" + i).text( data[i-1].humidity );
-                $("#moisture" + i).text( data[i-1].moisture );
+                //$("#moisture" + i).text( data[i-1].moisture );
+                $("#probe1-" + i).text(data[i-1].probe1);
+                $("#probe2-" + i).text(data[i-1].probe2);
             }
 
             // Set "Last Entry"
@@ -94,7 +95,9 @@ $(document).on('click', '#sensor-submit', function() {
     // Convert form data into array of JSON objects
     var vals = [];
 
-    vals.push({ zone: 1 , light: $('#set-lights1').val() , temperature: $('#set-temperature1').val(), humidity: $('#set-humidity1').val(), moisture: $('#set-moisture1').val() });
+    vals.push({zone:1, light:$('#set-lights1').val(), temperature:$('#set-temperature1').val(), humidity:$('#set-humidity1').val(), probe1: $('#set-probe1-1').val(), probe2: $('#set-probe2-1').val() });
+
+    /*vals.push({ zone: 1 , light: $('#set-lights1').val() , temperature: $('#set-temperature1').val(), humidity: $('#set-humidity1').val(), moisture: $('#set-moisture1').val() });
     vals.push({ zone: 2 , light: $('#set-lights2').val() , temperature: $('#set-temperature2').val(), humidity: $('#set-humidity2').val(), moisture: $('#set-moisture2').val() });
     vals.push({ zone: 3 , light: $('#set-lights3').val() , temperature: $('#set-temperature3').val(), humidity: $('#set-humidity3').val(), moisture: $('#set-moisture3').val() });
     vals.push({ zone: 4 , light: $('#set-lights4').val() , temperature: $('#set-temperature4').val(), humidity: $('#set-humidity4').val(), moisture: $('#set-moisture4').val() });
@@ -102,7 +105,7 @@ $(document).on('click', '#sensor-submit', function() {
     vals.push({ zone: 6 , light: $('#set-lights6').val() , temperature: $('#set-temperature6').val(), humidity: $('#set-humidity6').val(), moisture: $('#set-moisture6').val() });
     vals.push({ zone: 7 , light: $('#set-lights7').val() , temperature: $('#set-temperature7').val(), humidity: $('#set-humidity7').val(), moisture: $('#set-moisture7').val() });
     vals.push({ zone: 8 , light: $('#set-lights8').val() , temperature: $('#set-temperature8').val(), humidity: $('#set-humidity8').val(), moisture: $('#set-moisture8').val() });
-
+*/
 
     /* Set values to make testing easier
     vals.push({ zone: 1 , light: 1 , temperature: 1, humidity: 1, moisture: 1 });

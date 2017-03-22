@@ -906,20 +906,20 @@ body {
 }
 
 .sensor-captions {
-    padding-top: 15px;
-    width: 120px;
+    padding-top: 0px;
+    width: 150px;
     text-align: right;
-    line-height: 50px;
+    line-height: 45px;
     font-size: 15px;
 }
 
 .sensor-values {
     float: left;
     width: 150px;
-    line-height: 42px;
-    padding-top: 25px;
+    line-height: 38px;
+    padding-top: 12px;
     padding-left: 10px;
-    font-size: 35px;
+    font-size: 30px;
     color: white;
 }
 
@@ -1270,6 +1270,7 @@ body {
     border: solid 1px rgba(255,255,255,0.5);
     transition: all .3s ease-in-out;
     z-index: 999;
+    display: none;
 }
 
 .zone-modal-close {
@@ -1278,14 +1279,17 @@ body {
     height: 100vh;
     transition: all .1s ease-in-out;
     z-index: 998;
+    display: none;
 }
 
 .zone-modal.close {
     top: 100vh;
+    display: none;
 }
 
 .zone-modal-close.close{
     top: 100vh;
+    display: none;
 }
 
 .blur {
@@ -1297,6 +1301,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('../images/background.png');
+    display: none;
 }
 
 .zone-title {

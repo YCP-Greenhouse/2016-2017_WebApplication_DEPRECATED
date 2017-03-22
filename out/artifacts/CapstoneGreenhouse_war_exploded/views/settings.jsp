@@ -172,9 +172,10 @@
 
     <div id="zone-modal" class="zone-modal close">
         <div class="zone-modal-content">
+            <!--
             <span class="zone-title" id="zone-title"></span>
             <div class="modal-title">WATER SCHEDULE</div>
-            <!--<table class="modal-table" id="water-schedule-table">
+            <table class="modal-table" id="water-schedule-table">
                 <thead>
                     <tr>
                         <th> </th>
@@ -190,8 +191,8 @@
 
 
 
-            </table> -->
-
+            </table>
+            -->
         </div>
     </div>
     <div id="zone-modal-close" class="zone-modal-close close"></div>

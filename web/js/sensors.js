@@ -35,7 +35,8 @@ function getSensorValues() {
                 $("#light-" + i).text( data[i-1].light + " " );
                 $("#temperature-" + i).html( data[i-1].temperature + "&deg; ");
                 $("#humidity-" + i).text( data[i-1].humidity + " " );
-                $("#moisture-" + i).text( data[i-1].moisture + " ");
+                $("#probe1-" + i).text( data[i-1].probe1 + " ");
+                $("#probe2-" + i).text( data[i-1].probe2 + " ");
             }
         }
     });

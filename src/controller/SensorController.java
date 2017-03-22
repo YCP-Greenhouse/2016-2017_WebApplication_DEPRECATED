@@ -116,13 +116,14 @@ public class SensorController {
 
                 sensorModel.setEntryId(Integer.parseInt(rs.getString(1)));
                 sensorModel.setZone(Integer.parseInt(rs.getString(2)));
-                sensorModel.setMoisture(Double.parseDouble(rs.getString(3)));
-                sensorModel.setTemperature(Double.parseDouble(rs.getString(4)));
-                sensorModel.setLight(Double.parseDouble(rs.getString(5)));
-                sensorModel.setHumidity(Double.parseDouble(rs.getString(6)));
+                sensorModel.setProbe1(rs.getDouble(3));
+                sensorModel.setProbe2(rs.getDouble(4));
+                sensorModel.setTemperature(Double.parseDouble(rs.getString(5)));
+                sensorModel.setLight(Double.parseDouble(rs.getString(6)));
+                sensorModel.setHumidity(Double.parseDouble(rs.getString(7)));
 
                 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                Date date = dateFormat.parse(rs.getString(7));
+                Date date = dateFormat.parse(rs.getString(8));
 
                 sensorModel.setSampleTime( dateFormat.format(date) );
 
@@ -185,7 +186,8 @@ public class SensorController {
                 JSONObject obj = new JSONObject();
 
                 obj.put("zone", sensorList.get(latestKey).getZone() );
-                obj.put("moisture", sensorList.get(latestKey).getMoisture() );
+                obj.put("probe1", sensorList.get(latestKey).getProbe1());
+                obj.put("probe2", sensorList.get(latestKey).getProbe2());
                 obj.put("temperature", sensorList.get(latestKey).getTemperature() );
                 obj.put("light", sensorList.get(latestKey).getLight() );
                 obj.put("humidity", sensorList.get(latestKey).getHumidity() );
@@ -234,7 +236,8 @@ public class SensorController {
 
             // Set sensor to latest values
             sensor.setZone(zoneID);
-            sensor.setMoisture(zoneList.get(latestKey).getMoisture());
+            sensor.setProbe1(zoneList.get(latestKey).getProbe1());
+            sensor.setProbe2(zoneList.get(latestKey).getProbe2());
             sensor.setTemperature(zoneList.get(latestKey).getTemperature());
             sensor.setLight(zoneList.get(latestKey).getLight());
             sensor.setHumidity(zoneList.get(latestKey).getHumidity());
@@ -293,7 +296,8 @@ public class SensorController {
                             JSONObject obj = new JSONObject();
 
                             obj.put("zone", sensorEntry.getZone() );
-                            obj.put("moisture", sensorEntry.getMoisture() );
+                            obj.put("probe1", sensorEntry.getProbe1());
+                            obj.put("probe2", sensorEntry.getProbe2());
                             obj.put("temperature", sensorEntry.getTemperature() );
                             obj.put("light", sensorEntry.getLight() );
                             obj.put("humidity", sensorEntry.getHumidity() );
@@ -353,7 +357,8 @@ public class SensorController {
                         JSONObject obj = new JSONObject();
 
                         obj.put("zone", sensor.getZone() );
-                        obj.put("moisture", sensor.getMoisture() );
+                        obj.put("probe1", sensor.getProbe1());
+                        obj.put("probe2", sensor.getProbe2());
                         obj.put("temperature", sensor.getTemperature() );
                         obj.put("light", sensor.getLight() );
                         obj.put("humidity", sensor.getHumidity() );
@@ -367,7 +372,8 @@ public class SensorController {
                     JSONObject obj = new JSONObject();
 
                     obj.put("zone", sensorList.get(latestKey).getZone() );
-                    obj.put("moisture", sensorList.get(latestKey).getMoisture() );
+                    obj.put("probe1", sensorList.get(latestKey).getProbe1());
+                    obj.put("probe2", sensorList.get(latestKey).getProbe2());
                     obj.put("temperature", sensorList.get(latestKey).getTemperature() );
                     obj.put("light", sensorList.get(latestKey).getLight() );
                     obj.put("humidity", sensorList.get(latestKey).getHumidity() );
@@ -401,13 +407,14 @@ public class SensorController {
                 avgLight += Double.parseDouble(latestData.getJSONObject(i).get("light").toString());
                 avgHumidity += Double.parseDouble(latestData.getJSONObject(i).get("humidity").toString());
                 avgTemperature += Double.parseDouble(latestData.getJSONObject(i).get("temperature").toString());
-                avgMoisture += Double.parseDouble(latestData.getJSONObject(i).get("moisture").toString());
+                avgMoisture += Double.parseDouble(latestData.getJSONObject(i).get("probe1").toString());
+                avgMoisture += Double.parseDouble(latestData.getJSONObject(i).get("probe2").toString());
             }
 
             avgLight = avgLight / latestData.length();
             avgHumidity = avgHumidity / latestData.length();
             avgTemperature = avgTemperature / latestData.length();
-            avgMoisture = avgMoisture / latestData.length();
+            avgMoisture = avgMoisture / ( 2*latestData.length() );
 
             jsonData.put("light",  avgLight );
             jsonData.put("humidity", avgHumidity );
@@ -487,7 +494,7 @@ public class SensorController {
         }
 
         PreparedStatement ps = null;
-        String sql = "INSERT INTO sensordata VALUES(?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO sensordata VALUES(?,?,?,?,?,?,?,?)";
 
         try {
 
@@ -502,20 +509,21 @@ public class SensorController {
             for( SensorModel sensor : sensorList ) {
                 ps = conn.prepareStatement(sql);
 
-                System.out.println("Add Sensors:\nZone: " + sensor.getZone() + "\nMoisture: " + sensor.getMoisture() + "\nTemperature: " + sensor.getTemperature() + "\nLight: " + sensor.getLight() + "\nHumidity: " + sensor.getHumidity());
+                //System.out.println("Add Sensors:\nZone: " + sensor.getZone() + "\nMoisture: " + sensor.getMoisture() + "\nTemperature: " + sensor.getTemperature() + "\nLight: " + sensor.getLight() + "\nHumidity: " + sensor.getHumidity());
 
                 ps.setString(1, null );
                 ps.setInt(2, sensor.getZone() );
-                ps.setDouble(3, sensor.getMoisture() );
-                ps.setDouble(4, sensor.getTemperature() );
-                ps.setDouble( 5, sensor.getLight() );
-                ps.setDouble( 6, sensor.getHumidity() );
-                ps.setString( 7, sensor.getSampleTime() );
+                ps.setDouble(3, sensor.getProbe1() );
+                ps.setDouble(4, sensor.getProbe2() );
+                ps.setDouble(5, sensor.getTemperature() );
+                ps.setDouble( 6, sensor.getLight() );
+                ps.setDouble( 7, sensor.getHumidity() );
+                ps.setString( 8, sensor.getSampleTime() );
 
                 avgLight += sensor.getLight();
                 avgHumidity += sensor.getHumidity();
                 avgTemperature += sensor.getTemperature();
-                avgMoisture += sensor.getMoisture();
+                avgMoisture += sensor.getProbe1() + sensor.getProbe2();
 
                 ps.executeUpdate();
                 ps.close();

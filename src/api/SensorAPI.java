@@ -113,9 +113,15 @@ public class SensorAPI extends HttpServlet {
                         }
 
                         try {
-                            sensor.setMoisture(Double.parseDouble(obj.get("moisture").toString()));
+                            sensor.setProbe1(Double.parseDouble(obj.get("probe1").toString()));
                         } catch (NumberFormatException e) {
-                            sensor.setMoisture(lastSensor.getMoisture());
+                            sensor.setProbe1(lastSensor.getProbe1());
+                        }
+
+                        try {
+                            sensor.setProbe2(Double.parseDouble(obj.get("probe2").toString()));
+                        } catch (NumberFormatException e) {
+                            sensor.setProbe2(lastSensor.getProbe2());
                         }
 
                         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

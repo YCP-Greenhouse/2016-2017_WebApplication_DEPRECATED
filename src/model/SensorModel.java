@@ -3,7 +3,7 @@ package model;
 public class SensorModel {
 
     int zone, entryId;
-    double moisture, temperature, light, humidity;
+    double temperature, light, humidity, probe1, probe2;
     String sampleTime;
 
     public SensorModel() {}
@@ -25,12 +25,20 @@ public class SensorModel {
         return entryId;
     }
 
-    public void setMoisture(double moisture) {
-        this.moisture = moisture;
+    public void setProbe1(double probe1) {
+        this.probe1 = probe1;
     }
 
-    public double getMoisture() {
-        return moisture;
+    public double getProbe1() {
+        return probe1;
+    }
+
+    public void setProbe2(double probe2){
+        this.probe2 = probe2;
+    }
+
+    public double getProbe2() {
+        return probe2;
     }
 
     public void setTemperature(double temperature) {

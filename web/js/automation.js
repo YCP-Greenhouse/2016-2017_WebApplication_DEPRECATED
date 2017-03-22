@@ -14,7 +14,7 @@ var vents;
 var heater;
 
 // Query API every 3 seconds
-/*
+
 window.setInterval( function() {
 
     $.ajax({
@@ -48,7 +48,7 @@ window.setInterval( function() {
 
     updateAutomationValues();
 
-}, 3000 ); */
+}, 3000 );
 
 $(document).ready( function() {
 
@@ -235,7 +235,7 @@ $(document).ready( function() {
 
         $('#zone-modal').css("display", "none");
 
-    });*/
+    });
 
     $('.big-table, .small-table, .zone-modal-close').click(function() {
         $('.container').toggleClass('blur');
@@ -244,7 +244,7 @@ $(document).ready( function() {
 
         $('#zone-title').text($(this).text());
         drawScheduleTable($('#water-schedule-table'));
-    });
+    });*/
 });
 
 function drawScheduleTable(el) {

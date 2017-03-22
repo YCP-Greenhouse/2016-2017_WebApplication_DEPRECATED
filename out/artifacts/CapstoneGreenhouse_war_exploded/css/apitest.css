@@ -33,7 +33,7 @@
 }
 
 .sensor-div {
-    height: 100px;
+    height: 125px;
     width: 180px;
     border: solid 1px black;
     margin-right: 40px;
@@ -89,7 +89,7 @@
     position: absolute;
     width: 350px;
     line-height: 20px;
-    margin-top: 820px;
+    margin-top: 900px;
     display: inline-block;
 }
 
