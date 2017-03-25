@@ -1,6 +1,7 @@
 package controller;
 
 import model.AutomationModel;
+import model.ScheduleModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by kylemusco on 1/28/17.
@@ -62,6 +65,48 @@ public class AutomationController {
             return null;
         }
 
+        // Get schedule entries
+        HashMap<Integer, ScheduleModel> lightSchedule = getLightSchedule();
+        HashMap<Integer, ScheduleModel> waterSchedule = getWaterSchedule();
+
+        try {
+
+            // Create JSON array of schedule entries
+            JSONArray light = new JSONArray();
+            for (int i = 0; i < lightSchedule.size(); i++) {
+                JSONObject lightObj = new JSONObject();
+
+                lightObj.put( "id", lightSchedule.get(i).getId() );
+                lightObj.put( "zone", lightSchedule.get(i).getZoneID() );
+                lightObj.put( "start", lightSchedule.get(i).getStartTime() );
+                lightObj.put( "end", lightSchedule.get(i).getEndTime() );
+                lightObj.put( "hours", lightSchedule.get(i).getHours() );
+
+                light.put(lightObj);
+            }
+
+            obj.put( "lightschedule", light );
+
+            // Create JSON array of schedule entries
+            JSONArray water = new JSONArray();
+            for (int i = 0; i < waterSchedule.size(); i++) {
+                JSONObject waterObj = new JSONObject();
+
+                waterObj.put( "id", waterSchedule.get(i).getId() );
+                waterObj.put( "zone", waterSchedule.get(i).getZoneID() );
+                waterObj.put( "start", waterSchedule.get(i).getStartTime() );
+                waterObj.put( "end", waterSchedule.get(i).getEndTime() );
+                waterObj.put( "hours", waterSchedule.get(i).getHours() );
+
+                water.put(waterObj);
+            }
+
+            obj.put( "waterschedule", water );
+
+        } catch( JSONException e ) {
+
+        }
+
         return obj;
     }
 
@@ -111,7 +156,30 @@ public class AutomationController {
 
     public void updateAutomationSettings(AutomationModel automationModel) {
 
-        //System.out.println("Temp low: " + automationModel.getTempLow() + "\nTemp high: " + automationModel.getTempHigh() + "\nMoisture: " + automationModel.getSoilMoisture() + "\nHumidity: " + automationModel.getHumidity() + "\nLight: " + automationModel.getLightIntesity());
+        // Get schedule entries
+        HashMap<Integer, ScheduleModel> currentLightSchedule = getLightSchedule();
+        HashMap<Integer, ScheduleModel> currentWaterSchedule = getWaterSchedule();
+
+        // Iterate through current schedule entries, if schedule ID exists update it, otherwise add it
+        ArrayList<ScheduleModel> newLightSchedule = automationModel.getLightSchedule();
+        for( int i=0; i<newLightSchedule.size(); i++ ) {
+            if( currentLightSchedule.containsKey(newLightSchedule.get(i).getId())) {
+                updateScheduleEntry("lightschedule", newLightSchedule.get(i) );
+            } else {
+                addSchedule( "lightschedule", newLightSchedule.get(i) );
+                currentLightSchedule.put( newLightSchedule.get(i).getId(), newLightSchedule.get(i) );
+            }
+        }
+
+        ArrayList<ScheduleModel> newWaterSchedule = automationModel.getWaterSchedule();
+        for( int i=0; i<newWaterSchedule.size(); i++ ) {
+            if( currentWaterSchedule.containsKey(newWaterSchedule.get(i).getId())) {
+                updateScheduleEntry("waterschedule", newWaterSchedule.get(i) );
+            } else {
+                addSchedule( "waterschedule", newWaterSchedule.get(i) );
+                currentWaterSchedule.put( newWaterSchedule.get(i).getId(), newWaterSchedule.get(i) );
+            }
+        }
 
         // Connect to database
         Connection conn = null;
@@ -140,5 +208,169 @@ public class AutomationController {
             e.printStackTrace();
             return;
         }
+    }
+
+    public void addSchedule(String database, ScheduleModel newSchedule ) {
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = dbController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
+        PreparedStatement ps = null;
+        String sql = "INSERT INTO " + database + " VALUES(?,?,?,?,?)";
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+
+            ps.setInt(1, newSchedule.getId() );
+            ps.setInt(2, newSchedule.getZoneID() );
+            ps.setString(3, newSchedule.getStartTime() );
+            ps.setString(4, newSchedule.getEndTime() );
+            ps.setDouble(5, newSchedule.getHours() );
+
+            ps.executeUpdate();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public void updateScheduleEntry(String database, ScheduleModel newSchedule ) {
+
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = dbController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
+        PreparedStatement ps = null;
+        String sql = "UPDATE " + database + " SET zoneId='" + newSchedule.getZoneID() + "', startTime='" + newSchedule.getStartTime() + "', endTime='" + newSchedule.getEndTime() + "', hours='" + newSchedule.getHours() + "' WHERE id='" + newSchedule.getId() + "'";
+        System.out.println(sql);
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            ps.executeUpdate();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public HashMap<Integer, ScheduleModel> getLightSchedule() {
+        HashMap<Integer, ScheduleModel> lightSchedule = new HashMap<>();
+
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = dbController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String sql = "SELECT * FROM lightschedule";
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while( rs.next() ) {
+                ScheduleModel schedule = new ScheduleModel();
+
+                schedule.setId(rs.getInt(1));
+                schedule.setZoneID(rs.getInt(2));
+                schedule.setStartTime(rs.getString(3));
+                schedule.setEndTime(rs.getString(4));
+                schedule.setHours(rs.getInt(5));
+
+                lightSchedule.put(schedule.getId(), schedule);
+            }
+
+            rs.close();
+            ps.close();
+            conn.commit();
+            conn.close();
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return lightSchedule;
+    }
+
+    public HashMap<Integer, ScheduleModel> getWaterSchedule() {
+        HashMap<Integer, ScheduleModel> waterSchedule = new HashMap<>();
+
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = dbController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String sql = "SELECT * FROM waterschedule";
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while( rs.next() ) {
+                ScheduleModel schedule = new ScheduleModel();
+
+                schedule.setId(rs.getInt(1));
+                schedule.setZoneID(rs.getInt(2));
+                schedule.setStartTime(rs.getString(3));
+                schedule.setEndTime(rs.getString(4));
+                schedule.setHours(rs.getInt(5));
+
+                waterSchedule.put(schedule.getId(), schedule);
+            }
+
+            rs.close();
+            ps.close();
+            conn.commit();
+            conn.close();
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return waterSchedule;
     }
 }

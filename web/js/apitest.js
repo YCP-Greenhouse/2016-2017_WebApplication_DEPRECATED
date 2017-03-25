@@ -7,6 +7,7 @@ $(document).ready( function() {
 });
 
 // Query APIs every 3 seconds
+/*
 window.setInterval( function() {
 
     // Get state values
@@ -21,7 +22,7 @@ window.setInterval( function() {
     // Get Error Message
     getErrorMessage();
 
-}, 3000 );
+}, 3000 ); */
 
 // Get greenhouse state
 function getState() {
@@ -172,12 +173,21 @@ function getAutomationValues() {
     });
 }
 
+var lightSchedule = [];
+var waterSchedule = [];
+
+lightSchedule.push({id: 1, zone: 1, starttime: '2017/02/01 00:00:00', endtime: '2017/02/19 05:00:00', hours: 5 },
+    {id: 2, zone: 2, starttime: '2017/02/02 00:00:00', endtime: '2017/02/19 05:00:00', hours: 5 },
+    {id: 3, zone: 3, starttime: '2017/02/03 00:00:00', endtime: '2017/02/19 05:00:00', hours: 5 });
+waterSchedule.push({id: 1, zone: 1, starttime: '2017/02/19 00:00:00', endtime: '2017/02/19 05:00:00', hours: 5 });
+
 // Submit automation values
 $(document).on('click', '#automation-submit', function() {
+
     $.ajax({
         type: 'POST',
         url: '/api/automation',
-        data: { apikey: $('#apikey').val(), light: $('#auto-lights').val(), temperature: $('#auto-temperature').val(), humidity: $('#auto-humidity').val(), moisture: $('#auto-moisture').val() },
+        data: { apikey: '44ffe28b-f470-4bc0-8ee9-38fce01438ce', light: $('#auto-lights').val(), temperature: $('#auto-temperature').val(), humidity: $('#auto-humidity').val(), moisture: $('#auto-moisture').val(), waterschedule: waterSchedule, lightschedule: lightSchedule },
         success: function() {
             getAutomationValues();
         }

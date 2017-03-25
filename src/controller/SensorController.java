@@ -421,7 +421,7 @@ public class SensorController {
             jsonData.put("temperature", avgTemperature);
             jsonData.put("moisture", avgMoisture);
 
-            System.out.println(jsonData);
+            //System.out.println(jsonData);
 
         } catch( JSONException e ) {
             e.printStackTrace();
