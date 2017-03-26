@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/greenhouse.css">
     <link rel="stylesheet" type="text/css" href="../css/rangeslider.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery3.1.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
 
     <script src="../js/automation.js"></script>

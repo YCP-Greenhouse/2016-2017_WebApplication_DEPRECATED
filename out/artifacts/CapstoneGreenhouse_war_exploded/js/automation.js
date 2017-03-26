@@ -301,9 +301,9 @@ function updateAutomationValues() {
             var data = JSON.parse(response);
 
             // Set values
-            light = data.light;
-            templow = data.templow;
-            temphigh = data.temphigh;
+            light = data.ShadeLim;
+            templow = data.TempLo;
+            temphigh = data.TempHigh;
             humidity = data.humidity;
             moisture = data.moisture;
 
@@ -334,9 +334,9 @@ function getAutomationValues() {
             var data = JSON.parse(response);
 
             // Set values
-            light = data.light;
-            templow = data.templow;
-            temphigh = data.temphigh;
+            light = data.ShadeLim;
+            templow = data.TempLo;
+            temphigh = data.TempHigh;
             humidity = data.humidity;
             moisture = data.moisture;
 

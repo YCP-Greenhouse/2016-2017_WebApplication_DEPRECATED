@@ -123,7 +123,7 @@ $(document).on('click', '#sensor-submit', function() {
     $.ajax({
         type: 'POST',
         url: '/api/sensors',
-        data: { data: vals, apikey: 'asddd' },
+        data: { data: vals, apikey: '44ffe28b-f470-4bc0-8ee9-38fce01438ce' },
         success: function() {
             getSensorValues();
         }
@@ -204,7 +204,7 @@ $(document).on('click', '#error-submit', function() {
     $.ajax({
         type: 'POST',
         url: '/api/error',
-        data: { apikey: $('#apikey').val(), message: $('#set-error-message').val(), code: $('#set-error-code').val() },
+        data: { apikey: '44ffe28b-f470-4bc0-8ee9-38fce01438ce', message: $('#set-error-message').val(), code: $('#set-error-code').val() },
         success: function() {
             getErrorMessage();
         }
