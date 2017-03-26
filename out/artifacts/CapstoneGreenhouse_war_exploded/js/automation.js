@@ -302,7 +302,7 @@ function updateAutomationValues() {
 
             // Set values
             light = data.ShadeLim;
-            templow = data.TempLo;
+            templow = data.TempLow;
             temphigh = data.TempHigh;
             humidity = data.humidity;
             moisture = data.moisture;
@@ -335,7 +335,7 @@ function getAutomationValues() {
 
             // Set values
             light = data.ShadeLim;
-            templow = data.TempLo;
+            templow = data.TempLow;
             temphigh = data.TempHigh;
             humidity = data.humidity;
             moisture = data.moisture;

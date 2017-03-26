@@ -7,15 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/greenhouse_war/1.3.war" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/apitest.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/apitest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/AutomationController.java" afterPath="$PROJECT_DIR$/src/controller/AutomationController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/greenhouse.css" afterPath="$PROJECT_DIR$/web/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/apitest.js" afterPath="$PROJECT_DIR$/web/js/apitest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/documentation.html" afterPath="$PROJECT_DIR$/web/documentation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/automation.js" afterPath="$PROJECT_DIR$/web/js/automation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/settings.jsp" afterPath="$PROJECT_DIR$/web/views/settings.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="912" column="20" lean-forward="false" selection-start-line="912" selection-start-column="20" selection-end-line="912" selection-end-column="20" />
+              <caret line="927" column="32" lean-forward="false" selection-start-line="927" selection-start-column="32" selection-end-line="927" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -45,20 +42,8 @@
         <entry file="file://$PROJECT_DIR$/src/api/AveragesAPI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/DatabaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -66,22 +51,22 @@
       <file leaf-file-name="settings.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-735">
+            <state relative-caret-position="135">
               <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="automation.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="automation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/automation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-161">
-              <caret line="336" column="33" lean-forward="false" selection-start-line="336" selection-start-column="33" selection-end-line="336" selection-end-column="33" />
+            <state relative-caret-position="-319">
+              <caret line="306" column="37" lean-forward="true" selection-start-line="306" selection-start-column="37" selection-end-line="306" selection-end-column="37" />
               <folding>
-                <marker date="1490497084000" expanded="true" signature="1480:1502" ph="..." />
-                <marker date="1490497084000" expanded="true" signature="2154:2176" ph="..." />
-                <marker date="1490497084000" expanded="true" signature="2540:2556" ph="..." />
+                <marker date="1490498712000" expanded="true" signature="1480:1502" ph="..." />
+                <marker date="1490498712000" expanded="true" signature="2154:2176" ph="..." />
+                <marker date="1490498712000" expanded="true" signature="2540:2556" ph="..." />
               </folding>
             </state>
           </provider>
@@ -100,8 +85,8 @@
       <file leaf-file-name="AutomationController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/AutomationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="294" column="29" lean-forward="true" selection-start-line="294" selection-start-column="29" selection-end-line="294" selection-end-column="29" />
+            <state relative-caret-position="2955">
+              <caret line="477" column="13" lean-forward="true" selection-start-line="477" selection-start-column="13" selection-end-line="477" selection-end-column="13" />
               <folding>
                 <element signature="docComment;class#AutomationController#0" expanded="false" />
                 <element signature="method#getCurrentAutomationSettings#0;class#AutomationController#0" expanded="false" />
@@ -110,27 +95,37 @@
                 <element signature="method#updateScheduleEntry#0;class#AutomationController#0" expanded="false" />
                 <element signature="method#getLightSchedule#0;class#AutomationController#0" expanded="false" />
                 <element signature="method#getWaterSchedule#0;class#AutomationController#0" expanded="false" />
-                <marker date="1490455253000" expanded="false" signature="977:1001" ph="SELECT * FRO... automation" />
-                <marker date="1490455253000" expanded="false" signature="4062:4086" ph="SELECT * FRO... automation" />
-                <marker date="1490455253000" expanded="false" signature="6597:6628" ph="UPDATE autom... " />
-                <marker date="1490455253000" expanded="false" signature="6597:6677" ph="UPDATE autom... " />
-                <marker date="1490455253000" expanded="false" signature="6597:6727" ph="UPDATE autom... " />
-                <marker date="1490455253000" expanded="false" signature="6597:6781" ph="UPDATE autom... " />
-                <marker date="1490455253000" expanded="false" signature="6597:6828" ph="UPDATE autom... " />
-                <marker date="1490455253000" expanded="false" signature="6597:6884" ph="UPDATE autom... " />
-                <marker date="1490455253000" expanded="false" signature="7566:7612" ph="INSERT INTO missingValue... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8600" ph="UPDATE autom... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8607" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8653" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8686" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8688" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8699" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8741" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8783" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="8572:8811" ph="UPDATE missi... " />
-                <marker date="1490455253000" expanded="false" signature="9678:9705" ph="SELECT * FRO... lightschedule" />
-                <marker date="1490455253000" expanded="false" signature="11032:11059" ph="SELECT * FRO... waterschedule" />
+                <marker date="1490498701000" expanded="false" signature="977:1001" ph="SELECT * FRO... automation" />
+                <marker date="1490498701000" expanded="false" signature="4063:4087" ph="SELECT * FRO... automation" />
+                <marker date="1490498701000" expanded="false" signature="6598:6629" ph="UPDATE autom... " />
+                <marker date="1490498701000" expanded="false" signature="6598:6678" ph="UPDATE autom... " />
+                <marker date="1490498701000" expanded="false" signature="6598:6728" ph="UPDATE autom... " />
+                <marker date="1490498701000" expanded="false" signature="6598:6782" ph="UPDATE autom... " />
+                <marker date="1490498701000" expanded="false" signature="6598:6829" ph="UPDATE autom... " />
+                <marker date="1490498701000" expanded="false" signature="6598:6885" ph="UPDATE autom... " />
+                <marker date="1490498701000" expanded="false" signature="7567:7613" ph="INSERT INTO missingValue... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8601" ph="UPDATE autom... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8608" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8654" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8687" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8689" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8700" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8742" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8784" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="8573:8812" ph="UPDATE missi... " />
+                <marker date="1490498701000" expanded="false" signature="9679:9706" ph="SELECT * FRO... lightschedule" />
+                <marker date="1490498701000" expanded="false" signature="11033:11060" ph="SELECT * FRO... waterschedule" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="documentation.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/documentation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="662">
+              <caret line="488" column="0" lean-forward="true" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -278,13 +273,13 @@
         <option value="$PROJECT_DIR$/src/model/ScheduleModel.java" />
         <option value="$PROJECT_DIR$/src/api/AutomationAPI.java" />
         <option value="$PROJECT_DIR$/src/controller/SensorController.java" />
-        <option value="$PROJECT_DIR$/web/documentation.html" />
-        <option value="$PROJECT_DIR$/src/controller/AutomationController.java" />
         <option value="$PROJECT_DIR$/web/views/settings.jsp" />
         <option value="$PROJECT_DIR$/src/controller/DatabaseController.java" />
         <option value="$PROJECT_DIR$/web/js/apitest.js" />
         <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
+        <option value="$PROJECT_DIR$/src/controller/AutomationController.java" />
         <option value="$PROJECT_DIR$/web/js/automation.js" />
+        <option value="$PROJECT_DIR$/web/documentation.html" />
       </list>
     </option>
   </component>
@@ -304,7 +299,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="10" />
     <option name="y" value="23" />
-    <option name="width" value="1250" />
+    <option name="width" value="1427" />
     <option name="height" value="836" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -326,8 +321,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -509,6 +504,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenhouse_war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1112,16 +1161,17 @@
       <workItem from="1490198949726" duration="8728000" />
       <workItem from="1490401110436" duration="23628000" />
       <workItem from="1490459576772" duration="7951000" />
-      <workItem from="1490496314459" duration="732000" />
+      <workItem from="1490496314459" duration="1299000" />
+      <workItem from="1490498660891" duration="527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="375729000" />
+    <option name="totallyTimeSpent" value="376823000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="23" width="1250" height="836" extended-state="0" />
-    <editor active="true" />
+    <frame x="10" y="23" width="1427" height="836" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1148,7 +1198,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3360215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2839404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25126353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1244,7 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="1966" column="0" lean-forward="false" selection-start-line="1966" selection-start-column="0" selection-end-line="1966" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1560,13 +1609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/documentation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7320">
-          <caret line="488" column="0" lean-forward="false" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ScheduleModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -1655,9 +1697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1693,26 +1733,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
+    <entry file="file://$PROJECT_DIR$/src/api/AveragesAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="912" column="20" lean-forward="false" selection-start-line="912" selection-start-column="20" selection-end-line="912" selection-end-column="20" />
+        <state relative-caret-position="450">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/AveragesAPI.java">
+    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="927" column="32" lean-forward="false" selection-start-line="927" selection-start-column="32" selection-end-line="927" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/automation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-319">
+          <caret line="306" column="37" lean-forward="true" selection-start-line="306" selection-start-column="37" selection-end-line="306" selection-end-column="37" />
+          <folding>
+            <marker date="1490498712000" expanded="true" signature="1480:1502" ph="..." />
+            <marker date="1490498712000" expanded="true" signature="2154:2176" ph="..." />
+            <marker date="1490498712000" expanded="true" signature="2540:2556" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/AutomationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="294" column="29" lean-forward="true" selection-start-line="294" selection-start-column="29" selection-end-line="294" selection-end-column="29" />
+        <state relative-caret-position="2955">
+          <caret line="477" column="13" lean-forward="true" selection-start-line="477" selection-start-column="13" selection-end-line="477" selection-end-column="13" />
           <folding>
             <element signature="docComment;class#AutomationController#0" expanded="false" />
             <element signature="method#getCurrentAutomationSettings#0;class#AutomationController#0" expanded="false" />
@@ -1721,47 +1781,35 @@
             <element signature="method#updateScheduleEntry#0;class#AutomationController#0" expanded="false" />
             <element signature="method#getLightSchedule#0;class#AutomationController#0" expanded="false" />
             <element signature="method#getWaterSchedule#0;class#AutomationController#0" expanded="false" />
-            <marker date="1490455253000" expanded="false" signature="977:1001" ph="SELECT * FRO... automation" />
-            <marker date="1490455253000" expanded="false" signature="4062:4086" ph="SELECT * FRO... automation" />
-            <marker date="1490455253000" expanded="false" signature="6597:6628" ph="UPDATE autom... " />
-            <marker date="1490455253000" expanded="false" signature="6597:6677" ph="UPDATE autom... " />
-            <marker date="1490455253000" expanded="false" signature="6597:6727" ph="UPDATE autom... " />
-            <marker date="1490455253000" expanded="false" signature="6597:6781" ph="UPDATE autom... " />
-            <marker date="1490455253000" expanded="false" signature="6597:6828" ph="UPDATE autom... " />
-            <marker date="1490455253000" expanded="false" signature="6597:6884" ph="UPDATE autom... " />
-            <marker date="1490455253000" expanded="false" signature="7566:7612" ph="INSERT INTO missingValue... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8600" ph="UPDATE autom... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8607" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8653" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8686" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8688" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8699" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8741" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8783" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="8572:8811" ph="UPDATE missi... " />
-            <marker date="1490455253000" expanded="false" signature="9678:9705" ph="SELECT * FRO... lightschedule" />
-            <marker date="1490455253000" expanded="false" signature="11032:11059" ph="SELECT * FRO... waterschedule" />
+            <marker date="1490498701000" expanded="false" signature="977:1001" ph="SELECT * FRO... automation" />
+            <marker date="1490498701000" expanded="false" signature="4063:4087" ph="SELECT * FRO... automation" />
+            <marker date="1490498701000" expanded="false" signature="6598:6629" ph="UPDATE autom... " />
+            <marker date="1490498701000" expanded="false" signature="6598:6678" ph="UPDATE autom... " />
+            <marker date="1490498701000" expanded="false" signature="6598:6728" ph="UPDATE autom... " />
+            <marker date="1490498701000" expanded="false" signature="6598:6782" ph="UPDATE autom... " />
+            <marker date="1490498701000" expanded="false" signature="6598:6829" ph="UPDATE autom... " />
+            <marker date="1490498701000" expanded="false" signature="6598:6885" ph="UPDATE autom... " />
+            <marker date="1490498701000" expanded="false" signature="7567:7613" ph="INSERT INTO missingValue... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8601" ph="UPDATE autom... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8608" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8654" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8687" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8689" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8700" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8742" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8784" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="8573:8812" ph="UPDATE missi... " />
+            <marker date="1490498701000" expanded="false" signature="9679:9706" ph="SELECT * FRO... lightschedule" />
+            <marker date="1490498701000" expanded="false" signature="11033:11060" ph="SELECT * FRO... waterschedule" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
+    <entry file="file://$PROJECT_DIR$/web/documentation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="662">
+          <caret line="488" column="0" lean-forward="true" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/automation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="336" column="33" lean-forward="false" selection-start-line="336" selection-start-column="33" selection-end-line="336" selection-end-column="33" />
-          <folding>
-            <marker date="1490497084000" expanded="true" signature="1480:1502" ph="..." />
-            <marker date="1490497084000" expanded="true" signature="2154:2176" ph="..." />
-            <marker date="1490497084000" expanded="true" signature="2540:2556" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

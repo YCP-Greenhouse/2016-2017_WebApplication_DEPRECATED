@@ -49,7 +49,7 @@ public class AutomationController {
             rs = ps.executeQuery();
 
             if( rs.next() ) {
-                obj.put("TempLo", rs.getString(2));
+                obj.put("TempLow", rs.getString(2));
                 obj.put("TempHigh", rs.getString(3));
                 obj.put("moisture", rs.getString(4));
                 obj.put("humidity", rs.getString(5));
