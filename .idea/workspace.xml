@@ -7,12 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controller/ScheduleController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/schedule.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/schedule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/model/ScheduleModel.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/model/ScheduleModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/model/ScheduleModel.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/model/ScheduleModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/AutomationController.java" afterPath="$PROJECT_DIR$/src/controller/AutomationController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/automation.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/automation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/SensorController.java" afterPath="$PROJECT_DIR$/src/controller/SensorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ScheduleModel.java" afterPath="$PROJECT_DIR$/src/model/ScheduleModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/greenhouse.css" afterPath="$PROJECT_DIR$/web/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/documentation.html" afterPath="$PROJECT_DIR$/web/documentation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/automation.js" afterPath="$PROJECT_DIR$/web/js/automation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/settings.jsp" afterPath="$PROJECT_DIR$/web/views/settings.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,18 +42,18 @@
       <file leaf-file-name="greenhouse.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="927" column="32" lean-forward="false" selection-start-line="927" selection-start-column="32" selection-end-line="927" selection-end-column="32" />
+            <state relative-caret-position="20550">
+              <caret line="1370" column="22" lean-forward="false" selection-start-line="1370" selection-start-column="22" selection-end-line="1370" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AveragesAPI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/AveragesAPI.java">
+      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="43" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -51,8 +62,8 @@
       <file leaf-file-name="settings.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="2595">
+              <caret line="173" column="13" lean-forward="false" selection-start-line="173" selection-start-column="13" selection-end-line="173" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -61,100 +72,86 @@
       <file leaf-file-name="automation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/automation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-319">
-              <caret line="306" column="37" lean-forward="true" selection-start-line="306" selection-start-column="37" selection-end-line="306" selection-end-column="37" />
+            <state relative-caret-position="3375">
+              <caret line="225" column="50" lean-forward="false" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="50" />
               <folding>
-                <marker date="1490498712000" expanded="true" signature="1480:1502" ph="..." />
-                <marker date="1490498712000" expanded="true" signature="2154:2176" ph="..." />
-                <marker date="1490498712000" expanded="true" signature="2540:2556" ph="..." />
+                <marker date="1490587192000" expanded="true" signature="1480:1502" ph="..." />
+                <marker date="1490587192000" expanded="true" signature="2154:2176" ph="..." />
+                <marker date="1490587192000" expanded="true" signature="2540:2556" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apitest.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/apitest.jsp">
+      <file leaf-file-name="schedule.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2430">
-              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="7" />
+            <state relative-caret-position="4230">
+              <caret line="282" column="58" lean-forward="false" selection-start-line="282" selection-start-column="58" selection-end-line="282" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutomationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/AutomationController.java">
+      <file leaf-file-name="Weather.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/listener/Weather.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2955">
-              <caret line="477" column="13" lean-forward="true" selection-start-line="477" selection-start-column="13" selection-end-line="477" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="122" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StateController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/StateController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="119" column="39" lean-forward="true" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/SensorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="487" column="8" lean-forward="false" selection-start-line="487" selection-start-column="8" selection-end-line="492" selection-end-column="9" />
               <folding>
-                <element signature="docComment;class#AutomationController#0" expanded="false" />
-                <element signature="method#getCurrentAutomationSettings#0;class#AutomationController#0" expanded="false" />
-                <element signature="method#updateAutomationSettings#0;class#AutomationController#0" expanded="false" />
-                <element signature="method#addSchedule#0;class#AutomationController#0" expanded="false" />
-                <element signature="method#updateScheduleEntry#0;class#AutomationController#0" expanded="false" />
-                <element signature="method#getLightSchedule#0;class#AutomationController#0" expanded="false" />
-                <element signature="method#getWaterSchedule#0;class#AutomationController#0" expanded="false" />
-                <marker date="1490498701000" expanded="false" signature="977:1001" ph="SELECT * FRO... automation" />
-                <marker date="1490498701000" expanded="false" signature="4063:4087" ph="SELECT * FRO... automation" />
-                <marker date="1490498701000" expanded="false" signature="6598:6629" ph="UPDATE autom... " />
-                <marker date="1490498701000" expanded="false" signature="6598:6678" ph="UPDATE autom... " />
-                <marker date="1490498701000" expanded="false" signature="6598:6728" ph="UPDATE autom... " />
-                <marker date="1490498701000" expanded="false" signature="6598:6782" ph="UPDATE autom... " />
-                <marker date="1490498701000" expanded="false" signature="6598:6829" ph="UPDATE autom... " />
-                <marker date="1490498701000" expanded="false" signature="6598:6885" ph="UPDATE autom... " />
-                <marker date="1490498701000" expanded="false" signature="7567:7613" ph="INSERT INTO missingValue... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8601" ph="UPDATE autom... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8608" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8654" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8687" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8689" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8700" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8742" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8784" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="8573:8812" ph="UPDATE missi... " />
-                <marker date="1490498701000" expanded="false" signature="9679:9706" ph="SELECT * FRO... lightschedule" />
-                <marker date="1490498701000" expanded="false" signature="11033:11060" ph="SELECT * FRO... waterschedule" />
+                <element signature="method#getAllSensorDataJSON#0;class#SensorController#0" expanded="false" />
+                <element signature="method#categorizeSensorData#0;class#SensorController#0" expanded="false" />
+                <element signature="method#getLatestSensorData#0;class#SensorController#0" expanded="false" />
+                <element signature="method#getLatestSensorDataByID#0;class#SensorController#0" expanded="false" />
+                <element signature="method#getSensorData#0;class#SensorController#0" expanded="false" />
+                <element signature="e#10882#10911#0" expanded="false" />
+                <element signature="method#getAllAverages#0;class#SensorController#0" expanded="false" />
+                <marker date="1490803870000" expanded="false" signature="865:889" ph="SELECT * FRO... sensordata" />
+                <marker date="1490803870000" expanded="false" signature="2500:2524" ph="SELECT * FRO... sensordata" />
+                <marker date="1490803870000" expanded="false" signature="16422:16444" ph="SELECT * FRO... averages" />
+                <marker date="1490803870000" expanded="true" signature="17894:17940" ph="INSERT INTO sensordata... " />
+                <marker date="1490803870000" expanded="false" signature="17900:17901" ph="INSERT INTO sensordata... " />
+                <marker date="1490803870000" expanded="false" signature="19440:19480" ph="INSERT INTO averages... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="documentation.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/documentation.html">
+      <file leaf-file-name="SensorAPI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/api/SensorAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="488" column="0" lean-forward="true" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
+            <state relative-caret-position="705">
+              <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apitest.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/apitest.js">
+      <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/DatabaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="submittest.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/submittest.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sensors.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/sensors.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+            <state relative-caret-position="300">
+              <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -166,20 +163,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="HTML File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>component</find>
-      <find>greenhouse-div</find>
-      <find>settings-login</find>
-      <find>jcs-value</find>
-      <find>graph-</find>
       <find>settings.value</find>
       <find>automation.html</find>
       <find>requestParamsToJSON</find>
@@ -205,6 +197,11 @@
       <find>set-probe2</find>
       <find>System.ou</find>
       <find>low</find>
+      <find>zone-modal</find>
+      <find>apikey</find>
+      <find>console</find>
+      <find>add-schedule-modal</find>
+      <find>light-event</find>
     </findStrings>
     <replaceStrings>
       <replace>size=&quot;7&quot;</replace>
@@ -229,11 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/css/history.js" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/listener/Main.java" />
-        <option value="$PROJECT_DIR$/src/api/WeatherAPI.java" />
-        <option value="$PROJECT_DIR$/src/controller/WeatherController.java" />
         <option value="$PROJECT_DIR$/web/js/plotly.js" />
         <option value="$PROJECT_DIR$/web/js/webgl/Detector.js" />
         <option value="$PROJECT_DIR$/web/js/webgl/MTLLoader.js" />
@@ -247,7 +239,6 @@
         <option value="$PROJECT_DIR$/web/js/spoof.js" />
         <option value="$PROJECT_DIR$/web/js/weather.js" />
         <option value="$PROJECT_DIR$/src/servlet/SettingsServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/servlet/LoginServlet.java" />
         <option value="$PROJECT_DIR$/web/js/history.js" />
         <option value="$PROJECT_DIR$/web/js/circular-slider.js" />
@@ -270,16 +261,22 @@
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/submittest.html" />
         <option value="$PROJECT_DIR$/src/model/AutomationModel.java" />
-        <option value="$PROJECT_DIR$/src/model/ScheduleModel.java" />
         <option value="$PROJECT_DIR$/src/api/AutomationAPI.java" />
-        <option value="$PROJECT_DIR$/src/controller/SensorController.java" />
-        <option value="$PROJECT_DIR$/web/views/settings.jsp" />
         <option value="$PROJECT_DIR$/src/controller/DatabaseController.java" />
         <option value="$PROJECT_DIR$/web/js/apitest.js" />
-        <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
         <option value="$PROJECT_DIR$/src/controller/AutomationController.java" />
-        <option value="$PROJECT_DIR$/web/js/automation.js" />
         <option value="$PROJECT_DIR$/web/documentation.html" />
+        <option value="$PROJECT_DIR$/src/model/ScheduleModel.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/controller/StateController.java" />
+        <option value="$PROJECT_DIR$/web/schedule.html" />
+        <option value="$PROJECT_DIR$/src/controller/ScheduleController.java" />
+        <option value="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
+        <option value="$PROJECT_DIR$/web/js/automation.js" />
+        <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
+        <option value="$PROJECT_DIR$/web/views/settings.jsp" />
+        <option value="$PROJECT_DIR$/web/js/schedule.js" />
+        <option value="$PROJECT_DIR$/src/controller/SensorController.java" />
       </list>
     </option>
   </component>
@@ -296,10 +293,12 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
     <option name="y" value="23" />
-    <option name="width" value="1427" />
+    <option name="width" value="1440" />
     <option name="height" value="836" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -320,9 +319,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,92 +330,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -452,10 +364,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -468,6 +376,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listener" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -507,62 +419,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greenhouse_war" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CapstoneGreenhouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1162,23 +1021,27 @@
       <workItem from="1490401110436" duration="23628000" />
       <workItem from="1490459576772" duration="7951000" />
       <workItem from="1490496314459" duration="1299000" />
-      <workItem from="1490498660891" duration="527000" />
+      <workItem from="1490498660891" duration="8150000" />
+      <workItem from="1490507185481" duration="18836000" />
+      <workItem from="1490573550863" duration="14274000" />
+      <workItem from="1490630163864" duration="411000" />
+      <workItem from="1490803261494" duration="575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376823000" />
+    <option name="totallyTimeSpent" value="418542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="23" width="1427" height="836" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="836" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Azure Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39919356" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20026882" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Azure Activity Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1189,16 +1052,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43010753" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35215053" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3360215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.78734857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25126353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1206,6 +1068,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3512786" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1221,7 +1084,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/SensorController.java</url>
-          <line>144</line>
+          <line>145</line>
           <properties />
           <option name="timeStamp" value="175" />
         </line-breakpoint>
@@ -1235,61 +1098,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/model/StateModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ErrorModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/StateAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="57" column="74" lean-forward="false" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/WeatherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getWeatherData#0;class#WeatherController#0" expanded="false" />
-            <marker date="1487565495000" expanded="false" signature="730:751" ph="SELECT * FRO... weather" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/DocumentationServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/weather.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/listener/Weather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -1301,13 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
           <caret line="69" column="22" lean-forward="false" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/history.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7575">
-          <caret line="505" column="32" lean-forward="false" selection-start-line="505" selection-start-column="32" selection-end-line="505" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1343,79 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4935">
           <caret line="329" column="0" lean-forward="false" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
-          <folding>
-            <marker date="1489356311000" expanded="true" signature="25:22152" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="91:22149" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="177:249" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="255:22142" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="327:636" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="500:620" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="664:3840" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="697:3825" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="763:2843" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="1022:1272" ph="{&quot;border-bottom&quot;: 'none'...}" />
-            <marker date="1489356311000" expanded="true" signature="1366:1584" ph="{&quot;border-bottom&quot;: 'none'...}" />
-            <marker date="1489356311000" expanded="true" signature="1917:2366" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="1960:2338" ph="{&quot;line-height&quot;: &quot;115px&quot;...}" />
-            <marker date="1489356311000" expanded="true" signature="2372:2821" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="2415:2793" ph="{&quot;line-height&quot;: &quot;115px&quot;...}" />
-            <marker date="1489356311000" expanded="true" signature="2910:3155" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="2943:3132" ph="{&quot;r&quot;: jcsRadius...}" />
-            <marker date="1489356311000" expanded="true" signature="3201:3463" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="3511:3806" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="3870:4579" ph="{&quot;innerCircleRatio&quot;: '0.5'...}" />
-            <marker date="1489356311000" expanded="true" signature="4359:4378" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="4429:4448" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="4690:6470" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="7134:7298" ph="{&quot;jcs&quot;: jcs...}" />
-            <marker date="1489356311000" expanded="true" signature="8038:10173" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="8070:8208" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="9195:9255" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="9273:9339" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="9345:9403" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="9421:9482" ph="//..." />
-            <marker date="1489356311000" expanded="true" signature="9652:10092" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="9807:9956" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="10224:11581" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="10347:10485" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="11060:11153" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="11629:11715" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="11731:12006" ph="//..." />
-            <marker date="1489356311000" expanded="true" signature="12078:13485" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="12343:12396" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="12514:13471" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="12543:13140" ph="{&quot;type&quot;: 'POST'...}" />
-            <marker date="1489356311000" expanded="true" signature="12656:13118" ph="{&quot;apikey&quot;: '44ffe28b-f470-4bc0-8ee9-38fce01438ce'...}" />
-            <marker date="1489356311000" expanded="true" signature="13567:14261" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="13665:14245" ph="{&quot;type&quot;: 'POST'...}" />
-            <marker date="1489356311000" expanded="true" signature="13771:14112" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="14155:14227" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="14311:14398" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="14494:15285" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="14562:14700" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="14939:15216" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="14983:15044" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="15050:15198" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="15374:15421" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="15471:15711" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="15751:16563" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="15873:15993" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="16610:17401" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="17445:17603" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="17645:17699" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="17743:17799" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="17850:17911" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="17963:18027" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="18087:18316" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="18368:18632" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="18675:18730" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="18782:18835" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="18885:19393" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="19476:21057" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="20544:20599" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="21141:21464" ph="{...}" />
-            <marker date="1489356311000" expanded="true" signature="21661:22129" ph="{&quot;setValue&quot;: setValue...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1437,18 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="123" column="13" lean-forward="false" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
-          <folding>
-            <marker date="1489873202000" expanded="false" signature="28:223" ph="..." />
-            <marker date="1489873202000" expanded="true" signature="389:1581" ph="{...}" />
-            <marker date="1489873202000" expanded="true" signature="514:604" ph="//..." />
-            <marker date="1489873202000" expanded="false" signature="897:953" ph="SELECT * FRO... accounts" />
-            <marker date="1489873202000" expanded="false" signature="1632:2612" ph="{...}" />
-            <marker date="1489873202000" expanded="false" signature="2007:2061" ph="SELECT * FRO... apikeys" />
-            <marker date="1489873202000" expanded="false" signature="2088:2120" ph="SELECT * FRO... apikeys" />
-            <marker date="1489873202000" expanded="false" signature="2088:2121" ph="SELECT * FRO... apikeys" />
-            <marker date="1489873202000" expanded="false" signature="2088:2122" ph="SELECT * FRO... apikeys" />
-            <marker date="1489873202000" expanded="true" signature="2659:3398" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1456,18 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding>
-            <element signature="e#342#343#0" expanded="false" />
-            <element signature="e#380#381#0" expanded="false" />
-            <element signature="e#485#486#0" expanded="false" />
-            <element signature="e#521#522#0" expanded="false" />
-            <element signature="e#554#555#0" expanded="false" />
-            <element signature="e#583#584#0" expanded="false" />
-            <element signature="e#626#627#0" expanded="false" />
-            <element signature="e#662#663#0" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#724#725#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1475,20 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="91" column="18" lean-forward="false" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/greenhouse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/sensors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1528,34 +1218,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/SensorAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/IndexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1563,10 +1229,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="e#486#487#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1577,64 +1239,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/StateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="method#setCurrentState#0;class#StateController#0" expanded="false" />
-            <element signature="method#storeCurrentState#0;class#StateController#0" expanded="false" />
-            <element signature="method#getCurrentStateJSON#0;class#StateController#0" expanded="false" />
-            <element signature="method#stringToBoolean#0;class#StateController#0" expanded="false" />
-            <element signature="method#booleanToOnOff#0;class#StateController#0" expanded="false" />
-            <element signature="method#booleanToNum#0;class#StateController#0" expanded="false" />
-            <marker date="1486751525000" expanded="true" signature="896:915" ph="SELECT * FRO... state" />
-            <marker date="1486751525000" expanded="false" signature="2566:2869" ph="UPDATE state... " />
-            <marker date="1486751525000" expanded="false" signature="2566:2927" ph="UPDATE state... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ErrorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="36" />
-          <folding>
-            <element signature="method#getLastError#0;class#ErrorController#0" expanded="false" />
-            <element signature="method#updateError#0;class#ErrorController#0" expanded="false" />
-            <element signature="method#getLastErrorFromDatabase#0;class#ErrorController#0" expanded="false" />
-            <marker date="1487001636000" expanded="false" signature="1657:1691" ph="INSERT INTO errors... " />
-            <marker date="1487001636000" expanded="false" signature="2593:2613" ph="SELECT * FRO... errors" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ScheduleModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-          <folding>
-            <element signature="e#147#148#0" expanded="false" />
-            <element signature="e#175#176#0" expanded="false" />
-            <element signature="e#201#202#0" expanded="false" />
-            <element signature="e#226#227#0" expanded="false" />
-            <element signature="e#269#270#0" expanded="false" />
-            <element signature="e#305#306#0" expanded="false" />
-            <element signature="e#335#336#0" expanded="false" />
-            <element signature="e#364#365#0" expanded="false" />
-            <element signature="e#416#417#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#494#495#0" expanded="false" />
-            <element signature="e#526#527#0" expanded="false" />
-            <element signature="e#574#575#0" expanded="false" />
-            <element signature="e#612#613#0" expanded="false" />
-            <element signature="e#646#647#0" expanded="false" />
-            <element signature="e#676#677#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#752#753#0" expanded="false" />
-            <element signature="e#784#785#0" expanded="false" />
-            <element signature="e#812#813#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1642,78 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="method#AutomationModel#0;class#AutomationModel#0" expanded="false" />
-            <element signature="method#setTempHigh#0;class#AutomationModel#0" expanded="false" />
-            <element signature="method#getTempHigh#0;class#AutomationModel#0" expanded="false" />
-            <element signature="e#1041#1042#0" expanded="false" />
-            <element signature="e#1072#1073#0" expanded="false" />
-            <element signature="e#1182#1183#0" expanded="false" />
-            <element signature="e#1240#1241#0" expanded="false" />
-            <element signature="e#1276#1277#0" expanded="false" />
-            <element signature="e#1338#1339#0" expanded="false" />
-            <element signature="e#1386#1387#0" expanded="false" />
-            <element signature="e#1444#1445#0" expanded="false" />
-            <element signature="e#1480#1481#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/SensorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="165" column="16" lean-forward="false" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="84" />
-          <folding>
-            <element signature="method#getAllSensorDataJSON#0;class#SensorController#0" expanded="false" />
-            <element signature="method#categorizeSensorData#0;class#SensorController#0" expanded="false" />
-            <element signature="method#getLatestSensorDataByID#0;class#SensorController#0" expanded="false" />
-            <element signature="method#getSensorData#0;class#SensorController#0" expanded="false" />
-            <element signature="e#10855#10884#0" expanded="false" />
-            <element signature="method#getCurrentAverages#0;class#SensorController#0" expanded="false" />
-            <marker date="1490403503000" expanded="false" signature="838:862" ph="SELECT * FRO... sensordata" />
-            <marker date="1490403503000" expanded="false" signature="2473:2497" ph="SELECT * FRO... sensordata" />
-            <marker date="1490403503000" expanded="false" signature="16395:16417" ph="SELECT * FRO... averages" />
-            <marker date="1490403503000" expanded="true" signature="17699:17745" ph="INSERT INTO sensordata... " />
-            <marker date="1490403503000" expanded="true" signature="17705:17706" ph="INSERT INTO sensordata... " />
-            <marker date="1490403503000" expanded="false" signature="19245:19285" ph="INSERT INTO averages... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/AutomationAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="27" column="78" lean-forward="false" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
-          <folding>
-            <element signature="method#doPost#0;class#AutomationAPI#0" expanded="false" />
-            <element signature="method#getDataNumber#0;class#AutomationAPI#0" expanded="false" />
-            <element signature="method#contains#0;class#AutomationAPI#0" expanded="false" />
-            <element signature="method#isValidInput#0;class#AutomationAPI#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/DatabaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/sensors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/submittest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1721,15 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
           <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/apitest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,71 +1264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="927" column="32" lean-forward="false" selection-start-line="927" selection-start-column="32" selection-end-line="927" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/automation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="306" column="37" lean-forward="true" selection-start-line="306" selection-start-column="37" selection-end-line="306" selection-end-column="37" />
-          <folding>
-            <marker date="1490498712000" expanded="true" signature="1480:1502" ph="..." />
-            <marker date="1490498712000" expanded="true" signature="2154:2176" ph="..." />
-            <marker date="1490498712000" expanded="true" signature="2540:2556" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AutomationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2955">
-          <caret line="477" column="13" lean-forward="true" selection-start-line="477" selection-start-column="13" selection-end-line="477" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#AutomationController#0" expanded="false" />
-            <element signature="method#getCurrentAutomationSettings#0;class#AutomationController#0" expanded="false" />
-            <element signature="method#updateAutomationSettings#0;class#AutomationController#0" expanded="false" />
-            <element signature="method#addSchedule#0;class#AutomationController#0" expanded="false" />
-            <element signature="method#updateScheduleEntry#0;class#AutomationController#0" expanded="false" />
-            <element signature="method#getLightSchedule#0;class#AutomationController#0" expanded="false" />
-            <element signature="method#getWaterSchedule#0;class#AutomationController#0" expanded="false" />
-            <marker date="1490498701000" expanded="false" signature="977:1001" ph="SELECT * FRO... automation" />
-            <marker date="1490498701000" expanded="false" signature="4063:4087" ph="SELECT * FRO... automation" />
-            <marker date="1490498701000" expanded="false" signature="6598:6629" ph="UPDATE autom... " />
-            <marker date="1490498701000" expanded="false" signature="6598:6678" ph="UPDATE autom... " />
-            <marker date="1490498701000" expanded="false" signature="6598:6728" ph="UPDATE autom... " />
-            <marker date="1490498701000" expanded="false" signature="6598:6782" ph="UPDATE autom... " />
-            <marker date="1490498701000" expanded="false" signature="6598:6829" ph="UPDATE autom... " />
-            <marker date="1490498701000" expanded="false" signature="6598:6885" ph="UPDATE autom... " />
-            <marker date="1490498701000" expanded="false" signature="7567:7613" ph="INSERT INTO missingValue... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8601" ph="UPDATE autom... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8608" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8654" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8687" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8689" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8700" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8742" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8784" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="8573:8812" ph="UPDATE missi... " />
-            <marker date="1490498701000" expanded="false" signature="9679:9706" ph="SELECT * FRO... lightschedule" />
-            <marker date="1490498701000" expanded="false" signature="11033:11060" ph="SELECT * FRO... waterschedule" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1809,6 +1271,209 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="662">
           <caret line="488" column="0" lean-forward="true" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/AutomationAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="123" column="48" lean-forward="true" selection-start-line="123" selection-start-column="48" selection-end-line="123" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/submittest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sensors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/history.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8235">
+          <caret line="549" column="0" lean-forward="false" selection-start-line="549" selection-start-column="0" selection-end-line="551" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/StateAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="52" column="55" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="52" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/sensors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-260">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/greenhouse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/apitest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="125" column="73" lean-forward="true" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ScheduleModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="52" column="23" lean-forward="false" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AutomationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="205" column="8" lean-forward="true" selection-start-line="205" selection-start-column="8" selection-end-line="222" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="159" column="9" lean-forward="false" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/ScheduleAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="43" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20550">
+          <caret line="1370" column="22" lean-forward="false" selection-start-line="1370" selection-start-column="22" selection-end-line="1370" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2595">
+          <caret line="173" column="13" lean-forward="false" selection-start-line="173" selection-start-column="13" selection-end-line="173" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/automation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3375">
+          <caret line="225" column="50" lean-forward="false" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="50" />
+          <folding>
+            <marker date="1490587192000" expanded="true" signature="1480:1502" ph="..." />
+            <marker date="1490587192000" expanded="true" signature="2154:2176" ph="..." />
+            <marker date="1490587192000" expanded="true" signature="2540:2556" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4230">
+          <caret line="282" column="58" lean-forward="false" selection-start-line="282" selection-start-column="58" selection-end-line="282" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/listener/Weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/StateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="119" column="39" lean-forward="true" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/DatabaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/SensorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="487" column="8" lean-forward="false" selection-start-line="487" selection-start-column="8" selection-end-line="492" selection-end-column="9" />
+          <folding>
+            <element signature="method#getAllSensorDataJSON#0;class#SensorController#0" expanded="false" />
+            <element signature="method#categorizeSensorData#0;class#SensorController#0" expanded="false" />
+            <element signature="method#getLatestSensorData#0;class#SensorController#0" expanded="false" />
+            <element signature="method#getLatestSensorDataByID#0;class#SensorController#0" expanded="false" />
+            <element signature="method#getSensorData#0;class#SensorController#0" expanded="false" />
+            <element signature="e#10882#10911#0" expanded="false" />
+            <element signature="method#getAllAverages#0;class#SensorController#0" expanded="false" />
+            <marker date="1490803870000" expanded="false" signature="865:889" ph="SELECT * FRO... sensordata" />
+            <marker date="1490803870000" expanded="false" signature="2500:2524" ph="SELECT * FRO... sensordata" />
+            <marker date="1490803870000" expanded="false" signature="16422:16444" ph="SELECT * FRO... averages" />
+            <marker date="1490803870000" expanded="true" signature="17894:17940" ph="INSERT INTO sensordata... " />
+            <marker date="1490803870000" expanded="false" signature="17900:17901" ph="INSERT INTO sensordata... " />
+            <marker date="1490803870000" expanded="false" signature="19440:19480" ph="INSERT INTO averages... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/SensorAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="53" />
           <folding />
         </state>
       </provider>

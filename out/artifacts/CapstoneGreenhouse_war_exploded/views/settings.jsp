@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
 
     <script src="../js/automation.js"></script>
+    <script src="../js/schedule.js"></script>
     <script src="../js/rangeslider.js"></script>
 
 </head>
@@ -170,31 +171,46 @@
         <% } %>
     </div>
 
-    <div id="zone-modal" class="zone-modal close">
+    <div id="zone-modal" class="zone-modal">
         <div class="zone-modal-content">
-            <!--
             <span class="zone-title" id="zone-title"></span>
-            <div class="modal-title">WATER SCHEDULE</div>
-            <table class="modal-table" id="water-schedule-table">
-                <thead>
-                    <tr>
-                        <th> </th>
-                        <th>SUNDAY</th>
-                        <th>MONDAY</th>
-                        <th>TUESDAY</th>
-                        <th>WEDNESDAY</th>
-                        <th>THURSDAY</th>
-                        <th>FRIDAY</th>
-                        <th>SATURDAY</th>
-                    </tr>
-                </thead>
+            <div class="schedule-title">LIGHT SCHEDULE</div>
+            <button id="schedule-close" class="schedule-close-button">CLOSE</button>
+
+            <div id="calendar" class="calendar-div">
+                <table class="schedule-calendar" id="calendar-table" cellspacing="0">
+                    <thead id="schedule-heading"></thead>
+
+                    <tbody id="schedule-body">
 
 
 
-            </table>
-            -->
+                    </tbody>
+
+
+                </table>
+            </div>
+
+            <div id="schedule-modal" class="add-schedule-modal">
+                <div class="add-schedule">
+                    <span>Start Time: </span><input type="text" id="start-time"><br>
+                    <span>End Time: </span><input type="text" id="end-time"><br>
+                    <span>Hours: </span><input type="text" id="hours"><br>
+                    <input type="hidden" id="inverse" value="0">
+                    <input type="hidden" id="schedule-date">
+                    <input type="hidden" id="schedule-id">
+                    <input type="hidden" id="schedule-type">
+                    <input type="hidden" id="zoneid">
+
+                    <div class="schedule-buttons">
+                        <button id="close-button">Close</button>
+                        <button id="save-button">Save</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
-    <div id="zone-modal-close" class="zone-modal-close close"></div>
+
 </body>
 </html>

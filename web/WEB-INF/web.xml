@@ -60,6 +60,13 @@
         <servlet-class>api.AveragesAPI</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ScheduleAPI</servlet-name>
+        <servlet-class>api.ScheduleAPI</servlet-class>
+    </servlet>
+
+
+
     <!-- Servlet mappings -->
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
@@ -110,6 +117,11 @@
     <servlet-mapping>
         <servlet-name>AveragesAPI</servlet-name>
         <url-pattern>/api/averages</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ScheduleAPI</servlet-name>
+        <url-pattern>/api/schedule</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

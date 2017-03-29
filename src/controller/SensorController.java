@@ -17,6 +17,7 @@ import java.util.*;
 public class SensorController {
 
     DatabaseController dbController = new DatabaseController();
+    boolean saved = false;
 
     public JSONArray getAllSensorDataJSON() {
 
@@ -483,6 +484,14 @@ public class SensorController {
 
     // Add ArrayList of SensorModels to database
     public void addSensorData(ArrayList<SensorModel> sensorList) {
+
+        Calendar now = Calendar.getInstance();
+
+        // Only save every 15 minutes
+        if( now.get(Calendar.MINUTE) % 15 != 0) {
+            return;
+        }
+
 
         // Connect to database
         Connection conn = null;

@@ -220,13 +220,16 @@ $(document).ready( function() {
     });
 
     // Zone modal click events
-    /*
+
     $('#zone-1').click(function() {
-        $('#container').css("transform", "scale(1.02)");
+        //$('#container').css("transform", "scale(1.02)");
         $('#container').css("filter","blur(4px)");
 
         $('#zone-modal').css("display", "block");
+        $('#zone-title').text("ZONE 1");
     });
+
+    /*
 
     $('#zone-2').click(function() {
         //$('#zone-modal').css("display", "block");

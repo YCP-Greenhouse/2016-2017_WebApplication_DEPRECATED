@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="css/greenhouse.css">
+    <script src="js/jquery3.1.1.js"></script>
+    <script src="js/schedule.js"></script>
+
+</head>
+<body>
+    <div id="calendar" class="calendar-div">
+        <table class="schedule-calendar" id="calendar-table" cellspacing="0">
+            <thead id="schedule-heading"></thead>
+
+            <tbody id="schedule-body">
+
+
+
+            </tbody>
+
+
+        </table>
+    </div>
+
+    <div id="schedule-modal" class="add-schedule-modal">
+        <div class="add-schedule">
+            <span>Start Time: </span><input type="text" id="start-time"><br>
+            <span>End Time: </span><input type="text" id="end-time"><br>
+            <span>Hours: </span><input type="text" id="hours"><br>
+            <input type="hidden" id="inverse" value="0">
+            <input type="hidden" id="schedule-date">
+            <input type="hidden" id="schedule-id">
+            <input type="hidden" id="schedule-type">
+            <input type="hidden" id="zoneid">
+
+            <div class="schedule-buttons">
+                <button id="close-button">Close</button>
+                <button id="save-button">Save</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

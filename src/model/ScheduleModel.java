@@ -1,7 +1,7 @@
 package model;
 
 public class ScheduleModel {
-    int id, zoneID;
+    int id, zoneID, inverse;
     double hours;
     String startTime, endTime;
 
@@ -43,5 +43,13 @@ public class ScheduleModel {
 
     public double getHours() {
         return hours;
+    }
+
+    public void setInverse(int inverse) {
+        this.inverse = inverse;
+    }
+
+    public int getInverse() {
+        return inverse;
     }
 }
