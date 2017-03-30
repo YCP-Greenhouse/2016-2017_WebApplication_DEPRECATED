@@ -1,8 +1,6 @@
 $(document).ready( function() {
     zone = 1;
     getSchedules(1);
-
-
 });
 
 var zone = 0;

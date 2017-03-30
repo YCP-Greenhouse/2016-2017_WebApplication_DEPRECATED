@@ -53,6 +53,7 @@ public class ScheduleAPI extends HttpServlet {
             int inverse = Integer.parseInt(req.getParameter("inverse"));
             int zoneID = Integer.parseInt(req.getParameter("zoneid"));
             int id = 0;
+            
             try {
                 id = Integer.parseInt(req.getParameter("id"));
             } catch( NullPointerException e ) {
