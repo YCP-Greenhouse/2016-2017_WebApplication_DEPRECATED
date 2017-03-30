@@ -1,6 +1,7 @@
 package controller;
 
 import model.ScheduleModel;
+import model.SensorModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,15 +28,18 @@ public class ScheduleController {
 
             // Create JSON array of schedule entries
             JSONArray light = new JSONArray();
-            for (int i = 0; i < lightSchedule.size(); i++) {
+
+            for( HashMap.Entry<Integer, ScheduleModel> scheduleEntry: lightSchedule.entrySet() ) {
+                int key = scheduleEntry.getKey();
+
                 JSONObject lightObj = new JSONObject();
 
-                lightObj.put( "id", lightSchedule.get(i).getId() );
-                lightObj.put( "zone", lightSchedule.get(i).getZoneID() );
-                lightObj.put( "start", lightSchedule.get(i).getStartTime() );
-                lightObj.put( "end", lightSchedule.get(i).getEndTime() );
-                lightObj.put( "hours", lightSchedule.get(i).getHours() );
-                lightObj.put( "inverse", lightSchedule.get(i).getInverse() );
+                lightObj.put( "id", lightSchedule.get(key).getId() );
+                lightObj.put( "zone", lightSchedule.get(key).getZoneID() );
+                lightObj.put( "start", lightSchedule.get(key).getStartTime() );
+                lightObj.put( "end", lightSchedule.get(key).getEndTime() );
+                lightObj.put( "hours", lightSchedule.get(key).getHours() );
+                lightObj.put( "inverse", lightSchedule.get(key).getInverse() );
 
                 light.put(lightObj);
             }
@@ -44,15 +48,17 @@ public class ScheduleController {
 
             // Create JSON array of schedule entries
             JSONArray water = new JSONArray();
-            for (int i = 0; i < waterSchedule.size(); i++) {
+            for( HashMap.Entry<Integer, ScheduleModel> scheduleEntry: waterSchedule.entrySet() ) {
+                int key = scheduleEntry.getKey();
+
                 JSONObject waterObj = new JSONObject();
 
-                waterObj.put( "id", waterSchedule.get(i).getId() );
-                waterObj.put( "zone", waterSchedule.get(i).getZoneID() );
-                waterObj.put( "start", waterSchedule.get(i).getStartTime() );
-                waterObj.put( "end", waterSchedule.get(i).getEndTime() );
-                waterObj.put( "hours", waterSchedule.get(i).getHours() );
-                waterObj.put( "inverse", waterSchedule.get(i).getInverse() );
+                waterObj.put( "id", waterSchedule.get(key).getId() );
+                waterObj.put( "zone", waterSchedule.get(key).getZoneID() );
+                waterObj.put( "start", waterSchedule.get(key).getStartTime() );
+                waterObj.put( "end", waterSchedule.get(key).getEndTime() );
+                waterObj.put( "hours", waterSchedule.get(key).getHours() );
+                waterObj.put( "inverse", waterSchedule.get(key).getInverse() );
 
                 water.put(waterObj);
             }
@@ -60,7 +66,7 @@ public class ScheduleController {
             obj.put( "waterschedule", water );
 
         } catch( JSONException e ) {
-
+            e.printStackTrace();
         }
 
         return obj;
@@ -102,7 +108,7 @@ public class ScheduleController {
 
             ps = conn.prepareStatement(sql);
 
-            ps.setInt(1, listSize);
+            ps.setString(1, null);
             ps.setInt(2, schedule.getZoneID());
             ps.setString( 3, schedule.getStartTime() );
             ps.setString(4, schedule.getEndTime() );

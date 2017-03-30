@@ -144,6 +144,9 @@ public class SensorAPI extends HttpServlet {
                 e.printStackTrace();
             }
 
+            // Update latest sensor values
+            sensorController.updateLatestSensor( sensorList );
+
             sensorController.addSensorData(sensorList);
 
             resp.getWriter().println(sensorController.getLatestSensorData());

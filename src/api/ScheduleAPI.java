@@ -62,6 +62,8 @@ public class ScheduleAPI extends HttpServlet {
             }
             String date = req.getParameter("date");
 
+            System.out.println("Start time: " + convertTime(start) );
+
             // Set ScheduleModel
             scheduleModel.setId(id);
             scheduleModel.setZoneID(zoneID);
@@ -89,8 +91,11 @@ public class ScheduleAPI extends HttpServlet {
         time = time.substring(0,time.length()-2);
 
         int t = Integer.parseInt(time);
+
         if( ampm.equals("pm") ) {
             t += 12;
+        } else if( t == 12 ) {
+            t = 0;
         }
 
         return Integer.toString(t);

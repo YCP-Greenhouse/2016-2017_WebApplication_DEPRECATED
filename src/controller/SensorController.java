@@ -193,7 +193,7 @@ public class SensorController {
 
                 SensorModel sensorModel = new SensorModel();
 
-                System.out.println("categorizeTodaysSensorData: EntryID: " + Integer.parseInt(rs.getString(1)) );
+                //System.out.println("categorizeTodaysSensorData: EntryID: " + Integer.parseInt(rs.getString(1)) );
 
                 sensorModel.setEntryId(Integer.parseInt(rs.getString(1)));
                 sensorModel.setZone(Integer.parseInt(rs.getString(2)));
@@ -268,8 +268,6 @@ public class SensorController {
                 sensor.setLight(sensorList.get(latestKey).getLight());
                 sensor.setSampleTime(sensorList.get(latestKey).getSampleTime());
 
-                System.out.println("loadLatestSensorValues: " + sensor.getZone());
-
                 latestSensors.put(key, sensor);
             }
 
@@ -277,20 +275,18 @@ public class SensorController {
 
         }
 
-        System.out.println("Loaded latest sensor values");
-
         return;
     }
 
-    public void updateLatestSensor(int key, SensorModel sensor) {
-        // Get old value
-        SensorModel currentSensorVal = latestSensors.get(key);
+    public void updateLatestSensor(ArrayList<SensorModel> sensorList) {
 
-        // Remove old value
-        latestSensors.remove(key);
+        for( SensorModel sensor : sensorList) {
+            // Remove old value
+            latestSensors.remove(sensor.getZone());
 
-        // Set updated value
-        latestSensors.put(key, sensor);
+            // Add new value
+            latestSensors.put( sensor.getZone(), sensor );
+        }
 
         return;
     }
@@ -299,9 +295,6 @@ public class SensorController {
 
         if( latestSensors.isEmpty() ) {
             loadLatestSensorValues();
-
-
-            System.out.println("Sensor: " + latestSensors.get(1).toString() );
         }
 
         JSONArray jsonData = new JSONArray();
@@ -701,9 +694,6 @@ public class SensorController {
             // Enter all entries in ArrayList into database
             for( SensorModel sensor : sensorList ) {
                 ps = conn.prepareStatement(sql);
-
-                // Update latest sensor hashmap
-                updateLatestSensor( sensor.getZone(), sensor );
 
                 //System.out.println("Add Sensors:\nZone: " + sensor.getZone() + "\nMoisture: " + sensor.getMoisture() + "\nTemperature: " + sensor.getTemperature() + "\nLight: " + sensor.getLight() + "\nHumidity: " + sensor.getHumidity());
 
