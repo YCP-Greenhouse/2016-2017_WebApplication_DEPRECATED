@@ -1,7 +1,9 @@
 package servlet;
 
+import controller.SensorController;
 import controller.StateController;
 import model.StateModel;
+import sun.management.Sensor;
 
 import java.io.IOException;
 
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class IndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    SensorController sensorController = new SensorController();
     StateController stateController = new StateController();
     StateModel stateModel = new StateModel();
 
@@ -22,6 +25,8 @@ public class IndexServlet extends HttpServlet {
 
         stateModel = stateController.getStoredState();
         stateController.setCurrentState(stateModel);
+
+        sensorController.loadLatestSensorValues();
 
         req.getRequestDispatcher("/views/apitest.jsp").forward(req, resp);
     }

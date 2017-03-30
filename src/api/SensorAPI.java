@@ -60,9 +60,8 @@ public class SensorAPI extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp )
             throws ServletException, IOException {
 
+        // Convert request parameters to JSONArray
         JSONArray jsonArr = requestParamsToJSON(req);
-
-        //System.out.println("JSON Array: " + jsonArr.toString() );
 
         ArrayList<SensorModel> sensorList = new ArrayList<>();
 
@@ -87,53 +86,59 @@ public class SensorAPI extends HttpServlet {
                 for (int i = 0; i < jsonArr.length(); i++) {
                     JSONObject obj = jsonArr.getJSONObject(i);
 
+                    //System.out.println("Light: " + Double.parseDouble(obj.get("light").toString()) + "\nTemperature: " + Double.parseDouble(obj.get("temperature").toString()) + "\nHumidity: " + Double.parseDouble(obj.get("humidity").toString()) + "\nProbe 1:" + Double.parseDouble(obj.get("probe1").toString()) + "\nProbe 2:" + Double.parseDouble(obj.get("probe2").toString()));
+
                     // Only create new sensor entry if zone has a value change. If all values are null, don't add sensor
-                    //if (!obj.get("light").equals("") && !obj.get("temperature").equals("") && !obj.get("humidity").equals("") && !obj.get("moisture").equals("")) {
+                    if (!obj.get("light").equals("") && !obj.get("temperature").equals("") && !obj.get("humidity").equals("") && !obj.get("probe1").equals("") && !obj.get("probe2").equals("")) {
+                        // Don't add sensor if all values are 0
+                        if( !(Double.parseDouble(obj.get("light").toString()) == 0.0 && Double.parseDouble(obj.get("temperature").toString()) == 0.0 && Double.parseDouble(obj.get("humidity").toString()) == 0.0 && Double.parseDouble(obj.get("probe1").toString()) == 0.0 && Double.parseDouble(obj.get("probe2").toString()) == 0.0) ) {
 
-                        SensorModel sensor = new SensorModel();
-                        SensorModel lastSensor = sensorController.getLatestSensorDataByID(i+1);
+                            SensorModel sensor = new SensorModel();
+                            SensorModel lastSensor = sensorController.getLatestSensorDataByID(i + 1);
 
-                        // If value is null, use value from last reading
-                        try {
-                            sensor.setLight(Double.parseDouble(obj.get("light").toString()));
-                        } catch (NumberFormatException e) {
-                            sensor.setLight(lastSensor.getLight());
+                            // If value is null, use value from last reading
+                            try {
+                                sensor.setLight(Double.parseDouble(obj.get("light").toString()));
+                            } catch (NumberFormatException e) {
+                                sensor.setLight(lastSensor.getLight());
+                            }
+
+                            try {
+                                sensor.setTemperature(Double.parseDouble(obj.get("temperature").toString()));
+                            } catch (NumberFormatException e) {
+                                sensor.setTemperature(lastSensor.getTemperature());
+                            }
+
+                            try {
+                                sensor.setHumidity(Double.parseDouble(obj.get("humidity").toString()));
+                            } catch (NumberFormatException e) {
+                                sensor.setHumidity(lastSensor.getHumidity());
+                            }
+
+                            try {
+                                sensor.setProbe1(Double.parseDouble(obj.get("probe1").toString()));
+                            } catch (NumberFormatException e) {
+                                sensor.setProbe1(lastSensor.getProbe1());
+                            }
+
+                            try {
+                                sensor.setProbe2(Double.parseDouble(obj.get("probe2").toString()));
+                            } catch (NumberFormatException e) {
+                                sensor.setProbe2(lastSensor.getProbe2());
+                            }
+
+                            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                            Date utcTime = new Date();
+                            Date date = new Date(utcTime.getTime() + TimeZone.getTimeZone("EST").getRawOffset());
+                            sensor.setSampleTime(dateFormat.format(date));
+
+                            sensor.setZone(Integer.parseInt(obj.get("zone").toString()));
+
+                            sensorList.add(sensor);
+                        } else {
+                            //System.out.println("Blank values. Ignoring");
                         }
-
-                        try {
-                            sensor.setTemperature(Double.parseDouble(obj.get("temperature").toString()));
-                        } catch (NumberFormatException e) {
-                            sensor.setTemperature(lastSensor.getTemperature());
-                        }
-
-                        try {
-                            sensor.setHumidity(Double.parseDouble(obj.get("humidity").toString()));
-                        } catch (NumberFormatException e) {
-                            sensor.setHumidity(lastSensor.getHumidity());
-                        }
-
-                        try {
-                            sensor.setProbe1(Double.parseDouble(obj.get("probe1").toString()));
-                        } catch (NumberFormatException e) {
-                            sensor.setProbe1(lastSensor.getProbe1());
-                        }
-
-                        try {
-                            sensor.setProbe2(Double.parseDouble(obj.get("probe2").toString()));
-                        } catch (NumberFormatException e) {
-                            sensor.setProbe2(lastSensor.getProbe2());
-                        }
-
-                        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                        Date utcTime = new Date();
-                        Date date = new Date(utcTime.getTime() + TimeZone.getTimeZone("EST").getRawOffset() );
-                        sensor.setSampleTime(dateFormat.format(date));
-
-                        sensor.setZone(Integer.parseInt(obj.get("zone").toString()));
-
-                        sensorList.add(sensor);
-
-                   // }
+                   }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -165,9 +170,7 @@ public class SensorAPI extends HttpServlet {
 
         JSONArray jsonArr = new JSONArray();
 
-
         try {
-
             Enumeration<String> parameterNames = req.getParameterNames();
 
             while( parameterNames.hasMoreElements() ) {
@@ -181,7 +184,6 @@ public class SensorAPI extends HttpServlet {
                         jsonArr.put(arr.get(i));
                     }
                 }
-
             }
         } catch( JSONException e ) {
             e.printStackTrace();

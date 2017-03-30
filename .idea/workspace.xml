@@ -7,23 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controller/ScheduleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/schedule.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/model/ScheduleModel.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/model/ScheduleModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/model/ScheduleModel.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/model/ScheduleModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/SensorController.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/SensorController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/SensorController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/SensorController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/automation.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/automation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/SensorAPI.java" afterPath="$PROJECT_DIR$/src/api/SensorAPI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/SensorController.java" afterPath="$PROJECT_DIR$/src/controller/SensorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ScheduleModel.java" afterPath="$PROJECT_DIR$/src/model/ScheduleModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/greenhouse.css" afterPath="$PROJECT_DIR$/web/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/automation.js" afterPath="$PROJECT_DIR$/web/js/automation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/settings.jsp" afterPath="$PROJECT_DIR$/web/views/settings.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/listener/Weather.java" afterPath="$PROJECT_DIR$/src/listener/Weather.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/IndexServlet.java" afterPath="$PROJECT_DIR$/src/servlet/IndexServlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,50 +29,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="greenhouse.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20550">
-              <caret line="1370" column="22" lean-forward="false" selection-start-line="1370" selection-start-column="22" selection-end-line="1370" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/schedule.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="43" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2595">
-              <caret line="173" column="13" lean-forward="false" selection-start-line="173" selection-start-column="13" selection-end-line="173" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="automation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/automation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3375">
-              <caret line="225" column="50" lean-forward="false" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="50" />
-              <folding>
-                <marker date="1490587192000" expanded="true" signature="1480:1502" ph="..." />
-                <marker date="1490587192000" expanded="true" signature="2154:2176" ph="..." />
-                <marker date="1490587192000" expanded="true" signature="2540:2556" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="schedule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,9 +42,14 @@
       <file leaf-file-name="Weather.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/listener/Weather.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="122" />
-              <folding />
+            <state relative-caret-position="90">
+              <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+              <folding>
+                <element signature="method#contextDestroyed#0;class#Weather#0" expanded="false" />
+                <element signature="method#startTimer#0;class#Weather#0" expanded="false" />
+                <element signature="e#2386#2405#0" expanded="false" />
+                <marker date="1490839964000" expanded="true" signature="2812:2849" ph="INSERT INTO weather... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,42 +57,194 @@
       <file leaf-file-name="StateController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/StateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="119" column="39" lean-forward="true" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
+            <state relative-caret-position="1605">
+              <caret line="119" column="39" lean-forward="false" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/SensorController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="487" column="8" lean-forward="false" selection-start-line="487" selection-start-column="8" selection-end-line="492" selection-end-column="9" />
+              <caret line="667" column="51" lean-forward="true" selection-start-line="667" selection-start-column="51" selection-end-line="667" selection-end-column="51" />
               <folding>
                 <element signature="method#getAllSensorDataJSON#0;class#SensorController#0" expanded="false" />
                 <element signature="method#categorizeSensorData#0;class#SensorController#0" expanded="false" />
+                <element signature="method#categorizeTodaysSensorData#0;class#SensorController#0" expanded="false" />
+                <element signature="method#loadLatestSensorValues#0;class#SensorController#0" expanded="false" />
+                <element signature="method#updateLatestSensor#0;class#SensorController#0" expanded="false" />
                 <element signature="method#getLatestSensorData#0;class#SensorController#0" expanded="false" />
                 <element signature="method#getLatestSensorDataByID#0;class#SensorController#0" expanded="false" />
                 <element signature="method#getSensorData#0;class#SensorController#0" expanded="false" />
-                <element signature="e#10882#10911#0" expanded="false" />
+                <element signature="e#16856#16885#0" expanded="false" />
+                <element signature="method#getCurrentAverages#0;class#SensorController#0" expanded="false" />
                 <element signature="method#getAllAverages#0;class#SensorController#0" expanded="false" />
-                <marker date="1490803870000" expanded="false" signature="865:889" ph="SELECT * FRO... sensordata" />
-                <marker date="1490803870000" expanded="false" signature="2500:2524" ph="SELECT * FRO... sensordata" />
-                <marker date="1490803870000" expanded="false" signature="16422:16444" ph="SELECT * FRO... averages" />
-                <marker date="1490803870000" expanded="true" signature="17894:17940" ph="INSERT INTO sensordata... " />
-                <marker date="1490803870000" expanded="false" signature="17900:17901" ph="INSERT INTO sensordata... " />
-                <marker date="1490803870000" expanded="false" signature="19440:19480" ph="INSERT INTO averages... " />
+                <marker date="1490841768000" expanded="false" signature="923:947" ph="SELECT * FRO... sensordata" />
+                <marker date="1490841768000" expanded="false" signature="2578:2602" ph="SELECT * FRO... sensordata" />
+                <marker date="1490841768000" expanded="false" signature="4987:5029" ph="SELECT * FRO... sensordata" />
+                <marker date="1490841768000" expanded="false" signature="4987:5043" ph="SELECT * FRO... sensordata" />
+                <marker date="1490841768000" expanded="false" signature="22396:22418" ph="SELECT * FRO... averages" />
+                <marker date="1490841768000" expanded="false" signature="24307:24353" ph="INSERT INTO sensordata... " />
+                <marker date="1490841768000" expanded="false" signature="24313:24314" ph="INSERT INTO sensordata... " />
+                <marker date="1490841768000" expanded="false" signature="25966:26006" ph="INSERT INTO averages... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorAPI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/IndexServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SensorAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/SensorAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="53" />
+            <state relative-caret-position="257">
+              <caret line="50" column="74" lean-forward="false" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/history.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="history.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/history.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="70" column="24" lean-forward="false" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+              <folding>
+                <element signature="e#70#1704#0" expanded="false" />
+                <element signature="e#308#857#0" expanded="false" />
+                <element signature="e#863#1702#0" expanded="false" />
+                <element signature="e#1923#2109#0" expanded="false" />
+                <element signature="e#2136#2322#0" expanded="false" />
+                <element signature="e#2349#2535#0" expanded="false" />
+                <element signature="e#2562#2748#0" expanded="false" />
+                <element signature="e#2775#2961#0" expanded="false" />
+                <element signature="e#2988#3174#0" expanded="false" />
+                <element signature="e#3224#4750#0" expanded="false" />
+                <element signature="e#3266#3486#0" expanded="false" />
+                <element signature="e#3516#3736#0" expanded="false" />
+                <element signature="e#3766#3986#0" expanded="false" />
+                <element signature="e#4016#4236#0" expanded="false" />
+                <element signature="e#4266#4486#0" expanded="false" />
+                <element signature="e#4516#4736#0" expanded="false" />
+                <element signature="n#!!block;n#getZoneHumidityData#0" expanded="false" />
+                <element signature="e#4919#7979#0" expanded="false" />
+                <element signature="e#5015#7973#0" expanded="false" />
+                <element signature="e#5087#5273#0" expanded="false" />
+                <element signature="e#5300#5486#0" expanded="false" />
+                <element signature="e#5513#5699#0" expanded="false" />
+                <element signature="e#5726#5912#0" expanded="false" />
+                <element signature="e#5939#6125#0" expanded="false" />
+                <element signature="e#6152#6338#0" expanded="false" />
+                <element signature="e#6388#7866#0" expanded="false" />
+                <element signature="e#6430#6642#0" expanded="false" />
+                <element signature="e#6672#6884#0" expanded="false" />
+                <element signature="e#6914#7126#0" expanded="false" />
+                <element signature="e#7156#7368#0" expanded="false" />
+                <element signature="e#7398#7610#0" expanded="false" />
+                <element signature="e#7640#7852#0" expanded="false" />
+                <element signature="n#!!block;n#getZoneLightData#0" expanded="false" />
+                <element signature="e#8026#11060#0" expanded="false" />
+                <element signature="e#8122#11054#0" expanded="false" />
+                <element signature="e#8194#8380#0" expanded="false" />
+                <element signature="e#8407#8593#0" expanded="false" />
+                <element signature="e#8620#8806#0" expanded="false" />
+                <element signature="e#8833#9019#0" expanded="false" />
+                <element signature="e#9046#9232#0" expanded="false" />
+                <element signature="e#9259#9445#0" expanded="false" />
+                <element signature="e#9495#10955#0" expanded="false" />
+                <element signature="e#9537#9746#0" expanded="false" />
+                <element signature="e#9776#9985#0" expanded="false" />
+                <element signature="e#10015#10224#0" expanded="false" />
+                <element signature="e#10254#10463#0" expanded="false" />
+                <element signature="e#10493#10702#0" expanded="false" />
+                <element signature="e#10732#10941#0" expanded="false" />
+                <element signature="n#!!block;n#getZoneSoilMoistureData#0" expanded="false" />
+                <element signature="e#11114#14171#0" expanded="false" />
+                <element signature="e#11210#14165#0" expanded="false" />
+                <element signature="e#11282#11468#0" expanded="false" />
+                <element signature="e#11495#11681#0" expanded="false" />
+                <element signature="e#11708#11894#0" expanded="false" />
+                <element signature="e#11921#12107#0" expanded="false" />
+                <element signature="e#12134#12320#0" expanded="false" />
+                <element signature="e#12347#12533#0" expanded="false" />
+                <element signature="e#12583#14061#0" expanded="false" />
+                <element signature="e#12625#12837#0" expanded="false" />
+                <element signature="e#12867#13079#0" expanded="false" />
+                <element signature="e#13109#13321#0" expanded="false" />
+                <element signature="e#13351#13563#0" expanded="false" />
+                <element signature="e#13593#13805#0" expanded="false" />
+                <element signature="e#13835#14047#0" expanded="false" />
+                <element signature="n#!!block;n#getGreenhouseTemperatureData#0" expanded="false" />
+                <element signature="e#14230#15150#0" expanded="false" />
+                <element signature="e#14326#15144#0" expanded="false" />
+                <element signature="e#14437#14785#0" expanded="false" />
+                <element signature="e#14651#14734#0" expanded="false" />
+                <element signature="e#14835#15051#0" expanded="false" />
+                <element signature="n#!!block;n#getGreenhouseHumidityData#0" expanded="false" />
+                <element signature="e#15206#16112#0" expanded="false" />
+                <element signature="e#15302#16106#0" expanded="false" />
+                <element signature="e#15413#15761#0" expanded="false" />
+                <element signature="e#15627#15710#0" expanded="false" />
+                <element signature="e#15811#16019#0" expanded="false" />
+                <element signature="n#!!block;n#getGreenhouseLightData#0" expanded="false" />
+                <element signature="e#16165#17057#0" expanded="false" />
+                <element signature="e#16261#17051#0" expanded="false" />
+                <element signature="e#16372#16720#0" expanded="false" />
+                <element signature="e#16586#16669#0" expanded="false" />
+                <element signature="e#16770#16975#0" expanded="false" />
+                <element signature="n#!!block;n#getOutdoorTemperature#0" expanded="false" />
+                <element signature="e#17109#17969#0" expanded="false" />
+                <element signature="e#17197#17963#0" expanded="false" />
+                <element signature="e#17273#17621#0" expanded="false" />
+                <element signature="e#17487#17570#0" expanded="false" />
+                <element signature="e#17671#17873#0" expanded="false" />
+                <element signature="e#18034#18066#0" expanded="false" />
+                <element signature="e#18132#18179#0" expanded="false" />
+                <element signature="e#18242#18278#0" expanded="false" />
+                <element signature="e#18338#18371#0" expanded="false" />
+                <element signature="e#18431#18464#0" expanded="false" />
+                <element signature="e#18521#18551#0" expanded="false" />
+                <element signature="e#18605#18632#0" expanded="false" />
+                <element signature="e#18689#18723#0" expanded="false" />
+                <element signature="n#!!block;n#drawPlot#0" expanded="false" />
+                <element signature="e#18848#19366#0" expanded="false" />
+                <element signature="e#18977#19030#0" expanded="false" />
+                <element signature="e#19047#19194#0" expanded="false" />
+                <element signature="e#19211#19358#0" expanded="false" />
+                <element signature="n#!!block;n#convertTime#0" expanded="false" />
+                <element signature="e#19657#19744#0" expanded="false" />
+                <element signature="e#19750#19787#0" expanded="false" />
+                <element signature="e#19855#19869#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AveragesAPI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/AveragesAPI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,7 +253,7 @@
       <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/DatabaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="615">
               <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
               <folding />
             </state>
@@ -172,9 +275,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>settings.value</find>
       <find>automation.html</find>
-      <find>requestParamsToJSON</find>
       <find>System.out</find>
       <find>addSensorData</find>
       <find>temperature-b</find>
@@ -202,6 +303,8 @@
       <find>console</find>
       <find>add-schedule-modal</find>
       <find>light-event</find>
+      <find>requestParamsToJSON</find>
+      <find>getLatestSensorData</find>
     </findStrings>
     <replaceStrings>
       <replace>size=&quot;7&quot;</replace>
@@ -226,13 +329,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/js/plotly.js" />
         <option value="$PROJECT_DIR$/web/js/webgl/Detector.js" />
         <option value="$PROJECT_DIR$/web/js/webgl/MTLLoader.js" />
         <option value="$PROJECT_DIR$/web/js/webgl/OBJLoader.js" />
         <option value="$PROJECT_DIR$/web/js/webgl/OrbitControls.js" />
         <option value="$PROJECT_DIR$/web/js/webgl/three.js" />
-        <option value="$PROJECT_DIR$/src/listener/Weather.java" />
         <option value="$PROJECT_DIR$/src/model/ErrorModel.java" />
         <option value="$PROJECT_DIR$/src/api/StateAPI.java" />
         <option value="$PROJECT_DIR$/src/api/AveragesAPI.java" />
@@ -247,7 +348,6 @@
         <option value="$PROJECT_DIR$/src/controller/AccountController.java" />
         <option value="$PROJECT_DIR$/web/css/rangeslider.css" />
         <option value="$PROJECT_DIR$/src/model/SensorModel.java" />
-        <option value="$PROJECT_DIR$/src/api/SensorAPI.java" />
         <option value="$PROJECT_DIR$/web/css/apitest.css" />
         <option value="$PROJECT_DIR$/web/js/greenhouse.js" />
         <option value="$PROJECT_DIR$/web/js/sensors.js" />
@@ -276,6 +376,9 @@
         <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
         <option value="$PROJECT_DIR$/web/views/settings.jsp" />
         <option value="$PROJECT_DIR$/web/js/schedule.js" />
+        <option value="$PROJECT_DIR$/src/api/SensorAPI.java" />
+        <option value="$PROJECT_DIR$/src/listener/Weather.java" />
+        <option value="$PROJECT_DIR$/src/servlet/IndexServlet.java" />
         <option value="$PROJECT_DIR$/src/controller/SensorController.java" />
       </list>
     </option>
@@ -320,6 +423,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -330,6 +434,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,7 +557,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1025,12 +1160,13 @@
       <workItem from="1490507185481" duration="18836000" />
       <workItem from="1490573550863" duration="14274000" />
       <workItem from="1490630163864" duration="411000" />
-      <workItem from="1490803261494" duration="575000" />
+      <workItem from="1490803261494" duration="3326000" />
+      <workItem from="1490833664320" duration="8001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418542000" />
+    <option name="totallyTimeSpent" value="429294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="6" />
@@ -1052,15 +1188,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43010753" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35080644" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.78734857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46639785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21530758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1068,7 +1205,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3512786" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1081,15 +1217,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/SensorController.java</url>
-          <line>145</line>
-          <properties />
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="178" />
+      <option name="time" value="188" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1211,20 +1339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/IndexServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/AccountModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1257,13 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
           <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/AveragesAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1300,13 +1407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/history.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8235">
-          <caret line="549" column="0" lean-forward="false" selection-start-line="549" selection-start-column="0" selection-end-line="551" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1384,7 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="43" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1392,7 +1491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20550">
           <caret line="1370" column="22" lean-forward="false" selection-start-line="1370" selection-start-column="22" selection-end-line="1370" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1400,7 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2595">
           <caret line="173" column="13" lean-forward="false" selection-start-line="173" selection-start-column="13" selection-end-line="173" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,57 +1521,206 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/listener/Weather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/StateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="119" column="39" lean-forward="true" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
+        <state relative-caret-position="1605">
+          <caret line="119" column="39" lean-forward="false" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/DatabaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="615">
           <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/AveragesAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/history.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="70" column="24" lean-forward="false" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+          <folding>
+            <element signature="e#70#1704#0" expanded="false" />
+            <element signature="e#308#857#0" expanded="false" />
+            <element signature="e#863#1702#0" expanded="false" />
+            <element signature="e#1923#2109#0" expanded="false" />
+            <element signature="e#2136#2322#0" expanded="false" />
+            <element signature="e#2349#2535#0" expanded="false" />
+            <element signature="e#2562#2748#0" expanded="false" />
+            <element signature="e#2775#2961#0" expanded="false" />
+            <element signature="e#2988#3174#0" expanded="false" />
+            <element signature="e#3224#4750#0" expanded="false" />
+            <element signature="e#3266#3486#0" expanded="false" />
+            <element signature="e#3516#3736#0" expanded="false" />
+            <element signature="e#3766#3986#0" expanded="false" />
+            <element signature="e#4016#4236#0" expanded="false" />
+            <element signature="e#4266#4486#0" expanded="false" />
+            <element signature="e#4516#4736#0" expanded="false" />
+            <element signature="n#!!block;n#getZoneHumidityData#0" expanded="false" />
+            <element signature="e#4919#7979#0" expanded="false" />
+            <element signature="e#5015#7973#0" expanded="false" />
+            <element signature="e#5087#5273#0" expanded="false" />
+            <element signature="e#5300#5486#0" expanded="false" />
+            <element signature="e#5513#5699#0" expanded="false" />
+            <element signature="e#5726#5912#0" expanded="false" />
+            <element signature="e#5939#6125#0" expanded="false" />
+            <element signature="e#6152#6338#0" expanded="false" />
+            <element signature="e#6388#7866#0" expanded="false" />
+            <element signature="e#6430#6642#0" expanded="false" />
+            <element signature="e#6672#6884#0" expanded="false" />
+            <element signature="e#6914#7126#0" expanded="false" />
+            <element signature="e#7156#7368#0" expanded="false" />
+            <element signature="e#7398#7610#0" expanded="false" />
+            <element signature="e#7640#7852#0" expanded="false" />
+            <element signature="n#!!block;n#getZoneLightData#0" expanded="false" />
+            <element signature="e#8026#11060#0" expanded="false" />
+            <element signature="e#8122#11054#0" expanded="false" />
+            <element signature="e#8194#8380#0" expanded="false" />
+            <element signature="e#8407#8593#0" expanded="false" />
+            <element signature="e#8620#8806#0" expanded="false" />
+            <element signature="e#8833#9019#0" expanded="false" />
+            <element signature="e#9046#9232#0" expanded="false" />
+            <element signature="e#9259#9445#0" expanded="false" />
+            <element signature="e#9495#10955#0" expanded="false" />
+            <element signature="e#9537#9746#0" expanded="false" />
+            <element signature="e#9776#9985#0" expanded="false" />
+            <element signature="e#10015#10224#0" expanded="false" />
+            <element signature="e#10254#10463#0" expanded="false" />
+            <element signature="e#10493#10702#0" expanded="false" />
+            <element signature="e#10732#10941#0" expanded="false" />
+            <element signature="n#!!block;n#getZoneSoilMoistureData#0" expanded="false" />
+            <element signature="e#11114#14171#0" expanded="false" />
+            <element signature="e#11210#14165#0" expanded="false" />
+            <element signature="e#11282#11468#0" expanded="false" />
+            <element signature="e#11495#11681#0" expanded="false" />
+            <element signature="e#11708#11894#0" expanded="false" />
+            <element signature="e#11921#12107#0" expanded="false" />
+            <element signature="e#12134#12320#0" expanded="false" />
+            <element signature="e#12347#12533#0" expanded="false" />
+            <element signature="e#12583#14061#0" expanded="false" />
+            <element signature="e#12625#12837#0" expanded="false" />
+            <element signature="e#12867#13079#0" expanded="false" />
+            <element signature="e#13109#13321#0" expanded="false" />
+            <element signature="e#13351#13563#0" expanded="false" />
+            <element signature="e#13593#13805#0" expanded="false" />
+            <element signature="e#13835#14047#0" expanded="false" />
+            <element signature="n#!!block;n#getGreenhouseTemperatureData#0" expanded="false" />
+            <element signature="e#14230#15150#0" expanded="false" />
+            <element signature="e#14326#15144#0" expanded="false" />
+            <element signature="e#14437#14785#0" expanded="false" />
+            <element signature="e#14651#14734#0" expanded="false" />
+            <element signature="e#14835#15051#0" expanded="false" />
+            <element signature="n#!!block;n#getGreenhouseHumidityData#0" expanded="false" />
+            <element signature="e#15206#16112#0" expanded="false" />
+            <element signature="e#15302#16106#0" expanded="false" />
+            <element signature="e#15413#15761#0" expanded="false" />
+            <element signature="e#15627#15710#0" expanded="false" />
+            <element signature="e#15811#16019#0" expanded="false" />
+            <element signature="n#!!block;n#getGreenhouseLightData#0" expanded="false" />
+            <element signature="e#16165#17057#0" expanded="false" />
+            <element signature="e#16261#17051#0" expanded="false" />
+            <element signature="e#16372#16720#0" expanded="false" />
+            <element signature="e#16586#16669#0" expanded="false" />
+            <element signature="e#16770#16975#0" expanded="false" />
+            <element signature="n#!!block;n#getOutdoorTemperature#0" expanded="false" />
+            <element signature="e#17109#17969#0" expanded="false" />
+            <element signature="e#17197#17963#0" expanded="false" />
+            <element signature="e#17273#17621#0" expanded="false" />
+            <element signature="e#17487#17570#0" expanded="false" />
+            <element signature="e#17671#17873#0" expanded="false" />
+            <element signature="e#18034#18066#0" expanded="false" />
+            <element signature="e#18132#18179#0" expanded="false" />
+            <element signature="e#18242#18278#0" expanded="false" />
+            <element signature="e#18338#18371#0" expanded="false" />
+            <element signature="e#18431#18464#0" expanded="false" />
+            <element signature="e#18521#18551#0" expanded="false" />
+            <element signature="e#18605#18632#0" expanded="false" />
+            <element signature="e#18689#18723#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlot#0" expanded="false" />
+            <element signature="e#18848#19366#0" expanded="false" />
+            <element signature="e#18977#19030#0" expanded="false" />
+            <element signature="e#19047#19194#0" expanded="false" />
+            <element signature="e#19211#19358#0" expanded="false" />
+            <element signature="n#!!block;n#convertTime#0" expanded="false" />
+            <element signature="e#19657#19744#0" expanded="false" />
+            <element signature="e#19750#19787#0" expanded="false" />
+            <element signature="e#19855#19869#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/IndexServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/SensorAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="50" column="74" lean-forward="false" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/listener/Weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+          <folding>
+            <element signature="method#contextDestroyed#0;class#Weather#0" expanded="false" />
+            <element signature="method#startTimer#0;class#Weather#0" expanded="false" />
+            <element signature="e#2386#2405#0" expanded="false" />
+            <marker date="1490839964000" expanded="true" signature="2812:2849" ph="INSERT INTO weather... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/SensorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="487" column="8" lean-forward="false" selection-start-line="487" selection-start-column="8" selection-end-line="492" selection-end-column="9" />
+          <caret line="667" column="51" lean-forward="true" selection-start-line="667" selection-start-column="51" selection-end-line="667" selection-end-column="51" />
           <folding>
             <element signature="method#getAllSensorDataJSON#0;class#SensorController#0" expanded="false" />
             <element signature="method#categorizeSensorData#0;class#SensorController#0" expanded="false" />
+            <element signature="method#categorizeTodaysSensorData#0;class#SensorController#0" expanded="false" />
+            <element signature="method#loadLatestSensorValues#0;class#SensorController#0" expanded="false" />
+            <element signature="method#updateLatestSensor#0;class#SensorController#0" expanded="false" />
             <element signature="method#getLatestSensorData#0;class#SensorController#0" expanded="false" />
             <element signature="method#getLatestSensorDataByID#0;class#SensorController#0" expanded="false" />
             <element signature="method#getSensorData#0;class#SensorController#0" expanded="false" />
-            <element signature="e#10882#10911#0" expanded="false" />
+            <element signature="e#16856#16885#0" expanded="false" />
+            <element signature="method#getCurrentAverages#0;class#SensorController#0" expanded="false" />
             <element signature="method#getAllAverages#0;class#SensorController#0" expanded="false" />
-            <marker date="1490803870000" expanded="false" signature="865:889" ph="SELECT * FRO... sensordata" />
-            <marker date="1490803870000" expanded="false" signature="2500:2524" ph="SELECT * FRO... sensordata" />
-            <marker date="1490803870000" expanded="false" signature="16422:16444" ph="SELECT * FRO... averages" />
-            <marker date="1490803870000" expanded="true" signature="17894:17940" ph="INSERT INTO sensordata... " />
-            <marker date="1490803870000" expanded="false" signature="17900:17901" ph="INSERT INTO sensordata... " />
-            <marker date="1490803870000" expanded="false" signature="19440:19480" ph="INSERT INTO averages... " />
+            <marker date="1490841768000" expanded="false" signature="923:947" ph="SELECT * FRO... sensordata" />
+            <marker date="1490841768000" expanded="false" signature="2578:2602" ph="SELECT * FRO... sensordata" />
+            <marker date="1490841768000" expanded="false" signature="4987:5029" ph="SELECT * FRO... sensordata" />
+            <marker date="1490841768000" expanded="false" signature="4987:5043" ph="SELECT * FRO... sensordata" />
+            <marker date="1490841768000" expanded="false" signature="22396:22418" ph="SELECT * FRO... averages" />
+            <marker date="1490841768000" expanded="false" signature="24307:24353" ph="INSERT INTO sensordata... " />
+            <marker date="1490841768000" expanded="false" signature="24313:24314" ph="INSERT INTO sensordata... " />
+            <marker date="1490841768000" expanded="false" signature="25966:26006" ph="INSERT INTO averages... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/SensorAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>

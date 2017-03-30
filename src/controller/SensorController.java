@@ -17,7 +17,8 @@ import java.util.*;
 public class SensorController {
 
     DatabaseController dbController = new DatabaseController();
-    boolean saved = false;
+    HashMap<Integer, SensorModel> latestSensors = new HashMap<>();
+    int min = -1;
 
     public JSONArray getAllSensorDataJSON() {
 
@@ -75,7 +76,7 @@ public class SensorController {
         return jsonData;
     }
 
-    // Categorize sensors into arrays by zone
+    // Get all entries and categorize sensors into arrays by zone
     // Key: zone
     // Value: ArrayList of sensor data
     public HashMap<Integer, ArrayList<SensorModel>> categorizeSensorData() {
@@ -151,15 +152,190 @@ public class SensorController {
 
     }
 
+    public HashMap<Integer, ArrayList<SensorModel>> categorizeTodaysSensorData() {
+        HashMap<Integer, ArrayList<SensorModel>> sensorMap = new HashMap<>();
+
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = dbController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String time = dbController.getCurrentTime();
+        String[] timeArr = time.split(" ");
+
+
+
+        String sql = "SELECT * FROM sensordata WHERE sampleTime>" + timeArr[0];
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while( rs.next() ) {
+
+                ArrayList<SensorModel> sensorList = new ArrayList<>();
+
+                // Get value from HashMap
+                if( sensorMap.containsKey(Integer.parseInt(rs.getString(2)) ) ) {
+                    sensorList = sensorMap.get(Integer.parseInt(rs.getString(2)));
+                } else {
+                    sensorList = new ArrayList<>();
+                }
+
+                SensorModel sensorModel = new SensorModel();
+
+                System.out.println("categorizeTodaysSensorData: EntryID: " + Integer.parseInt(rs.getString(1)) );
+
+                sensorModel.setEntryId(Integer.parseInt(rs.getString(1)));
+                sensorModel.setZone(Integer.parseInt(rs.getString(2)));
+                sensorModel.setProbe1(rs.getDouble(3));
+                sensorModel.setProbe2(rs.getDouble(4));
+                sensorModel.setTemperature(Double.parseDouble(rs.getString(5)));
+                sensorModel.setLight(Double.parseDouble(rs.getString(6)));
+                sensorModel.setHumidity(Double.parseDouble(rs.getString(7)));
+
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                Date date = dateFormat.parse(rs.getString(8));
+
+                sensorModel.setSampleTime( dateFormat.format(date) );
+
+                sensorList.add(sensorModel);
+
+                sensorMap.put(Integer.parseInt(rs.getString(2)), sensorList);
+
+            }
+
+            rs.close();
+            ps.close();
+            conn.commit();
+            conn.close();
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        } catch( ParseException e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return sensorMap;
+    }
+
+    public void loadLatestSensorValues() {
+        HashMap<Integer, ArrayList<SensorModel>> latestList = categorizeTodaysSensorData();
+
+        try {
+            for (HashMap.Entry<Integer, ArrayList<SensorModel>> zone : latestList.entrySet()) {
+                int key = zone.getKey();
+                ArrayList<SensorModel> sensorList = zone.getValue();
+
+                // Set first entry as starting date
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                Date latestDate = dateFormat.parse(sensorList.get(0).getSampleTime());
+
+                // Set first entry key as "last entry" key
+                int latestKey = 0;
+                int count = 0;
+
+                // Iterate through ArrayList to find last entry
+                for (SensorModel sensorEntry : sensorList) {
+                    Date sampleDate = dateFormat.parse(sensorEntry.getSampleTime());
+                    // If sampleDate is more recent than date, set
+                    if (sampleDate.after(latestDate)) {
+                        latestDate = sampleDate;
+                        latestKey = count;
+                    }
+
+                    count++;
+                }
+
+                SensorModel sensor = new SensorModel();
+
+                sensor.setZone(key);
+                sensor.setProbe1(sensorList.get(latestKey).getProbe1());
+                sensor.setProbe2(sensorList.get(latestKey).getProbe2());
+                sensor.setHumidity(sensorList.get(latestKey).getHumidity());
+                sensor.setTemperature(sensorList.get(latestKey).getTemperature());
+                sensor.setLight(sensorList.get(latestKey).getLight());
+                sensor.setSampleTime(sensorList.get(latestKey).getSampleTime());
+
+                System.out.println("loadLatestSensorValues: " + sensor.getZone());
+
+                latestSensors.put(key, sensor);
+            }
+
+        } catch( ParseException e ) {
+
+        }
+
+        System.out.println("Loaded latest sensor values");
+
+        return;
+    }
+
+    public void updateLatestSensor(int key, SensorModel sensor) {
+        // Get old value
+        SensorModel currentSensorVal = latestSensors.get(key);
+
+        // Remove old value
+        latestSensors.remove(key);
+
+        // Set updated value
+        latestSensors.put(key, sensor);
+
+        return;
+    }
+
     public JSONArray getLatestSensorData() {
 
-        HashMap<Integer, ArrayList<SensorModel>> sensorMap = categorizeSensorData();
+        if( latestSensors.isEmpty() ) {
+            loadLatestSensorValues();
+
+
+            System.out.println("Sensor: " + latestSensors.get(1).toString() );
+        }
+
+        JSONArray jsonData = new JSONArray();
+
+        try {
+            for( HashMap.Entry<Integer, SensorModel> sensorEntry: latestSensors.entrySet() ) {
+                SensorModel sensor = sensorEntry.getValue();
+
+                JSONObject obj = new JSONObject();
+
+                obj.put("zone", sensor.getZone() );
+                obj.put("probe1", sensor.getProbe1());
+                obj.put("probe2", sensor.getProbe2());
+                obj.put("temperature", sensor.getTemperature() );
+                obj.put("light", sensor.getLight() );
+                obj.put("humidity", sensor.getHumidity() );
+                obj.put("sampletime", sensor.getSampleTime() );
+
+                jsonData.put(obj);
+            }
+        } catch( JSONException e ) {
+
+        }
+
+        return jsonData;
+
+        /*
+        HashMap<Integer, ArrayList<SensorModel>> latestList = categorizeLimitedSensorData();
 
         JSONArray jsonData = new JSONArray();
 
         try {
             // Iterate through all values in hashmap to find the most recent entry for each zone
-            for (HashMap.Entry<Integer, ArrayList<SensorModel>> zone : sensorMap.entrySet()) {
+            for (HashMap.Entry<Integer, ArrayList<SensorModel>> zone : latestList.entrySet()) {
                 int key = zone.getKey();
                 ArrayList<SensorModel> sensorList = zone.getValue();
 
@@ -203,7 +379,7 @@ public class SensorController {
             e.printStackTrace();
         }
 
-        return jsonData;
+        return jsonData;*/
     }
 
     public SensorModel getLatestSensorDataByID(int zoneID) {
@@ -488,10 +664,18 @@ public class SensorController {
         Calendar now = Calendar.getInstance();
 
         // Only save every 15 minutes
-        if( now.get(Calendar.MINUTE) % 15 != 0) {
+        if( now.get(Calendar.MINUTE) % 15 == 0 ) {
+            if( now.get(Calendar.MINUTE) == min ) {
+                //System.out.println("Already been saved. Ignoring");
+                return;
+            } else {
+                //System.out.println("Saving entry. Setting min to " + now.get(Calendar.MINUTE) );
+                min = now.get(Calendar.MINUTE);
+            }
+        } else {
+            //System.out.println("Not interval of 15. Minutes: " + now.get(Calendar.MINUTE));
             return;
         }
-
 
         // Connect to database
         Connection conn = null;
@@ -517,6 +701,9 @@ public class SensorController {
             // Enter all entries in ArrayList into database
             for( SensorModel sensor : sensorList ) {
                 ps = conn.prepareStatement(sql);
+
+                // Update latest sensor hashmap
+                updateLatestSensor( sensor.getZone(), sensor );
 
                 //System.out.println("Add Sensors:\nZone: " + sensor.getZone() + "\nMoisture: " + sensor.getMoisture() + "\nTemperature: " + sensor.getTemperature() + "\nLight: " + sensor.getLight() + "\nHumidity: " + sensor.getHumidity());
 
