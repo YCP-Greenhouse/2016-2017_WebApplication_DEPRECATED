@@ -64,12 +64,13 @@
         } else {  %>
             <div class="top-controls-panel">
                 <div class="top-panel-1"></div>
-                <div class="top-panel-title">GREENHOUSE</div>
+                <div class="top-panel-title">TABLES</div>
                 <div class="top-panel-2"></div>
                 <div class="top-panel-3">
                     <!-- Top table row -->
-                    <div class="big-table" id="zone-1">ZONE 1</div>
-                    <div class="big-table" id="zone-2">ZONE 2</div>
+
+                    <div class="big-table-left" id="zone-1">ZONE 1</div>
+                    <div class="big-table-right" id="zone-2">ZONE 2</div>
 
                     <!-- Middle table row -->
                     <div class="middle-table-div">
@@ -78,15 +79,16 @@
                     </div>
 
                     <!-- Bottom table row -->
+                    <!--
                     <div class="bottom-table-div">
                         <div class="small-table" style="margin-right: 20px;" id="zone-5">ZONE 5</div>
                         <div class="small-table" id="zone-6">ZONE 6</div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="light-control-panel">
                     <div class="light-left-corner"></div>
-                    <div class="light-title">LIGHT</div>
+                    <div class="light-title">MAX LIGHT</div>
                     <div class="light-right-corner"></div>
                     <div class="light-body">
                         <div class="light-val">

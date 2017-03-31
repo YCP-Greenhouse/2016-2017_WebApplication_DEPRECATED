@@ -18,6 +18,7 @@ public class SensorController {
 
     DatabaseController dbController = new DatabaseController();
     HashMap<Integer, SensorModel> latestSensors = new HashMap<>();
+    HashMap<Integer, Integer> lastSave = new HashMap<>();
     int min = -1;
 
     public JSONArray getAllSensorDataJSON() {
@@ -652,19 +653,41 @@ public class SensorController {
     }
 
     // Add ArrayList of SensorModels to database
+    // Calculate averages of sensor list to save to averages table
     public void addSensorData(ArrayList<SensorModel> sensorList) {
+
 
         Calendar now = Calendar.getInstance();
 
+        // Create new array list for sensors that will be added
+        ArrayList<SensorModel> addList = new ArrayList<>();
+
         // Only save every 15 minutes
         if( now.get(Calendar.MINUTE) % 15 == 0 ) {
-            if( now.get(Calendar.MINUTE) == min ) {
-                //System.out.println("Already been saved. Ignoring");
-                return;
-            } else {
                 //System.out.println("Saving entry. Setting min to " + now.get(Calendar.MINUTE) );
                 min = now.get(Calendar.MINUTE);
-            }
+
+                // Iterate through sensorList to find last saves. Add valid sensors to addList
+                for( SensorModel sensor : sensorList ) {
+                    // If key doesn't exist, add key and save value
+                    if( !lastSave.containsKey(sensor.getZone())) {
+                        //System.out.println("Key doesnt exist. Adding " + sensor.getZone());
+                        lastSave.put(sensor.getZone(), min);
+                    // If key exists, get last save time
+                    } else {
+                        // If last save is not current min add to addList
+                        if( lastSave.get(sensor.getZone()) != min ) {
+                            //System.out.println("Last min for zone " + sensor.getZone() + " is " + min);
+                            addList.add(addList.size(), sensor);
+
+                            // Update lastSave entry
+                            //System.out.println("Updating min for zone " + sensor.getZone() + " from " + lastSave.get(sensor.getZone()) + " to " + min);
+                            lastSave.remove(sensor.getZone());
+                            lastSave.put(sensor.getZone(), min);
+                        }
+                    }
+                }
+
         } else {
             //System.out.println("Not interval of 15. Minutes: " + now.get(Calendar.MINUTE));
             return;
@@ -692,7 +715,7 @@ public class SensorController {
             conn.setAutoCommit(false);
 
             // Enter all entries in ArrayList into database
-            for( SensorModel sensor : sensorList ) {
+            for( SensorModel sensor : addList ) {
                 ps = conn.prepareStatement(sql);
 
                 //System.out.println("Add Sensors:\nZone: " + sensor.getZone() + "\nMoisture: " + sensor.getMoisture() + "\nTemperature: " + sensor.getTemperature() + "\nLight: " + sensor.getLight() + "\nHumidity: " + sensor.getHumidity());

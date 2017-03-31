@@ -91,7 +91,7 @@ public class SensorAPI extends HttpServlet {
                     // Only create new sensor entry if zone has a value change. If all values are null, don't add sensor
                     if (!obj.get("light").equals("") && !obj.get("temperature").equals("") && !obj.get("humidity").equals("") && !obj.get("probe1").equals("") && !obj.get("probe2").equals("")) {
                         // Don't add sensor if all values are 0
-                        if( !(Double.parseDouble(obj.get("light").toString()) == 0.0 && Double.parseDouble(obj.get("temperature").toString()) == 0.0 && Double.parseDouble(obj.get("humidity").toString()) == 0.0 && Double.parseDouble(obj.get("probe1").toString()) == 0.0 && Double.parseDouble(obj.get("probe2").toString()) == 0.0) ) {
+                        //if( !(Double.parseDouble(obj.get("light").toString()) == 0.0 && Double.parseDouble(obj.get("temperature").toString()) == 0.0 && Double.parseDouble(obj.get("humidity").toString()) == 0.0 && Double.parseDouble(obj.get("probe1").toString()) == 0.0 && Double.parseDouble(obj.get("probe2").toString()) == 0.0) ) {
 
                             SensorModel sensor = new SensorModel();
                             SensorModel lastSensor = sensorController.getLatestSensorDataByID(i + 1);
@@ -135,9 +135,9 @@ public class SensorAPI extends HttpServlet {
                             sensor.setZone(Integer.parseInt(obj.get("zone").toString()));
 
                             sensorList.add(sensor);
-                        } else {
+                        //} else {
                             //System.out.println("Blank values. Ignoring");
-                        }
+                        //}
                    }
                 }
             } catch (JSONException e) {
