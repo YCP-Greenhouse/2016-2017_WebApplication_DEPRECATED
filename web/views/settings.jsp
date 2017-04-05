@@ -217,9 +217,6 @@
                     <thead id="schedule-heading"></thead>
 
                     <tbody id="schedule-body">
-
-
-
                     </tbody>
 
 
@@ -228,20 +225,22 @@
 
             <div id="schedule-modal" class="add-schedule-modal">
                 <div class="add-schedule">
-                    <span id="modal-title"></span><br><br>
-                    <span>Start Time: </span><input type="time" id="start-time"><br>
-                    <span>End Time: </span><input type="time" id="end-time"><br>
-                    <span>Hours: </span><input type="text" id="hours"><br>
-                    <span>Type: <input id="water-radio" type="radio" name="type" value="water">Water</span><input id="light-radio" type="radio" name="type" value="light">Light</span><br><br>
-                    <input type="hidden" id="inverse" value="0">
-                    <input type="hidden" id="schedule-date">
-                    <input type="hidden" id="schedule-id">
-                    <input type="hidden" id="schedule-type">
-                    <input type="hidden" id="zoneid">
+                    <span id="modal-title" class="schedule-modal-title"></span><br>
+                    <div class="schedule-modal-text">
+                        <span>Start Time: </span><input type="time" class="time-input" id="start-time" onclick="timeUpdate()"><br>
+                        <span>End Time: </span><input type="time" class="time-input" id="end-time" onclick="timeUpdate()"><br>
+                        <span>Hours: </span><input type="number" style="width: 92px;" min="1" max="24" class="time-input" id="hours" onclick="hourUpdate()"><br>
+                        <span>Type: <span class="time-input" style="margin-left: 10px;">Water<input id="water-radio" type="radio" name="type" value="water"></span><span class="time-input">Light<input id="light-radio" type="radio" name="type" value="light"></span></span><br><br>
+                        <input type="hidden" id="inverse" value="0">
+                        <input type="hidden" id="schedule-date">
+                        <input type="hidden" id="schedule-id">
+                        <input type="hidden" id="schedule-type">
+                        <input type="hidden" id="zoneid">
+                    </div>
 
                     <div class="schedule-buttons">
-                        <button id="close-button">Close</button>
-                        <button id="save-button">Save</button>
+                        <button id="save-button" class="schedule-button">Save</button>
+                        <button id="close-button" class="schedule-button">Close</button>
                         <button id="delete-button">Delete</button>
                     </div>
 

@@ -1350,7 +1350,16 @@ body {
     font-weight: 400;
     font-size: 25px;
     color: white;
+}
 
+.schedule-buttons {
+    width: 100%;
+}
+
+.schedule-button {
+    margin-left: 20px;
+    display: block;
+    float: right;
 }
 
 
@@ -1360,6 +1369,7 @@ body {
     height: 75%;
     width: 100%;
     margin: auto;
+    margin-top: 10px;
 }
 
 .schedule-calendar {
@@ -1439,21 +1449,54 @@ body {
     display: none;
     z-index: 998;
     position: absolute;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
 
+.schedule-modal-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.schedule-modal-text {
+    margin-top: 10px;
 }
 
 .add-schedule {
-    width: 250px;
-    height: 150px;
+    width: 220px;
+    height: 180px;
     background-color: white;
+    line-height: 28px;
     margin: auto;
-    margin-top: 10%;
-    padding: 40px;
+    margin-top: 15%;
+    padding: 50px;
+    padding-top: 30px;
+
+}
+
+
+.time-input {
+    margin-top: 5px;
+    float: right;
 }
 
 .schedule-close-button {
     float: right;
-    margin-top: -50px;
+    margin-top: -55px;
+    margin-right: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 90px;
+    background-color: rgba(255,255,255,0.15);
+    border: solid 1px rgba(255,255,255,0.15);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 2px;
+    border: none;
+    display: inline-block;
 }
 
 

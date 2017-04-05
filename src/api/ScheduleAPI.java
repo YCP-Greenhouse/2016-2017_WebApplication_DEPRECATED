@@ -90,8 +90,8 @@ public class ScheduleAPI extends HttpServlet {
                 scheduleModel.setId(id);
                 scheduleModel.setZoneID(zoneID);
                 scheduleModel.setDay(day);
-                scheduleModel.setStartTime(convertTime(start) + ":00:00");
-                scheduleModel.setEndTime(convertTime(end) + ":00:00");
+                scheduleModel.setStartTime(start);
+                scheduleModel.setEndTime(end);
                 scheduleModel.setHours(hours);
                 scheduleModel.setInverse(inverse);
 

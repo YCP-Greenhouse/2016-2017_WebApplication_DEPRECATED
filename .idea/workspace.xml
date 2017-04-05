@@ -7,32 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/api/ScheduleAPI.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/api/ScheduleAPI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/api/SensorAPI.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/api/SensorAPI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/AutomationController.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/AutomationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/ScheduleController.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/ScheduleController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/SensorController.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/SensorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/model/ScheduleModel.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/model/ScheduleModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/ScheduleAPI.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/ScheduleAPI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/SensorAPI.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/SensorAPI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/AutomationController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/AutomationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/ScheduleController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/ScheduleController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/SensorController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/SensorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/model/ScheduleModel.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/model/ScheduleModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/automation.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/automation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/schedule.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/schedule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/settings.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/ScheduleAPI.java" afterPath="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/SensorAPI.java" afterPath="$PROJECT_DIR$/src/api/SensorAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/AutomationController.java" afterPath="$PROJECT_DIR$/src/controller/AutomationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ScheduleController.java" afterPath="$PROJECT_DIR$/src/controller/ScheduleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/SensorController.java" afterPath="$PROJECT_DIR$/src/controller/SensorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ScheduleModel.java" afterPath="$PROJECT_DIR$/src/model/ScheduleModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/greenhouse.css" afterPath="$PROJECT_DIR$/web/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/automation.js" afterPath="$PROJECT_DIR$/web/js/automation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/schedule.js" afterPath="$PROJECT_DIR$/web/js/schedule.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/settings.jsp" afterPath="$PROJECT_DIR$/web/views/settings.jsp" />
     </list>
@@ -82,44 +58,51 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="schedule.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="schedule.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="49" column="72" lean-forward="false" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
+            <state relative-caret-position="158">
+              <caret line="508" column="4" lean-forward="false" selection-start-line="508" selection-start-column="4" selection-end-line="508" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#2953#3018#0" expanded="false" />
                 <element signature="n#!!block;n#clearCalendar#0" expanded="false" />
-                <element signature="e#6110#6136#0" expanded="false" />
-                <element signature="e#6314#6340#0" expanded="false" />
-                <element signature="e#7228#7291#0" expanded="false" />
-                <element signature="e#7965#8241#0" expanded="false" />
-                <element signature="e#8013#8043#0" expanded="false" />
-                <element signature="e#8195#8235#0" expanded="false" />
-                <element signature="e#8382#8408#0" expanded="false" />
-                <element signature="e#8586#8612#0" expanded="false" />
-                <element signature="e#10257#10287#0" expanded="false" />
-                <element signature="e#10626#10652#0" expanded="false" />
-                <element signature="e#10830#10856#0" expanded="false" />
+                <element signature="e#7038#7101#0" expanded="false" />
+                <element signature="e#7775#8051#0" expanded="false" />
+                <element signature="e#7823#7853#0" expanded="false" />
+                <element signature="e#8005#8045#0" expanded="false" />
+                <element signature="e#9889#9919#0" expanded="false" />
                 <element signature="n#!!block;n#convertMilitaryToStandardTime#0" expanded="false" />
-                <element signature="e#11084#11115#0" expanded="false" />
-                <element signature="e#11135#11160#0" expanded="false" />
+                <element signature="e#10535#10566#0" expanded="false" />
+                <element signature="e#10586#10611#0" expanded="false" />
                 <element signature="n#!!block;n#getAmPm#0" expanded="false" />
-                <element signature="e#11240#11268#0" expanded="false" />
-                <element signature="e#11274#11302#0" expanded="false" />
-                <marker date="1491248664000" expanded="true" signature="1423:1435" ph="..." />
-                <marker date="1491248664000" expanded="true" signature="1423:1456" ph="..." />
+                <element signature="e#10691#10719#0" expanded="false" />
+                <element signature="e#10725#10753#0" expanded="false" />
+                <marker date="1491411306000" expanded="true" signature="1423:1435" ph="..." />
+                <marker date="1491411306000" expanded="true" signature="1423:1456" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="greenhouse.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="231" column="154" lean-forward="false" selection-start-line="231" selection-start-column="154" selection-end-line="231" selection-end-column="154" />
+              <folding>
+                <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#span#3;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="greenhouse.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="1423" column="40" lean-forward="false" selection-start-line="1423" selection-start-column="40" selection-end-line="1423" selection-end-column="40" />
+            <state relative-caret-position="-1711">
+              <caret line="1371" column="18" lean-forward="false" selection-start-line="1371" selection-start-column="18" selection-end-line="1371" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -140,16 +123,6 @@
                 <marker date="1491194160000" expanded="true" signature="6241:6291" ph="DELETE FROM " />
                 <marker date="1491194160000" expanded="true" signature="6252:6269" ph="UPDATE missi... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="234" column="94" lean-forward="false" selection-start-line="234" selection-start-column="94" selection-end-line="234" selection-end-column="94" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -199,11 +172,9 @@
       <file leaf-file-name="ScheduleAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/ScheduleAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="-94">
+              <caret line="93" column="44" lean-forward="false" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -223,12 +194,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>categorizeTodaysSensorData</find>
-      <find>requestParamsToJSON</find>
-      <find>fahre</find>
-      <find>light-val</find>
-      <find>big-table</find>
-      <find>manual</find>
       <find>switch-la</find>
       <find>temperature-bu</find>
       <find>container</find>
@@ -253,6 +218,12 @@
       <find>schedule-calendar</find>
       <find>schedule-cal</find>
       <find>water</find>
+      <find>add-schedule</find>
+      <find>buttons</find>
+      <find>edit water</find>
+      <find>schedu</find>
+      <find>calendar</find>
+      <find>start-time</find>
     </findStrings>
     <replaceStrings>
       <replace>size=&quot;7&quot;</replace>
@@ -323,11 +294,11 @@
         <option value="$PROJECT_DIR$/web/js/automation.js" />
         <option value="$PROJECT_DIR$/src/model/ScheduleModel.java" />
         <option value="$PROJECT_DIR$/src/controller/ScheduleController.java" />
-        <option value="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
         <option value="$PROJECT_DIR$/src/controller/AutomationController.java" />
-        <option value="$PROJECT_DIR$/web/js/schedule.js" />
-        <option value="$PROJECT_DIR$/web/views/settings.jsp" />
+        <option value="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
         <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
+        <option value="$PROJECT_DIR$/web/views/settings.jsp" />
+        <option value="$PROJECT_DIR$/web/js/schedule.js" />
       </list>
     </option>
   </component>
@@ -1208,16 +1179,16 @@
       <workItem from="1490888087280" duration="10000000" />
       <workItem from="1491071939680" duration="36987000" />
       <workItem from="1491190298788" duration="12591000" />
-      <workItem from="1491405574941" duration="249000" />
+      <workItem from="1491405574941" duration="5028000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="494374000" />
+    <option name="totallyTimeSpent" value="499153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1242,9 +1213,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12096774" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4717742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18955651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18955651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1612,6 +1583,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2010">
           <caret line="295" column="41" lean-forward="false" selection-start-line="295" selection-start-column="41" selection-end-line="295" selection-end-column="41" />
+          <folding>
+            <element signature="e#1281#1830#0" expanded="false" />
+            <element signature="e#1836#2667#0" expanded="false" />
+            <element signature="e#2704#3513#0" expanded="false" />
+            <element signature="e#2790#3507#0" expanded="false" />
+            <element signature="e#2918#2986#0" expanded="false" />
+            <element signature="e#3018#3086#0" expanded="false" />
+            <element signature="e#3116#3182#0" expanded="false" />
+            <element signature="e#3212#3280#0" expanded="false" />
+            <element signature="e#3621#3771#0" expanded="false" />
+            <element signature="e#3836#3875#0" expanded="false" />
+            <element signature="e#3912#3954#0" expanded="false" />
+            <element signature="e#4062#4212#0" expanded="false" />
+            <element signature="e#4239#4311#0" expanded="false" />
+            <element signature="e#4360#4492#0" expanded="false" />
+            <element signature="e#4545#4696#0" expanded="false" />
+            <element signature="e#4723#4795#0" expanded="false" />
+            <element signature="e#4844#4977#0" expanded="false" />
+            <element signature="e#5031#5182#0" expanded="false" />
+            <element signature="e#5209#5281#0" expanded="false" />
+            <element signature="e#5331#5464#0" expanded="false" />
+            <element signature="e#5518#5670#0" expanded="false" />
+            <element signature="e#5697#5769#0" expanded="false" />
+            <element signature="e#5819#5953#0" expanded="false" />
+            <element signature="e#5963#5992#0" expanded="false" />
+            <element signature="e#6310#7457#0" expanded="false" />
+            <element signature="e#6559#6596#0" expanded="false" />
+            <element signature="e#6714#7451#0" expanded="false" />
+            <element signature="e#6735#7168#0" expanded="false" />
+            <element signature="e#6824#7154#0" expanded="false" />
+            <element signature="e#9855#10441#0" expanded="false" />
+            <element signature="n#!!block;n#drawScheduleTable#0" expanded="false" />
+            <element signature="n#!!block;n#updateOutput#0" expanded="false" />
+            <element signature="e#10613#10659#0" expanded="false" />
+            <element signature="n#!!block;n#tempChange#0" expanded="false" />
+            <element signature="e#10792#11163#0" expanded="false" />
+            <element signature="e#10831#10990#0" expanded="false" />
+            <element signature="e#10996#11153#0" expanded="false" />
+            <element signature="e#11169#11540#0" expanded="false" />
+            <element signature="e#11208#11369#0" expanded="false" />
+            <element signature="e#11375#11530#0" expanded="false" />
+            <element signature="n#!!block;n#updateAutomationValues#0" expanded="false" />
+            <element signature="e#11591#12178#0" expanded="false" />
+            <element signature="e#11683#12172#0" expanded="false" />
+            <element signature="n#!!block;n#submitAutomationValues#0" expanded="false" />
+            <element signature="e#12231#12495#0" expanded="false" />
+            <element signature="e#12301#12489#0" expanded="false" />
+            <element signature="n#!!block;n#getAutomationValues#0" expanded="false" />
+            <element signature="e#12574#13666#0" expanded="false" />
+            <element signature="e#12665#13660#0" expanded="false" />
+            <element signature="e#13302#13483#0" expanded="false" />
+            <element signature="e#13380#13465#0" expanded="false" />
+            <element signature="e#13525#13648#0" expanded="false" />
+            <marker date="1491163308000" expanded="false" signature="262:1128" ph="{...}" />
+            <marker date="1491163308000" expanded="false" signature="276:1092" ph="{&quot;type&quot;: 'GET'...}" />
+            <marker date="1491163308000" expanded="false" signature="362:1086" ph="{...}" />
+            <marker date="1491163308000" expanded="false" signature="505:616" ph="{...}" />
+            <marker date="1491163308000" expanded="false" signature="663:774" ph="{...}" />
+            <marker date="1491163308000" expanded="false" signature="817:922" ph="{...}" />
+            <marker date="1491163308000" expanded="false" signature="967:1076" ph="{...}" />
+            <marker date="1491163308000" expanded="false" signature="1485:1507" ph="..." />
+            <marker date="1491163308000" expanded="false" signature="2159:2181" ph="..." />
+            <marker date="1491163308000" expanded="false" signature="2545:2561" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1619,16 +1654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="27" column="76" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/ScheduleAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1711,50 +1736,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
+    <entry file="file://$PROJECT_DIR$/src/api/ScheduleAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="49" column="72" lean-forward="false" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#2953#3018#0" expanded="false" />
-            <element signature="n#!!block;n#clearCalendar#0" expanded="false" />
-            <element signature="e#6110#6136#0" expanded="false" />
-            <element signature="e#6314#6340#0" expanded="false" />
-            <element signature="e#7228#7291#0" expanded="false" />
-            <element signature="e#7965#8241#0" expanded="false" />
-            <element signature="e#8013#8043#0" expanded="false" />
-            <element signature="e#8195#8235#0" expanded="false" />
-            <element signature="e#8382#8408#0" expanded="false" />
-            <element signature="e#8586#8612#0" expanded="false" />
-            <element signature="e#10257#10287#0" expanded="false" />
-            <element signature="e#10626#10652#0" expanded="false" />
-            <element signature="e#10830#10856#0" expanded="false" />
-            <element signature="n#!!block;n#convertMilitaryToStandardTime#0" expanded="false" />
-            <element signature="e#11084#11115#0" expanded="false" />
-            <element signature="e#11135#11160#0" expanded="false" />
-            <element signature="n#!!block;n#getAmPm#0" expanded="false" />
-            <element signature="e#11240#11268#0" expanded="false" />
-            <element signature="e#11274#11302#0" expanded="false" />
-            <marker date="1491248664000" expanded="true" signature="1423:1435" ph="..." />
-            <marker date="1491248664000" expanded="true" signature="1423:1456" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="234" column="94" lean-forward="false" selection-start-line="234" selection-start-column="94" selection-end-line="234" selection-end-column="94" />
+        <state relative-caret-position="-94">
+          <caret line="93" column="44" lean-forward="false" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="1423" column="40" lean-forward="false" selection-start-line="1423" selection-start-column="40" selection-end-line="1423" selection-end-column="40" />
+        <state relative-caret-position="-1711">
+          <caret line="1371" column="18" lean-forward="false" selection-start-line="1371" selection-start-column="18" selection-end-line="1371" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="231" column="154" lean-forward="false" selection-start-line="231" selection-start-column="154" selection-end-line="231" selection-end-column="154" />
+          <folding>
+            <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#3;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="508" column="4" lean-forward="false" selection-start-line="508" selection-start-column="4" selection-end-line="508" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#2953#3018#0" expanded="false" />
+            <element signature="n#!!block;n#clearCalendar#0" expanded="false" />
+            <element signature="e#7038#7101#0" expanded="false" />
+            <element signature="e#7775#8051#0" expanded="false" />
+            <element signature="e#7823#7853#0" expanded="false" />
+            <element signature="e#8005#8045#0" expanded="false" />
+            <element signature="e#9889#9919#0" expanded="false" />
+            <element signature="n#!!block;n#convertMilitaryToStandardTime#0" expanded="false" />
+            <element signature="e#10535#10566#0" expanded="false" />
+            <element signature="e#10586#10611#0" expanded="false" />
+            <element signature="n#!!block;n#getAmPm#0" expanded="false" />
+            <element signature="e#10691#10719#0" expanded="false" />
+            <element signature="e#10725#10753#0" expanded="false" />
+            <marker date="1491411306000" expanded="true" signature="1423:1435" ph="..." />
+            <marker date="1491411306000" expanded="true" signature="1423:1456" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

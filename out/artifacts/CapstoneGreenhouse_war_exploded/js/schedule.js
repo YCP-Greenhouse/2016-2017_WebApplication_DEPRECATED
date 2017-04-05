@@ -176,7 +176,6 @@ $(document).on('click', '.blank', function() {
     // Get start time
     var tdId = $(this)[0].id;       // Gets id as (h-d)
     var splitId = tdId.split('-');  // Splits id into h and d
-    var startFound = false;
 
     $('#schedule-id').val( $(this).attr("scheduleid") );
 
@@ -197,29 +196,25 @@ $(document).on('click', '.blank', function() {
     var startHour = checkId;
 
     // Get end time
-    var endFound = false;
     var checkId = splitId[0];
     checkId++;
 
     var endHour = checkId;
 
-    // Convert start ID into hour
-    var hour = convertMilitaryToStandardTime(startHour);
-    if( hour == 0 ) {
-        hour = 12;
+    if( startHour < 10 ) {
+        startHour = "0" + startHour;
     }
-    var ampm = getAmPm(startHour);
 
-    $('#start-time').val(hour+ampm);
+    $('#start-time').val(startHour+":00:00");
 
-    // Convert end ID into hour
-    hour = convertMilitaryToStandardTime(endHour);
-    if( hour == 0 ) {
-        hour = 12;
+
+    if( endHour < 10 ) {
+        endHour = "0" + endHour;
     }
-    ampm = getAmPm(endHour);
 
-    $('#end-time').val(hour+ampm);
+    console.log("End hour: " + endHour);
+
+    $('#end-time').val(endHour+":00:00");
 
     // Calculate hours
     var hours = endHour - startHour;
@@ -232,7 +227,7 @@ $(document).on('click', '.light-event', function() {
     $('#schedule-modal').css("display", "block");
 
     $('#modal-title').text('');
-    $('#modal-title').text('Edit Light Event');
+    $('#modal-title').text('Edit Light Schedule');
 
     // Show schedule delete button
     $('#delete-button').css("display", "block");
@@ -298,23 +293,18 @@ $(document).on('click', '.light-event', function() {
 
     var endHour = checkId;
 
-    // Convert start ID into hour
-    var hour = convertMilitaryToStandardTime(startHour);
-    if( hour == 0 ) {
-        hour = 12;
+    if( startHour < 10 ) {
+        startHour = "0" + startHour;
     }
-    var ampm = getAmPm(startHour);
 
-    $('#start-time').val(hour+ampm);
+    $('#start-time').val(startHour+":00:00");
 
-    // Convert end ID into hour
-    hour = convertMilitaryToStandardTime(endHour);
-    if( hour == 0 ) {
-        hour = 12;
+
+    if( endHour < 10 ) {
+        endHour = "0" + endHour;
     }
-    ampm = getAmPm(endHour);
 
-    $('#end-time').val(hour+ampm);
+    $('#end-time').val(endHour+":00:00");
 
     // Calculate hours
     var hours = endHour - startHour;
@@ -328,7 +318,7 @@ $(document).on('click', '.water-event', function() {
     $('#schedule-modal').css("display", "block");
 
     $('#modal-title').text('');
-    $('#modal-title').text('Edit Water Event');
+    $('#modal-title').text('Edit Water Schedule');
 
     // Show schedule delete button
     $('#delete-button').css("display", "block");
@@ -392,23 +382,18 @@ $(document).on('click', '.water-event', function() {
 
     var endHour = checkId;
 
-    // Convert start ID into hour
-    var hour = convertMilitaryToStandardTime(startHour);
-    if( hour == 0 ) {
-        hour = 12;
+    if( startHour < 10 ) {
+        startHour = "0" + startHour;
     }
-    var ampm = getAmPm(startHour);
 
-    $('#start-time').val(hour+ampm);
+    $('#start-time').val(startHour+":00:00");
 
-    // Convert end ID into hour
-    hour = convertMilitaryToStandardTime(endHour);
-    if( hour == 0 ) {
-        hour = 12;
+
+    if( endHour < 10 ) {
+        endHour = "0" + endHour;
     }
-    ampm = getAmPm(endHour);
 
-    $('#end-time').val(hour+ampm);
+    $('#end-time').val(endHour+":00:00");
 
     // Calculate hours
     var hours = endHour - startHour;
@@ -502,4 +487,39 @@ $(document).on('click','#delete-button', function() {
         }
     })
 });
+
+
+// Recalculate hours on time change
+function timeUpdate() {
+    var startTime = $('#start-time').val().split(":")[0];
+    var endTime = $('#end-time').val().split(":")[0];
+    var hours = endTime - startTime;
+
+    if( hours < 0 || hours > 24) {
+        hours = "0";
+    }
+
+    $('#hours').val( hours );
+}
+
+// Recalculate end time on hour change
+function hourUpdate() {
+    var startTime = $('#start-time').val().split(":")[0];
+    var endTime = parseInt(startTime) + parseInt($('#hours').val());
+
+    console.log("End time: " + endTime );
+
+    if( endTime > 23 ) {
+        endTime = 23;
+        $('hours').val(parseInt($('#hours').val()-1));
+    }
+
+    if( endTime < 10 ) {
+        endTime = "0" + endTime;
+    }
+
+    $('#end-time').val(endTime+":00:00");
+}
+
+
 
