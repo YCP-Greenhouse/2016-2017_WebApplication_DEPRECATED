@@ -1,13 +1,7 @@
-/*$(document).ready( function() {
-    zone = 1;
-    getSchedules(1);
-});*/
-
 // Set when user clicks zone 1-6
 var zone;
 
 function getSchedules(zone) {
-    //this.zone = zone;
     $.ajax({
         type: 'GET',
         url: 'api/schedule',
@@ -127,16 +121,6 @@ function populateHeading() {
 
     startDay.setDate( today.getDate() - today.getDay() );
 
-    // Tests
-    var testDate = new Date();
-    //testDate.setDate( today.getDate() - 10 );
-    //startDay.setDate( testDate.getDate() - testDate.getDay() );
-
-    //today.setDate(testDate.getDate());
-
-    //console.log("Test day: " + days[today.getDay()] + " " + (today.getMonth()+1) + "/" + today.getDate());
-    //console.log("Start day: " + days[startDay.getDay()] + " " + (startDay.getMonth()+1) + "/" + startDay.getDate());
-
     // Append dates to days for table headers
     var header = document.getElementById('schedule-heading');
     var row = header.insertRow(0);
@@ -145,8 +129,6 @@ function populateHeading() {
     cell.innerHTML = " ";
 
     for( var i=0; i<7; i++ ) {
-        //console.log( days[i] + " " + (startDay.getMonth()+1) + "/" + startDay.getDate() );
-
         var cell = row.insertCell(-1);
 
         cell.classList.add('schedule-heading');
@@ -241,6 +223,7 @@ $(document).on('click', '.light-event', function() {
 
     // Set schedule type
     $('#schedule-type').val('light');
+    $('#light-radio').attr('checked','checked');
 
     // Find day of column clicked
     var today = new Date();
@@ -275,8 +258,6 @@ $(document).on('click', '.light-event', function() {
     // Get end time
     var endFound = false;
     var checkId = splitId[0];
-
-    //console.log(checkId);
 
     while( !endFound ) {
         checkId++;
@@ -325,6 +306,7 @@ $(document).on('click', '.water-event', function() {
 
     // Set schedule type
     $('#schedule-type').val('water');
+    $('#water-radio').attr('checked','checked');
 
     // Get start time
     var tdId = $(this)[0].id;       // Gets id as (h-d)
@@ -506,7 +488,7 @@ function timeUpdate() {
 function hourUpdate() {
     var startTime = $('#start-time').val().split(":")[0];
     var endTime = parseInt(startTime) + parseInt($('#hours').val());
-    
+
     if( endTime > 23 ) {
         endTime = 23;
         $('hours').val(parseInt($('#hours').val()-1));

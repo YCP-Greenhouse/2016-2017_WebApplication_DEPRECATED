@@ -14,7 +14,7 @@ var vents;
 var heater;
 
 // Query API every 3 seconds
-/*
+var isPaused = false;
 window.setInterval( function() {
 
     $.ajax({
@@ -46,10 +46,12 @@ window.setInterval( function() {
         }
     });
 
-    updateAutomationValues();
+    if( !isPaused ) {
+        updateAutomationValues();
+    }
 
 }, 3000 );
-*/
+
 
 $(document).ready( function() {
 
@@ -119,11 +121,15 @@ $(document).ready( function() {
     // Temperature button handlers
     var timeout = 0;
     $('#temp-low-increase').mousedown(function() {
+        // Pause update timer
+        isPaused = true;
+
         var el = $('#temperature-low');
         var val = 1;
         timeout = window.setInterval( function() { tempChange(el,val,0) }, 150);
 
     }).on('mouseup', function() {
+        isPaused = false;
         clearTimeout(timeout);
         submitAutomationValues();
     });
@@ -136,11 +142,16 @@ $(document).ready( function() {
     });
 
     $('#temp-low-decrease').mousedown(function() {
+
+        // Pause update timer
+        isPaused = true;
+
         var el = $('#temperature-low');
         var val = -1;
         timeout = window.setInterval( function() { tempChange(el,val,0) }, 150);
 
     }).on('mouseup', function() {
+        isPaused = false;
         clearTimeout(timeout);
         submitAutomationValues();
     });
@@ -153,11 +164,15 @@ $(document).ready( function() {
     });
 
     $('#temp-high-increase').mousedown(function() {
+        // Pause update timer
+        isPaused = true;
+
         var el = $('#temperature-high');
         var val = 1;
         timeout = window.setInterval( function() { tempChange(el,val,1) }, 150);
 
     }).on('mouseup', function() {
+        isPaused = false;
         clearTimeout(timeout);
         submitAutomationValues();
     });
@@ -170,11 +185,15 @@ $(document).ready( function() {
     });
 
     $('#temp-high-decrease').mousedown(function() {
+        // Pause update timer
+        isPaused = true;
+
         var el = $('#temperature-high');
         var val = -1;
         timeout = window.setInterval( function() { tempChange(el,val,1) }, 150);
 
     }).on('mouseup', function() {
+        isPauded = false;
         clearTimeout(timeout);
         submitAutomationValues();
     });
@@ -336,6 +355,9 @@ function updateOutput(el, val) {
 // Input: element, value to increment/decrement, high or low
 function tempChange(el, val, type) {
 
+        console.log("TempHigh: " + temphigh + " TempLow: " + templow + " val: " + val);
+
+        // If type == 1, update tempHigh
         if (parseInt(type) == 1) {
             if( parseInt(val) == 1 ) {
                 if( temphigh < 120 )
@@ -350,10 +372,17 @@ function tempChange(el, val, type) {
                 el.html('');
                 el.html(temphigh + "&deg;");
             }
+
+        // If type == 0, update tempLow
         } else {
             if( parseInt(val) == 1 ) {
-                if( templow < temphigh )
+                if( parseInt(templow) < parseInt(temphigh) ) {
                     templow++;
+                    console.log("Increment templow to " + templow);
+                }
+
+
+
 
                 el.html('');
                 el.html(templow + "&deg;");
@@ -365,6 +394,7 @@ function tempChange(el, val, type) {
                 el.html(templow + "&deg;");
             }
         }
+
 }
 
 function updateAutomationValues() {

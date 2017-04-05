@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/ScheduleAPI.java" afterPath="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/greenhouse.css" afterPath="$PROJECT_DIR$/web/css/greenhouse.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/automation.js" afterPath="$PROJECT_DIR$/web/js/automation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/schedule.js" afterPath="$PROJECT_DIR$/web/js/schedule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/settings.jsp" afterPath="$PROJECT_DIR$/web/views/settings.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,28 +56,79 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="schedule.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="schedule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="508" column="4" lean-forward="false" selection-start-line="508" selection-start-column="4" selection-end-line="508" selection-end-column="4" />
+            <state relative-caret-position="17">
+              <caret line="220" column="0" lean-forward="true" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#2953#3018#0" expanded="false" />
+                <element signature="e#2853#2918#0" expanded="false" />
                 <element signature="n#!!block;n#clearCalendar#0" expanded="false" />
-                <element signature="e#7038#7101#0" expanded="false" />
-                <element signature="e#7775#8051#0" expanded="false" />
-                <element signature="e#7823#7853#0" expanded="false" />
-                <element signature="e#8005#8045#0" expanded="false" />
-                <element signature="e#9889#9919#0" expanded="false" />
+                <element signature="e#7171#7447#0" expanded="false" />
+                <element signature="e#7219#7249#0" expanded="false" />
+                <element signature="e#7401#7441#0" expanded="false" />
+                <element signature="e#9334#9364#0" expanded="false" />
                 <element signature="n#!!block;n#convertMilitaryToStandardTime#0" expanded="false" />
-                <element signature="e#10535#10566#0" expanded="false" />
-                <element signature="e#10586#10611#0" expanded="false" />
+                <element signature="e#9980#10011#0" expanded="false" />
+                <element signature="e#10031#10056#0" expanded="false" />
                 <element signature="n#!!block;n#getAmPm#0" expanded="false" />
-                <element signature="e#10691#10719#0" expanded="false" />
-                <element signature="e#10725#10753#0" expanded="false" />
-                <marker date="1491411306000" expanded="true" signature="1423:1435" ph="..." />
-                <marker date="1491411306000" expanded="true" signature="1423:1456" ph="..." />
+                <element signature="e#10136#10164#0" expanded="false" />
+                <element signature="e#10170#10198#0" expanded="false" />
+                <marker date="1491411569000" expanded="true" signature="1323:1335" ph="..." />
+                <marker date="1491411569000" expanded="true" signature="1323:1356" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="automation.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/automation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="356" column="4" lean-forward="false" selection-start-line="356" selection-start-column="4" selection-end-line="356" selection-end-column="4" />
+              <folding>
+                <element signature="e#1330#1879#0" expanded="false" />
+                <element signature="e#1885#2716#0" expanded="false" />
+                <element signature="e#2753#3562#0" expanded="false" />
+                <element signature="e#2839#3556#0" expanded="false" />
+                <element signature="e#2967#3035#0" expanded="false" />
+                <element signature="e#3067#3135#0" expanded="false" />
+                <element signature="e#3165#3231#0" expanded="false" />
+                <element signature="e#3261#3329#0" expanded="false" />
+                <element signature="e#3670#3820#0" expanded="false" />
+                <element signature="e#3885#3924#0" expanded="false" />
+                <element signature="e#3961#4003#0" expanded="false" />
+                <element signature="e#5058#5191#0" expanded="false" />
+                <element signature="e#5627#5760#0" expanded="false" />
+                <element signature="e#6197#6331#0" expanded="false" />
+                <element signature="e#6341#6370#0" expanded="false" />
+                <element signature="e#6688#7835#0" expanded="false" />
+                <element signature="e#6937#6974#0" expanded="false" />
+                <element signature="e#7092#7829#0" expanded="false" />
+                <element signature="e#7113#7546#0" expanded="false" />
+                <element signature="e#7202#7532#0" expanded="false" />
+                <element signature="e#10233#10819#0" expanded="false" />
+                <element signature="n#!!block;n#drawScheduleTable#0" expanded="false" />
+                <element signature="n#!!block;n#updateOutput#0" expanded="false" />
+                <element signature="n#!!block;n#updateAutomationValues#0" expanded="false" />
+                <element signature="e#12096#12683#0" expanded="false" />
+                <element signature="e#12188#12677#0" expanded="false" />
+                <element signature="n#!!block;n#submitAutomationValues#0" expanded="false" />
+                <element signature="e#12736#13000#0" expanded="false" />
+                <element signature="e#12806#12994#0" expanded="false" />
+                <element signature="e#13807#13988#0" expanded="false" />
+                <element signature="e#13885#13970#0" expanded="false" />
+                <element signature="e#14030#14153#0" expanded="false" />
+                <marker date="1491412752000" expanded="true" signature="281:1179" ph="{...}" />
+                <marker date="1491412752000" expanded="true" signature="295:1111" ph="{&quot;type&quot;: 'GET'...}" />
+                <marker date="1491412752000" expanded="true" signature="381:1105" ph="{...}" />
+                <marker date="1491412752000" expanded="false" signature="524:635" ph="{...}" />
+                <marker date="1491412752000" expanded="false" signature="682:793" ph="{...}" />
+                <marker date="1491412752000" expanded="false" signature="836:941" ph="{...}" />
+                <marker date="1491412752000" expanded="false" signature="986:1095" ph="{...}" />
+                <marker date="1491412752000" expanded="false" signature="1534:1556" ph="..." />
+                <marker date="1491412752000" expanded="false" signature="2208:2230" ph="..." />
+                <marker date="1491412752000" expanded="false" signature="2594:2610" ph="..." />
               </folding>
             </state>
           </provider>
@@ -88,8 +137,8 @@
       <file leaf-file-name="settings.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="231" column="154" lean-forward="false" selection-start-line="231" selection-start-column="154" selection-end-line="231" selection-end-column="154" />
+            <state relative-caret-position="249">
+              <caret line="232" column="104" lean-forward="true" selection-start-line="232" selection-start-column="104" selection-end-line="232" selection-end-column="115" />
               <folding>
                 <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#span#3;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -160,11 +209,9 @@
       <file leaf-file-name="AutomationAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/AutomationAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="195">
               <caret line="27" column="76" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="76" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -194,7 +241,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>switch-la</find>
       <find>temperature-bu</find>
       <find>container</find>
       <find>light-title</find>
@@ -224,6 +270,7 @@
       <find>schedu</find>
       <find>calendar</find>
       <find>start-time</find>
+      <find>temp</find>
     </findStrings>
     <replaceStrings>
       <replace>size=&quot;7&quot;</replace>
@@ -291,7 +338,6 @@
         <option value="$PROJECT_DIR$/src/servlet/IndexServlet.java" />
         <option value="$PROJECT_DIR$/src/api/SensorAPI.java" />
         <option value="$PROJECT_DIR$/src/controller/SensorController.java" />
-        <option value="$PROJECT_DIR$/web/js/automation.js" />
         <option value="$PROJECT_DIR$/src/model/ScheduleModel.java" />
         <option value="$PROJECT_DIR$/src/controller/ScheduleController.java" />
         <option value="$PROJECT_DIR$/src/controller/AutomationController.java" />
@@ -299,6 +345,7 @@
         <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
         <option value="$PROJECT_DIR$/web/views/settings.jsp" />
         <option value="$PROJECT_DIR$/web/js/schedule.js" />
+        <option value="$PROJECT_DIR$/web/js/automation.js" />
       </list>
     </option>
   </component>
@@ -1179,12 +1226,12 @@
       <workItem from="1490888087280" duration="10000000" />
       <workItem from="1491071939680" duration="36987000" />
       <workItem from="1491190298788" duration="12591000" />
-      <workItem from="1491405574941" duration="5028000" />
+      <workItem from="1491405574941" duration="6469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="499153000" />
+    <option name="totallyTimeSpent" value="500594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="6" />
@@ -1213,7 +1260,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4717742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13172042" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18955651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1579,87 +1626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/automation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="295" column="41" lean-forward="false" selection-start-line="295" selection-start-column="41" selection-end-line="295" selection-end-column="41" />
-          <folding>
-            <element signature="e#1281#1830#0" expanded="false" />
-            <element signature="e#1836#2667#0" expanded="false" />
-            <element signature="e#2704#3513#0" expanded="false" />
-            <element signature="e#2790#3507#0" expanded="false" />
-            <element signature="e#2918#2986#0" expanded="false" />
-            <element signature="e#3018#3086#0" expanded="false" />
-            <element signature="e#3116#3182#0" expanded="false" />
-            <element signature="e#3212#3280#0" expanded="false" />
-            <element signature="e#3621#3771#0" expanded="false" />
-            <element signature="e#3836#3875#0" expanded="false" />
-            <element signature="e#3912#3954#0" expanded="false" />
-            <element signature="e#4062#4212#0" expanded="false" />
-            <element signature="e#4239#4311#0" expanded="false" />
-            <element signature="e#4360#4492#0" expanded="false" />
-            <element signature="e#4545#4696#0" expanded="false" />
-            <element signature="e#4723#4795#0" expanded="false" />
-            <element signature="e#4844#4977#0" expanded="false" />
-            <element signature="e#5031#5182#0" expanded="false" />
-            <element signature="e#5209#5281#0" expanded="false" />
-            <element signature="e#5331#5464#0" expanded="false" />
-            <element signature="e#5518#5670#0" expanded="false" />
-            <element signature="e#5697#5769#0" expanded="false" />
-            <element signature="e#5819#5953#0" expanded="false" />
-            <element signature="e#5963#5992#0" expanded="false" />
-            <element signature="e#6310#7457#0" expanded="false" />
-            <element signature="e#6559#6596#0" expanded="false" />
-            <element signature="e#6714#7451#0" expanded="false" />
-            <element signature="e#6735#7168#0" expanded="false" />
-            <element signature="e#6824#7154#0" expanded="false" />
-            <element signature="e#9855#10441#0" expanded="false" />
-            <element signature="n#!!block;n#drawScheduleTable#0" expanded="false" />
-            <element signature="n#!!block;n#updateOutput#0" expanded="false" />
-            <element signature="e#10613#10659#0" expanded="false" />
-            <element signature="n#!!block;n#tempChange#0" expanded="false" />
-            <element signature="e#10792#11163#0" expanded="false" />
-            <element signature="e#10831#10990#0" expanded="false" />
-            <element signature="e#10996#11153#0" expanded="false" />
-            <element signature="e#11169#11540#0" expanded="false" />
-            <element signature="e#11208#11369#0" expanded="false" />
-            <element signature="e#11375#11530#0" expanded="false" />
-            <element signature="n#!!block;n#updateAutomationValues#0" expanded="false" />
-            <element signature="e#11591#12178#0" expanded="false" />
-            <element signature="e#11683#12172#0" expanded="false" />
-            <element signature="n#!!block;n#submitAutomationValues#0" expanded="false" />
-            <element signature="e#12231#12495#0" expanded="false" />
-            <element signature="e#12301#12489#0" expanded="false" />
-            <element signature="n#!!block;n#getAutomationValues#0" expanded="false" />
-            <element signature="e#12574#13666#0" expanded="false" />
-            <element signature="e#12665#13660#0" expanded="false" />
-            <element signature="e#13302#13483#0" expanded="false" />
-            <element signature="e#13380#13465#0" expanded="false" />
-            <element signature="e#13525#13648#0" expanded="false" />
-            <marker date="1491163308000" expanded="false" signature="262:1128" ph="{...}" />
-            <marker date="1491163308000" expanded="false" signature="276:1092" ph="{&quot;type&quot;: 'GET'...}" />
-            <marker date="1491163308000" expanded="false" signature="362:1086" ph="{...}" />
-            <marker date="1491163308000" expanded="false" signature="505:616" ph="{...}" />
-            <marker date="1491163308000" expanded="false" signature="663:774" ph="{...}" />
-            <marker date="1491163308000" expanded="false" signature="817:922" ph="{...}" />
-            <marker date="1491163308000" expanded="false" signature="967:1076" ph="{...}" />
-            <marker date="1491163308000" expanded="false" signature="1485:1507" ph="..." />
-            <marker date="1491163308000" expanded="false" signature="2159:2181" ph="..." />
-            <marker date="1491163308000" expanded="false" signature="2545:2561" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/AutomationAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="27" column="76" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ScheduleController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
@@ -1754,8 +1720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="231" column="154" lean-forward="false" selection-start-line="231" selection-start-column="154" selection-end-line="231" selection-end-column="154" />
+        <state relative-caret-position="249">
+          <caret line="232" column="104" lean-forward="true" selection-start-line="232" selection-start-column="104" selection-end-line="232" selection-end-column="115" />
           <folding>
             <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#span#3;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1765,25 +1731,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/schedule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="508" column="4" lean-forward="false" selection-start-line="508" selection-start-column="4" selection-end-line="508" selection-end-column="4" />
+        <state relative-caret-position="17">
+          <caret line="220" column="0" lean-forward="true" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#2953#3018#0" expanded="false" />
+            <element signature="e#2853#2918#0" expanded="false" />
             <element signature="n#!!block;n#clearCalendar#0" expanded="false" />
-            <element signature="e#7038#7101#0" expanded="false" />
-            <element signature="e#7775#8051#0" expanded="false" />
-            <element signature="e#7823#7853#0" expanded="false" />
-            <element signature="e#8005#8045#0" expanded="false" />
-            <element signature="e#9889#9919#0" expanded="false" />
+            <element signature="e#7171#7447#0" expanded="false" />
+            <element signature="e#7219#7249#0" expanded="false" />
+            <element signature="e#7401#7441#0" expanded="false" />
+            <element signature="e#9334#9364#0" expanded="false" />
             <element signature="n#!!block;n#convertMilitaryToStandardTime#0" expanded="false" />
-            <element signature="e#10535#10566#0" expanded="false" />
-            <element signature="e#10586#10611#0" expanded="false" />
+            <element signature="e#9980#10011#0" expanded="false" />
+            <element signature="e#10031#10056#0" expanded="false" />
             <element signature="n#!!block;n#getAmPm#0" expanded="false" />
-            <element signature="e#10691#10719#0" expanded="false" />
-            <element signature="e#10725#10753#0" expanded="false" />
-            <marker date="1491411306000" expanded="true" signature="1423:1435" ph="..." />
-            <marker date="1491411306000" expanded="true" signature="1423:1456" ph="..." />
+            <element signature="e#10136#10164#0" expanded="false" />
+            <element signature="e#10170#10198#0" expanded="false" />
+            <marker date="1491411569000" expanded="true" signature="1323:1335" ph="..." />
+            <marker date="1491411569000" expanded="true" signature="1323:1356" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/AutomationAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="27" column="76" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/automation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="356" column="4" lean-forward="false" selection-start-line="356" selection-start-column="4" selection-end-line="356" selection-end-column="4" />
+          <folding>
+            <element signature="e#1330#1879#0" expanded="false" />
+            <element signature="e#1885#2716#0" expanded="false" />
+            <element signature="e#2753#3562#0" expanded="false" />
+            <element signature="e#2839#3556#0" expanded="false" />
+            <element signature="e#2967#3035#0" expanded="false" />
+            <element signature="e#3067#3135#0" expanded="false" />
+            <element signature="e#3165#3231#0" expanded="false" />
+            <element signature="e#3261#3329#0" expanded="false" />
+            <element signature="e#3670#3820#0" expanded="false" />
+            <element signature="e#3885#3924#0" expanded="false" />
+            <element signature="e#3961#4003#0" expanded="false" />
+            <element signature="e#5058#5191#0" expanded="false" />
+            <element signature="e#5627#5760#0" expanded="false" />
+            <element signature="e#6197#6331#0" expanded="false" />
+            <element signature="e#6341#6370#0" expanded="false" />
+            <element signature="e#6688#7835#0" expanded="false" />
+            <element signature="e#6937#6974#0" expanded="false" />
+            <element signature="e#7092#7829#0" expanded="false" />
+            <element signature="e#7113#7546#0" expanded="false" />
+            <element signature="e#7202#7532#0" expanded="false" />
+            <element signature="e#10233#10819#0" expanded="false" />
+            <element signature="n#!!block;n#drawScheduleTable#0" expanded="false" />
+            <element signature="n#!!block;n#updateOutput#0" expanded="false" />
+            <element signature="n#!!block;n#updateAutomationValues#0" expanded="false" />
+            <element signature="e#12096#12683#0" expanded="false" />
+            <element signature="e#12188#12677#0" expanded="false" />
+            <element signature="n#!!block;n#submitAutomationValues#0" expanded="false" />
+            <element signature="e#12736#13000#0" expanded="false" />
+            <element signature="e#12806#12994#0" expanded="false" />
+            <element signature="e#13807#13988#0" expanded="false" />
+            <element signature="e#13885#13970#0" expanded="false" />
+            <element signature="e#14030#14153#0" expanded="false" />
+            <marker date="1491412752000" expanded="true" signature="281:1179" ph="{...}" />
+            <marker date="1491412752000" expanded="true" signature="295:1111" ph="{&quot;type&quot;: 'GET'...}" />
+            <marker date="1491412752000" expanded="true" signature="381:1105" ph="{...}" />
+            <marker date="1491412752000" expanded="false" signature="524:635" ph="{...}" />
+            <marker date="1491412752000" expanded="false" signature="682:793" ph="{...}" />
+            <marker date="1491412752000" expanded="false" signature="836:941" ph="{...}" />
+            <marker date="1491412752000" expanded="false" signature="986:1095" ph="{...}" />
+            <marker date="1491412752000" expanded="false" signature="1534:1556" ph="..." />
+            <marker date="1491412752000" expanded="false" signature="2208:2230" ph="..." />
+            <marker date="1491412752000" expanded="false" signature="2594:2610" ph="..." />
           </folding>
         </state>
       </provider>
