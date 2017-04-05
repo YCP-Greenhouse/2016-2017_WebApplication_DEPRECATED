@@ -14,6 +14,7 @@ var vents;
 var heater;
 
 // Query API every 3 seconds
+/*
 window.setInterval( function() {
 
     $.ajax({
@@ -48,6 +49,7 @@ window.setInterval( function() {
     updateAutomationValues();
 
 }, 3000 );
+*/
 
 $(document).ready( function() {
 
@@ -225,7 +227,77 @@ $(document).ready( function() {
         $('#container').css("filter","blur(4px)");
 
         $('#zone-modal').css("display", "block");
-        $('#zone-title').text("ZONE 1");
+        $('#zone-title').text("ZONE 1 SCHEDULE");
+        $('#schedule-type').val('water');
+
+        // Set zone ID
+        $('#zoneid').val(1);
+        getSchedules($('#zoneid').val());
+    });
+
+    $('#zone-2').click(function() {
+        //$('#container').css("transform", "scale(1.02)");
+        $('#container').css("filter","blur(4px)");
+
+        $('#zone-modal').css("display", "block");
+        $('#zone-title').text("ZONE 2 SCHEDULE");
+        $('#schedule-type').val('water');
+
+        // Set zone ID
+        $('#zoneid').val(2);
+        getSchedules($('#zoneid').val());
+    });
+
+    $('#zone-3').click(function() {
+        //$('#container').css("transform", "scale(1.02)");
+        $('#container').css("filter","blur(4px)");
+
+        $('#zone-modal').css("display", "block");
+        $('#zone-title').text("ZONE 3 SCHEDULE");
+        $('#schedule-type').val('water');
+
+        // Set zone ID
+        $('#zoneid').val(3);
+        getSchedules($('#zoneid').val());
+    });
+
+    $('#zone-4').click(function() {
+        //$('#container').css("transform", "scale(1.02)");
+        $('#container').css("filter","blur(4px)");
+
+        $('#zone-modal').css("display", "block");
+        $('#zone-title').text("ZONE 4 SCHEDULE");
+        $('#schedule-type').val('water');
+
+        // Set zone ID
+        $('#zoneid').val(4);
+        getSchedules($('#zoneid').val());
+    });
+
+    $('#zone-5').click(function() {
+        //$('#container').css("transform", "scale(1.02)");
+        $('#container').css("filter","blur(4px)");
+
+        $('#zone-modal').css("display", "block");
+        $('#zone-title').text("ZONE 5 SCHEDULE");
+        $('#schedule-type').val('water');
+
+        // Set zone ID
+        $('#zoneid').val(5);
+        getSchedules($('#zoneid').val());
+    });
+
+    $('#zone-6').click(function() {
+        //$('#container').css("transform", "scale(1.02)");
+        $('#container').css("filter","blur(4px)");
+
+        $('#zone-modal').css("display", "block");
+        $('#zone-title').text("ZONE 6 SCHEDULE");
+        $('#schedule-type').val('water');
+
+        // Set zone ID
+        $('#zoneid').val(6);
+        getSchedules($('#zoneid').val());
     });
 
     /*
@@ -311,6 +383,9 @@ function updateAutomationValues() {
 
             $('#temperature-low').html(templow + "&deg;");
             $('#temperature-high').html(temphigh + "&deg;");
+            $('#light-val').html(light);
+
+            $('input[type="range"]').val(light).change();
         }
     });
 }

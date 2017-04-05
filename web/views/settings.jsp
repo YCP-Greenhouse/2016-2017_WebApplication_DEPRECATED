@@ -79,11 +79,10 @@
                     </div>
 
                     <!-- Bottom table row -->
-                    <!--
                     <div class="bottom-table-div">
                         <div class="small-table" style="margin-right: 20px;" id="zone-5">ZONE 5</div>
                         <div class="small-table" id="zone-6">ZONE 6</div>
-                    </div> -->
+                    </div>
                 </div>
 
                 <div class="light-control-panel">
@@ -104,16 +103,16 @@
             <div class="bottom-controls-panel">
                 <!-- Manual Controls Section -->
                 <div class="manual-panel-1"></div>
-                <div class="manual-panel-2">
-                    <div class="controls-title">CONTROLS</div>
-                    <label class="light-switch switch-left-right">
+                <div class="manual-panel-title">GLOBAL CONTROLS</div>
+                <div class="manual-panel-2"></div>
+                <div class="manual-panel-3">
+                    <label class="switch switch-left-right">
                         <input id="light-check" class="switch-input" type="checkbox" />
                         <span id="light-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
                         <span class="switch-handle"></span>
+                        <div class="control-caption">LIGHTS</div>
                     </label>
-                    <div class="control-caption">LIGHTS</div>
-                </div>
-                <div class="manual-panel-3">
+
                     <label class="switch switch-left-right">
                         <input id="shade-check" class="switch-input" name="shade-switch" type="checkbox" />
                         <span id="shade-switch" class="switch-label" data-on="Open" data-off="Closed"></span>
@@ -135,11 +134,46 @@
                         <span class="switch-handle"></span>
                         <div class="control-caption">WATER</div>
                     </label>
+
+
                 </div>
+
                 <!-- End Manual Controls Section -->
 
                 <!-- Temperature Section -->
-                <div class="manual-panel-1"></div>
+
+                <div class="manual-panel-1" style="margin-top:-10px; margin-left:30px;"></div>
+                <div class="manual-light-title">TEMPERATURE</div>
+                <div class="manual-panel-4"></div>
+                <div class="manual-panel-5">
+                    <div style="float: left; width: 50%;">
+                        <div class="temperature-label">
+                            <span class="temperature-value" id="temperature-low"></span>
+                            <span class="temp-f">F</span>
+                            <div class="control-caption-2">LOW</div>
+                        </div>
+
+                        <div class="temperature-buttons">
+                            <div class="temperature-button" id="temp-low-increase">+</div>
+                            <div class="temperature-button" id="temp-low-decrease">-</div>
+                        </div>
+                    </div>
+
+                    <div style="float: left; width: 50%;">
+                        <div class="temperature-label">
+                            <span class="temperature-value" id="temperature-high"></span>
+                            <span class="temp-f">F</span>
+                            <div class="control-caption-2">HIGH</div>
+                        </div>
+
+                        <div class="temperature-buttons">
+                            <div class="temperature-button" id="temp-high-increase">+</div>
+                            <div class="temperature-button" id="temp-high-decrease">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
                 <div class="manual-panel-5">
                     <div class="controls-title">TEMPERATURE</div>
                     <div class="temperature-label">
@@ -175,8 +209,7 @@
 
     <div id="zone-modal" class="zone-modal">
         <div class="zone-modal-content">
-            <span class="zone-title" id="zone-title"></span>
-            <div class="schedule-title">LIGHT SCHEDULE</div>
+            <div class="schedule-title" id="zone-title">SCHEDULE</div>
             <button id="schedule-close" class="schedule-close-button">CLOSE</button>
 
             <div id="calendar" class="calendar-div">
@@ -195,9 +228,11 @@
 
             <div id="schedule-modal" class="add-schedule-modal">
                 <div class="add-schedule">
-                    <span>Start Time: </span><input type="text" id="start-time"><br>
-                    <span>End Time: </span><input type="text" id="end-time"><br>
+                    <span id="modal-title"></span><br><br>
+                    <span>Start Time: </span><input type="time" id="start-time"><br>
+                    <span>End Time: </span><input type="time" id="end-time"><br>
                     <span>Hours: </span><input type="text" id="hours"><br>
+                    <span>Type: <input id="water-radio" type="radio" name="type" value="water">Water</span><input id="light-radio" type="radio" name="type" value="light">Light</span><br><br>
                     <input type="hidden" id="inverse" value="0">
                     <input type="hidden" id="schedule-date">
                     <input type="hidden" id="schedule-id">
@@ -207,6 +242,7 @@
                     <div class="schedule-buttons">
                         <button id="close-button">Close</button>
                         <button id="save-button">Save</button>
+                        <button id="delete-button">Delete</button>
                     </div>
 
                 </div>

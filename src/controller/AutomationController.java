@@ -14,6 +14,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -74,51 +75,6 @@ public class AutomationController {
 
         // Get next light starts
         obj = getNextLightSchedules(obj);
-
-
-        /*
-        // Get schedule entries
-        HashMap<Integer, ScheduleModel> lightSchedule = getLightSchedule();
-        HashMap<Integer, ScheduleModel> waterSchedule = getWaterSchedule();
-
-        try {
-
-            // Create JSON array of schedule entries
-            JSONArray light = new JSONArray();
-            for (int i = 0; i < lightSchedule.size(); i++) {
-                JSONObject lightObj = new JSONObject();
-
-                lightObj.put( "id", lightSchedule.get(i).getId() );
-                lightObj.put( "zone", lightSchedule.get(i).getZoneID() );
-                lightObj.put( "start", lightSchedule.get(i).getStartTime() );
-                lightObj.put( "end", lightSchedule.get(i).getEndTime() );
-                lightObj.put( "hours", lightSchedule.get(i).getHours() );
-
-                light.put(lightObj);
-            }
-
-            obj.put( "lightschedule", light );
-
-            // Create JSON array of schedule entries
-            JSONArray water = new JSONArray();
-            for (int i = 0; i < waterSchedule.size(); i++) {
-                JSONObject waterObj = new JSONObject();
-
-                waterObj.put( "id", waterSchedule.get(i).getId() );
-                waterObj.put( "zone", waterSchedule.get(i).getZoneID() );
-                waterObj.put( "start", waterSchedule.get(i).getStartTime() );
-                waterObj.put( "end", waterSchedule.get(i).getEndTime() );
-                waterObj.put( "hours", waterSchedule.get(i).getHours() );
-
-                water.put(waterObj);
-            }
-
-            obj.put( "waterschedule", water );
-
-        } catch( JSONException e ) {
-
-        }
-        */
 
         return obj;
     }
@@ -321,9 +277,10 @@ public class AutomationController {
 
                 schedule.setId(rs.getInt(1));
                 schedule.setZoneID(rs.getInt(2));
-                schedule.setStartTime(rs.getString(3));
-                schedule.setEndTime(rs.getString(4));
-                schedule.setHours(rs.getInt(5));
+                schedule.setDay(rs.getInt(3));
+                schedule.setStartTime(rs.getString(4));
+                schedule.setEndTime(rs.getString(5));
+                schedule.setHours(rs.getInt(6));
 
                 lightSchedule.put(schedule.getId(), schedule);
             }
@@ -371,9 +328,10 @@ public class AutomationController {
 
                 schedule.setId(rs.getInt(1));
                 schedule.setZoneID(rs.getInt(2));
-                schedule.setStartTime(rs.getString(3));
-                schedule.setEndTime(rs.getString(4));
-                schedule.setHours(rs.getInt(5));
+                schedule.setDay(rs.getInt(3));
+                schedule.setStartTime(rs.getString(4));
+                schedule.setEndTime(rs.getString(5));
+                schedule.setHours(rs.getInt(6));
 
                 waterSchedule.put(schedule.getId(), schedule);
             }
@@ -394,35 +352,51 @@ public class AutomationController {
     public JSONObject getNextWaterSchedules( JSONObject obj ) {
         HashMap<Integer, ScheduleModel> waterSchedule = getWaterSchedule();
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-
         // Key: Zone, Value: Schedule object
-        HashMap<Integer, ScheduleModel > nextWaterStarts = new HashMap<>();
+        HashMap<Integer, ScheduleModel> nextWaterStarts = new HashMap<>();
+
+        // Get today as day of the week 0-6
+        Date now = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(now);
+
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
 
         try {
+            // Iterate through each zone
+            for( int i=1; i<=6; i++ ) {
 
-            // Iterate through water schedule to find next entries for each zone
-            for (HashMap.Entry<Integer, ScheduleModel> schedule : waterSchedule.entrySet()) {
-                ScheduleModel evalSchedule = schedule.getValue();
 
-                // If nextWaterStarts doesn't contain key, add entry
-                if (!nextWaterStarts.containsKey(evalSchedule.getZoneID())) {
-                    nextWaterStarts.put(evalSchedule.getZoneID(), evalSchedule);
+                    // Iterate through water schedule to find today's schedules
+                    for (HashMap.Entry<Integer, ScheduleModel> schedule : waterSchedule.entrySet()) {
+                        ScheduleModel evalSchedule = schedule.getValue();
 
-                    // Else, check if start time is earlier than current start time
-                } else {
-                    Date scheduleStartTime = dateFormat.parse(evalSchedule.getStartTime());
-                    Date currentStartTime = dateFormat.parse(nextWaterStarts.get(evalSchedule.getZoneID()).getStartTime());
+                        // Check that schedule matches current zone (i)
+                        if( evalSchedule.getZoneID() == i ) {
 
-                    // If currentStartTime comes after scheduleStartTime, set schedule as next
-                    if( currentStartTime.after(scheduleStartTime) ) {
-                        nextWaterStarts.remove( evalSchedule.getZoneID() );
-                        nextWaterStarts.put( evalSchedule.getZoneID(), evalSchedule );
-                    }
+                            // If schedule day matches today, look for next start time
+                            if( evalSchedule.getDay() == dayOfWeek && Integer.parseInt(evalSchedule.getStartTime().split(":")[0]) >= currentHour ) {
+                                // If zone ID doesn't have entry, add current schedule
+                                if( !nextWaterStarts.containsKey(evalSchedule.getZoneID())) {
+                                    nextWaterStarts.put( i, evalSchedule );
+
+                                // Else evaluate if current schedule occurs before nextWaterStarts schedule
+                                } else {
+                                    if( Integer.parseInt(evalSchedule.getStartTime().split(":")[0]) < Integer.parseInt(nextWaterStarts.get(i).getStartTime().split(":")[0] )) {
+                                        nextWaterStarts.remove(i);
+                                        nextWaterStarts.put( i, evalSchedule );
+                                    }
+                                }
+
+                            }
+                        }
+
+
                 }
             }
 
-            // Add nextWaterStarts to JSON Object
+            // Add WaterStarts to JSON obj
             JSONObject startObj = new JSONObject();
             JSONObject endObj = new JSONObject();
             for( HashMap.Entry<Integer, ScheduleModel> schedule : nextWaterStarts.entrySet() ) {
@@ -435,13 +409,10 @@ public class AutomationController {
 
             obj.put("WaterStarts", startObj);
             obj.put("WaterEnds", endObj);
-
-        } catch( ParseException e ) {
-
+             
         } catch( JSONException e ) {
-
+            
         }
-
 
         return obj;
     }
@@ -449,54 +420,71 @@ public class AutomationController {
     public JSONObject getNextLightSchedules( JSONObject obj ) {
         HashMap<Integer, ScheduleModel> lightSchedule = getLightSchedule();
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-
         // Key: Zone, Value: Schedule object
-        HashMap<Integer, ScheduleModel > nextLightStarts = new HashMap<>();
+        HashMap<Integer, ScheduleModel> nextLightStarts = new HashMap<>();
+
+        // Get today as day of the week 0-6
+        Date now = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(now);
+
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+
+        // Subtract 1 to coincide with (0-6) scale. Calendar returns days as (1-7)
+        dayOfWeek--;
+        int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+
 
         try {
+            // Iterate through each zone
+            for (int i = 1; i <= 6; i++) {
 
-            // Iterate through water schedule to find next entries for each zone
-            for (HashMap.Entry<Integer, ScheduleModel> schedule : lightSchedule.entrySet()) {
-                ScheduleModel evalSchedule = schedule.getValue();
+                    // Iterate through water schedule to find today's schedules
+                    for (HashMap.Entry<Integer, ScheduleModel> schedule : lightSchedule.entrySet()) {
+                        ScheduleModel evalSchedule = schedule.getValue();
 
-                // If nextLightStarts doesn't contain key, add entry
-                if (!nextLightStarts.containsKey(evalSchedule.getZoneID())) {
-                    nextLightStarts.put(evalSchedule.getZoneID(), evalSchedule);
+                        // Check that schedule matches current zone (i)
+                        if (evalSchedule.getZoneID() == i) {
 
-                    // Else, check if start time is earlier than current start time
-                } else {
-                    Date scheduleStartTime = dateFormat.parse(evalSchedule.getStartTime());
-                    Date currentStartTime = dateFormat.parse(nextLightStarts.get(evalSchedule.getZoneID()).getStartTime());
+                            //System.out.println("Current zone: " + i + "\nEvalSchedule ID: " + evalSchedule.getId() + "\nEvalSchedule Day: " + evalSchedule.getDay() + "\nEvalSchedule start: " + Integer.parseInt(evalSchedule.getStartTime().split(":")[0]) );
 
-                    // If currentStartTime comes after scheduleStartTime, set schedule as next
-                    if( currentStartTime.after(scheduleStartTime) ) {
-                        nextLightStarts.remove( evalSchedule.getZoneID() );
-                        nextLightStarts.put( evalSchedule.getZoneID(), evalSchedule );
-                    }
+                            // If schedule day matches today, look for next start time
+                            if (evalSchedule.getDay() == dayOfWeek && Integer.parseInt(evalSchedule.getStartTime().split(":")[0]) > currentHour) {
+                                // If zone ID doesn't have entry, add current schedule
+                                if (!nextLightStarts.containsKey(evalSchedule.getZoneID())) {
+                                    nextLightStarts.put(i, evalSchedule);
+
+                                    // Else evaluate if current schedule occurs before nextWaterStarts schedule
+                                } else {
+                                    if (Integer.parseInt(evalSchedule.getStartTime().split(":")[0]) < Integer.parseInt(nextLightStarts.get(i).getStartTime().split(":")[0])) {
+                                        nextLightStarts.remove(i);
+                                        nextLightStarts.put(i, evalSchedule);
+                                    }
+                                }
+
+                            }
+                        }
+
                 }
             }
 
-            // Add nextLightStarts to JSON Object
+            // Add WaterStarts to JSON obj
             JSONObject startObj = new JSONObject();
             JSONObject endObj = new JSONObject();
-            for( HashMap.Entry<Integer, ScheduleModel> schedule : nextLightStarts.entrySet() ) {
+            for (HashMap.Entry<Integer, ScheduleModel> schedule : nextLightStarts.entrySet()) {
                 ScheduleModel evalSchedule = schedule.getValue();
 
                 String zoneID = Integer.toString(evalSchedule.getZoneID());
-                startObj.put( zoneID , evalSchedule.getStartTime() );
-                endObj.put( zoneID, evalSchedule.getEndTime() );
+                startObj.put(zoneID, evalSchedule.getStartTime());
+                endObj.put(zoneID, evalSchedule.getEndTime());
             }
 
             obj.put("LightStarts", startObj);
             obj.put("LightEnds", endObj);
 
-        } catch( ParseException e ) {
-
-        } catch( JSONException e ) {
+        } catch (JSONException e) {
 
         }
-
 
         return obj;
     }

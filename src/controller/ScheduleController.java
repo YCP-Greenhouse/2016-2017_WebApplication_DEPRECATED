@@ -36,6 +36,7 @@ public class ScheduleController {
 
                 lightObj.put( "id", lightSchedule.get(key).getId() );
                 lightObj.put( "zone", lightSchedule.get(key).getZoneID() );
+                lightObj.put( "day", lightSchedule.get(key).getDay() );
                 lightObj.put( "start", lightSchedule.get(key).getStartTime() );
                 lightObj.put( "end", lightSchedule.get(key).getEndTime() );
                 lightObj.put( "hours", lightSchedule.get(key).getHours() );
@@ -55,6 +56,7 @@ public class ScheduleController {
 
                 waterObj.put( "id", waterSchedule.get(key).getId() );
                 waterObj.put( "zone", waterSchedule.get(key).getZoneID() );
+                waterObj.put( "day", waterSchedule.get(key).getDay() );
                 waterObj.put( "start", waterSchedule.get(key).getStartTime() );
                 waterObj.put( "end", waterSchedule.get(key).getEndTime() );
                 waterObj.put( "hours", waterSchedule.get(key).getHours() );
@@ -101,7 +103,7 @@ public class ScheduleController {
         }
 
         PreparedStatement ps = null;
-        String sql = "INSERT INTO " + database + " VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO " + database + " VALUES(?,?,?,?,?,?,?)";
 
         try {
             conn.setAutoCommit(false);
@@ -110,10 +112,11 @@ public class ScheduleController {
 
             ps.setString(1, null);
             ps.setInt(2, schedule.getZoneID());
-            ps.setString( 3, schedule.getStartTime() );
-            ps.setString(4, schedule.getEndTime() );
-            ps.setDouble(5, schedule.getHours());
-            ps.setInt(6, schedule.getInverse());
+            ps.setInt( 3, schedule.getDay());
+            ps.setString( 4, schedule.getStartTime() );
+            ps.setString(5, schedule.getEndTime() );
+            ps.setDouble(6, schedule.getHours());
+            ps.setInt(7, schedule.getInverse());
 
             ps.executeUpdate();
             ps.close();
@@ -147,7 +150,7 @@ public class ScheduleController {
         }
 
         PreparedStatement ps = null;
-        String sql = "UPDATE " + database + " SET zoneId='" + schedule.getZoneID() + "', startTime='" + schedule.getStartTime() + "', endTime='" + schedule.getEndTime() + "', hours='" + schedule.getHours() + "', inverse='" + schedule.getInverse() + "' WHERE id='" + schedule.getId() + "'";
+        String sql = "UPDATE " + database + " SET zoneId='" + schedule.getZoneID() + "', day='" + schedule.getDay() + "', startTime='" + schedule.getStartTime() + "', endTime='" + schedule.getEndTime() + "', hours='" + schedule.getHours() + "', inverse='" + schedule.getInverse() + "' WHERE id='" + schedule.getId() + "'";
 
         try {
             conn.setAutoCommit(false);
@@ -164,5 +167,48 @@ public class ScheduleController {
             e.printStackTrace();
             return;
         }
+    }
+
+    public void deleteSchedule(int id, String type) {
+
+        // Determine database
+        String database = "";
+        if( type.equals("light") ) {
+            database = "lightschedule";
+
+        } else if( type.equals("water") ) {
+            database = "waterschedule";
+        } else {
+            return;
+        }
+
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = databaseController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
+        PreparedStatement ps = null;
+        String sql = "DELETE FROM " + database + " WHERE id='" + id + "'";
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            ps.executeUpdate();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
     }
 }

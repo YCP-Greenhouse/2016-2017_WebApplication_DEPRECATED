@@ -46,45 +46,70 @@ public class ScheduleAPI extends HttpServlet {
         }
 
         if( user.equals("admin") || accountController.verifyAPIKey(APIkey) ) {
-            String start = req.getParameter("start");
-            String end = req.getParameter("end");
-            String type = req.getParameter("type");
-            double hours = Double.parseDouble(req.getParameter("hours"));
-            int inverse = Integer.parseInt(req.getParameter("inverse"));
-            int zoneID = Integer.parseInt(req.getParameter("zoneid"));
-            int id = 0;
-            
+
+            int id;
+
+            // Get id, type and action. These parameters are universal for post/delete requests
+
+            // Try to get id. Empty schedule cells will not return ids
             try {
                 id = Integer.parseInt(req.getParameter("id"));
-            } catch( NullPointerException e ) {
+            } catch (NullPointerException e) {
                 id = -1;
-            } catch( NumberFormatException e ) {
+            } catch (NumberFormatException e) {
                 id = -1;
             }
-            String date = req.getParameter("date");
 
-            System.out.println("Start time: " + convertTime(start) );
+            // Get type
+            String type = req.getParameter("type");
 
-            // Set ScheduleModel
-            scheduleModel.setId(id);
-            scheduleModel.setZoneID(zoneID);
-            scheduleModel.setStartTime(date + " " + convertTime(start)+":00:00");
-            scheduleModel.setEndTime(date + " " + convertTime(end)+":00:00");
-            scheduleModel.setHours(hours);
-            scheduleModel.setInverse(inverse);
+            // Try to get action. Only delete posts have the 'action' parameter
+            String action = "";
+            try {
+                action = req.getParameter("action");
+            } catch ( NullPointerException e ) {
+                action = "post";
+            }
 
-            //System.out.println("Start: " + start + "\nEnd: " + end + "\nHours: " + hours + "\nInverse: " + inverse + "\nid: " + id + "\nDate: " + date );
+            if( action == null ) {
+                action = "post";
+            }
 
-            // If ID = -1, it doesn't exist so add it
-            if( id == -1 ) {
-                scheduleController.addSchedule(type, scheduleModel);
+            // If action doesn't equal delete, handle post normally
+            if( !action.equals("delete") ) {
+
+                String start = req.getParameter("start");
+                String end = req.getParameter("end");
+
+                double hours = Double.parseDouble(req.getParameter("hours"));
+                int day = Integer.parseInt(req.getParameter("date"));
+                int inverse = Integer.parseInt(req.getParameter("inverse"));
+                int zoneID = Integer.parseInt(req.getParameter("zoneid"));
+
+                // Set ScheduleModel
+                scheduleModel.setId(id);
+                scheduleModel.setZoneID(zoneID);
+                scheduleModel.setDay(day);
+                scheduleModel.setStartTime(convertTime(start) + ":00:00");
+                scheduleModel.setEndTime(convertTime(end) + ":00:00");
+                scheduleModel.setHours(hours);
+                scheduleModel.setInverse(inverse);
+
+                // If ID = -1, it doesn't exist so add it
+                if (id == -1) {
+                    scheduleController.addSchedule(type, scheduleModel);
+                } else {
+                    scheduleController.updateSchedule(type, scheduleModel);
+                }
             } else {
-                scheduleController.updateSchedule(type, scheduleModel);
+                System.out.println("Delete id: " + id );
+                scheduleController.deleteSchedule(id, type);
             }
         } else {
             resp.getWriter().println("Invalid Credentials");
         }
     }
+
 
     public String convertTime(String time) {
 
@@ -98,6 +123,8 @@ public class ScheduleAPI extends HttpServlet {
         } else if( t == 12 ) {
             t = 0;
         }
+
+        System.out.println("Converting " + time + " to " + t );
 
         return Integer.toString(t);
     }

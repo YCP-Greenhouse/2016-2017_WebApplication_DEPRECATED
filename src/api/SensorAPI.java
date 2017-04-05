@@ -89,7 +89,7 @@ public class SensorAPI extends HttpServlet {
                     //System.out.println("Light: " + Double.parseDouble(obj.get("light").toString()) + "\nTemperature: " + Double.parseDouble(obj.get("temperature").toString()) + "\nHumidity: " + Double.parseDouble(obj.get("humidity").toString()) + "\nProbe 1:" + Double.parseDouble(obj.get("probe1").toString()) + "\nProbe 2:" + Double.parseDouble(obj.get("probe2").toString()));
 
                     // Only create new sensor entry if zone has a value change. If all values are null, don't add sensor
-                    if (!obj.get("light").equals("") && !obj.get("temperature").equals("") && !obj.get("humidity").equals("") && !obj.get("probe1").equals("") && !obj.get("probe2").equals("")) {
+                    //if (!obj.get("light").equals("") && !obj.get("temperature").equals("") && !obj.get("humidity").equals("") && !obj.get("probe1").equals("") && !obj.get("probe2").equals("")) {
                         // Don't add sensor if all values are 0
                         //if( !(Double.parseDouble(obj.get("light").toString()) == 0.0 && Double.parseDouble(obj.get("temperature").toString()) == 0.0 && Double.parseDouble(obj.get("humidity").toString()) == 0.0 && Double.parseDouble(obj.get("probe1").toString()) == 0.0 && Double.parseDouble(obj.get("probe2").toString()) == 0.0) ) {
 
@@ -138,7 +138,7 @@ public class SensorAPI extends HttpServlet {
                         //} else {
                             //System.out.println("Blank values. Ignoring");
                         //}
-                   }
+                  // }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

@@ -378,46 +378,51 @@ public class SensorController {
 
     public SensorModel getLatestSensorDataByID(int zoneID) {
 
-        HashMap<Integer, ArrayList<SensorModel>> sensorMap = categorizeSensorData();
+        if( latestSensors.containsKey(zoneID) ) {
+            return latestSensors.get(zoneID);
 
-        SensorModel sensor = new SensorModel();
+        } else {
+            HashMap<Integer, ArrayList<SensorModel>> sensorMap = categorizeSensorData();
 
-        try {
-            ArrayList<SensorModel> zoneList = sensorMap.get(zoneID);
+            SensorModel sensor = new SensorModel();
 
-            // Set first entry as starting date
-            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            Date latestDate = dateFormat.parse(zoneList.get(0).getSampleTime());
+            try {
+                ArrayList<SensorModel> zoneList = sensorMap.get(zoneID);
 
-            // Set first entry key as "last entry" key
-            int latestKey = 0;
-            int count = 0;
+                // Set first entry as starting date
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                Date latestDate = dateFormat.parse(zoneList.get(0).getSampleTime());
 
-            // Iterate through ArrayList to find last entry
-            for (SensorModel sensorEntry : zoneList) {
-                Date sampleDate = dateFormat.parse(sensorEntry.getSampleTime());
-                // If sampleDate is more recent than date, set
-                if (sampleDate.after(latestDate)) {
-                    latestDate = sampleDate;
-                    latestKey = count;
+                // Set first entry key as "last entry" key
+                int latestKey = 0;
+                int count = 0;
+
+                // Iterate through ArrayList to find last entry
+                for (SensorModel sensorEntry : zoneList) {
+                    Date sampleDate = dateFormat.parse(sensorEntry.getSampleTime());
+                    // If sampleDate is more recent than date, set
+                    if (sampleDate.after(latestDate)) {
+                        latestDate = sampleDate;
+                        latestKey = count;
+                    }
+
+                    count++;
                 }
 
-                count++;
+                // Set sensor to latest values
+                sensor.setZone(zoneID);
+                sensor.setProbe1(zoneList.get(latestKey).getProbe1());
+                sensor.setProbe2(zoneList.get(latestKey).getProbe2());
+                sensor.setTemperature(zoneList.get(latestKey).getTemperature());
+                sensor.setLight(zoneList.get(latestKey).getLight());
+                sensor.setHumidity(zoneList.get(latestKey).getHumidity());
+                sensor.setSampleTime(zoneList.get(latestKey).getSampleTime());
+            } catch( ParseException e ) {
+
             }
 
-            // Set sensor to latest values
-            sensor.setZone(zoneID);
-            sensor.setProbe1(zoneList.get(latestKey).getProbe1());
-            sensor.setProbe2(zoneList.get(latestKey).getProbe2());
-            sensor.setTemperature(zoneList.get(latestKey).getTemperature());
-            sensor.setLight(zoneList.get(latestKey).getLight());
-            sensor.setHumidity(zoneList.get(latestKey).getHumidity());
-            sensor.setSampleTime(zoneList.get(latestKey).getSampleTime());
-        } catch( ParseException e ) {
-
+            return sensor;
         }
-
-        return sensor;
     }
 
     public JSONArray getSensorData(int id, String time) {
