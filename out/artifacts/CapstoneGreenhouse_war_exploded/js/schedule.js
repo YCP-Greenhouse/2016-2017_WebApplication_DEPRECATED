@@ -14,14 +14,14 @@ function getSchedules(zone) {
 
             // Populate light schedule
             for (var i = 0; i < data.lightschedule.length; i++) {
-                if (data.lightschedule[i].zone == zone) {
+                if (data.lightschedule[i].zone == zone ) {
                     populateCalendar('light', data.lightschedule[i]);
                 }
             }
 
             // Populate water schedule
             for (var i = 0; i < data.waterschedule.length; i++) {
-                if (data.lightschedule[i].zone == zone) {
+                if (data.waterschedule[i].zone == zone ) {
                     populateCalendar('water', data.waterschedule[i]);
                 }
             }
@@ -194,8 +194,6 @@ $(document).on('click', '.blank', function() {
         endHour = "0" + endHour;
     }
 
-    console.log("End hour: " + endHour);
-
     $('#end-time').val(endHour+":00:00");
 
     // Calculate hours
@@ -356,7 +354,7 @@ $(document).on('click', '.water-event', function() {
             break;
         }
 
-        // If element doesn't have 'light-event' class, break loop
+        // If element doesn't have 'water-event' class, break loop
         if( !$('#' + checkId + '-' + splitId[1] + '-2' ).hasClass('water-event') ) {
             endFound = true;
         }
@@ -476,6 +474,23 @@ function timeUpdate() {
     var startTime = $('#start-time').val().split(":")[0];
     var endTime = $('#end-time').val().split(":")[0];
     var hours = endTime - startTime;
+
+    if( hours < 0 || hours > 24) {
+        hours = "0";
+    }
+
+    if( hours == 0 ) {
+        var newStart = parseInt($('#end-time').val().split(":")[0]) + 1;
+
+        if( newStart < 10 ) {
+            newStart = "0" + newStart;
+        }
+        $('#end-time').val(newStart+":00:00");
+    }
+
+    startTime = $('#start-time').val().split(":")[0];
+    endTime = $('#end-time').val().split(":")[0];
+    hours = endTime - startTime;
 
     if( hours < 0 || hours > 24) {
         hours = "0";

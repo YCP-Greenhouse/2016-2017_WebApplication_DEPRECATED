@@ -242,12 +242,14 @@ $(document).ready( function() {
     // Zone modal click events
 
     $('#zone-1').click(function() {
-        //$('#container').css("transform", "scale(1.02)");
         $('#container').css("filter","blur(4px)");
 
         $('#zone-modal').css("display", "block");
         $('#zone-title').text("ZONE 1 SCHEDULE");
+
+        // Set water as default radio option
         $('#schedule-type').val('water');
+        $('#water-radio').attr('checked','checked');
 
         // Set zone ID
         $('#zoneid').val(1);
@@ -260,7 +262,10 @@ $(document).ready( function() {
 
         $('#zone-modal').css("display", "block");
         $('#zone-title').text("ZONE 2 SCHEDULE");
+
+        // Set water as default radio option
         $('#schedule-type').val('water');
+        $('#water-radio').attr('checked','checked');
 
         // Set zone ID
         $('#zoneid').val(2);
@@ -273,7 +278,10 @@ $(document).ready( function() {
 
         $('#zone-modal').css("display", "block");
         $('#zone-title').text("ZONE 3 SCHEDULE");
+
+        // Set water as default radio option
         $('#schedule-type').val('water');
+        $('#water-radio').attr('checked','checked');
 
         // Set zone ID
         $('#zoneid').val(3);
@@ -286,7 +294,10 @@ $(document).ready( function() {
 
         $('#zone-modal').css("display", "block");
         $('#zone-title').text("ZONE 4 SCHEDULE");
+
+        // Set water as default radio option
         $('#schedule-type').val('water');
+        $('#water-radio').attr('checked','checked');
 
         // Set zone ID
         $('#zoneid').val(4);
@@ -299,7 +310,10 @@ $(document).ready( function() {
 
         $('#zone-modal').css("display", "block");
         $('#zone-title').text("ZONE 5 SCHEDULE");
+
+        // Set water as default radio option
         $('#schedule-type').val('water');
+        $('#water-radio').attr('checked','checked');
 
         // Set zone ID
         $('#zoneid').val(5);
@@ -312,39 +326,16 @@ $(document).ready( function() {
 
         $('#zone-modal').css("display", "block");
         $('#zone-title').text("ZONE 6 SCHEDULE");
+
+        // Set water as default radio option
         $('#schedule-type').val('water');
+        $('#water-radio').attr('checked','checked');
 
         // Set zone ID
         $('#zoneid').val(6);
         getSchedules($('#zoneid').val());
     });
-
-    /*
-
-    $('#zone-2').click(function() {
-        //$('#zone-modal').css("display", "block");
-        $('#container').css("transform", "scale(1)");
-        $('#container').css("filter","blur(0px)");
-
-        $('#zone-modal').css("display", "none");
-
-    });
-
-    $('.big-table, .small-table, .zone-modal-close').click(function() {
-        $('.container').toggleClass('blur');
-        $('.zone-modal').toggleClass('close');
-        $('.zone-modal-close').toggleClass('close');
-
-        $('#zone-title').text($(this).text());
-        drawScheduleTable($('#water-schedule-table'));
-    });*/
 });
-
-function drawScheduleTable(el) {
-    var data = el.html();
-    el.append
-
-}
 
 // Update light slider bar
 function updateOutput(el, val) {
@@ -354,8 +345,6 @@ function updateOutput(el, val) {
 // Changes the high and low temperature values
 // Input: element, value to increment/decrement, high or low
 function tempChange(el, val, type) {
-
-        console.log("TempHigh: " + temphigh + " TempLow: " + templow + " val: " + val);
 
         // If type == 1, update tempHigh
         if (parseInt(type) == 1) {
@@ -378,11 +367,7 @@ function tempChange(el, val, type) {
             if( parseInt(val) == 1 ) {
                 if( parseInt(templow) < parseInt(temphigh) ) {
                     templow++;
-                    console.log("Increment templow to " + templow);
                 }
-
-
-
 
                 el.html('');
                 el.html(templow + "&deg;");
@@ -451,7 +436,6 @@ function getAutomationValues() {
             $('#temperature-high').html(temphigh + "&deg;");
             $('#light-val').html(light);
             $('#light-slider').val(light);
-
 
             // Light slider
             var $element = $('input[type="range"]');
