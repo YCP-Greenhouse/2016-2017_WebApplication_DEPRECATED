@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 import java.util.TimeZone;
@@ -56,7 +57,16 @@ public class DatabaseController {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date utcTime = new Date();
         Date date = new Date(utcTime.getTime() + TimeZone.getTimeZone("EST").getRawOffset() );
-        return dateFormat.format(date);
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+
+        // Check if daylight savings is active
+        if( TimeZone.getTimeZone("EST").inDaylightTime(date) ) {
+            cal.add(Calendar.HOUR_OF_DAY, 1);
+        }
+
+        return dateFormat.format(cal.getTime());
     }
 
     // Checks input for invalid String characters

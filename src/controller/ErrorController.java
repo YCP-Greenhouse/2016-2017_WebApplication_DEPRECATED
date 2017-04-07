@@ -1,5 +1,9 @@
 package controller;
 
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+
 import model.ErrorModel;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,6 +17,20 @@ public class ErrorController {
 
     DatabaseController dbController = new DatabaseController();
     ErrorModel errorModel = new ErrorModel();
+
+    public void alertAdmins(String error) {
+        String ACCOUNT_SID = "AC73e88c0373966b37338518a7dd9dc190";
+        String AUTH_TOKEN = "5796534f03e9046b576e906aa6aa8477";
+
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+
+        Message message = Message.creator(new PhoneNumber("+16107870426"),
+                new PhoneNumber("+14842355187"),
+                error).create();
+
+        System.out.println(message.getSid());
+
+    }
 
     public JSONObject getLastError() {
         JSONObject obj = new JSONObject();
@@ -45,6 +63,7 @@ public class ErrorController {
             return;
         }
 
+        alertAdmins(model.getMessage());
         setLastError(model);
         saveErrorToDatabase(model);
     }
