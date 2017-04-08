@@ -76,9 +76,6 @@ public class AutomationController {
 
         }
 
-        // Get next light starts
-        //obj = getNextLightSchedules(obj);
-
         return obj;
     }
 
@@ -385,10 +382,6 @@ public class AutomationController {
         int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
 
         JSONArray arr = new JSONArray();
-
-        System.out.println("getNextSchedules: Calendar: " + calendar.getTime() + " Date: " + now.toString() );
-
-
 
         try {
 

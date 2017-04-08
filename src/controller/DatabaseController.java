@@ -6,11 +6,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Properties;
-import java.util.TimeZone;
+import java.util.*;
 
 public class DatabaseController {
     public Connection getConnection() throws SQLException {
@@ -54,19 +52,46 @@ public class DatabaseController {
     }
 
     public String getCurrentTime() {
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeZone(TimeZone.getTimeZone("EST"));
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        dateFormat.setCalendar(cal);
+
+        //System.out.println( "Before daylight: " + dateFormat.format(cal.getTime()));
+
+        // Check if daylight savings is active
+        if( !TimeZone.getTimeZone("EST").inDaylightTime(cal.getTime()) ) {
+            cal.add(Calendar.HOUR_OF_DAY, 1);
+        }
+
+        dateFormat.setCalendar(cal);
+
+        //System.out.println( "After daylight: " + dateFormat.format(cal.getTime()));
+
+        return dateFormat.format(cal.getTime());
+
+        /*
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date utcTime = new Date();
+
+        System.out.println("Date: " + utcTime.toString() );
+
         Date date = new Date(utcTime.getTime() + TimeZone.getTimeZone("EST").getRawOffset() );
 
         Calendar cal = Calendar.getInstance();
-        cal.setTime(new Date());
+        cal.setTime(date);
+
+        //cal.add(Calendar.HOUR_OF_DAY, -4);
 
         // Check if daylight savings is active
         if( TimeZone.getTimeZone("EST").inDaylightTime(date) ) {
             cal.add(Calendar.HOUR_OF_DAY, 1);
         }
 
-        return dateFormat.format(cal.getTime());
+        System.out.println("Updated Time: " + dateFormat.format(cal.getTime()));
+        return dateFormat.format(cal.getTime());*/
     }
 
     // Checks input for invalid String characters
