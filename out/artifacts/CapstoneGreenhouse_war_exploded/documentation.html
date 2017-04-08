@@ -335,7 +335,7 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-        <p>This endpoint returns a JSON object with the greenhouse automation limits and schedules.</p>
+        <p>This endpoint returns a JSON object with the greenhouse automation limits and schedules. The schedules arrays contain the next schedule events for the day.</p>
 
         <h3 id="http-request">HTTP Request</h3>
 
@@ -394,6 +394,122 @@
         <h3 id="http-request">HTTP Request</h3>
 
         <p><code class="prettyprint">POST http://example.com/api/automation</code></p>
+
+        <h1 id="schedules">Schedules</h1>
+
+        <h2 id="get-schedule-events">Get Schedule Events</h2>
+        <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">getSchedule</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Get light and water schedules using jQuery</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'api/schedule'</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Use data how you want</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+        <blockquote>
+            <p>The HTTP request returns JSON structured like this:</p>
+        </blockquote>
+        <pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"lightschedule"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"inverse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w"> </span><span class="nt">"zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"inverse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">},</span><span class="w">
+    </span><span class="err">etc...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"waterschedule"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"inverse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w"> </span><span class="nt">"zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21:00:00"</span><span class="p">,</span><span class="w"> </span><span class="nt">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"inverse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">},</span><span class="w">
+    </span><span class="err">etc...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        <p>This endpoint returns a JSON object containing arrays of all the light and water schedule events stored in the database.</p>
+
+        <h3 id="http-request">HTTP Request</h3>
+
+        <p><code class="prettyprint">GET http://example.com/api/schedule</code></p>
+
+        <h2 id="set-schedule-events">Set Schedule Events</h2>
+        <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">setScheduleEvent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Add new schedule using jQuery</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span><span class="s1">'POST'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'/api/schedule'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="na">start</span><span class="p">:</span> <span class="s2">"21:00:00"</span><span class="p">,</span> <span class="na">end</span><span class="p">:</span> <span class="s2">"22:00:00"</span><span class="p">,</span> <span class="na">hours</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span> <span class="na">inverse</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span> <span class="na">id</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="na">zoneid</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span> <span class="na">date</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s2">"light"</span> <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+        <p>This endpoint receives a JSON object to set a new schedule event and doesn&rsquo;t return anything.</p>
+
+        <p>The endpoint will only accept data sent with a valid API key. For example:</p>
+
+        <p><code class="prettyprint">apikey: greenhouse-api-key</code></p>
+
+        <aside class="notice">
+            You must replace <code>greenhouse-api-key</code> with your personal API key.
+        </aside>
+
+        <h3 id="http-request">HTTP Request</h3>
+
+        <p><code class="prettyprint">POST http://example.com/api/schedule</code></p>
+
+        <h1 id="contacts">Contacts</h1>
+
+        <h2 id="get-contacts">Get Contacts</h2>
+        <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">getContacts</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Get contacts using jQuery</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+      <span class="na">url</span><span class="p">:</span> <span class="s1">'api/schedule'</span><span class="p">,</span>
+      <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// User data how you want</span>
+      <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+        <blockquote>
+            <p>The HTTP request returns JSON structured like this:</p>
+        </blockquote>
+        <pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bob"</span><span class="p">,</span><span class="w"> </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teacher"</span><span class="p">,</span><span class="w"> </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bob@goodeelementary.com"</span><span class="p">,</span><span class="w"> </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-123-1234"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim"</span><span class="p">,</span><span class="w"> </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teacher"</span><span class="p">,</span><span class="w"> </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tim@goodeelementary.com"</span><span class="p">,</span><span class="w"> </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-123-1234"</span><span class="p">},</span><span class="w">
+    </span><span class="err">etc...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        <p>This endpoint returns all contacts as a JSON Array and is used for sending email and text alerts if greenhouse components fail.</p>
+
+        <h3 id="http-request">HTTP Request</h3>
+
+        <p><code class="prettyprint">GET http://example.com/api/contacts</code></p>
+
+        <h2 id="set-contacts">Set Contacts</h2>
+        <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">addContact</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Add contact using jQuery</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'api/contacts'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Bob"</span><span class="p">,</span> <span class="s2">"position"</span><span class="p">:</span> <span class="s2">"Teacher"</span><span class="p">,</span> <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"bob@goodeelementary.com"</span><span class="p">,</span> <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"123-123-1234"</span><span class="p">,</span> <span class="na">apikey</span><span class="p">:</span> <span class="s1">'Your API key'</span><span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+        <p>This endpoint receives a JSON object to add a new contact to the database.</p>
+
+        <p>The endpoint will only accept data sent with a valid API key. For example:</p>
+
+        <p><code class="prettyprint">apikey: greenhouse-api-key</code></p>
+
+        <aside class="notice">
+            You must replace <code>greenhouse-api-key</code> with your personal API key.
+        </aside>
+
+        <h3 id="http-request">HTTP Request</h3>
+
+        <p><code class="prettyprint">POST http://example.com/api/contacts</code></p>
 
         <h1 id="error-messages">Error Messages</h1>
 
@@ -478,7 +594,7 @@
   </span><span class="p">{</span><span class="nt">"sampletime"</span><span class="p">:</span><span class="s2">"2017/02/19 23:42:08"</span><span class="p">,</span><span class="nt">"temp"</span><span class="p">:</span><span class="s2">"44.35"</span><span class="p">,</span><span class="nt">"high"</span><span class="p">:</span><span class="s2">"44.35"</span><span class="p">,</span><span class="nt">"low"</span><span class="p">:</span><span class="s2">"44.35"</span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-        <p>This endpoint returns all weather data from the database. Weather entries are returned as an array of JSON objects and contain the current temperature, high, low and time sampled.</p>
+        <p>This endpoint returns an array of all weather data entries from the database. Weather entries contain the temperature, high, low and time sampled.</p>
 
         <h3 id="http-request">HTTP Request</h3>
 
