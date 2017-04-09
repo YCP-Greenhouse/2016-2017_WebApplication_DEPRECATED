@@ -131,7 +131,7 @@
 
     <servlet-mapping>
         <servlet-name>ContactAPI</servlet-name>
-        <url-pattern>/api/contact</url-pattern>
+        <url-pattern>/api/contacts</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

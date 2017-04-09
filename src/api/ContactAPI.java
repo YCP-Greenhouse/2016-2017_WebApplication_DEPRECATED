@@ -21,7 +21,7 @@ public class ContactAPI extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp )
             throws ServletException, IOException {
 
-        resp.getWriter().println(contactController.getAllContacts());
+        resp.getWriter().println(contactController.getAllContactsJSON());
     }
 
     @Override
@@ -70,6 +70,8 @@ public class ContactAPI extends HttpServlet {
             contact.setPhoneNumber(phone);
 
             contactController.addContact(contact);
+        } else {
+            resp.getWriter().println("Invalid credentials");
         }
     }
 }

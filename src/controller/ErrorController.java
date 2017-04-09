@@ -4,6 +4,7 @@ import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 
+import model.ContactModel;
 import model.ErrorModel;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,10 +13,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ErrorController {
 
     DatabaseController dbController = new DatabaseController();
+    ContactController contactController = new ContactController();
     ErrorModel errorModel = new ErrorModel();
 
     public void alertAdmins(String error) {
@@ -24,11 +27,19 @@ public class ErrorController {
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-        Message message = Message.creator(new PhoneNumber("+16107870426"),
-                new PhoneNumber("+14842355187"),
-                error).create();
+        ArrayList<ContactModel> contactList = contactController.getAllContacts();
 
-        System.out.println(message.getSid());
+        for( ContactModel contact : contactList ) {
+            Message message = Message.creator(new PhoneNumber(contact.getPhoneNumber()),
+                    new PhoneNumber("+14842355187"),
+                    error).create();
+
+            System.out.println(message.getSid());
+        }
+
+
+
+
 
     }
 

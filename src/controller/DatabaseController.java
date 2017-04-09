@@ -97,6 +97,11 @@ public class DatabaseController {
     // Checks input for invalid String characters
     public boolean isValidInput(String input) {
         int count = 0;
+
+        if( input == null ) {
+            return false;
+        }
+
         count = input.replaceAll("[^\";'`()~]", "").length();
 
         if( count == 0 ) {

@@ -55,6 +55,7 @@ window.setInterval( function() {
 
 $(document).ready( function() {
 
+
     // Check if browser is Raspberry Pi
     if ( navigator.platform.toLowerCase().indexOf('linux') >= 0 ) {
         $('#nav-list').addClass('nav-small');
@@ -455,7 +456,5 @@ function getAutomationValues() {
         }
     });
 }
-
-
 
 

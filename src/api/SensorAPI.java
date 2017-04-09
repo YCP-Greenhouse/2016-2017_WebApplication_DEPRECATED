@@ -1,6 +1,7 @@
 package api;
 
 import controller.AccountController;
+import controller.DatabaseController;
 import controller.SensorController;
 import model.SensorModel;
 import org.json.JSONArray;
@@ -21,6 +22,7 @@ public class SensorAPI extends HttpServlet {
 
     SensorController sensorController = new SensorController();
     AccountController accountController = new AccountController();
+    DatabaseController databaseController = new DatabaseController();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp )
@@ -127,10 +129,7 @@ public class SensorAPI extends HttpServlet {
                                 sensor.setProbe2(lastSensor.getProbe2());
                             }
 
-                            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                            Date utcTime = new Date();
-                            Date date = new Date(utcTime.getTime() + TimeZone.getTimeZone("EST").getRawOffset());
-                            sensor.setSampleTime(dateFormat.format(date));
+                            sensor.setSampleTime(databaseController.getCurrentTime());
 
                             sensor.setZone(Integer.parseInt(obj.get("zone").toString()));
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery3.1.1.js"></script>
+    <script src="/js/contacts.js"></script>
+
+</head>
+<body>
+
+    <div id="contact-table-div">
+        <table id="contact-table" style="width: 600px;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="contact-table-body"></tbody>
+        </table>
+    </div>
+
+    <div id="add-contact-div" style="top:10px; right: 10px; position: absolute; height: 150px; width: 200px; padding: 10px; border: solid 1px black;">
+        <div><b>Add Contact</b></div><br>
+        <form id="contact-form" action="" method="post">
+            <label>Name</label><input type="text" name="name"><br>
+            <label>Position</label><input type="text" name="position"><br>
+            <label>Email</label><input type="email" name="email"><br>
+            <label>Phone</label><input type="text" name="phone"><br><br>
+            <input type="hidden" name="apikey" value="44ffe28b-f470-4bc0-8ee9-38fce01438ce">
+
+            <button type="button" id="contact-submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="error-div" style="margin-top: 150px; right: 10px; position: absolute; height: 100px; width: 200px; padding: 10px; border: solid 1px black;">
+        <div><b>Last Error</b></div><br>
+        Code: <span class="state-span" id="error-code"></span><br>
+        Message: <span class="state-span" id="error-message"></span><br>
+        Time: <span class="state-span" id="error-time"></span>
+    </div>
+
+    <div id="send-error-div" style="margin-top: 300px; right: 10px; position: absolute; height: 100px; width: 200px; padding: 10px; border: solid 1px black;">
+        <div><b>Send Error</b></div><br>
+        <form id="error-form" action="" method="post">
+            <label>Code</label><input id="set-error-code" type="text" name="code">
+            <label>Message</label><input id="set-error-message" type="text" name="message">
+
+            <button type="button" id="error-submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

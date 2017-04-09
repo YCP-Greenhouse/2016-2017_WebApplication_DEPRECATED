@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ContactController {
     DatabaseController databaseController = new DatabaseController();
@@ -27,6 +28,8 @@ public class ContactController {
         PreparedStatement ps = null;
         String sql = "INSERT INTO contactlist VALUES(?,?,?,?,?)";
 
+        System.out.println("Username: " + contact.getUsername());
+
         try {
             conn.setAutoCommit(false);
             ps = conn.prepareStatement(sql);
@@ -40,13 +43,16 @@ public class ContactController {
             ps.executeUpdate();
             ps.close();
 
+            conn.commit();
+            conn.close();
+
         } catch( SQLException e ) {
 
         }
     }
 
-    public JSONArray getAllContacts() {
-        JSONArray arr = new JSONArray();
+    public ArrayList<ContactModel> getAllContacts() {
+        ArrayList<ContactModel> contactList = new ArrayList<>();
 
         // Connect to database
         Connection conn = null;
@@ -69,19 +75,49 @@ public class ContactController {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                JSONObject obj = new JSONObject();
+                ContactModel contact = new ContactModel();
 
-                obj.put("id", rs.getInt(1));
-                obj.put("name", rs.getString(2));
-                obj.put("position", rs.getString(3));
-                obj.put("email", rs.getString(4));
-                obj.put("phone", rs.getString(5));
+                contact.setId(rs.getInt(1));
+                contact.setUsername(rs.getString(2));
+                contact.setPosition(rs.getString(3));
+                contact.setEmail(rs.getString(4));
+                contact.setPhoneNumber(rs.getString(5));
 
-                // Add contact object to JSONArray
-                arr.put(obj);
+                contactList.add(contact);
             }
 
+            rs.close();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
         } catch( SQLException e ) {
+
+        }
+
+        return contactList;
+    }
+
+    public JSONArray getAllContactsJSON() {
+        JSONArray arr = new JSONArray();
+
+        ArrayList<ContactModel> contactList = getAllContacts();
+
+        try {
+            for( ContactModel contact : contactList) {
+
+                    JSONObject obj = new JSONObject();
+
+                    obj.put("id", contact.getId());
+                    obj.put("name", contact.getUsername());
+                    obj.put("position", contact.getPosition());
+                    obj.put("email", contact.getEmail());
+                    obj.put("phone", contact.getPhoneNumber());
+
+                    // Add contact object to JSONArray
+                    arr.put(obj);
+            }
 
         } catch( JSONException e ) {
 
