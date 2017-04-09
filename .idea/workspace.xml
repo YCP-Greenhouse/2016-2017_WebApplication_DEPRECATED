@@ -7,18 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/ContactAPI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controller/ContactController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/ContactModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/AutomationController.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/AutomationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/SensorController.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/SensorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/AutomationController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/AutomationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/SensorController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/SensorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/SensorController.java" afterPath="$PROJECT_DIR$/src/controller/SensorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/greenhouse.css" afterPath="$PROJECT_DIR$/web/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/documentation.html" afterPath="$PROJECT_DIR$/web/documentation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/history.html" afterPath="$PROJECT_DIR$/web/history.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/history.js" afterPath="$PROJECT_DIR$/web/js/history.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/settings.jsp" afterPath="$PROJECT_DIR$/web/views/settings.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,12 +58,46 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="greenhouse.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-305">
+              <caret line="70" column="102" lean-forward="false" selection-start-line="70" selection-start-column="102" selection-end-line="70" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="greenhouse.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="1372" column="21" lean-forward="true" selection-start-line="1372" selection-start-column="21" selection-end-line="1372" selection-end-column="21" />
+            <state relative-caret-position="156">
+              <caret line="1041" column="20" lean-forward="false" selection-start-line="1041" selection-start-column="20" selection-end-line="1041" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/history.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="44" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="history.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/history.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="598" column="83" lean-forward="true" selection-start-line="598" selection-start-column="83" selection-end-line="598" selection-end-column="83" />
+              <folding>
+                <marker date="1491756475000" expanded="true" signature="508:530" ph="..." />
+                <marker date="1491756475000" expanded="true" signature="1190:1212" ph="..." />
+                <marker date="1491756475000" expanded="true" signature="1580:1596" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,7 +138,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="421">
@@ -144,59 +170,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/SensorController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="106" column="32" lean-forward="true" selection-start-line="100" selection-start-column="7" selection-end-line="106" selection-end-column="32" />
-              <folding>
-                <element signature="method#getAllSensorDataJSON#0;class#SensorController#0" expanded="false" />
-                <element signature="method#categorizeTodaysSensorData#0;class#SensorController#0" expanded="false" />
-                <element signature="method#loadLatestSensorValues#0;class#SensorController#0" expanded="false" />
-                <element signature="method#updateLatestSensor#0;class#SensorController#0" expanded="false" />
-                <element signature="method#getLatestSensorData#0;class#SensorController#0" expanded="false" />
-                <element signature="method#getLatestSensorDataByID#0;class#SensorController#0" expanded="false" />
-                <element signature="method#getSensorData#0;class#SensorController#0" expanded="false" />
-                <element signature="e#16955#16984#0" expanded="false" />
-                <element signature="method#getCurrentAverages#0;class#SensorController#0" expanded="false" />
-                <element signature="method#getAllAverages#0;class#SensorController#0" expanded="false" />
-                <element signature="method#addSensorData#0;class#SensorController#0" expanded="false" />
-                <marker date="1491680746000" expanded="false" signature="981:1005" ph="SELECT * FRO... sensordata" />
-                <marker date="1491680746000" expanded="false" signature="2636:2660" ph="SELECT * FRO... sensordata" />
-                <marker date="1491680746000" expanded="false" signature="5045:5087" ph="SELECT * FRO... sensordata" />
-                <marker date="1491680746000" expanded="false" signature="5045:5101" ph="SELECT * FRO... sensordata" />
-                <marker date="1491680746000" expanded="false" signature="22495:22517" ph="SELECT * FRO... averages" />
-                <marker date="1491680746000" expanded="false" signature="25133:25179" ph="INSERT INTO sensordata... " />
-                <marker date="1491680746000" expanded="false" signature="25139:25140" ph="INSERT INTO sensordata... " />
-                <marker date="1491680746000" expanded="false" signature="26676:26716" ph="INSERT INTO averages... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/DatabaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="70" column="10" lean-forward="false" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/AccountController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="108" column="48" lean-forward="true" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
-              <folding>
-                <marker date="1489873202000" expanded="true" signature="897:953" ph="SELECT * FRO... accounts" />
-                <marker date="1489873202000" expanded="true" signature="2007:2061" ph="SELECT * FRO... apikeys" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -212,10 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>top-control</find>
-      <find>top</find>
-      <find>updateAuto</find>
-      <find>updateOutput</find>
       <find>getSensorData</find>
       <find>getLatestSensorDataByID</find>
       <find>zone</find>
@@ -242,6 +211,10 @@
       <find>schedule-modal-title</find>
       <find>dbController</find>
       <find>calendar</find>
+      <find>big-table</find>
+      <find>chart-div</find>
+      <find>option-div</find>
+      <find>option</find>
     </findStrings>
     <replaceStrings>
       <replace>size=&quot;7&quot;</replace>
@@ -274,7 +247,6 @@
         <option value="$PROJECT_DIR$/web/js/weather.js" />
         <option value="$PROJECT_DIR$/src/servlet/SettingsServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/web/js/history.js" />
         <option value="$PROJECT_DIR$/web/js/circular-slider.js" />
         <option value="$PROJECT_DIR$/web/WEB-INF/blank.html" />
         <option value="$PROJECT_DIR$/web/js/blank.js" />
@@ -290,7 +262,6 @@
         <option value="$PROJECT_DIR$/web/automation.html" />
         <option value="$PROJECT_DIR$/web/blank.html" />
         <option value="$PROJECT_DIR$/web/dataspoofer.html" />
-        <option value="$PROJECT_DIR$/web/history.html" />
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/src/model/AutomationModel.java" />
         <option value="$PROJECT_DIR$/src/api/AutomationAPI.java" />
@@ -302,7 +273,6 @@
         <option value="$PROJECT_DIR$/src/model/ScheduleModel.java" />
         <option value="$PROJECT_DIR$/src/controller/ScheduleController.java" />
         <option value="$PROJECT_DIR$/src/api/ScheduleAPI.java" />
-        <option value="$PROJECT_DIR$/web/views/settings.jsp" />
         <option value="$PROJECT_DIR$/web/js/automation.js" />
         <option value="$PROJECT_DIR$/web/js/schedule.js" />
         <option value="$PROJECT_DIR$/src/listener/Weather.java" />
@@ -314,9 +284,12 @@
         <option value="$PROJECT_DIR$/src/controller/SensorController.java" />
         <option value="$PROJECT_DIR$/src/controller/ContactController.java" />
         <option value="$PROJECT_DIR$/web/documentation.html" />
-        <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
         <option value="$PROJECT_DIR$/src/api/ContactAPI.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/views/settings.jsp" />
+        <option value="$PROJECT_DIR$/web/js/history.js" />
+        <option value="$PROJECT_DIR$/web/history.html" />
+        <option value="$PROJECT_DIR$/web/css/greenhouse.css" />
       </list>
     </option>
   </component>
@@ -1165,12 +1138,12 @@
       <workItem from="1491405574941" duration="10500000" />
       <workItem from="1491492207543" duration="8807000" />
       <workItem from="1491603204012" duration="2897000" />
-      <workItem from="1491611269102" duration="12251000" />
+      <workItem from="1491611269102" duration="18831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="528580000" />
+    <option name="totallyTimeSpent" value="535160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="6" />
@@ -1179,7 +1152,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Azure Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39919356" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20295699" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20026882" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1198,7 +1171,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20295699" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20295699" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17525035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1394,20 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/history.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/history.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="70" column="24" lean-forward="false" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/IndexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1545,14 +1504,6 @@
             <marker date="1491194160000" expanded="true" signature="6241:6291" ph="DELETE FROM " />
             <marker date="1491194160000" expanded="true" signature="6252:6269" ph="UPDATE missi... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3405">
-          <caret line="227" column="50" lean-forward="false" selection-start-line="227" selection-start-column="50" selection-end-line="227" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1713,14 +1664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="1372" column="21" lean-forward="true" selection-start-line="1372" selection-start-column="21" selection-end-line="1372" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ContactController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1759,10 +1702,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/history.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="598" column="83" lean-forward="true" selection-start-line="598" selection-start-column="83" selection-end-line="598" selection-end-column="83" />
+          <folding>
+            <marker date="1491756475000" expanded="true" signature="508:530" ph="..." />
+            <marker date="1491756475000" expanded="true" signature="1190:1212" ph="..." />
+            <marker date="1491756475000" expanded="true" signature="1580:1596" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/settings.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-305">
+          <caret line="70" column="102" lean-forward="false" selection-start-line="70" selection-start-column="102" selection-end-line="70" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="133" column="47" lean-forward="true" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="44" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/greenhouse.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="1041" column="20" lean-forward="false" selection-start-line="1041" selection-start-column="20" selection-end-line="1041" selection-end-column="20" />
           <folding />
         </state>
       </provider>

@@ -968,7 +968,8 @@ body {
 .chart-div {
     margin: auto;
     margin-top: 5%;
-    width: 80%;
+    padding-left: 100px;
+    width: 85%;
     height: 400px;
     vertical-align: middle;
     text-align: center;
@@ -981,12 +982,15 @@ body {
 .option-div {
     margin: auto;
     margin-top: 20px;
-    width: 1100px;
+    width: 80%;
+    height: 190px;
+    min-width: 800px;
     vertical-align: middle;
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 18px;
+    padding-left: 100px;
 }
 
 .chart {
@@ -994,6 +998,15 @@ body {
     width: 100%;
     background-color: transparent;
     color: white;
+}
+
+.option-title-left {
+    float: left;
+    width: 2%;
+    height: 100%;
+    margin-top: 19px;
+    border: solid 1px rgba(255,255,255,0.5);
+    border-right: none;
 }
 
 .option-title {
@@ -1005,14 +1018,13 @@ body {
     text-align: center;
     margin-top: 9px;
     float: left;
-    width: 130px;
-    height: 40px;
+    width: 15%;
     vertical-align: middle;
 }
 
 .option-title-right {
-    float: right;
-    width: 940px;
+    float: left;
+    width: 82%;
     height: 20px;
     margin-top: 19px;
     border-top: solid 1px rgba(255,255,255,0.5);
@@ -1022,17 +1034,19 @@ body {
 .options {
     border: solid 1px rgba(255,255,255,0.5);
     border-top: none;
+    border-left: none;
     height: 170px;
-    margin: auto;
-    margin-top: 60px;
-    width: 1098px;
+    float:left;
+    width: 95%;
     text-align: center;
+    padding-right: 2%;
 }
 
 .graph-option {
     cursor: pointer;
     height: 50px;
-    width: 200px;
+    width: 18%;
+    max-width: 200px;
     background-color: rgba(255,255,255,0.15);
     border: solid 1px rgba(255,255,255,0.15);
     color: white;
@@ -1042,9 +1056,12 @@ body {
     letter-spacing: 2px;
     margin-left: 25px;
     margin-right: 25px;
-    margin-bottom: 20px;
+    margin-top:12px;
+    margin-bottom: 12px;
     border: none;
     display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .graph-option.focus,
@@ -1179,12 +1196,23 @@ body {
 
 .top-panel-3 {
     float: left;
-    /*width: 1000px;*/
     width: 83%;
     height: 430px;
     border: solid 1px rgba(255,255,255,0.5);
     border-left: none;
     border-top: none;
+}
+
+.zone-instruction {
+    width: 100%;
+    height: 30px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 1.2px;
+    color: rgba(255,255,255,.9);
+    text-transform: uppercase;
 }
 
 .big-table-left {
@@ -1195,7 +1223,7 @@ body {
     background-color: rgba(255,255,255,0.3);
     color: white;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-right: 10px;
     margin-left: 3%;
     font-family: 'Lato', sans-serif;
@@ -1213,7 +1241,7 @@ body {
     background-color: rgba(255,255,255,0.3);
     color: white;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 10px;
     margin-right: 3%;
     font-family: 'Lato', sans-serif;
@@ -1241,7 +1269,7 @@ body {
 .middle-table-div {
     height: 80px;
     width: 100%;
-    margin-top: 170px;
+    margin-top: 155px;
     margin-left: 13%;
 }
 
@@ -1249,7 +1277,7 @@ body {
     height: 80px;
     width: 100%;
     float: left;
-    margin-top: 80px;
+    margin-top: 65px;
     margin-left: 13%;
 }
 
@@ -1327,11 +1355,12 @@ body {
 
 .zone-modal-content {
     width: 80%;
-    height: 80%;
+    height: 85%;
     background: url('../images/background.png');
     margin: auto;
     margin-top: 2%;
     padding: 30px;
+    padding-top: 1%;
 }
 
 .zone-title {
@@ -1344,7 +1373,7 @@ body {
 
 .schedule-title {
     width: 100%;
-    height: 50px;
+    height: 40px;
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -1368,6 +1397,7 @@ body {
 .calendar-div {
     height: 75%;
     width: 100%;
+    max-width: 1100px;
     margin: auto;
     margin-top: 10px;
 }
@@ -1428,6 +1458,8 @@ body {
     height: 100%;
     width: 50%;
     float: left;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .water-event {
@@ -1438,6 +1470,8 @@ body {
     height: 100%;
     width: 50%;
     float: right;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .add-schedule-modal {
@@ -1468,7 +1502,7 @@ body {
     width: 280px;
     height: 180px;
     background-color: white;
-    line-height: 28px;
+    line-height: 30px;
     margin: auto;
     margin-top: 15%;
     padding: 50px;
@@ -1484,7 +1518,7 @@ body {
 
 .schedule-close-button {
     float: right;
-    margin-top: -55px;
+    margin-top: -40px;
     margin-right: 20px;
     cursor: pointer;
     height: 40px;

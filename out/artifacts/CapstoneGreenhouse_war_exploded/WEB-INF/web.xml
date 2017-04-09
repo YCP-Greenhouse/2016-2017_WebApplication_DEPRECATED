@@ -65,6 +65,11 @@
         <servlet-class>api.ScheduleAPI</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ContactAPI</servlet-name>
+        <servlet-class>api.ContactAPI</servlet-class>
+    </servlet>
+
 
 
     <!-- Servlet mappings -->
@@ -122,6 +127,11 @@
     <servlet-mapping>
         <servlet-name>ScheduleAPI</servlet-name>
         <url-pattern>/api/schedule</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ContactAPI</servlet-name>
+        <url-pattern>/api/contact</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

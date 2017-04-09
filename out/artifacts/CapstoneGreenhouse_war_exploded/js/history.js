@@ -398,7 +398,6 @@ function getGreenhouseTemperatureData() {
         url: '/api/averages?time=a',
         success: function(response) {
             var data = JSON.parse(response);
-            //console.table(data);
 
             var tableData = {
                 x: [],
@@ -431,7 +430,6 @@ function getGreenhouseHumidityData() {
         url: '/api/averages?time=a',
         success: function(response) {
             var data = JSON.parse(response);
-            //console.table(data);
 
             var tableData = {
                 x: [],
@@ -464,7 +462,6 @@ function getGreenhouseLightData() {
         url: '/api/averages?time=a',
         success: function(response) {
             var data = JSON.parse(response);
-            //console.table(data);
 
             var tableData = {
                 x: [],

@@ -68,7 +68,7 @@
                 <div class="top-panel-2"></div>
                 <div class="top-panel-3">
                     <!-- Top table row -->
-
+                    <div class="zone-instruction">Select a zone to configure light and water schedules</div>
                     <div class="big-table-left" id="zone-1">ZONE 1</div>
                     <div class="big-table-right" id="zone-2">ZONE 2</div>
 
@@ -172,35 +172,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!--
-                <div class="manual-panel-5">
-                    <div class="controls-title">TEMPERATURE</div>
-                    <div class="temperature-label">
-                        <span class="temperature-value" id="temperature-low"></span>
-                        <span class="temp-f">F</span>
-                        <div class="control-caption-2">LOW</div>
-                    </div>
-
-                    <div class="temperature-buttons">
-                        <div class="temperature-button" id="temp-low-increase">+</div>
-                        <div class="temperature-button" id="temp-low-decrease">-</div>
-                    </div>
-                </div>
-                <div class="manual-panel-4">
-                    <div class="temperature-label">
-                        <span class="temperature-value" id="temperature-high"></span>
-                        <span class="temp-f">F</span>
-                        <div class="control-caption-2">HIGH</div>
-                    </div>
-
-                    <div class="temperature-buttons">
-                        <div class="temperature-button" id="temp-high-increase">+</div>
-                        <div class="temperature-button" id="temp-high-decrease">-</div>
-                    </div>
-
-                </div>
-                <!-- End Temperature Section -->
             </div>
 
 
@@ -216,9 +187,7 @@
                 <table class="schedule-calendar" id="calendar-table" cellspacing="0">
                     <thead id="schedule-heading"></thead>
 
-                    <tbody id="schedule-body">
-                    </tbody>
-
+                    <tbody id="schedule-body"></tbody>
 
                 </table>
             </div>
