@@ -305,89 +305,181 @@ function getZoneSoilMoistureData() {
         success: function(response) {
             var data = JSON.parse(response);
 
-            var zone1 = {
+            var zone1probe1 = {
                 x: [],
                 y: [],
                 text: [],
                 mode: 'lines',
                 hoverinfo: 'text+x',
-                name: 'Zone 1'
+                name: 'Zone 1 Probe 1'
             };
 
-            var zone2 = {
+            var zone1probe2 = {
                 x: [],
                 y: [],
                 text: [],
                 mode: 'lines',
                 hoverinfo: 'text+x',
-                name: 'Zone 2'
+                name: 'Zone 1 Probe 2'
+            }
+
+            var zone2probe1 = {
+                x: [],
+                y: [],
+                text: [],
+                mode: 'lines',
+                hoverinfo: 'text+x',
+                name: 'Zone 2 Probe 1'
             };
 
-            var zone3 = {
+            var zone2probe2 = {
                 x: [],
                 y: [],
                 text: [],
                 mode: 'lines',
                 hoverinfo: 'text+x',
-                name: 'Zone 3'
+                name: 'Zone 2 Probe 2'
+            }
+
+            var zone3probe1 = {
+                x: [],
+                y: [],
+                text: [],
+                mode: 'lines',
+                hoverinfo: 'text+x',
+                name: 'Zone 3 Probe 1'
             };
 
-            var zone4 = {
+            var zone3probe2 = {
                 x: [],
                 y: [],
                 text: [],
                 mode: 'lines',
                 hoverinfo: 'text+x',
-                name: 'Zone 4'
+                name: 'Zone 3 Probe 2'
             };
 
-            var zone5 = {
+            var zone4probe1 = {
                 x: [],
                 y: [],
                 text: [],
                 mode: 'lines',
                 hoverinfo: 'text+x',
-                name: 'Zone 5'
+                name: 'Zone 4 Probe 1'
             };
 
-            var zone6 = {
+            var zone4probe2 = {
                 x: [],
                 y: [],
-                mode: 'lines',
                 text: [],
+                mode: 'lines',
                 hoverinfo: 'text+x',
-                name: 'Zone 6'
+                name: 'Zone 4 Probe 2'
             };
+
+            var zone5probe1 = {
+                x: [],
+                y: [],
+                text: [],
+                mode: 'lines',
+                hoverinfo: 'text+x',
+                name: 'Zone 5 Probe 1'
+            };
+
+            var zone5probe2 = {
+                x: [],
+                y: [],
+                text: [],
+                mode: 'lines',
+                hoverinfo: 'text+x',
+                name: 'Zone 5 Probe 2'
+            };
+
+            var zone6probe1 = {
+                x: [],
+                y: [],
+                text: [],
+                mode: 'lines',
+                hoverinfo: 'text+x',
+                name: 'Zone 6 Probe 1'
+            };
+
+            var zone6probe2 = {
+                x: [],
+                y: [],
+                text: [],
+                mode: 'lines',
+                hoverinfo: 'text+x',
+                name: 'Zone 6 Probe 2'
+            };
+
 
             for( var i=0; i<data.length; i++ ) {
                 if( data[i].zone == 1 ) {
-                    zone1.x.push( data[i].sampletime.replace( /\//g, "-") );
-                    zone1.y.push( data[i].moisture );
-                    zone1.text.push( data[i].moisture + "%");
+                    // Probe 1
+                    zone1probe1.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone1probe1.y.push( data[i].probe1 );
+                    zone1probe1.text.push( data[i].probe1 + "%");
+
+                    // Probe 2
+                    zone1probe2.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone1probe2.y.push( data[i].probe2 );
+                    zone1probe2.text.push( data[i].probe2 + "%");
+
                 } else if( data[i].zone == 2 ) {
-                    zone2.x.push( data[i].sampletime.replace( /\//g, "-") );
-                    zone2.y.push( data[i].moisture );
-                    zone2.text.push( data[i].moisture + "%");
+                    // Probe 1
+                    zone2probe1.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone2probe1.y.push( data[i].probe1 );
+                    zone2probe1.text.push( data[i].probe1 + "%");
+
+                    // Probe 2
+                    zone2probe2.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone2probe2.y.push( data[i].probe2 );
+                    zone2probe2.text.push( data[i].probe2 + "%");
                 } else if( data[i].zone == 3 ) {
-                    zone3.x.push( data[i].sampletime.replace( /\//g, "-") );
-                    zone3.y.push( data[i].moisture );
-                    zone3.text.push( data[i].moisture + "%");
+                    // Probe 1
+                    zone3probe1.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone3probe1.y.push( data[i].probe1 );
+                    zone3probe1.text.push( data[i].probe1 + "%");
+
+                    // Probe 2
+                    zone3probe2.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone3probe2.y.push( data[i].probe2 );
+                    zone3probe2.text.push( data[i].probe2 + "%");
                 } else if( data[i].zone == 4 ) {
-                    zone4.x.push( data[i].sampletime.replace( /\//g, "-") );
-                    zone4.y.push( data[i].moisture );
-                    zone4.text.push( data[i].moisture + "%");
+                    // Probe 1
+                    zone4probe1.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone4probe1.y.push( data[i].probe1 );
+                    zone4probe1.text.push( data[i].probe1 + "%");
+
+                    // Probe 2
+                    zone4probe2.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone4probe2.y.push( data[i].probe2 );
+                    zone4probe2.text.push( data[i].probe2 + "%");
                 } else if( data[i].zone == 5 ) {
-                    zone5.x.push( data[i].sampletime.replace( /\//g, "-") );
-                    zone5.y.push( data[i].moisture );
-                    zone5.text.push( data[i].moisture + "%");
+                    // Probe 1
+                    zone5probe1.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone5probe1.y.push( data[i].probe1 );
+                    zone5probe1.text.push( data[i].probe1 + "%");
+
+                    // Probe 2
+                    zone5probe2.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone5probe2.y.push( data[i].probe2 );
+                    zone5probe2.text.push( data[i].probe2 + "%");
                 } else if( data[i].zone == 6 ) {
-                    zone6.x.push( data[i].sampletime.replace( /\//g, "-") );
-                    zone6.y.push( data[i].moisture );
-                    zone6.text.push( data[i].moisture + "%");
+                    // Probe 1
+                    zone6probe1.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone6probe1.y.push( data[i].probe1 );
+                    zone6probe1.text.push( data[i].probe1 + "%");
+
+                    // Probe 2
+                    zone6probe2.x.push( data[i].sampletime.replace( /\//g, "-") );
+                    zone6probe2.y.push( data[i].probe2 );
+                    zone6probe2.text.push( data[i].probe2 + "%");
                 }
             }
 
-            drawPlot( [zone1,zone2,zone3,zone4,zone5,zone6], "ZONE SOIL MOISTURE", "", "" );
+            drawPlot( [zone1probe1,zone1probe2, zone2probe1, zone2probe2, zone3probe1, zone3probe2, zone4probe1, zone4probe2, zone5probe1, zone5probe2, zone6probe1, zone6probe2 ], "ZONE SOIL MOISTURE", "", "" );
         }
     });
 }
