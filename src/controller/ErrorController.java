@@ -31,14 +31,18 @@ public class ErrorController {
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
+
+
         ArrayList<ContactModel> contactList = contactController.getAllContacts();
+
+        sendEmail(error, contactList);
 
         for( ContactModel contact : contactList ) {
             Message message = Message.creator(new PhoneNumber(contact.getPhoneNumber()),
                     new PhoneNumber("+14842355187"),
                     error.getMessage()).create();
 
-            sendEmail(error, contact);
+
 
             System.out.println(message.getSid());
         }
@@ -46,10 +50,9 @@ public class ErrorController {
 
     }
 
-    public void sendEmail(ErrorModel error, ContactModel contact) {
+    public static void sendEmail(ErrorModel error, ArrayList<ContactModel> contactList ) {
         String myEmailId = "goodegreenhousealerts@gmail.com";
         String myPassword = System.getenv("EMAIL_PASSWORD");
-        String senderId = contact.getEmail();
 
         try {
             MultiPartEmail email = new MultiPartEmail();
@@ -60,7 +63,11 @@ public class ErrorController {
             email.setFrom(myEmailId);
             email.setSubject("Greenhouse Alert");
             email.setMsg("Error: " + error.getMessage() + "\nTime: " + error.getTime());
-            email.addTo(senderId);
+
+            for( ContactModel contact : contactList ) {
+                email.addTo(contact.getEmail());
+            }
+
             email.setTLS(true);
 
 
@@ -102,13 +109,16 @@ public class ErrorController {
             System.out.println("ErrorController: UpdateError(): Error message contains invalid characters");
             return;
         }
-
-        alertAdmins(error);
         setLastError(error);
         saveErrorToDatabase(error);
+        alertAdmins(error);
+
     }
 
     public void saveErrorToDatabase( ErrorModel model ) {
+
+        System.out.println("Save error to database");
+
         // Get website information from DB
         Connection conn = null;
         try {
