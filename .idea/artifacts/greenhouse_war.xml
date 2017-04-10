@@ -11,6 +11,7 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="lib">
           <element id="library" level="project" name="twilio" />
+          <element id="library" level="project" name="mail" />
         </element>
       </element>
     </root>

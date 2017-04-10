@@ -7,8 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/activation.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/commons-email-1.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mail.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CapstoneGreenhouse_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CapstoneGreenhouse_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/greenhouse_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/greenhouse_war.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/history.js" afterPath="$PROJECT_DIR$/web/js/history.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CapstoneGreenhouse.iml" afterPath="$PROJECT_DIR$/CapstoneGreenhouse.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/ErrorAPI.java" afterPath="$PROJECT_DIR$/src/api/ErrorAPI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ErrorController.java" afterPath="$PROJECT_DIR$/src/controller/ErrorController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,24 +64,15 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="contacts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/contacts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="88" column="3" lean-forward="false" selection-start-line="88" selection-start-column="3" selection-end-line="88" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ErrorController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ErrorController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/ErrorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="32" column="86" lean-forward="false" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
+            <state relative-caret-position="180">
+              <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
               <folding>
-                <marker date="1491768467000" expanded="true" signature="2543:2577" ph="INSERT INTO errors... " />
-                <marker date="1491768467000" expanded="true" signature="3479:3499" ph="SELECT * FRO... errors" />
+                <element signature="imports" expanded="true" />
+                <marker date="1491838403000" expanded="true" signature="3652:3686" ph="INSERT INTO errors... " />
+                <marker date="1491838403000" expanded="true" signature="4588:4608" ph="SELECT * FRO... errors" />
               </folding>
             </state>
           </provider>
@@ -110,10 +109,21 @@
       <file leaf-file-name="ErrorAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/ErrorAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="54" column="52" lean-forward="false" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+            <state relative-caret-position="60">
+              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/AccountController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="108" column="48" lean-forward="true" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="48" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <marker date="1489873202000" expanded="true" signature="897:953" ph="SELECT * FRO... accounts" />
+                <marker date="1489873202000" expanded="true" signature="2007:2061" ph="SELECT * FRO... apikeys" />
               </folding>
             </state>
           </provider>
@@ -161,7 +171,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="history.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="history.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/history.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="449">
@@ -170,6 +180,16 @@
                 <marker date="1491828001000" expanded="true" signature="508:530" ph="..." />
                 <marker date="1491828001000" expanded="true" signature="1190:1212" ph="..." />
                 <marker date="1491828001000" expanded="true" signature="1580:1596" ph="..." />
+                <marker date="1491828001000" expanded="true" signature="11101:17444" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="11114:17440" ph="{&quot;type&quot;: 'GET'...}" />
+                <marker date="1491828001000" expanded="true" signature="11210:17434" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="14028:17211" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="14070:14567" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="14597:15093" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="15123:15619" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="15649:16145" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="16175:16671" ph="{...}" />
+                <marker date="1491828001000" expanded="true" signature="16701:17197" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -190,7 +210,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getSensorData</find>
       <find>getLatestSensorDataByID</find>
       <find>zone</find>
       <find>start time</find>
@@ -220,6 +239,7 @@
       <find>chart-div</find>
       <find>option-div</find>
       <find>option</find>
+      <find>moi</find>
     </findStrings>
     <replaceStrings>
       <replace>size=&quot;7&quot;</replace>
@@ -244,7 +264,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/api/StateAPI.java" />
         <option value="$PROJECT_DIR$/src/api/AveragesAPI.java" />
         <option value="$PROJECT_DIR$/web/js/spoof.js" />
         <option value="$PROJECT_DIR$/web/js/weather.js" />
@@ -293,8 +312,9 @@
         <option value="$PROJECT_DIR$/web/contacts.html" />
         <option value="$PROJECT_DIR$/src/api/ContactAPI.java" />
         <option value="$PROJECT_DIR$/src/controller/ContactController.java" />
-        <option value="$PROJECT_DIR$/src/controller/ErrorController.java" />
         <option value="$PROJECT_DIR$/web/js/history.js" />
+        <option value="$PROJECT_DIR$/src/api/ErrorAPI.java" />
+        <option value="$PROJECT_DIR$/src/controller/ErrorController.java" />
       </list>
     </option>
   </component>
@@ -528,6 +548,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -553,17 +601,17 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/web/js" />
-      <recent name="$PROJECT_DIR$/web/views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/web/images" />
       <recent name="$PROJECT_DIR$/web/css" />
       <recent name="$PROJECT_DIR$/web/js" />
       <recent name="$PROJECT_DIR$/web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/js" />
+      <recent name="$PROJECT_DIR$/web/views" />
     </key>
   </component>
   <component name="RunManager" selected="GlassFish Server.GlassFish 4.1.1">
@@ -990,7 +1038,6 @@
     </configuration>
     <configuration default="false" name="GlassFish 4.1.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.1" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <deployment>
         <artifact name="CapstoneGreenhouse:war exploded">
           <settings>
@@ -1058,6 +1105,11 @@
         <EnvironmentVariables>
           <option name="NAME" value="RDS_SALT" />
           <option name="VALUE" value="IqX7=ST2G691N8]K]kPllms7$ox3Hj+:vnE+2,}V{U0xDD1;`ie,U3Bf5eCrj" />
+          <option name="IS_PREDEFINED" value="false" />
+        </EnvironmentVariables>
+        <EnvironmentVariables>
+          <option name="NAME" value="EMAIL_PASSWORD" />
+          <option name="VALUE" value="capstone2017" />
           <option name="IS_PREDEFINED" value="false" />
         </EnvironmentVariables>
       </ConfigurationWrapper>
@@ -1145,16 +1197,16 @@
       <workItem from="1491492207543" duration="8807000" />
       <workItem from="1491603204012" duration="2897000" />
       <workItem from="1491611269102" duration="26737000" />
-      <workItem from="1491827291193" duration="713000" />
+      <workItem from="1491827291193" duration="2567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543779000" />
+    <option name="totallyTimeSpent" value="545633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1440" height="836" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1178,7 +1230,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.49713877" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06300268" sideWeight="0.8948498" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41286862" sideWeight="0.8948498" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.49713877" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21244635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1534,17 +1586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="108" column="48" lean-forward="true" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
-          <folding>
-            <marker date="1489873202000" expanded="true" signature="897:953" ph="SELECT * FRO... accounts" />
-            <marker date="1489873202000" expanded="true" signature="2007:2061" ph="SELECT * FRO... apikeys" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/AutomationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1098">
@@ -1766,16 +1807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/ErrorAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="54" column="52" lean-forward="false" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ContactController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
@@ -1783,17 +1814,6 @@
           <folding>
             <marker date="1491768191000" expanded="true" signature="732:773" ph="INSERT INTO contactlist... " />
             <marker date="1491768191000" expanded="true" signature="1803:1828" ph="SELECT * FRO... contactlist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ErrorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="32" column="86" lean-forward="false" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
-          <folding>
-            <marker date="1491768467000" expanded="true" signature="2543:2577" ph="INSERT INTO errors... " />
-            <marker date="1491768467000" expanded="true" signature="3479:3499" ph="SELECT * FRO... errors" />
           </folding>
         </state>
       </provider>
@@ -1814,6 +1834,47 @@
             <marker date="1491828001000" expanded="true" signature="508:530" ph="..." />
             <marker date="1491828001000" expanded="true" signature="1190:1212" ph="..." />
             <marker date="1491828001000" expanded="true" signature="1580:1596" ph="..." />
+            <marker date="1491828001000" expanded="true" signature="11101:17444" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="11114:17440" ph="{&quot;type&quot;: 'GET'...}" />
+            <marker date="1491828001000" expanded="true" signature="11210:17434" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="14028:17211" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="14070:14567" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="14597:15093" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="15123:15619" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="15649:16145" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="16175:16671" ph="{...}" />
+            <marker date="1491828001000" expanded="true" signature="16701:17197" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="108" column="48" lean-forward="true" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="48" />
+          <folding>
+            <marker date="1489873202000" expanded="true" signature="897:953" ph="SELECT * FRO... accounts" />
+            <marker date="1489873202000" expanded="true" signature="2007:2061" ph="SELECT * FRO... apikeys" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/ErrorAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ErrorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1491838403000" expanded="true" signature="3652:3686" ph="INSERT INTO errors... " />
+            <marker date="1491838403000" expanded="true" signature="4588:4608" ph="SELECT * FRO... errors" />
           </folding>
         </state>
       </provider>
@@ -1897,7 +1958,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>twilio</last-edited>
+          <last-edited>mail</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

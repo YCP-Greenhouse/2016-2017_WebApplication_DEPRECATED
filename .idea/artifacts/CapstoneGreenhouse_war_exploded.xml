@@ -12,6 +12,7 @@
           <element id="library" level="project" name="java-json" />
           <element id="library" level="project" name="mysql-connector-java-5.1.38-bin" />
           <element id="library" level="project" name="twilio" />
+          <element id="library" level="project" name="mail" />
         </element>
       </element>
     </root>

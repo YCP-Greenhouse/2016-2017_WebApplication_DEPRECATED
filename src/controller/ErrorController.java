@@ -6,6 +6,8 @@ import com.twilio.type.PhoneNumber;
 
 import model.ContactModel;
 import model.ErrorModel;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.MultiPartEmail;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,7 +23,9 @@ public class ErrorController {
     ContactController contactController = new ContactController();
     ErrorModel errorModel = new ErrorModel();
 
-    public void alertAdmins(String error) {
+    public void alertAdmins(ErrorModel error) {
+
+        // Twilio configurations
         String ACCOUNT_SID = "AC73e88c0373966b37338518a7dd9dc190";
         String AUTH_TOKEN = "5796534f03e9046b576e906aa6aa8477";
 
@@ -32,16 +36,41 @@ public class ErrorController {
         for( ContactModel contact : contactList ) {
             Message message = Message.creator(new PhoneNumber(contact.getPhoneNumber()),
                     new PhoneNumber("+14842355187"),
-                    error).create();
+                    error.getMessage()).create();
+
+            sendEmail(error, contact);
 
             System.out.println(message.getSid());
         }
 
 
-
-
-
     }
+
+    public void sendEmail(ErrorModel error, ContactModel contact) {
+        String myEmailId = "goodegreenhousealerts@gmail.com";
+        String myPassword = System.getenv("EMAIL_PASSWORD");
+        String senderId = contact.getEmail();
+
+        try {
+            MultiPartEmail email = new MultiPartEmail();
+            email.setSmtpPort(587);
+            email.setAuthenticator(new DefaultAuthenticator(myEmailId, myPassword));
+            email.setDebug(true);
+            email.setHostName("smtp.gmail.com");
+            email.setFrom(myEmailId);
+            email.setSubject("Greenhouse Alert");
+            email.setMsg("Error: " + error.getMessage() + "\nTime: " + error.getTime());
+            email.addTo(senderId);
+            email.setTLS(true);
+
+
+            email.send();
+            System.out.println("Mail sent!");
+        } catch (Exception e) {
+            System.out.println("Exception :: " + e);
+        }
+    }
+
 
     public JSONObject getLastError() {
         JSONObject obj = new JSONObject();
@@ -66,17 +95,17 @@ public class ErrorController {
         errorModel = model;
     }
 
-    public void updateError( ErrorModel model ) {
+    public void updateError( ErrorModel error ) {
 
         // Check for invalid input
-        if( !dbController.isValidInput(model.getMessage()) ){
+        if( !dbController.isValidInput(error.getMessage()) ){
             System.out.println("ErrorController: UpdateError(): Error message contains invalid characters");
             return;
         }
 
-        alertAdmins(model.getMessage());
-        setLastError(model);
-        saveErrorToDatabase(model);
+        alertAdmins(error);
+        setLastError(error);
+        saveErrorToDatabase(error);
     }
 
     public void saveErrorToDatabase( ErrorModel model ) {

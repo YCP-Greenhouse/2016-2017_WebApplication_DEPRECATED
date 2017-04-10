@@ -24,5 +24,6 @@
     <orderEntry type="library" name="java-json" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.38-bin" level="project" />
     <orderEntry type="library" name="twilio" level="project" />
+    <orderEntry type="library" name="mail" level="project" />
   </component>
 </module>
