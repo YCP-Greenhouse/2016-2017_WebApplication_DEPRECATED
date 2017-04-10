@@ -1,6 +1,7 @@
 package api;
 
 import controller.AccountController;
+import controller.DatabaseController;
 import controller.ErrorController;
 import model.ErrorModel;
 
@@ -14,6 +15,7 @@ public class ErrorAPI extends HttpServlet {
 
     ErrorController errorController = new ErrorController();
     AccountController accountController = new AccountController();
+    DatabaseController databaseController = new DatabaseController();
 
 
     @Override
@@ -50,7 +52,7 @@ public class ErrorAPI extends HttpServlet {
 
             errorModel.setMessage(req.getParameter("message"));
             errorModel.setCode(Integer.parseInt(req.getParameter("code")));
-            errorModel.setTime();
+            errorModel.setTime(databaseController.getCurrentTime());
 
             errorController.updateError(errorModel);
 

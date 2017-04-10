@@ -356,7 +356,7 @@ function tempChange(el, val, type) {
                 el.html('');
                 el.html(temphigh + "&deg;");
             } else {
-                if( temphigh > 50)
+                if( temphigh > 50 && ( temphigh-templow > 5 ))
                     temphigh--;
 
                 el.html('');
@@ -366,7 +366,7 @@ function tempChange(el, val, type) {
         // If type == 0, update tempLow
         } else {
             if( parseInt(val) == 1 ) {
-                if( parseInt(templow) < parseInt(temphigh) ) {
+                if( parseInt(templow) < parseInt(temphigh)-5 ) {
                     templow++;
                 }
 
