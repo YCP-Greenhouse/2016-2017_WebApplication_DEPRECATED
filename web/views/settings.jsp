@@ -113,10 +113,10 @@
                         <div class="control-caption">LIGHTS</div>
                     </label>
 
-                    <label class="switch switch-left-right">
-                        <input id="shade-check" class="switch-input" name="shade-switch" type="checkbox" />
-                        <span id="shade-switch" class="switch-label" data-on="Open" data-off="Closed"></span>
-                        <span class="switch-handle"></span>
+                    <label class="shade-switch shade-switch-left-right">
+                        <input id="shade-check" class="shade-switch-input" name="shade-switch" type="checkbox" />
+                        <span id="shade-switch" class="shade-switch-label" data-on="Extended" data-off="Retracted"></span>
+                        <span class="shade-switch-handle"></span>
                         <div class="control-caption">SHADES</div>
                     </label>
 
