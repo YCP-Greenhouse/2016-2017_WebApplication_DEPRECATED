@@ -1,5 +1,6 @@
 // Set when user clicks zone 1-6
 var zone;
+var saveZone = $('#zoneid').val();
 
 function getSchedules(zone) {
     $.ajax({
@@ -12,9 +13,18 @@ function getSchedules(zone) {
             populateHeading();
             drawCalendar();
 
+            // Light zones are  1 = (1,2), 2 = (3,4), 3 = (5,6)
+            var lightZone = 0;
+            if( parseInt(zone) % 2 == 0 ) {
+                lightZone = parseInt(zone)/2;
+            } else {
+                lightZone = (parseInt(zone)+1)/2;
+            }
+
             // Populate light schedule
             for (var i = 0; i < data.lightschedule.length; i++) {
-                if (data.lightschedule[i].zone == zone ) {
+
+                if (data.lightschedule[i].zone == lightZone ) {
                     populateCalendar('light', data.lightschedule[i]);
                 }
             }
@@ -78,32 +88,51 @@ function populateCalendar(title, schedule) {
 
             var blankDiv = document.getElementById( tdId + -1 );
             blankDiv.setAttribute('scheduleid', schedule.id);
-            blankDiv.setAttribute('scheduletype', title);
-            blankDiv.classList.add('light-event');
+            blankDiv.setAttribute('schedule', title);
+            blankDiv.setAttribute('scheduletype', schedule.type);
+            //blankDiv.setAttribute('inverse', schedule.inverse );
+            blankDiv.setAttribute('threshold', schedule.threshold);
+
+            if( schedule.type == 'blocked' ) {
+                blankDiv.classList.add('light-blocked');
+                if( i==0 ) {
+                    blankDiv.innerText = "NO LIGHTS";
+                }
+            } else {
+                blankDiv.classList.add('light-event');
+                if( i==0 ) {
+                    blankDiv.innerText = "LIGHTS ON";
+                }
+            }
 
             // Remove 'clear' classes
             blankDiv.classList.remove("blank");
             blankDiv.classList.remove("left");
-
-            if( i==0 ) {
-                blankDiv.innerText = "LIGHTS ON";
-            }
 
         } else if( title === 'water' ) {
 
             var blankDiv = document.getElementById( tdId + -2 );
             blankDiv.setAttribute('scheduleid', schedule.id);
-            blankDiv.setAttribute('scheduletype', title);
-            blankDiv.classList.add('water-event');
+            blankDiv.setAttribute('schedule', title);
+            blankDiv.setAttribute('scheduletype', schedule.type);
+            //blankDiv.setAttribute('inverse', schedule.inverse );
+            blankDiv.setAttribute('threshold', schedule.threshold);
+
+            if( schedule.type == 'blocked' ) {
+                blankDiv.classList.add('water-blocked');
+                if( i==0 ) {
+                    blankDiv.innerText = "NO WATER";
+                }
+            } else {
+                blankDiv.classList.add('water-event');
+                if( i==0 ) {
+                    blankDiv.innerText = "WATER ON";
+                }
+            }
 
             // Remove 'clear' classes
             blankDiv.classList.remove("blank");
             blankDiv.classList.remove("left");
-
-
-            if( i==0 ) {
-                blankDiv.innerText = "WATER ON";
-            }
         }
     }
 }
@@ -145,6 +174,29 @@ $(document).on('click', '.blank', function() {
     if( $(this)[0].children.length > 1 ) {
         return;
     }
+
+    // Set saveZone variable ( For light, need to convert from 1-6 to 1-3
+    var zoneId = parseInt($('#zoneid').val());
+    if( zoneId % 2 == 0 ) {
+        saveZone = zoneId / 2;
+    } else {
+        saveZone = (zoneId+1)/2;
+    }
+
+    var lightZone = 1;
+
+    // Set light zone text
+    if( zoneId > 2 && zoneId <= 4) {
+        lightZone = 3;
+    } else if( zoneId > 4 ) {
+        lightZone = 5;
+    }
+
+    // Set schedule type
+    $('#schedule-type').val('light');
+    document.querySelector("input[value='light']").checked = true;
+    $('#schedule-description').html('Sets light schedule for Zones ' + lightZone + ' and ' + (lightZone+1) );
+    $('#schedule-description').show();
 
     // Display modal
     $('#schedule-modal').css("display", "block");
@@ -202,6 +254,25 @@ $(document).on('click', '.blank', function() {
 });
 
 $(document).on('click', '.light-event', function() {
+    drawLightScheduleModal($(this));
+});
+
+$(document).on('click', '.light-blocked', function() {
+    drawLightScheduleModal($(this));
+});
+
+// Input: div object
+function drawLightScheduleModal(el) {
+    var id = el[0].id;
+    var scheduleId = el.attr("scheduleid");
+
+    // Set saveZone variable ( For light, need to convert from 1-6 to 1-3
+    var sZ = parseInt($('#zoneid').val());
+    if( sZ % 2 == 0 ) {
+        saveZone = sZ / 2;
+    } else {
+        saveZone = (sZ+1)/2;
+    }
 
     // Display modal
     $('#schedule-modal').css("display", "block");
@@ -213,15 +284,34 @@ $(document).on('click', '.light-event', function() {
     $('#delete-button').css("display", "block");
 
     // Get start time
-    var tdId = $(this)[0].id;       // Gets id as (h-d)
+    var tdId = id;       // Gets id as (h-d)
     var splitId = tdId.split('-');  // Splits id into h and d
     var startFound = false;
 
-    $('#schedule-id').val( $(this).attr("scheduleid") );
+    // Set scheduleId
+    $('#schedule-id').val( scheduleId );
+
+    // Set schedule
+    $('#schedule-type').val('light');
+    document.querySelector("input[value='light']").checked = true;
+    $('#schedule-description').html('Sets light schedule for Zones ' + saveZone + ' and ' + (saveZone+1) );
+    $('#schedule-description').show();
 
     // Set schedule type
-    $('#schedule-type').val('light');
-    $('#light-radio').attr('checked','checked');
+    var scheduleType = el.attr('scheduletype');
+    var scheduleClass = 'light-event';
+
+    if( scheduleType == 'constant' ) {
+        document.querySelector("input[value='constant']").checked = true;
+        displayConstantMessage();
+    } else if( scheduleType == 'sensors' ) {
+        document.querySelector("input[value='sensors']").checked = true;
+        displaySensorsMessage(el);
+    } else if( scheduleType == 'blocked' ) {
+        document.querySelector("input[value='blocked']").checked = true;
+        displayBlockedMessage();
+        scheduleClass = 'light-blocked';
+    }
 
     // Find day of column clicked
     var today = new Date();
@@ -245,7 +335,7 @@ $(document).on('click', '.light-event', function() {
         }
 
         // If element doesn't have 'light-event' class, break loop
-        if( !$('#' + checkId + '-' + splitId[1] + '-1' ).hasClass('light-event') ) {
+        if( !$('#' + checkId + '-' + splitId[1] + '-1' ).hasClass(scheduleClass) ) {
             startFound = true;
             checkId++;
         }
@@ -265,7 +355,7 @@ $(document).on('click', '.light-event', function() {
         }
 
         // If element doesn't have 'light-event' class, break loop
-        if( !$('#' + checkId + '-' + splitId[1] + '-1' ).hasClass('light-event') ) {
+        if( !$('#' + checkId + '-' + splitId[1] + '-1' ).hasClass(scheduleClass) ) {
             endFound = true;
         }
     }
@@ -289,9 +379,23 @@ $(document).on('click', '.light-event', function() {
     var hours = endHour - startHour;
     $('#hours').val(hours);
 
-});
+}
 
 $(document).on('click', '.water-event', function() {
+    drawWaterScheduleModal($(this));
+});
+
+$(document).on('click', '.water-blocked', function() {
+    drawWaterScheduleModal($(this));
+});
+
+// Input: div's id and schedule's id
+function drawWaterScheduleModal(el) {
+    var id = el[0].id;
+    var scheduleId = el.attr("scheduleid");
+
+    // Set save zone variable ( For water, set to zoneid )
+    saveZone = $('#zoneid').val();
 
     // Display modal
     $('#schedule-modal').css("display", "block");
@@ -302,16 +406,35 @@ $(document).on('click', '.water-event', function() {
     // Show schedule delete button
     $('#delete-button').css("display", "block");
 
-    // Set schedule type
-    $('#schedule-type').val('water');
-    $('#water-radio').attr('checked','checked');
-
     // Get start time
-    var tdId = $(this)[0].id;       // Gets id as (h-d)
+    var tdId = id;       // Gets id as (h-d)
     var splitId = tdId.split('-');  // Splits id into h and d
     var startFound = false;
 
-    $('#schedule-id').val( $(this).attr("scheduleid") );
+    // Set scheduleId
+    $('#schedule-id').val( scheduleId );
+
+    // Set schedule
+    $('#schedule-type').val('water');
+    document.querySelector("input[value='water']").checked = true;
+    $('#schedule-description').show();
+    $('#schedule-description').html('Sets water schedule for Zone ' + saveZone );
+
+    // Set schedule type
+    var scheduleType = el.attr('scheduletype');
+    var scheduleClass = 'water-event';
+
+    if( scheduleType == 'constant' ) {
+        document.querySelector("input[value='constant']").checked = true;
+        displayConstantMessage();
+    } else if( scheduleType == 'sensors' ) {
+        document.querySelector("input[value='sensors']").checked = true;
+        displaySensorsMessage(el);
+    } else if( scheduleType == 'blocked' ) {
+        document.querySelector("input[value='blocked']").checked = true;
+        displayBlockedMessage();
+        scheduleClass = 'water-blocked';
+    }
 
     // Find day of column clicked
     var today = new Date();
@@ -335,7 +458,7 @@ $(document).on('click', '.water-event', function() {
         }
 
         // If element doesn't have 'light-event' class, break loop
-        if( !$('#' + checkId + '-' + splitId[1] + '-2' ).hasClass('water-event') ) {
+        if( !$('#' + checkId + '-' + splitId[1] + '-2' ).hasClass(scheduleClass) ) {
             startFound = true;
             checkId++;
         }
@@ -355,7 +478,7 @@ $(document).on('click', '.water-event', function() {
         }
 
         // If element doesn't have 'water-event' class, break loop
-        if( !$('#' + checkId + '-' + splitId[1] + '-2' ).hasClass('water-event') ) {
+        if( !$('#' + checkId + '-' + splitId[1] + '-2' ).hasClass(scheduleClass) ) {
             endFound = true;
         }
     }
@@ -379,70 +502,198 @@ $(document).on('click', '.water-event', function() {
     var hours = endHour - startHour;
     $('#hours').val(hours);
 
-});
-
-
-function convertMilitaryToStandardTime(hour) {
-    if( hour > 12) {
-        hour = hour-12;
-    }
-
-    if( hour < 0) {
-        hour = 0;
-    }
-
-    return hour;
-}
-
-function getAmPm(hour) {
-    if( hour > 11 && hour < 24 ) {
-        return "pm";
-    } else {
-        return "am";
-    }
 }
 
 // Close schedule modal
 $(document).on('click', '#close-button', function() {
+
+    // Clear schedule type
+     var ele = document.getElementsByName("type");
+     for(var i=0;i<ele.length;i++)
+     ele[i].checked = false;
+
     $('#schedule-modal').css("display", "none");
+    $('#schedule-description').hide();
 });
 
+// Close schedule create/edit window
 $(document).on('click', '#schedule-close', function() {
     clearCalendar();
     $('#container').css("filter","blur(0px)");
     $('#zone-modal').css("display", "none");
 });
 
+// User presses water radio option for schedule create/edit
+$(document).on('click', '#water-radio', function() {
+    $('#schedule-type').val('water');
+
+    // Set saveZone variable ( For water, just set to zone ID )
+    saveZone = $('#zoneid').val();
+
+    $('#schedule-description').show();
+    $('#schedule-description').html('Sets water schedule for Zone ' + saveZone );
+
+    // Clear type radios and description
+    var ele = document.getElementsByName("type");
+    for(var i=0;i<ele.length;i++)
+        ele[i].checked = false;
+
+    $('#type-description').hide();
+    $('#sensor-threshold-div').html('');
+
+});
+
+// User presses light radio option for schedule create/edit
+$(document).on('click', '#light-radio', function() {
+    $('#schedule-type').val('light');
+
+    var zoneId = parseInt($('#zoneid').val());
+    var lightZone = 1;
+
+    if( zoneId > 2 && zoneId <= 4) {
+        lightZone = 3;
+    } else if( zoneId > 4 ) {
+        lightZone = 5;
+    }
+
+    // Clear type radios and description
+    var ele = document.getElementsByName("type");
+    for(var i=0;i<ele.length;i++)
+        ele[i].checked = false;
+
+    $('#type-description').hide();
+    $('#sensor-threshold-div').html('');
+
+
+    $('#schedule-description').show();
+    $('#schedule-description').html('Sets light schedule for Zone ' + lightZone + ' and ' + (lightZone+1) );
+});
+
+// User selects blocked for schedule type ( constant/sensor/blocked )
+$(document).on('click', '#blocked-radio', function() {
+    displayBlockedMessage();
+});
+
+function displayBlockedMessage() {
+    $('#schedule-option').val('blocked');
+
+    // Clear sensors div
+    $('#sensors-threshold-div').html('');
+    $('#sensor-threshold-div').html('');
+
+    $('#type-description').show();
+    $('#type-description').html('Prevent ' + $('#schedule-type').val() + ' from being turned on during this time');
+}
+
+// User selects sensors for schedule type ( constant/sensor/blocked )
+$(document).on('click', '#sensors-radio', function() {
+    displaySensorsMessage();
+});
+
+function displaySensorsMessage(el) {
+    $('#schedule-option').val('sensors');
+
+    // Clear threshold div
+    $('#sensors-threshold-div').html("");
+
+    var threshold;
+    if( el != undefined ) {
+        threshold = el.attr('threshold');
+    }
+
+    var text = '';
+    var obj = '';
+    if( $('#schedule-type').val() == 'light' ) {
+        obj = 'Lights';
+        text = 'light';
+        displayLightThresholds(threshold);
+    } else {
+        obj = 'Water';
+        text = 'soil moisture';
+        displayWaterThresholds(threshold);
+    }
+
+    $('#type-description').show();
+    $('#type-description').html( obj + ' will only turn on when the ' + text + ' sensors fall below the following threshold:');
+}
+
+// User selects constant for schedule type ( constant/sensor/blocked )
+$(document).on('click', '#constant-radio', function() {
+    displayConstantMessage();
+});
+
+function displayConstantMessage() {
+    $('#schedule-option').val('constant');
+
+    // Clear threshold div
+    $('#sensor-threshold-div').html('');
+
+    var obj = '';
+    if( $('#schedule-type').val() == 'light' ) {
+        obj = 'Lights';
+    } else {
+        obj = 'Water';
+    }
+
+    $('#type-description').show();
+    $('#type-description').html( obj + ' will remain on for scheduled duration');
+}
+
+function displayLightThresholds(threshold) {
+    var value = 10000;
+    if( threshold != undefined ) {
+        value = threshold;
+    }
+
+
+    $('#sensor-threshold-div').html('<label>lux: </label><input style="margin-left:5px; width: 70px;" type="number" name="light-threshold" id="threshold" value=' + value + '>');
+}
+
+function displayWaterThresholds(threshold) {
+    var value=30;
+    if( threshold != undefined ) {
+        value = threshold;
+    }
+
+
+    $('#sensor-threshold-div').html('<label>Soil moisture: </label><input style="margin-left:5px; width: 40px;" type="number" name="water-threshold" id="threshold" value='+ value +'>%');
+}
+
+// Post schedule data to backend
 $(document).on('click', '#save-button', function() {
     zone = $('#zoneid').val();
+
+    // Need to dynamically create data object depending on schedule type
+    var data = {};
+    data.start = $('#start-time').val();
+    data.end = $('#end-time').val();
+    data.hours = $('#hours').val();
+    data.inverse = $('#inverse').val();
+    data.id = $('#schedule-id').val();
+    data.zoneid = saveZone;
+    data.date = $('#schedule-date').val();
+    data.schedule = $("#schedule-div input[type='radio']:checked").val();
+    data.type = $("#type-div input[type='radio']:checked").val();
+
+    // Check for empty radio button
+    if( data.type == undefined ) {
+        data.type = 'constant';
+    }
+
+    // If user selects sensors, add threshold
+    if( data.type == 'sensors' ) {
+        data.threshold = $('#threshold').val();
+    }
 
     $.ajax({
         type: 'POST',
         url: 'api/schedule',
-        data: {
-            start: $('#start-time').val(),
-            end: $('#end-time').val(),
-            hours: $('#hours').val(),
-            inverse: $('#inverse').val(),
-            id: $('#schedule-id').val(),
-            zoneid: $('#zoneid').val(),
-            date: $('#schedule-date').val(),
-            type: $('#schedule-type').val()
-        },
+        data: data,
         success: function() {
             clearCalendar();
             getSchedules(zone);
         }
     });
-});
-
-// Set type
-$(document).on('click', '#water-radio', function() {
-    $('#schedule-type').val('water');
-});
-
-$(document).on('click', '#light-radio', function() {
-    $('#schedule-type').val('light');
 });
 
 // Delete schedule
@@ -453,7 +704,7 @@ $(document).on('click','#delete-button', function() {
         data: {
             action: 'delete',
             id: $('#schedule-id').val(),
-            type: $('#schedule-type').val()
+            schedule: $('#schedule-type').val()
         },
         success: function() {
             // Clear calendar
@@ -469,7 +720,7 @@ $(document).on('click','#delete-button', function() {
 });
 
 
-// Recalculate hours on time change
+// Recalculate hours when user changes start/end time when creating/editing schedule
 function timeUpdate() {
     var startTime = $('#start-time').val().split(":")[0];
     var endTime = $('#end-time').val().split(":")[0];
@@ -499,7 +750,7 @@ function timeUpdate() {
     $('#hours').val( hours );
 }
 
-// Recalculate end time on hour change
+// Recalculate end time when user changes number of hours
 function hourUpdate() {
     var startTime = $('#start-time').val().split(":")[0];
     var endTime = parseInt(startTime) + parseInt($('#hours').val());

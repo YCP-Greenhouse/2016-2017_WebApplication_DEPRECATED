@@ -1536,6 +1536,10 @@ body {
     float: right;
 }
 
+.sensor-threshold-div {
+    text-align: right;
+}
+
 
 /* Calendar */
 
@@ -1607,6 +1611,23 @@ body {
     overflow: hidden;
 }
 
+.light-blocked {
+    background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 5px,
+            rgba(255,255,255,0.4) 5px,
+            rgba(255,255,255,0.4) 8px);
+    font-size: 8px;
+    text-align: center;
+    line-height: 20px;
+    height: 100%;
+    width: 50%;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .water-event {
     background-color: rgba(0,100,255,0.5);
     font-size: 8px;
@@ -1615,6 +1636,23 @@ body {
     height: 100%;
     width: 50%;
     float: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.water-blocked {
+    background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 5px,
+            rgba(0,100,255,0.5) 5px,
+            rgba(0,100,255,0.5) 8px);
+    font-size: 8px;
+    text-align: center;
+    line-height: 20px;
+    height: 100%;
+    width: 50%;
+    float: left;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -1641,17 +1679,18 @@ body {
 
 .schedule-modal-text {
     margin-top: 10px;
+    height: 280px;
 }
 
 .add-schedule {
-    width: 280px;
-    height: 180px;
+    width: 400px;
+    height: 350px;
     background-color: white;
     line-height: 30px;
     margin: auto;
-    margin-top: 15%;
-    padding: 50px;
-    padding-top: 30px;
+    margin-top: 10%;
+    padding: 30px;
+
 
 }
 
@@ -1677,6 +1716,15 @@ body {
     letter-spacing: 2px;
     border: none;
     display: inline-block;
+}
+
+.schedule-description {
+    width: 100%;
+    float: right;
+    height: 30px;
+    display: none;
+    font-size: 10px;
+    text-align: right;
 }
 
 

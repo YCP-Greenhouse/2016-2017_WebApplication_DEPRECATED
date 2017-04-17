@@ -60,8 +60,13 @@ public class ScheduleAPI extends HttpServlet {
                 id = -1;
             }
 
+            // Get schedule
+            String schedule = req.getParameter("schedule");
+
             // Get type
             String type = req.getParameter("type");
+
+
 
             // Try to get action. Only delete posts have the 'action' parameter
             String action = "";
@@ -86,6 +91,13 @@ public class ScheduleAPI extends HttpServlet {
                 int inverse = Integer.parseInt(req.getParameter("inverse"));
                 int zoneID = Integer.parseInt(req.getParameter("zoneid"));
 
+                int threshold = -1;
+
+                // If type is 'sensor' get threshold
+                if( type.equals("sensors")) {
+                    threshold = Integer.parseInt(req.getParameter("threshold"));
+                }
+
                 // Set ScheduleModel
                 scheduleModel.setId(id);
                 scheduleModel.setZoneID(zoneID);
@@ -94,16 +106,18 @@ public class ScheduleAPI extends HttpServlet {
                 scheduleModel.setEndTime(end);
                 scheduleModel.setHours(hours);
                 scheduleModel.setInverse(inverse);
+                scheduleModel.setType(type);
+                scheduleModel.setThreshold(threshold);
 
                 // If ID = -1, it doesn't exist so add it
                 if (id == -1) {
-                    scheduleController.addSchedule(type, scheduleModel);
+                    scheduleController.addSchedule(schedule, scheduleModel);
                 } else {
-                    scheduleController.updateSchedule(type, scheduleModel);
+                    scheduleController.updateSchedule(schedule, scheduleModel);
                 }
             } else {
                 System.out.println("Delete id: " + id );
-                scheduleController.deleteSchedule(id, type);
+                scheduleController.deleteSchedule(id, schedule);
             }
         } else {
             resp.getWriter().println("Invalid Credentials");

@@ -1,9 +1,9 @@
 package model;
 
 public class ScheduleModel {
-    int id, zoneID, inverse, day;
+    int id, zoneID, inverse, day, threshold;
     double hours;
-    String startTime, endTime;
+    String startTime, endTime, type;
 
     public void setId( int id ) {
         this.id = id;
@@ -59,5 +59,21 @@ public class ScheduleModel {
 
     public int getDay() {
         return day;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setThreshold(int threshold) {
+        this.threshold = threshold;
+    }
+
+    public int getThreshold() {
+        return threshold;
     }
 }

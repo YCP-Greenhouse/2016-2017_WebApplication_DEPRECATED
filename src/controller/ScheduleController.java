@@ -40,7 +40,8 @@ public class ScheduleController {
                 lightObj.put( "start", lightSchedule.get(key).getStartTime() );
                 lightObj.put( "end", lightSchedule.get(key).getEndTime() );
                 lightObj.put( "hours", lightSchedule.get(key).getHours() );
-                lightObj.put( "inverse", lightSchedule.get(key).getInverse() );
+                lightObj.put( "type", lightSchedule.get(key).getType());
+                lightObj.put( "threshold", lightSchedule.get(key).getThreshold());
 
                 light.put(lightObj);
             }
@@ -60,7 +61,8 @@ public class ScheduleController {
                 waterObj.put( "start", waterSchedule.get(key).getStartTime() );
                 waterObj.put( "end", waterSchedule.get(key).getEndTime() );
                 waterObj.put( "hours", waterSchedule.get(key).getHours() );
-                waterObj.put( "inverse", waterSchedule.get(key).getInverse() );
+                waterObj.put( "type", waterSchedule.get(key).getType());
+                waterObj.put( "threshold", waterSchedule.get(key).getThreshold());
 
                 water.put(waterObj);
             }
@@ -103,7 +105,7 @@ public class ScheduleController {
         }
 
         PreparedStatement ps = null;
-        String sql = "INSERT INTO " + database + " VALUES(?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO " + database + " VALUES(?,?,?,?,?,?,?,?)";
 
         try {
             conn.setAutoCommit(false);
@@ -116,7 +118,8 @@ public class ScheduleController {
             ps.setString( 4, schedule.getStartTime() );
             ps.setString(5, schedule.getEndTime() );
             ps.setDouble(6, schedule.getHours());
-            ps.setInt(7, schedule.getInverse());
+            ps.setString(7, schedule.getType());
+            ps.setInt(8, schedule.getThreshold());
 
             ps.executeUpdate();
             ps.close();
@@ -150,8 +153,9 @@ public class ScheduleController {
         }
 
         PreparedStatement ps = null;
-        String sql = "UPDATE " + database + " SET zoneId='" + schedule.getZoneID() + "', day='" + schedule.getDay() + "', startTime='" + schedule.getStartTime() + "', endTime='" + schedule.getEndTime() + "', hours='" + schedule.getHours() + "', inverse='" + schedule.getInverse() + "' WHERE id='" + schedule.getId() + "'";
+        String sql = "UPDATE " + database + " SET zoneId='" + schedule.getZoneID() + "', day='" + schedule.getDay() + "', startTime='" + schedule.getStartTime() + "', endTime='" + schedule.getEndTime() + "', type='" + schedule.getType() + "', threshold='" + schedule.getThreshold() + "', hours='" + schedule.getHours() + "' WHERE id='" + schedule.getId() + "'";
 
+        System.out.println("UpdateSchedule: SQL: " + sql);
         try {
             conn.setAutoCommit(false);
 

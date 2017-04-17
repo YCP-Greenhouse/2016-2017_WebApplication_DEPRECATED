@@ -15,6 +15,7 @@ var heater;
 
 // Query API every 3 seconds
 var isPaused = false;
+/*
 window.setInterval( function() {
 
     $.ajax({
@@ -50,7 +51,7 @@ window.setInterval( function() {
         updateAutomationValues();
     }
 
-}, 3000 );
+}, 3000 ); */
 
 
 $(document).ready( function() {

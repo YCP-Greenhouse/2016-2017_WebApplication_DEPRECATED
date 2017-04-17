@@ -280,7 +280,9 @@ public class AutomationController {
                 schedule.setDay(rs.getInt(3));
                 schedule.setStartTime(rs.getString(4));
                 schedule.setEndTime(rs.getString(5));
-                schedule.setHours(rs.getInt(6));
+                schedule.setHours(rs.getDouble(6));
+                schedule.setType(rs.getString(7));
+                schedule.setThreshold(rs.getInt(8));
 
                 lightSchedule.put(schedule.getId(), schedule);
             }
@@ -331,7 +333,9 @@ public class AutomationController {
                 schedule.setDay(rs.getInt(3));
                 schedule.setStartTime(rs.getString(4));
                 schedule.setEndTime(rs.getString(5));
-                schedule.setHours(rs.getInt(6));
+                schedule.setHours(rs.getDouble(6));
+                schedule.setType(rs.getString(7));
+                schedule.setThreshold(rs.getInt(8));
 
                 waterSchedule.put(schedule.getId(), schedule);
             }

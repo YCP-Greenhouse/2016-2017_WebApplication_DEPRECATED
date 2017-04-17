@@ -199,12 +199,34 @@
                         <span>Start Time: </span><input type="time" class="time-input" id="start-time" onclick="timeUpdate()"><br>
                         <span>End Time: </span><input type="time" class="time-input" id="end-time" onclick="timeUpdate()"><br>
                         <span>Hours: </span><input type="number" style="width: 92px;" min="1" max="24" class="time-input" id="hours" onclick="hourUpdate()"><br>
-                        <span>Type: <span class="time-input" style="margin-left: 10px;">Water<input id="water-radio" type="radio" name="type" value="water"></span><span class="time-input">Light<input id="light-radio" type="radio" name="type" value="light"></span></span><br><br>
+
+                        <div id="schedule-div" style="height: 35px; margin-bottom: 2px;">
+
+                            <span>Schedule: <span class="time-input" style="margin-left: 10px;">Water<input id="water-radio" type="radio" name="schedule" value="water"></span><span class="time-input">Light<input id="light-radio" type="radio" name="schedule" value="light"></span></span><br>
+
+                        </div>
+
+                        <div id="schedule-description"class="schedule-description"></div>
+
+                        <div style="margin-top: 40px; height: 30px;" id="type-div">
+                            Type:
+                            <span class="time-input" style="margin-left: 5px;">Blocked<input id="blocked-radio" type="radio" name="type" value="blocked"></span>
+                            <span class="time-input" style="margin-left: 5px;">Sensors<input id="sensors-radio" type="radio" name="type" value="sensors"></span>
+                            <span class="time-input" style="margin-left: 5px;">Constant<input id="constant-radio" type="radio" name="type" value="constant"></span><br><br><br>
+                        </div>
+
+                        <div id="type-description" class="schedule-description"></div>
+
+                        <div id="sensor-threshold-div" class="sensor-threshold-div">
+
+                        </div>
+
                         <input type="hidden" id="inverse" value="0">
                         <input type="hidden" id="schedule-date">
                         <input type="hidden" id="schedule-id">
                         <input type="hidden" id="schedule-type">
                         <input type="hidden" id="zoneid">
+                        <input type="hidden" id="schedule-option">
                     </div>
 
                     <div class="schedule-buttons">
