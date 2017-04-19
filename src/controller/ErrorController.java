@@ -8,6 +8,7 @@ import model.ContactModel;
 import model.ErrorModel;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.MultiPartEmail;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,12 +32,11 @@ public class ErrorController {
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-
-
         ArrayList<ContactModel> contactList = contactController.getAllContacts();
 
         sendEmail(error, contactList);
 
+        /*
         for( ContactModel contact : contactList ) {
             Message message = Message.creator(new PhoneNumber(contact.getPhoneNumber()),
                     new PhoneNumber("+14842355187"),
@@ -44,10 +44,12 @@ public class ErrorController {
 
 
 
-            System.out.println(message.getSid());
-        }
+            //System.out.println(message.getSid());
+        }*/
 
-
+        Message message = Message.creator(new PhoneNumber("+16107870426"),
+                new PhoneNumber("+14842355187"),
+                error.getMessage()).create();
     }
 
     public static void sendEmail(ErrorModel error, ArrayList<ContactModel> contactList ) {
@@ -61,8 +63,8 @@ public class ErrorController {
             email.setDebug(true);
             email.setHostName("smtp.gmail.com");
             email.setFrom(myEmailId);
-            email.setSubject("Greenhouse Alert");
-            email.setMsg("Error: " + error.getMessage() + "\nTime: " + error.getTime());
+            email.setSubject("Greenhouse Alert!");
+            email.setMsg(error.getMessage());
 
             for( ContactModel contact : contactList ) {
                 email.addTo(contact.getEmail());
@@ -70,14 +72,12 @@ public class ErrorController {
 
             email.setTLS(true);
 
-
             email.send();
             System.out.println("Mail sent!");
         } catch (Exception e) {
             System.out.println("Exception :: " + e);
         }
     }
-
 
     public JSONObject getLastError() {
         JSONObject obj = new JSONObject();
@@ -112,12 +112,9 @@ public class ErrorController {
         setLastError(error);
         saveErrorToDatabase(error);
         alertAdmins(error);
-
     }
 
     public void saveErrorToDatabase( ErrorModel model ) {
-
-        System.out.println("Save error to database");
 
         // Get website information from DB
         Connection conn = null;
@@ -197,7 +194,52 @@ public class ErrorController {
         }
     }
 
+    public JSONArray getErrors() {
+        JSONArray arr = new JSONArray();
+
+        Connection conn = null;
+        try {
+            conn = dbController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "SELECT * FROM errors";
+
+        try {
+            conn.setAutoCommit(false);
 
 
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
 
+            while( rs.next() ) {
+                JSONObject obj = new JSONObject();
+
+                obj.put("code", rs.getInt(4));
+                obj.put("message", rs.getString(2));
+                obj.put("time", rs.getString(3));
+
+                arr.put(obj);
+            }
+
+            rs.close();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return null;
+        } catch( JSONException e ) {
+
+        }
+
+        return arr;
+    }
 }

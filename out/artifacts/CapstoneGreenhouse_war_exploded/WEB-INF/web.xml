@@ -29,6 +29,11 @@
         <servlet-class>servlet.SettingsServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>NotificationsServlet</servlet-name>
+        <servlet-class>servlet.NotificationsServlet</servlet-class>
+    </servlet>
+
     <!-- API Servlets -->
     <servlet>
         <servlet-name>StateAPI</servlet-name>
@@ -70,7 +75,10 @@
         <servlet-class>api.ContactAPI</servlet-class>
     </servlet>
 
-
+    <servlet>
+        <servlet-name>NotificationAPI</servlet-name>
+        <servlet-class>api.NotificationAPI</servlet-class>
+    </servlet>
 
     <!-- Servlet mappings -->
     <servlet-mapping>
@@ -91,6 +99,11 @@
     <servlet-mapping>
         <servlet-name>SettingsServlet</servlet-name>
         <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>NotificationsServlet</servlet-name>
+        <url-pattern>/notifications</url-pattern>
     </servlet-mapping>
 
     <!-- API mappings -->
@@ -132,6 +145,11 @@
     <servlet-mapping>
         <servlet-name>ContactAPI</servlet-name>
         <url-pattern>/api/contacts</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>NotificationAPI</servlet-name>
+        <url-pattern>/api/notifications</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

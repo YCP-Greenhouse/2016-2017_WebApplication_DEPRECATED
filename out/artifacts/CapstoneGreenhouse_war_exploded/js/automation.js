@@ -15,7 +15,7 @@ var heater;
 
 // Query API every 3 seconds
 var isPaused = false;
-/*
+
 window.setInterval( function() {
 
     $.ajax({
@@ -51,11 +51,10 @@ window.setInterval( function() {
         updateAutomationValues();
     }
 
-}, 3000 ); */
+}, 3000 );
 
 
 $(document).ready( function() {
-
 
     // Check if browser is Raspberry Pi
     if ( navigator.platform.toLowerCase().indexOf('linux') >= 0 ) {
@@ -109,6 +108,7 @@ $(document).ready( function() {
 
         $('#password').val('');
         $('#password').val( pw + id );
+
     });
 
     // Clear password form

@@ -49,7 +49,6 @@ public class AutomationController {
             if( rs.next() ) {
                 obj.put("TempLow", rs.getString(2));
                 obj.put("TempHigh", rs.getString(3));
-                obj.put("moisture", rs.getString(4));
                 obj.put("humidity", rs.getString(5));
                 obj.put("ShadeLim", rs.getString(6));
             }
@@ -67,7 +66,7 @@ public class AutomationController {
             return null;
         }
 
-        // Get next water starts
+
         try {
             obj.put("WaterSchedules", getNextSchedules("water"));
             obj.put("LightSchedules", getNextSchedules("light"));
@@ -228,7 +227,7 @@ public class AutomationController {
 
         PreparedStatement ps = null;
         String sql = "UPDATE " + database + " SET zoneId='" + newSchedule.getZoneID() + "', startTime='" + newSchedule.getStartTime() + "', endTime='" + newSchedule.getEndTime() + "', hours='" + newSchedule.getHours() + "' WHERE id='" + newSchedule.getId() + "'";
-        System.out.println(sql);
+        //System.out.println(sql);
 
         try {
             conn.setAutoCommit(false);
@@ -353,6 +352,7 @@ public class AutomationController {
         return waterSchedule;
     }
 
+    // Returns JSONArray of schedule events
     public JSONArray getNextSchedules(String type) {
         HashMap<Integer, ScheduleModel> schedule = new HashMap<>();
 
@@ -379,7 +379,6 @@ public class AutomationController {
             return null;
         }
 
-
         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
         dayOfWeek--; // Decrement dayOfWeek to coincide with (0-6) day standard
 
@@ -395,7 +394,7 @@ public class AutomationController {
 
                     if (evalSchedule.getZoneID() == i) {
                         // If schedule day matches today, look for next start time
-                        if (evalSchedule.getDay() == dayOfWeek && Integer.parseInt(evalSchedule.getStartTime().split(":")[0]) >= currentHour) {
+                        if (evalSchedule.getDay() == dayOfWeek && Integer.parseInt(evalSchedule.getEndTime().split(":")[0]) >= currentHour) {
 
                             // If zone ID doesn't have entry, add current schedule
                             if (!nextStarts.containsKey(evalSchedule.getZoneID())) {
@@ -420,16 +419,18 @@ public class AutomationController {
                     obj.put("zone", nextSchedule.getZoneID());
                     obj.put("start", nextSchedule.getStartTime());
                     obj.put("end", nextSchedule.getEndTime());
+                    obj.put("type", nextSchedule.getType());
+
+                    if( nextSchedule.getType().equals("sensors")) {
+                        obj.put("threshold", nextSchedule.getThreshold());
+                    }
 
                     // Add obj to JSON Array
                     arr.put(obj);
                 }
             }
 
-
-
         } catch( JSONException e ) {
-
 
         }
 

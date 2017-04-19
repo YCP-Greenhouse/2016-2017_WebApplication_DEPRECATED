@@ -2,6 +2,7 @@ package api;
 
 import controller.AccountController;
 import controller.DatabaseController;
+import controller.NotificationController;
 import controller.SensorController;
 import model.SensorModel;
 import org.json.JSONArray;
@@ -23,6 +24,7 @@ public class SensorAPI extends HttpServlet {
     SensorController sensorController = new SensorController();
     AccountController accountController = new AccountController();
     DatabaseController databaseController = new DatabaseController();
+    NotificationController notificationController = new NotificationController();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp )
@@ -133,6 +135,9 @@ public class SensorAPI extends HttpServlet {
 
                             sensor.setZone(Integer.parseInt(obj.get("zone").toString()));
 
+                            // Check bounds
+                            notificationController.checkBounds(sensor);
+
                             sensorList.add(sensor);
                         //} else {
                             //System.out.println("Blank values. Ignoring");
@@ -145,6 +150,8 @@ public class SensorAPI extends HttpServlet {
 
             // Update latest sensor values
             sensorController.updateLatestSensor( sensorList );
+
+            // Check for sensor bounds
 
             sensorController.addSensorData(sensorList);
 

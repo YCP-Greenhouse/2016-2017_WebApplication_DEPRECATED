@@ -49,7 +49,6 @@ public class AutomationAPI extends HttpServlet {
             // If null, do nothing
         }
 
-        //String APIkey = "44ffe28b-f470-4bc0-8ee9-38fce01438ce";
 
         if( user.equals("admin") || accountController.verifyAPIKey(APIkey) ) {
 

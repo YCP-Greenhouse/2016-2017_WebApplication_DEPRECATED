@@ -24,44 +24,40 @@
 
         <div id="nav-list"></div>
 
-        <div class="automation-selection">
-            <span class="automation-option active">AUTOMATION SETTINGS  </span>|
-            <span class="automation-option"> SCHEDULE</span>
-        </div>
-
         <% // If session is null, display login window
             String user = null;
             if( session.getAttribute("user") == null ) {
         %>
 
         <div class="settings-login">
-            <form action="/login" method="post" id="login-form">
-                <input type="hidden" name="username" value="admin">
-                <input id="password" type="password" name="password">
-            </form>
-                <div class="touch-pad">
-                    <button type="number" class="touch-button" id="1">1</button>
-                    <button type="number" class="touch-button" id="2">2</button>
-                    <button type="number" class="touch-button" id="3">3</button>
-                    <button type="number" class="touch-button" id="4">4</button>
-                    <button type="number" class="touch-button" id="5">5</button>
-                    <button type="number" class="touch-button" id="6">6</button>
-                    <button type="number" class="touch-button" id="7">7</button>
-                    <button type="number" class="touch-button" id="8">8</button>
-                    <button type="number" class="touch-button" id="9">9</button>
-                    <button type="number" class="action-button" id="clear">CLEAR</button>
-                    <button type="number" class="touch-button" id="0">0</button>
-                    <button type="number" class="action-button" id="login">LOGIN</button>
-
-                </div>
-
-                <!-- <button type="submit">Login</button> -->
-
+        <form action="/login" method="post" id="login-form">
+            <input type="hidden" name="username" value="admin">
+            <input id="password" type="password" name="password">
+        </form>
+        <div class="touch-pad">
+            <button type="number" class="touch-button" id="1">1</button>
+            <button type="number" class="touch-button" id="2">2</button>
+            <button type="number" class="touch-button" id="3">3</button>
+            <button type="number" class="touch-button" id="4">4</button>
+            <button type="number" class="touch-button" id="5">5</button>
+            <button type="number" class="touch-button" id="6">6</button>
+            <button type="number" class="touch-button" id="7">7</button>
+            <button type="number" class="touch-button" id="8">8</button>
+            <button type="number" class="touch-button" id="9">9</button>
+            <button type="number" class="action-button" id="clear">CLEAR</button>
+            <button type="number" class="touch-button" id="0">0</button>
+            <button type="number" class="action-button" id="login">LOGIN</button>
         </div>
+    </div>
 
         <%
             // If user is logged in, display setting options
         } else {  %>
+            <div class="automation-selection">
+                <a href="/settings"><button id="automation" class="settings-button selected">AUTOMATION</button></a>
+                <a href="/notifications"><button id="notifications" class="settings-button">NOTIFICATIONS</button></a>
+            </div>
+
             <div class="top-controls-panel">
                 <div class="top-panel-1"></div>
                 <div class="top-panel-title">TABLES</div>
@@ -173,11 +169,10 @@
                     </div>
                 </div>
             </div>
-
-
         <% } %>
     </div>
 
+    <!-- Hidden by default -->
     <div id="zone-modal" class="zone-modal">
         <div class="zone-modal-content">
             <div class="schedule-title" id="zone-title">SCHEDULE</div>

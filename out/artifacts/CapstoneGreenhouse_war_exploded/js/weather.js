@@ -30,7 +30,7 @@ function getWeather() {
         url: 'http://api.openweathermap.org/data/2.5/weather?q=York,us&appid=f581e69b118ec3559415b4939e550e33',
         success: function(data) {
             console.log( data );
-            $('#current-temperature').html( KelvinToFahrenheit(data.main.temp) + '&deg;<span class="fahrenheit">F</span>' );
+            $('#current-temperature').html( KelvinToFahrenheit(data.main.temp) + '&deg;<span class="weather-fahrenheit">F</span>' );
             $('#temp-high').html( KelvinToFahrenheit(data.main.temp_max) + '&deg;<span class="fahrenheit-small">H</span>' );
             $('#temp-low').html( KelvinToFahrenheit(data.main.temp_min) + '&deg;<span class="fahrenheit-small">L</span>' );
 

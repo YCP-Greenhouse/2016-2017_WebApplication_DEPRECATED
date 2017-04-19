@@ -22,7 +22,8 @@ public class ErrorAPI extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp )
             throws ServletException, IOException {
 
-        resp.getWriter().println( errorController.getLastError() );
+        //resp.getWriter().println( errorController.getLastError() );
+        resp.getWriter().println( errorController.getErrors() );
 
     }
 
