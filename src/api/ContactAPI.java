@@ -44,11 +44,15 @@ public class ContactAPI extends HttpServlet {
             APIkey = "";
         }
 
+
+
         if( user.equals("admin") || accountController.verifyAPIKey(APIkey) ) {
+
             String name = req.getParameter("name");
             String position = req.getParameter("position");
             String email = req.getParameter("email");
             String phone = req.getParameter("phone");
+            String action = req.getParameter("action");
 
             // Check for invalid input
             if( !databaseController.isValidInput(name) ) {
@@ -64,12 +68,20 @@ public class ContactAPI extends HttpServlet {
             // Assign values to Contact object
             ContactModel contact = new ContactModel();
 
+
             contact.setUsername(name);
             contact.setPosition(position);
             contact.setEmail(email);
             contact.setPhoneNumber(phone);
 
-            contactController.addContact(contact);
+            if( action.equals("add") ) {
+                contactController.addContact(contact);
+            } else if( action.equals("update") ) {
+                int id = Integer.parseInt(req.getParameter("id"));
+                contact.setId(id);
+                contactController.updateContact(contact);
+            }
+
         } else {
             resp.getWriter().println("Invalid credentials");
         }

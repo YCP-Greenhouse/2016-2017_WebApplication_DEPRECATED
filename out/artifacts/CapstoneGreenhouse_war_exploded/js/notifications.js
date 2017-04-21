@@ -16,7 +16,7 @@ $(document).ready( function() {
 
     } else {
         $('#nav-list').addClass('nav');
-        $('#nav-list').html('<ul><a href="index.html"><li class="nav-li"><img width="40" height="40" src="images/home.png"><span class="nav-item">HOME</span></li></a><a href="#"><li class="nav-active"><img width="40" height="40" src="images/gear.png"><span class="nav-item" style="letter-spacing: 1.5px;">SETTINGS</span></li></a><a href="sensors.html"><li class="nav-li"><img width="35" height="35" src="images/sensors.png"><span class="nav-item">SENSORS</span></li></a><a href="history.html"><li class="nav-li"><img width="35" height="35" src="images/history.png"><span class="nav-item">HISTORY</span></li></a><a href="/documentation"><li class="nav-li"><img style="margin-top:22px;" width="40" height="30" src="images/learn.png"><span class="nav-item">LEARN</span></li></a></ul>');
+        $('#nav-list').html('<ul><a href="index.html"><li class="nav-li"><img width="40" height="40" src="images/home.png"><span class="nav-item">HOME</span></li></a><a href="/settings"><li class="nav-active"><img width="40" height="40" src="images/gear.png"><span class="nav-item" style="letter-spacing: 1.5px;">SETTINGS</span></li></a><a href="sensors.html"><li class="nav-li"><img width="35" height="35" src="images/sensors.png"><span class="nav-item">SENSORS</span></li></a><a href="history.html"><li class="nav-li"><img width="35" height="35" src="images/history.png"><span class="nav-item">HISTORY</span></li></a><a href="/documentation"><li class="nav-li"><img style="margin-top:22px;" width="40" height="30" src="images/learn.png"><span class="nav-item">LEARN</span></li></a></ul>');
     }
 
 });
@@ -43,16 +43,16 @@ function getContacts() {
                 var row = table.insertRow(i);
 
                 var col1 = row.insertCell(0);
-                col1.innerHTML = data[i].name;
+                col1.innerHTML = '<input type="text" id="name-' + data[i].id + '" class="contact-input" value="' + data[i].name + '">';
 
                 var col2 = row.insertCell(1);
-                col2.innerHTML = data[i].position;
+                col2.innerHTML = '<input type="text" id="position-' + data[i].id + '" class="contact-input" value="' + data[i].position + '">';
 
                 var col3 = row.insertCell(2);
-                col3.innerHTML = data[i].email;
+                col3.innerHTML = '<input type="text" id="email-' + data[i].id + '" class="contact-input" value="' + data[i].email + '">';
 
                 var col4 = row.insertCell(3);
-                col4.innerHTML = data[i].phone;
+                col4.innerHTML = '<input type="text" id="phone-' + data[i].id + '" class="contact-input" value="' + data[i].phone + '">';
             }
         }
     });
@@ -172,6 +172,44 @@ function setNotificationSettings() {
     })
 }
 
+var contactText = '';
+$(document).on('click', '.contact-input', function() {
+    contactText = $(this)[0].defaultValue;
+});
+
+// Update contacts when user updates text and leaves text box
+$(document).on('focusout', '.contact-input', function() {
+
+    // Only update if the text changes
+    if( $(this)[0].value == contactText ) {
+        return;
+    }
+
+    var split = $(this)[0].id.split('-');
+    var id = split[1];
+
+    var contact = {};
+    contact.id = id;
+    contact.name = $('#name-' + id ).val();
+    contact.position = $('#position-' + id ).val();
+    contact.email = $('#email-' + id ).val();
+    contact.phone = $('#phone-' + id ).val();
+    contact.action = "update";
+
+    postContact(contact);
+});
+
+function postContact(contact) {
+    $.ajax({
+        type: 'POST',
+        url: '/api/contacts',
+        data: contact,
+        success: function() {
+            getContacts();
+        }
+    });
+}
+
 // Submit error message
 $(document).on('click', '#error-submit', function() {
 
@@ -182,6 +220,6 @@ $(document).on('click', '#error-submit', function() {
         success: function() {
             getErrorMessage();
         }
-    })
+    });
 });
 

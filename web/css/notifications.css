@@ -98,3 +98,19 @@ label:hover:before {
 .settings-input:focus {
     outline: 0;
 }
+
+.contact-input {
+    background: transparent;
+    border: none;
+    border-bottom: solid 1px rgba(255,255,255,0);
+    color: rgba(255,255,255,.9);
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    width: 150px;
+    transition: all .2s ease-in-out;
+}
+
+.contact-input:focus {
+    outline: 0;
+    border-bottom: solid 1px rgba(255,255,255,.9);
+}

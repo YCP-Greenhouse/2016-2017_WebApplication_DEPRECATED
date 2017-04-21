@@ -51,6 +51,38 @@ public class ContactController {
         }
     }
 
+    public void updateContact(ContactModel contact) {
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = databaseController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
+        PreparedStatement ps = null;
+        String sql = "UPDATE contactlist SET name='" + contact.getUsername() + "', position='" + contact.getPosition() + "', email='" + contact.getEmail() + "', phone='" + contact.getPhoneNumber() + "' WHERE id='" + contact.getId() + "'";
+
+        System.out.println(sql);
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            ps.executeUpdate();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
+    }
+
     public ArrayList<ContactModel> getAllContacts() {
         ArrayList<ContactModel> contactList = new ArrayList<>();
 
