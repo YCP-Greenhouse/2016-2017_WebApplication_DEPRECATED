@@ -7,34 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fe90891-bec4-4f74-9443-5021adfad920" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/ManualControlsAPI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controller/ManualControlsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/ManualControlsModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/NotificationController.class" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/WEB-INF/classes/controller/NotificationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/ContactAPI.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/ContactAPI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/StateAPI.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/api/StateAPI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/ContactController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/ContactController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/NotificationController.class" afterPath="$PROJECT_DIR$/out/production/CapstoneGreenhouse/controller/NotificationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/notifications.css" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/css/notifications.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/greenhouse.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/greenhouse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/notifications.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/notifications.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/schedule.js" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/js/schedule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/notifications.jsp" afterPath="$PROJECT_DIR$/out/artifacts/CapstoneGreenhouse_war_exploded/views/notifications.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/ContactAPI.java" afterPath="$PROJECT_DIR$/src/api/ContactAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/StateAPI.java" afterPath="$PROJECT_DIR$/src/api/StateAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ContactController.java" afterPath="$PROJECT_DIR$/src/controller/ContactController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/NotificationController.java" afterPath="$PROJECT_DIR$/src/controller/NotificationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/greenhouse.css" afterPath="$PROJECT_DIR$/web/css/greenhouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/notifications.css" afterPath="$PROJECT_DIR$/web/css/notifications.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/automation.js" afterPath="$PROJECT_DIR$/web/js/automation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/greenhouse.js" afterPath="$PROJECT_DIR$/web/js/greenhouse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/notifications.js" afterPath="$PROJECT_DIR$/web/js/notifications.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/schedule.js" afterPath="$PROJECT_DIR$/web/js/schedule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/notifications.jsp" afterPath="$PROJECT_DIR$/web/views/notifications.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/settings.jsp" afterPath="$PROJECT_DIR$/web/views/settings.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,23 +131,23 @@
       <file leaf-file-name="automation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/automation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="457" column="55" lean-forward="false" selection-start-line="457" selection-start-column="55" selection-end-line="457" selection-end-column="55" />
+            <state relative-caret-position="153">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
-                <element signature="e#4341#4547#0" expanded="false" />
-                <element signature="e#4574#4672#0" expanded="false" />
-                <element signature="e#4906#5114#0" expanded="false" />
-                <element signature="e#5288#5421#0" expanded="false" />
-                <element signature="e#6918#8005#0" expanded="false" />
-                <element signature="e#8075#8470#0" expanded="false" />
-                <element signature="e#8508#8962#0" expanded="false" />
-                <element signature="e#9000#9454#0" expanded="false" />
-                <element signature="e#9492#9946#0" expanded="false" />
-                <element signature="e#9984#10438#0" expanded="false" />
-                <element signature="e#10476#10930#0" expanded="false" />
-                <marker date="1492998554000" expanded="true" signature="1715:1737" ph="..." />
-                <marker date="1492998554000" expanded="true" signature="2389:2411" ph="..." />
-                <marker date="1492998554000" expanded="true" signature="2775:2791" ph="..." />
+                <element signature="e#4271#4477#0" expanded="false" />
+                <element signature="e#4504#4602#0" expanded="false" />
+                <element signature="e#4836#5044#0" expanded="false" />
+                <element signature="e#5218#5351#0" expanded="false" />
+                <element signature="e#6848#7935#0" expanded="false" />
+                <element signature="e#8005#8400#0" expanded="false" />
+                <element signature="e#8438#8892#0" expanded="false" />
+                <element signature="e#8930#9384#0" expanded="false" />
+                <element signature="e#9422#9876#0" expanded="false" />
+                <element signature="e#9914#10368#0" expanded="false" />
+                <element signature="e#10406#10860#0" expanded="false" />
+                <marker date="1492999235000" expanded="true" signature="1645:1667" ph="..." />
+                <marker date="1492999235000" expanded="true" signature="2319:2341" ph="..." />
+                <marker date="1492999235000" expanded="true" signature="2705:2721" ph="..." />
               </folding>
             </state>
           </provider>
@@ -195,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>modal-te</find>
       <find>checked</find>
       <find>light-event</find>
       <find>populateCal</find>
@@ -225,6 +197,7 @@
       <find>switch</find>
       <find>POST</find>
       <find>manual-panel-3</find>
+      <find>console.log</find>
     </findStrings>
     <replaceStrings>
       <replace>size=&quot;7&quot;</replace>
@@ -578,6 +551,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenhouse_war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CapstoneGreenhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1213,12 +1240,12 @@
       <workItem from="1492604671721" duration="19410000" />
       <workItem from="1492699235807" duration="57000" />
       <workItem from="1492779535954" duration="1998000" />
-      <workItem from="1492969148886" duration="21870000" />
+      <workItem from="1492969148886" duration="22546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="639603000" />
+    <option name="totallyTimeSpent" value="640279000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1901,23 +1928,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/automation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="457" column="55" lean-forward="false" selection-start-line="457" selection-start-column="55" selection-end-line="457" selection-end-column="55" />
+        <state relative-caret-position="153">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#4341#4547#0" expanded="false" />
-            <element signature="e#4574#4672#0" expanded="false" />
-            <element signature="e#4906#5114#0" expanded="false" />
-            <element signature="e#5288#5421#0" expanded="false" />
-            <element signature="e#6918#8005#0" expanded="false" />
-            <element signature="e#8075#8470#0" expanded="false" />
-            <element signature="e#8508#8962#0" expanded="false" />
-            <element signature="e#9000#9454#0" expanded="false" />
-            <element signature="e#9492#9946#0" expanded="false" />
-            <element signature="e#9984#10438#0" expanded="false" />
-            <element signature="e#10476#10930#0" expanded="false" />
-            <marker date="1492998554000" expanded="true" signature="1715:1737" ph="..." />
-            <marker date="1492998554000" expanded="true" signature="2389:2411" ph="..." />
-            <marker date="1492998554000" expanded="true" signature="2775:2791" ph="..." />
+            <element signature="e#4271#4477#0" expanded="false" />
+            <element signature="e#4504#4602#0" expanded="false" />
+            <element signature="e#4836#5044#0" expanded="false" />
+            <element signature="e#5218#5351#0" expanded="false" />
+            <element signature="e#6848#7935#0" expanded="false" />
+            <element signature="e#8005#8400#0" expanded="false" />
+            <element signature="e#8438#8892#0" expanded="false" />
+            <element signature="e#8930#9384#0" expanded="false" />
+            <element signature="e#9422#9876#0" expanded="false" />
+            <element signature="e#9914#10368#0" expanded="false" />
+            <element signature="e#10406#10860#0" expanded="false" />
+            <marker date="1492999235000" expanded="true" signature="1645:1667" ph="..." />
+            <marker date="1492999235000" expanded="true" signature="2319:2341" ph="..." />
+            <marker date="1492999235000" expanded="true" signature="2705:2721" ph="..." />
           </folding>
         </state>
       </provider>

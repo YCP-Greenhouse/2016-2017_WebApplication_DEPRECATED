@@ -24,8 +24,6 @@ window.setInterval( function() {
 
     getAutomationValues();
 
-    console.log(lightSchedule.active + " " + waterSchedule.active );
-
     $.ajax({
         type: 'GET',
         url: '/api/manualcontrols',
@@ -546,31 +544,5 @@ function getAutomationValues() {
         }
     });
 }
-
-$(document).on('click', '.switch-div', function() {
-   //console.log( $(this).children('.disabled').length );
-    if( $(this).children('.disabled').length == 0 ) {
-        //console.log( $(this).children('.switch-label').length );
-
-        //console.log( $(this).find('.switch-label').length );
-
-
-        /*
-        if( $(this).find('.switch-label').length > 0 ) {
-            console.log("Switch trigger");
-            $(this).find(".switch-label").first().trigger('click');
-
-        } else if( $(this).find('.shade-switch-label').length > 0 ) {
-            console.log("shade trigger");
-            $(this).find(".shade-switch-label").first().trigger('click');
-        } else {
-            console.log( $(this)[0] );
-        }*/
-
-
-
-        //console.log( $(this).find(".switch-label")[0].id );
-    }
-});
 
 
