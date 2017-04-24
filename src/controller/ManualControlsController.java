@@ -40,6 +40,8 @@ public class ManualControlsController {
                 manualControlsModel.setShades(toBoolean(rs.getInt(3)));
                 manualControlsModel.setFans(toBoolean(rs.getInt(4)));
                 manualControlsModel.setWater(toBoolean(rs.getInt(5)));
+                manualControlsModel.setLightOverride(toBoolean(rs.getInt(6)));
+                manualControlsModel.setWaterOverride(toBoolean(rs.getInt(7)));
             }
 
             rs.close();
@@ -65,6 +67,8 @@ public class ManualControlsController {
             obj.put("shades", manualControlsModel.isShades());
             obj.put("fans", manualControlsModel.isFans());
             obj.put("water", manualControlsModel.isWater());
+            obj.put("lightoverride", manualControlsModel.isLightOverride());
+            obj.put("wateroverride", manualControlsModel.isWaterOverride());
 
         } catch( JSONException e ) {
 
@@ -94,7 +98,7 @@ public class ManualControlsController {
 
         PreparedStatement ps = null;
 
-        String sql = "UPDATE manualcontrols SET light='" + booleanToNum(controls.isLights()) + "', shades='" + booleanToNum(controls.isShades()) + "', fans='" + booleanToNum(controls.isFans()) + "', water='" + booleanToNum(controls.isWater()) + "' WHERE id='1'";
+        String sql = "UPDATE manualcontrols SET light='" + booleanToNum(controls.isLights()) + "', shades='" + booleanToNum(controls.isShades()) + "', fans='" + booleanToNum(controls.isFans()) + "', water='" + booleanToNum(controls.isWater()) + "', lightoverride='" + booleanToNum(controls.isLightOverride()) + "', wateroverride='" + booleanToNum(controls.isWaterOverride()) + "' WHERE id='1'";
 
         try {
             conn.setAutoCommit(false);

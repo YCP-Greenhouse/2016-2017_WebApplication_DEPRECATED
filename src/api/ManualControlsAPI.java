@@ -46,6 +46,8 @@ public class ManualControlsAPI extends HttpServlet {
             boolean shades = convertToBoolean(req.getParameter("shades"));
             boolean water = convertToBoolean(req.getParameter("water"));
             boolean fans = convertToBoolean(req.getParameter("fans"));
+            boolean lightoverride = convertToBoolean(req.getParameter("lightoverride"));
+            boolean wateroverride = convertToBoolean(req.getParameter("wateroverride"));
 
             ManualControlsModel controls = new ManualControlsModel();
 
@@ -53,6 +55,8 @@ public class ManualControlsAPI extends HttpServlet {
             controls.setShades(shades);
             controls.setFans(fans);
             controls.setWater(water);
+            controls.setLightOverride(lightoverride);
+            controls.setWaterOverride(wateroverride);
 
             manualControlsController.updateControls(controls);
 

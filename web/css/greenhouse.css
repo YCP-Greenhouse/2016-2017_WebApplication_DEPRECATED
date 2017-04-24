@@ -1918,7 +1918,51 @@ body {
     cursor: pointer;
 }
 
+.alert-div {
+    width: 200px;
+    height: 90px;
+    background-color: white;
+    border-radius: 3px;
+    position: absolute;
+    display: none;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+    padding-top: 15px;
+}
 
+.button-div {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.alert-button {
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    outline: 0;
+    margin: auto;
+}
+
+.alert-button:active {
+    outline: 0;
+}
+
+.alert-button:hover {
+    cursor: pointer;
+}
+
+.green {
+    background-color: #35c37a;
+}
+
+.red {
+    background-color: #c34b44;
+}
 
 
 

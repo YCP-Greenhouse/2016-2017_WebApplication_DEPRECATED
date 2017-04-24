@@ -16,6 +16,8 @@ var heater;
 // Schedule variables
 var lightSchedule = {};
 var waterSchedule = {};
+var lightOverride = false;
+var waterOverride = false;
 
 // Query API every 3 seconds
 var isPaused = false;
@@ -56,6 +58,21 @@ window.setInterval( function() {
     if( !isPaused ) {
         updateAutomationValues();
     }
+
+    // Handle manual control button clicks. Placed inside interval so it wouldn't fire on page load
+    $(document).on('click', '.switch-div', function() {
+
+        // If switch is disabled
+        if( $(this).find('.disabled').length > 0 ) {
+            $('#manual-control-alert').css('top', $(this).position().top-120 );
+            $('#manual-control-alert').css('left', $(this).position().left-33 );
+            $('#manual-control-alert').css('display','block');
+            $('#manual-control-alert').attr('type', $(this)[0].id.split('-')[0]);
+        } else {
+            $('#manual-control-alert').css('display','none');
+        }
+
+    });
 
 }, 3000 );
 
@@ -105,8 +122,8 @@ $(document).ready( function() {
             shadeSwitch = data.shades;
             fanSwitch = data.fans;
             waterSwitch = data.water;
-            //vents = data.vents;
-            //heater = data.heater;
+            lightOverride = data.lightoverride;
+            waterOverride = data.wateroverride;
         }
     });
 
@@ -439,12 +456,12 @@ function getAutomationValues() {
             var now = new Date();
 
             // Check if there is an active light schedule
-            if( data.LightSchedules.length > 0 ) {
+            if( data.LightSchedules.length > 0  && !lightOverride ) {
                 var start = data.LightSchedules[0].start.split(":")[0];
                 var end =  data.LightSchedules[0].end.split(":")[0];
 
                 // Disabled manual control if there is an active schedule
-                if (now.getHours() >= start && now.getHours() <= end) {
+                if (now.getHours() >= start && now.getHours() < end) {
                     lightSchedule.active = true;
                     lightSchedule.type = data.LightSchedules[0].type;
 
@@ -477,12 +494,12 @@ function getAutomationValues() {
             }
 
             // Check if there is an active water schedule
-            if( data.WaterSchedules.length > 0 ) {
+            if( data.WaterSchedules.length > 0 && !waterOverride ) {
                 var start = data.WaterSchedules[0].start.split(":")[0];
                 var end =  data.WaterSchedules[0].end.split(":")[0]
 
                 // Disabled manual control if there is an active schedule
-                if (now.getHours() >= start && now.getHours() <= end) {
+                if (now.getHours() >= start && now.getHours() < end) {
                     waterSchedule.active = true;
                     waterSchedule.type = data.WaterSchedules[0].type;
 
@@ -521,6 +538,8 @@ function getAutomationValues() {
             humidity = data.humidity;
             moisture = data.moisture;
 
+            postManualControls();
+
             $('#temperature-low').html(templow + "&deg;");
             $('#temperature-high').html(temphigh + "&deg;");
             $('#light-val').html(light);
@@ -544,5 +563,54 @@ function getAutomationValues() {
         }
     });
 }
+
+function postManualControls() {
+    $.ajax({
+        type: 'POST',
+        url: '/api/manualcontrols',
+        data: {
+            lights: $('#light-check').is(":checked"),
+            shades: $('#shade-check').is(":checked"),
+            fans: $('#fan-check').is(":checked"),
+            water: $('#water-check').is(":checked"),
+            lightoverride: lightOverride,
+            wateroverride: waterOverride
+        }
+    });
+}
+
+// Handle schedule override click
+$(document).on('click', "#yes", function() {
+
+    console.log( $('#manual-control-alert').attr('type') );
+
+    if( $('#manual-control-alert').attr('type') == 'light' ) {
+        $('#light-switch-label').removeClass("disabled");
+        $('#light-switch-overlay').height(0);
+
+        $('#light-switch').trigger('click');
+        lightSwitch = !lightSwitch;
+        lightOverride = true;
+
+
+    } else if( $('#manual-control-alert').attr('type') == 'water' ) {
+        lightSchedule.active = false;
+        $('#water-switch-label').removeClass("disabled");
+        $('#water-switch-overlay').height(0);
+
+        $('#water-switch').trigger('click');
+        waterSwitch = !waterSwitch;
+        waterOverride = true;
+    }
+
+    postManualControls();
+});
+
+$(document).on('click', "#no", function() {
+    $('#manual-control-alert').css('display','none');
+});
+
+
+
 
 

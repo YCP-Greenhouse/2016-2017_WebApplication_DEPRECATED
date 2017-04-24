@@ -1,6 +1,7 @@
 package listener;
 
 import controller.DatabaseController;
+import controller.NotificationController;
 import controller.SensorController;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,10 +23,14 @@ import java.util.*;
 // Get call weather API every hour and save results to database
 public class Weather implements ServletContextListener {
     DatabaseController dbController = new DatabaseController();
+    NotificationController notificationController = new NotificationController();
 
     public void contextInitialized(ServletContextEvent e) {
         try {
             startTimer();
+
+            // Checks for connection timeouts. TODO: Make separate listener for this
+            notificationController.connectionChecker();
         } catch( IOException i ) {
             i.printStackTrace();
         }

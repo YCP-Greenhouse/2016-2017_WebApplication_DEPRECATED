@@ -219,8 +219,7 @@ function postContact(contact) {
 }
 
 function deleteContact(contact) {
-    console.log(contact);
-    /*
+
     $.ajax({
         type: 'POST',
         url: '/api/contacts',
@@ -228,7 +227,7 @@ function deleteContact(contact) {
         success: function() {
             getContacts();
         }
-    });*/
+    });
 }
 
 // Add new contact
@@ -286,8 +285,6 @@ function hideBtn() {
 
 // Delete or Cancel user edit
 $(document).on('click', '#delete-contact-btn', function() {
-
-    console.log($('#delete-contact-btn').text());
 
     // Delete contact
     if( $('#delete-contact-btn').text() == "DELETE CONTACT" ) {

@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,11 +21,51 @@ public class NotificationController {
     NotificationModel notificationSettings = new NotificationModel();
 
     boolean wait = false;
+    boolean connection = false;
+
+    public boolean getConnection() {
+
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = databaseController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return false;
+        }
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String sql = "SELECT * FROM notifications";
+
+        JSONObject obj = new JSONObject();
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            if( rs.next() ) {
+               if( rs.getInt(8) == 1 ) {
+                   connection = true;
+               } else {
+                   connection = false;
+               }
+            }
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return connection;
+    }
 
     public void toggleWait() {
 
         wait = true;
-
 
         // Toggle wait variable
         new Timer().schedule(new TimerTask()
@@ -34,11 +75,86 @@ public class NotificationController {
             {
                 wait = false;
             }
-        }, 30000 );
+        }, 300000 );
+
+    }
+
+    // Check connection variable every hour
+    public void connectionChecker() {
+
+        Timer timer = new Timer();
+
+        TimerTask hourlyTask = new TimerTask() {
+            @Override
+            public void run() {
+
+                Calendar now = Calendar.getInstance();
+
+                if (now.get(Calendar.MINUTE) == 0) {
+                    if( !getConnection() ) {
+                        ErrorModel error = new ErrorModel();
+                        error.setTime(databaseController.getCurrentTime());
+                        error.setMessage("Lost connection with greenhouse.");
+
+                        errorController.alertAdmins(error);
+                    }
+                }
+            }
+        };
+
+        timer.schedule( hourlyTask, 5000, 1000 * 60 );
+    }
+
+    public void setConnection( boolean c ) {
+
+        // Connect to database
+        Connection conn = null;
+        try {
+            conn = databaseController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
+        PreparedStatement ps = null;
+        String sql = "UPDATE notifications SET connection='" + c + "' WHERE id='1'";
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            ps.executeUpdate();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
+
+        } catch( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    // Every 30 minutes, mark connection as false
+    public void connectionTimeout() {
+
+        new Timer().schedule(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                setConnection(false);
+            }
+        }, 1800003 );
 
     }
 
     public void checkBounds(SensorModel sensor) {
+
+        // Set connection variable to true to state we received data
+        setConnection(true);
+        connectionTimeout();
 
         // Only send error messages every 15 minutes. Return if sent within 15 minutes
         if( wait ) {

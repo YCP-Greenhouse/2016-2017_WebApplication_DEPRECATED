@@ -245,5 +245,14 @@
         </div>
     </div>
 
+    <div id="manual-control-alert" class="alert-div">
+        Override schedule controls?
+        <div class="button-div">
+            <button class="alert-button red" style="order: 1" id="no">NO</button>
+            <button class="alert-button green" style="order: 2" id="yes">YES</button>
+        </div>
+
+    </div>
+
 </body>
 </html>

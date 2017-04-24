@@ -2,8 +2,7 @@ package model;
 
 public class ManualControlsModel {
     int id;
-    boolean lights, shades, fans, water;
-
+    boolean lights, shades, fans, water, lightOverride, waterOverride;
 
     public int getId() {
         return id;
@@ -43,5 +42,21 @@ public class ManualControlsModel {
 
     public void setWater(boolean water) {
         this.water = water;
+    }
+
+    public boolean isLightOverride() {
+        return lightOverride;
+    }
+
+    public void setLightOverride(boolean lightOverride) {
+        this.lightOverride = lightOverride;
+    }
+
+    public boolean isWaterOverride() {
+        return waterOverride;
+    }
+
+    public void setWaterOverride(boolean waterOverride) {
+        this.waterOverride = waterOverride;
     }
 }
