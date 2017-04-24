@@ -167,7 +167,6 @@ function populateHeading() {
     }
 }
 
-
 // Handle click events
 $(document).on('click', '.blank', function() {
 
@@ -204,7 +203,6 @@ $(document).on('click', '.blank', function() {
     // Hide schedule delete button
     $('#delete-button').css("display", "none");
 
-
     $('#modal-title').text('New Schedule');
 
     // Get start time
@@ -240,7 +238,6 @@ $(document).on('click', '.blank', function() {
     }
 
     $('#start-time').val(startHour+":00:00");
-
 
     if( endHour < 10 ) {
         endHour = "0" + endHour;

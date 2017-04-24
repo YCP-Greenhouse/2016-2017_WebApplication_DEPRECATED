@@ -28,8 +28,6 @@ public class StateAPI extends HttpServlet {
     protected void doPost( HttpServletRequest req, HttpServletResponse resp )
             throws ServletException, IOException {
 
-        System.out.println("Posted state data");
-
         // Verify user identity
         String user = "";
         String APIkey = "";
@@ -56,7 +54,7 @@ public class StateAPI extends HttpServlet {
             String vents = req.getParameter("vents");
             String shades = req.getParameter("shades");
 
-            System.out.println("Lights: " + lights + "\nHeater: " + heater + "\nPump: " + pump + "\nFans: " + fans + "\nVents: " + vents + "\nShades: " + shades );
+            //System.out.println("Lights: " + lights + "\nHeater: " + heater + "\nPump: " + pump + "\nFans: " + fans + "\nVents: " + vents + "\nShades: " + shades );
 
             stateController.setCurrentState(convertToBoolean(req.getParameter("lights")), convertToBoolean(req.getParameter("heater")), convertToBoolean(req.getParameter("pump")), convertToBoolean(req.getParameter("fans")), convertToBoolean(req.getParameter("vents")), convertToBoolean(req.getParameter("shades")));
             stateController.storeCurrentState();

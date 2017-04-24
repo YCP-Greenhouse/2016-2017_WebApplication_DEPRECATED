@@ -99,38 +99,48 @@
             <div class="bottom-controls-panel">
                 <!-- Manual Controls Section -->
                 <div class="manual-panel-1"></div>
-                <div class="manual-panel-title">GLOBAL CONTROLS</div>
+                <div class="manual-panel-title">MANUAL CONTROLS</div>
                 <div class="manual-panel-2"></div>
                 <div class="manual-panel-3">
-                    <label class="switch switch-left-right">
-                        <input id="light-check" class="switch-input" type="checkbox" />
-                        <span id="light-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
-                        <span class="switch-handle"></span>
-                        <div class="control-caption">LIGHTS</div>
-                    </label>
+                    <div id="light-switch-div" class="switch-div" style="order: 1; margin-left: 10px;">
+                        <div class="switch-overlay" id="light-switch-overlay"></div>
+                        <label class="switch switch-left-right" id="light-switch-label">
+                            <input id="light-check" class="switch-input" type="checkbox" />
+                            <span id="light-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
+                            <span class="switch-handle"></span>
+                            <div class="control-caption">LIGHTS</div>
+                        </label>
+                    </div>
 
-                    <label class="shade-switch shade-switch-left-right">
-                        <input id="shade-check" class="shade-switch-input" name="shade-switch" type="checkbox" />
-                        <span id="shade-switch" class="shade-switch-label" data-on="Extended" data-off="Retracted"></span>
-                        <span class="shade-switch-handle"></span>
-                        <div class="control-caption">SHADES</div>
-                    </label>
+                    <div id="shades-switch-div" class="switch-div" style="order: 2">
+                        <div class="switch-overlay"></div>
+                        <label class="shade-switch shade-switch-left-right">
+                            <input id="shade-check" class="shade-switch-input" name="shade-switch" type="checkbox" />
+                            <span id="shade-switch" class="shade-switch-label" data-on="Extended" data-off="Retracted"></span>
+                            <span class="shade-switch-handle"></span>
+                            <div class="control-caption">SHADES</div>
+                        </label>
+                    </div>
 
+                    <div id="fans-switch-div" class="switch-div" style="order: 3">
+                        <div class="switch-overlay"></div>
+                        <label class="switch switch-left-right">
+                            <input id="fan-check" class="switch-input" type="checkbox" />
+                            <span id="fan-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
+                            <span class="switch-handle"></span>
+                            <div class="control-caption">FANS</div>
+                        </label>
+                    </div>
 
-                    <label class="switch switch-left-right">
-                        <input id="fan-check" class="switch-input" type="checkbox" />
-                        <span id="fan-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
-                        <span class="switch-handle"></span>
-                        <div class="control-caption">FANS</div>
-                    </label>
-
-                    <label class="switch switch-left-right">
-                        <input id="water-check" class="switch-input" type="checkbox" />
-                        <span id="water-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
-                        <span class="switch-handle"></span>
-                        <div class="control-caption">WATER</div>
-                    </label>
-
+                    <div id="water-switch-div" class="switch-div" style="order: 4">
+                        <div class="switch-overlay" id="water-switch-overlay"></div>
+                        <label class="switch switch-left-right" id="water-switch-label">
+                            <input id="water-check" class="switch-input" type="checkbox" />
+                            <span id="water-switch" class="switch-label" data-on="On" data-off="&nbsp;&nbsp;&nbsp;Off"></span>
+                            <span class="switch-handle"></span>
+                            <div class="control-caption">WATER</div>
+                        </label>
+                    </div>
 
                 </div>
 

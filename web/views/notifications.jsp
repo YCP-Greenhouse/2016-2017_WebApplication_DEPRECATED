@@ -25,30 +25,8 @@
         <% // If session is null, display login window
             String user = null;
             if( session.getAttribute("user") == null ) {
-        %>
+                response.sendRedirect("/settings");
 
-        <div class="settings-login">
-            <form action="/login" method="post" id="login-form">
-                <input type="hidden" name="username" value="admin">
-                <input id="password" type="password" name="password">
-            </form>
-            <div class="touch-pad">
-                <button type="number" class="touch-button" id="1">1</button>
-                <button type="number" class="touch-button" id="2">2</button>
-                <button type="number" class="touch-button" id="3">3</button>
-                <button type="number" class="touch-button" id="4">4</button>
-                <button type="number" class="touch-button" id="5">5</button>
-                <button type="number" class="touch-button" id="6">6</button>
-                <button type="number" class="touch-button" id="7">7</button>
-                <button type="number" class="touch-button" id="8">8</button>
-                <button type="number" class="touch-button" id="9">9</button>
-                <button type="number" class="action-button" id="clear">CLEAR</button>
-                <button type="number" class="touch-button" id="0">0</button>
-                <button type="number" class="action-button" id="login">LOGIN</button>
-            </div>
-        </div>
-
-        <%
             // If user is logged in, display notification options
         } else {  %>
             <div class="automation-selection">
@@ -83,7 +61,7 @@
 
                     <div class="error-div">
                         <div class="contact-panel-1"></div>
-                        <div class="contact-panel-title">ERRORS</div>
+                        <div class="contact-panel-title">ALERTS</div>
                         <div class="contact-panel-2"></div>
                         <div class="contact-panel-3">
                             <table id="error-table" class="error-table" style="padding:5px;">
@@ -114,6 +92,8 @@
                             </thead>
                             <tbody id="contact-table-body"></tbody>
                         </table>
+                        <button id="delete-contact-btn" class="delete-contact-btn settings-button"></button>
+                        <button id="add-contact-btn" class="contact-btn settings-button">ADD CONTACT</button>
                     </div>
                 </div>
             </div>

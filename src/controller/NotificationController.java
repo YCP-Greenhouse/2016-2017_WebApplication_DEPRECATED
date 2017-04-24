@@ -45,10 +45,9 @@ public class NotificationController {
             return;
         }
 
-        // Check that notificationSettings is populated
-        if( notificationSettings.getSoilHigh() == 0 ) {
-            getNotificationSettings();
-        }
+        // Get notification settings
+        getNotificationSettings();
+
 
         ErrorModel error = new ErrorModel();
         error.setTime(databaseController.getCurrentTime());
@@ -57,13 +56,15 @@ public class NotificationController {
         if( notificationSettings.getNotifyTemp() == 1 ) {
 
             // Check if current temperature is outside thresholds
-            if( sensor.getTemperature() < notificationSettings.getTempLow() || sensor.getTemperature() > notificationSettings.getTempHigh() ) {
-                error.setMessage( "Zone " + sensor.getZone() + " temperature is currently " + sensor.getTemperature() + "°");
+            if( sensor.getTemperature() != 0.0) {
+                if (sensor.getTemperature() < notificationSettings.getTempLow() || sensor.getTemperature() > notificationSettings.getTempHigh()) {
+                    error.setMessage("Zone " + sensor.getZone() + " temperature is currently " + sensor.getTemperature());
 
-                errorController.updateError(error);
-                toggleWait();
+                    errorController.updateError(error);
+                    toggleWait();
 
-                return;
+                    return;
+                }
             }
         }
 
@@ -71,22 +72,26 @@ public class NotificationController {
         if( notificationSettings.getNotifySoil() == 1 ) {
 
             // Check if current soil moisture is outside thresholds
-            if( sensor.getProbe1() < notificationSettings.getSoilLow() || sensor.getProbe1() > notificationSettings.getSoilHigh() ) {
-                error.setMessage( "Zone " + sensor.getZone() + " Probe 1 soil moisture is currently " + sensor.getProbe1() + "%");
+            if( sensor.getProbe1() != 0.0 ) {
+                if (sensor.getProbe1() < notificationSettings.getSoilLow() || sensor.getProbe1() > notificationSettings.getSoilHigh()) {
+                    error.setMessage("Zone " + sensor.getZone() + " Probe 1 soil moisture is currently " + sensor.getProbe1() + "%");
 
-                errorController.updateError(error);
-                toggleWait();
+                    errorController.updateError(error);
+                    toggleWait();
 
-                return;
+                    return;
+                }
             }
 
-            if( sensor.getProbe2() < notificationSettings.getSoilLow() || sensor.getProbe2() > notificationSettings.getSoilHigh() ) {
-                error.setMessage( "Zone " + sensor.getZone() + " Probe 2 soil moisture is currently " + sensor.getProbe2() + "%");
+            if( sensor.getProbe2() != 0.0 ) {
+                if (sensor.getProbe2() < notificationSettings.getSoilLow() || sensor.getProbe2() > notificationSettings.getSoilHigh()) {
+                    error.setMessage("Zone " + sensor.getZone() + " Probe 2 soil moisture is currently " + sensor.getProbe2() + "%");
 
-                errorController.updateError(error);
-                toggleWait();
+                    errorController.updateError(error);
+                    toggleWait();
 
-                return;
+                    return;
+                }
             }
 
         }

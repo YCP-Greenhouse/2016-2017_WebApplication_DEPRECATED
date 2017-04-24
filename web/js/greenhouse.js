@@ -36,6 +36,9 @@ function getGreenhouseState() {
         success: function(response) {
             var data = JSON.parse(response);
 
+            // Remove active classes
+            $('.component-state-active').removeClass('component-state-active');
+
             if( data.lights ) {
                 $('#lights-on').addClass('component-state-active');
                 $('#lights-off').addClass('component-state');

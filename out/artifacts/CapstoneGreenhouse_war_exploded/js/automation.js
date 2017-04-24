@@ -13,14 +13,22 @@ var waterSwitch;
 var vents;
 var heater;
 
+// Schedule variables
+var lightSchedule = {};
+var waterSchedule = {};
+
 // Query API every 3 seconds
 var isPaused = false;
 
 window.setInterval( function() {
 
+    getAutomationValues();
+
+    console.log(lightSchedule.active + " " + waterSchedule.active );
+
     $.ajax({
         type: 'GET',
-        url: '/api/state',
+        url: '/api/manualcontrols',
         success: function(response) {
             var data = JSON.parse(response);
 
@@ -40,9 +48,9 @@ window.setInterval( function() {
                 fanSwitch = data.fans;
             }
 
-            if( data.pump != waterSwitch ) {
+            if( data.water != waterSwitch ) {
                 $('#water-switch').trigger('click');
-                waterSwitch = data.pump;
+                waterSwitch = data.water;
             }
         }
     });
@@ -66,10 +74,15 @@ $(document).ready( function() {
         $('#nav-list').html('<ul><a href="index.html"><li class="nav-li"><img width="40" height="40" src="images/home.png"><span class="nav-item">HOME</span></li></a><a href="#"><li class="nav-active"><img width="40" height="40" src="images/gear.png"><span class="nav-item" style="letter-spacing: 1.5px;">SETTINGS</span></li></a><a href="sensors.html"><li class="nav-li"><img width="35" height="35" src="images/sensors.png"><span class="nav-item">SENSORS</span></li></a><a href="history.html"><li class="nav-li"><img width="35" height="35" src="images/history.png"><span class="nav-item">HISTORY</span></li></a><a href="/documentation"><li class="nav-li"><img style="margin-top:22px;" width="40" height="30" src="images/learn.png"><span class="nav-item">LEARN</span></li></a></ul>');
     }
 
+    // Get automation values
+    getAutomationValues();
+
+
+
     // Get state values
     $.ajax({
         type: 'GET',
-        url: '/api/state',
+        url: '/api/manualcontrols',
         success: function(response) {
             var data = JSON.parse(response);
 
@@ -86,20 +99,20 @@ $(document).ready( function() {
                 $('#fan-switch').trigger('click');
             }
 
-            if( data.pump ) {
+            if( data.water ) {
                 $('#water-switch').trigger('click');
             }
 
             lightSwitch = data.lights;
             shadeSwitch = data.shades;
             fanSwitch = data.fans;
-            waterSwitch = data.pump;
-            vents = data.vents;
-            heater = data.heater;
+            waterSwitch = data.water;
+            //vents = data.vents;
+            //heater = data.heater;
         }
     });
 
-    getAutomationValues();
+
 
     // Login button click handlers
     $('.touch-button').click( function() {
@@ -222,14 +235,12 @@ $(document).ready( function() {
         } else if (lightSwitch != undefined && shadeSwitch != undefined && fanSwitch != undefined && waterSwitch != undefined) {
             $.ajax({
                 type: 'POST',
-                url: '/api/state',
+                url: '/api/manualcontrols',
                 data: {
                     lights: $('#light-check').is(":checked"),
                     shades: $('#shade-check').is(":checked"),
                     fans: $('#fan-check').is(":checked"),
-                    pump: $('#water-check').is(":checked"),
-                    vents: vents,
-                    heater: heater
+                    water: $('#water-check').is(":checked")
                 }
             });
 
@@ -420,12 +431,90 @@ function submitAutomationValues() {
 }
 
 function getAutomationValues() {
+
     // Get automation values
     $.ajax({
         type: 'GET',
         url: '/api/automation',
         success: function(response) {
             var data = JSON.parse(response);
+            var now = new Date();
+
+            // Check if there is an active light schedule
+            if( data.LightSchedules.length > 0 ) {
+                var start = data.LightSchedules[0].start.split(":")[0];
+                var end =  data.LightSchedules[0].end.split(":")[0];
+
+                // Disabled manual control if there is an active schedule
+                if (now.getHours() >= start && now.getHours() <= end) {
+                    lightSchedule.active = true;
+                    lightSchedule.type = data.LightSchedules[0].type;
+
+                    // Set switch before disabling it
+                    if( lightSchedule.type == 'blocked' ) {
+                        // If schedule type is blocked and switch is on, turn it off
+                        if( lightSwitch ) {
+                            $('#light-switch').trigger('click');
+                            lightSwitch = !lightSwitch;
+                        }
+                    } else {
+                        // If schedule is constant or sensor and switch is off, turn it on
+                        if( !lightSwitch ) {
+                            $('#light-switch').trigger('click');
+                            lightSwitch = !lightSwitch;
+                        }
+                    }
+
+                    $('#light-switch-label').addClass("disabled");
+                    $('#light-switch-overlay').height(100);
+                } else {
+                    lightSchedule.active = false;
+                    $('#light-switch-label').removeClass("disabled");
+                    $('#light-switch-overlay').height(0);
+                }
+            } else {
+                lightSchedule.active = false;
+                $('#light-switch-label').removeClass("disabled");
+                $('#light-switch-overlay').height(0);
+            }
+
+            // Check if there is an active water schedule
+            if( data.WaterSchedules.length > 0 ) {
+                var start = data.WaterSchedules[0].start.split(":")[0];
+                var end =  data.WaterSchedules[0].end.split(":")[0]
+
+                // Disabled manual control if there is an active schedule
+                if (now.getHours() >= start && now.getHours() <= end) {
+                    waterSchedule.active = true;
+                    waterSchedule.type = data.WaterSchedules[0].type;
+
+                    // Set switch before disabling it
+                    if( waterSchedule.type == 'blocked' ) {
+                        // If schedule type is blocked and switch is on, turn it off
+                        if( waterSwitch ) {
+                            $('#water-switch').trigger('click');
+                            waterSwitch = !waterSwitch;
+                        }
+                    } else {
+                        // If schedule is constant or sensor and switch is off, turn it on
+                        if( !waterSwitch ) {
+                            $('#water-switch').trigger('click');
+                            waterSwitch = !waterSwitch;
+                        }
+                    }
+
+                    $('#water-switch-label').addClass("disabled");
+                    $('#water-switch-overlay').height(100);
+                } else {
+                    waterSchedule.active = false;
+                    $('#water-switch-label').removeClass("disabled");
+                    $('#water-switch-overlay').height(0);
+                }
+            } else {
+                waterSchedule.active = false;
+                $('#water-switch-label').removeClass("disabled");
+                $('#water-switch-overlay').height(0);
+            }
 
             // Set values
             light = data.ShadeLim;
@@ -457,5 +546,31 @@ function getAutomationValues() {
         }
     });
 }
+
+$(document).on('click', '.switch-div', function() {
+   //console.log( $(this).children('.disabled').length );
+    if( $(this).children('.disabled').length == 0 ) {
+        //console.log( $(this).children('.switch-label').length );
+
+        //console.log( $(this).find('.switch-label').length );
+
+
+        /*
+        if( $(this).find('.switch-label').length > 0 ) {
+            console.log("Switch trigger");
+            $(this).find(".switch-label").first().trigger('click');
+
+        } else if( $(this).find('.shade-switch-label').length > 0 ) {
+            console.log("shade trigger");
+            $(this).find(".shade-switch-label").first().trigger('click');
+        } else {
+            console.log( $(this)[0] );
+        }*/
+
+
+
+        //console.log( $(this).find(".switch-label")[0].id );
+    }
+});
 
 

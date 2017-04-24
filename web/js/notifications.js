@@ -21,11 +21,12 @@ $(document).ready( function() {
 
 });
 
+/*
 window.setInterval( function() {
     // Get error message
     getErrorMessages();
 
-}, 3000 );
+}, 3000 ); */
 
 function getContacts() {
 
@@ -64,7 +65,6 @@ $(document).on('click', '#contact-submit', function() {
 });
 
 function addContact() {
-    console.log("Add Contact");
     $.ajax({
         type: 'POST',
         url: '/api/contacts',
@@ -173,12 +173,20 @@ function setNotificationSettings() {
 }
 
 var contactText = '';
+var contactID;
 $(document).on('click', '.contact-input', function() {
+    $('#delete-contact-btn').text('DELETE CONTACT');
+    $('#delete-contact-btn').css("display", "block");
+
+    contactID = $(this)[0].id;
     contactText = $(this)[0].defaultValue;
 });
 
 // Update contacts when user updates text and leaves text box
 $(document).on('focusout', '.contact-input', function() {
+
+    // Hide delete button
+    setTimeout(hideBtn, 100);
 
     // Only update if the text changes
     if( $(this)[0].value == contactText ) {
@@ -210,16 +218,93 @@ function postContact(contact) {
     });
 }
 
-// Submit error message
-$(document).on('click', '#error-submit', function() {
-
+function deleteContact(contact) {
+    console.log(contact);
+    /*
     $.ajax({
         type: 'POST',
-        url: '/api/error',
-        data: { apikey: '44ffe28b-f470-4bc0-8ee9-38fce01438ce', message: $('#set-error-message').val(), code: $('#set-error-code').val() },
+        url: '/api/contacts',
+        data: contact,
         success: function() {
-            getErrorMessage();
+            getContacts();
         }
-    });
+    });*/
+}
+
+// Add new contact
+$(document).on('click', '#add-contact-btn', function() {
+
+    // Check if new contact row exists
+    if( $('.new-contact-input').length > 0 ) {
+        return;
+    }
+
+    $('#delete-contact-btn').text('CANCEL');
+    $('#delete-contact-btn').css("display", "block");
+
+    var table = document.getElementById('contact-table-body');
+
+    var row = table.insertRow(0);
+
+    var col1 = row.insertCell(0);
+    col1.innerHTML = '<input type="text" id="new-name" name="name" class="new-contact-input">';
+
+    var col2 = row.insertCell(1);
+    col2.innerHTML = '<input type="text" id="new-position" name="position" class="new-contact-input">';
+
+    var col3 = row.insertCell(2);
+    col3.innerHTML = '<input type="text" id="new-email" name="email" class="new-contact-input">';
+
+    var col4 = row.insertCell(3);
+    col4.innerHTML = '<input type="text" id="new-phone" name="phone" class="new-contact-input">';
+
 });
+
+// Post new contact
+var newContact = {};
+$(document).on('focusout', '.new-contact-input', function() {
+
+    // Hide cancel button
+    //setTimeout(hideBtn, 1000);
+
+    //console.log( $(this)[0].name );
+
+    newContact.name = $('#new-name').val();
+    newContact.position = $('#new-position').val();
+    newContact.email = $('#new-email').val();
+    newContact.phone = $('#new-phone').val();
+    newContact.action = "add";
+
+    if( newContact.name != "" && newContact.position != "" && newContact.email != "" && newContact.phone != "") {
+        postContact(newContact);
+    }
+});
+
+function hideBtn() {
+    $('#delete-contact-btn').css("display", "none");
+}
+
+// Delete or Cancel user edit
+$(document).on('click', '#delete-contact-btn', function() {
+
+    console.log($('#delete-contact-btn').text());
+
+    // Delete contact
+    if( $('#delete-contact-btn').text() == "DELETE CONTACT" ) {
+
+        var contact = {}
+
+        contact.id = contactID.split('-')[1];
+        contact.action = "delete";
+
+        deleteContact(contact);
+
+        // Remove new line
+    } else if( $('#delete-contact-btn').text() == "CANCEL" ) {
+        $('#contact-table-body tr:first').remove();
+    }
+
+    $('#delete-contact-btn').css("display","none");
+});
+
 

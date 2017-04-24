@@ -48,38 +48,46 @@ public class ContactAPI extends HttpServlet {
 
         if( user.equals("admin") || accountController.verifyAPIKey(APIkey) ) {
 
-            String name = req.getParameter("name");
-            String position = req.getParameter("position");
-            String email = req.getParameter("email");
-            String phone = req.getParameter("phone");
             String action = req.getParameter("action");
 
-            // Check for invalid input
-            if( !databaseController.isValidInput(name) ) {
-                return;
-            } else if( !databaseController.isValidInput(position)) {
-                return;
-            } else if( !databaseController.isValidInput(email)) {
-                return;
-            } else if( !databaseController.isValidInput(phone)) {
-                return;
-            }
-
-            // Assign values to Contact object
-            ContactModel contact = new ContactModel();
-
-
-            contact.setUsername(name);
-            contact.setPosition(position);
-            contact.setEmail(email);
-            contact.setPhoneNumber(phone);
-
-            if( action.equals("add") ) {
-                contactController.addContact(contact);
-            } else if( action.equals("update") ) {
+            if( action.equals("delete") ) {
                 int id = Integer.parseInt(req.getParameter("id"));
-                contact.setId(id);
-                contactController.updateContact(contact);
+                contactController.deleteContact(id);
+
+            } else {
+                String name = req.getParameter("name");
+                String position = req.getParameter("position");
+                String email = req.getParameter("email");
+                String phone = req.getParameter("phone");
+
+
+                // Check for invalid input
+                if (!databaseController.isValidInput(name)) {
+                    return;
+                } else if (!databaseController.isValidInput(position)) {
+                    return;
+                } else if (!databaseController.isValidInput(email)) {
+                    return;
+                } else if (!databaseController.isValidInput(phone)) {
+                    return;
+                }
+
+                // Assign values to Contact object
+                ContactModel contact = new ContactModel();
+
+
+                contact.setUsername(name);
+                contact.setPosition(position);
+                contact.setEmail(email);
+                contact.setPhoneNumber(phone);
+
+                if (action.equals("add")) {
+                    contactController.addContact(contact);
+                } else if (action.equals("update")) {
+                    int id = Integer.parseInt(req.getParameter("id"));
+                    contact.setId(id);
+                    contactController.updateContact(contact);
+                }
             }
 
         } else {
