@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
 
     <script src="../js/notifications.js"></script>
+
 </head>
 <body>
     <div class="container" id="container">
@@ -19,8 +20,6 @@
         </div>
 
         <div id="nav-list"></div>
-
-
 
         <% // If session is null, display login window
             String user = null;

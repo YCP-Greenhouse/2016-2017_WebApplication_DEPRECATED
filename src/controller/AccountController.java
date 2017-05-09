@@ -79,6 +79,8 @@ public class AccountController {
         ResultSet rs = null;
 
         String sql = "SELECT * FROM apikeys WHERE apikey='" + hashedKey + "'";
+
+        System.out.println(sql);
         //String sql = "SELECT * FROM apikeys WHERE id='1'";
         boolean verified = false;
 

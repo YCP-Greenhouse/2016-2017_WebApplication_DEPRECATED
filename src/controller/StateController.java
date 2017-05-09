@@ -149,16 +149,6 @@ public class StateController {
         }
     }
 
-    public String booleanToOnOff(boolean input) {
-
-
-        if( input ) {
-            return "On";
-        } else {
-            return "Off";
-        }
-    }
-
     // Convert 'True' 'False' to '1' '0'
     public String booleanToNum(boolean input) {
         if(input) {

@@ -17,7 +17,6 @@ import java.util.TimerTask;
 public class NotificationController {
     DatabaseController databaseController = new DatabaseController();
     ErrorController errorController = new ErrorController();
-
     NotificationModel notificationSettings = new NotificationModel();
 
     boolean wait = false;
@@ -54,6 +53,9 @@ public class NotificationController {
                    connection = false;
                }
             }
+
+            conn.commit();
+            conn.close();
 
         } catch( SQLException e ) {
             e.printStackTrace();
@@ -107,6 +109,11 @@ public class NotificationController {
 
     public void setConnection( boolean c ) {
 
+        int num = 0;
+        if( c ) {
+            num = 1;
+        }
+
         // Connect to database
         Connection conn = null;
         try {
@@ -117,7 +124,7 @@ public class NotificationController {
         }
 
         PreparedStatement ps = null;
-        String sql = "UPDATE notifications SET connection='" + c + "' WHERE id='1'";
+        String sql = "UPDATE notifications SET connection='" + num + "' WHERE id='1'";
 
         try {
             conn.setAutoCommit(false);
@@ -128,7 +135,6 @@ public class NotificationController {
 
             conn.commit();
             conn.close();
-
 
         } catch( SQLException e ) {
             e.printStackTrace();

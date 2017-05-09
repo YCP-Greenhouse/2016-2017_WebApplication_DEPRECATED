@@ -779,16 +779,4 @@ public class SensorController {
         }
 
     }
-
-    public int getYear( String date ) {
-        return Integer.parseInt( date.substring(0,4) );
-    }
-
-    public int getDay( String date ) {
-        return Integer.parseInt( date.substring(5,8) );
-    }
-
-    public int getMonth( String date ) {
-        return Integer.parseInt( date.substring(8,10) );
-    }
 }

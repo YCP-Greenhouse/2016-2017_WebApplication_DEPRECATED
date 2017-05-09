@@ -18,6 +18,8 @@ public class ManualControlsAPI extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp )
             throws ServletException, IOException {
 
+        //System.out.println("ManualControlsAPI: GET");
+
         resp.getWriter().println( manualControlsController.getManualControls() );
 
     }
@@ -57,6 +59,8 @@ public class ManualControlsAPI extends HttpServlet {
             controls.setWater(water);
             controls.setLightOverride(lightoverride);
             controls.setWaterOverride(wateroverride);
+
+            //System.out.println("ManualControlsAPI: POST");
 
             manualControlsController.updateControls(controls);
 

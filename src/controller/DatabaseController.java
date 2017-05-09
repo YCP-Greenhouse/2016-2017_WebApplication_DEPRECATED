@@ -71,27 +71,6 @@ public class DatabaseController {
         //System.out.println( "After daylight: " + dateFormat.format(cal.getTime()));
 
         return dateFormat.format(cal.getTime());
-
-        /*
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date utcTime = new Date();
-
-        System.out.println("Date: " + utcTime.toString() );
-
-        Date date = new Date(utcTime.getTime() + TimeZone.getTimeZone("EST").getRawOffset() );
-
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-
-        //cal.add(Calendar.HOUR_OF_DAY, -4);
-
-        // Check if daylight savings is active
-        if( TimeZone.getTimeZone("EST").inDaylightTime(date) ) {
-            cal.add(Calendar.HOUR_OF_DAY, 1);
-        }
-
-        System.out.println("Updated Time: " + dateFormat.format(cal.getTime()));
-        return dateFormat.format(cal.getTime());*/
     }
 
     // Checks input for invalid String characters

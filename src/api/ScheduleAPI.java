@@ -1,6 +1,7 @@
 package api;
 
 import controller.AccountController;
+import controller.ManualControlsController;
 import controller.ScheduleController;
 import model.ScheduleModel;
 
@@ -66,8 +67,6 @@ public class ScheduleAPI extends HttpServlet {
             // Get type
             String type = req.getParameter("type");
 
-
-
             // Try to get action. Only delete posts have the 'action' parameter
             String action = "";
             try {
@@ -115,6 +114,11 @@ public class ScheduleAPI extends HttpServlet {
                 } else {
                     scheduleController.updateSchedule(schedule, scheduleModel);
                 }
+
+                // Reset override values when schedule is added or edited
+                //System.out.println("ScheduleAPI: POST");
+                //manualControlsController.resetOverrides();
+
             } else {
                 System.out.println("Delete id: " + id );
                 scheduleController.deleteSchedule(id, schedule);

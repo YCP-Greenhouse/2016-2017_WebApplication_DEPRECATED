@@ -75,7 +75,6 @@ public class ManualControlsController {
         }
 
         return obj;
-
     }
 
     public boolean toBoolean(int num) {
@@ -100,6 +99,8 @@ public class ManualControlsController {
 
         String sql = "UPDATE manualcontrols SET light='" + booleanToNum(controls.isLights()) + "', shades='" + booleanToNum(controls.isShades()) + "', fans='" + booleanToNum(controls.isFans()) + "', water='" + booleanToNum(controls.isWater()) + "', lightoverride='" + booleanToNum(controls.isLightOverride()) + "', wateroverride='" + booleanToNum(controls.isWaterOverride()) + "' WHERE id='1'";
 
+        //System.out.println("UpdateControls: " + sql );
+
         try {
             conn.setAutoCommit(false);
 
@@ -121,6 +122,35 @@ public class ManualControlsController {
             return "1";
         } else {
             return "0";
+        }
+    }
+
+    public void resetOverrides() {
+        // Get website information from DB
+        Connection conn = null;
+        try {
+            conn = databaseController.getConnection();
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+            return;
+        }
+
+        PreparedStatement ps = null;
+
+        String sql = "UPDATE manualcontrols SET lightoverride='0', wateroverride='0' WHERE id='1'";
+
+        try {
+            conn.setAutoCommit(false);
+
+            ps = conn.prepareStatement(sql);
+            ps.executeUpdate();
+            ps.close();
+
+            conn.commit();
+            conn.close();
+
+        } catch( SQLException e) {
+            e.printStackTrace();
         }
     }
 }

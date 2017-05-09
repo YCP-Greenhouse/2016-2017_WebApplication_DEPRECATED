@@ -131,9 +131,9 @@ function init() {
     ambient = new THREE.AmbientLight(0xffffff, 1.0);
     scene.add(ambient);
 
-    keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), .5);
+    keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(100%, 100%, 100%)'), .3);
     //keyLight.position.set(-50, 0, 50);
-    keyLight.position.set(0,65,0);
+    keyLight.position.set(0,550,0);
 
     fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
     fillLight.position.set(50, 0, 50);
@@ -143,7 +143,7 @@ function init() {
 
     /* Set lighting properties */
     ambient.intensity = 0.5;
-    //scene.add(keyLight);
+    scene.add(keyLight);
     scene.add(fillLight);
     scene.add(backLight);
 
@@ -152,7 +152,7 @@ function init() {
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setBaseUrl('assets/');
     mtlLoader.setPath('assets/');
-    mtlLoader.load('greenhouse.mtl', function (materials) {
+    mtlLoader.load('greenhouse-tex.mtl', function (materials) {
 
         materials.preload();
 
@@ -163,7 +163,7 @@ function init() {
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
         objLoader.setPath('assets/');
-        objLoader.load('greenhouse.obj', function (object) {
+        objLoader.load('greenhouse-tex.obj', function (object) {
 
             var mesh = object;
             mesh.position.y = 0;
@@ -221,14 +221,14 @@ function onKeyboardEvent(e) {
         if (lighting) {
 
             ambient.intensity = 0.75;
-            scene.add(keyLight);
+            //scene.add(keyLight);
             scene.add(fillLight);
             scene.add(backLight);
 
         } else {
 
             ambient.intensity = 1.0;
-            scene.remove(keyLight);
+            //scene.remove(keyLight);
             scene.remove(fillLight);
             scene.remove(backLight);
 

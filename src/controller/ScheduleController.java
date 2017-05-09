@@ -155,7 +155,7 @@ public class ScheduleController {
         PreparedStatement ps = null;
         String sql = "UPDATE " + database + " SET zoneId='" + schedule.getZoneID() + "', day='" + schedule.getDay() + "', startTime='" + schedule.getStartTime() + "', endTime='" + schedule.getEndTime() + "', type='" + schedule.getType() + "', threshold='" + schedule.getThreshold() + "', hours='" + schedule.getHours() + "' WHERE id='" + schedule.getId() + "'";
 
-        System.out.println("UpdateSchedule: SQL: " + sql);
+        //System.out.println("UpdateSchedule: SQL: " + sql);
         try {
             conn.setAutoCommit(false);
 

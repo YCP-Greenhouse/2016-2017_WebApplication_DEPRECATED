@@ -1,5 +1,6 @@
 package api;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -20,6 +21,8 @@ public class StateAPI extends HttpServlet {
     protected void doGet( HttpServletRequest req, HttpServletResponse resp )
             throws ServletException, IOException {
 
+        //System.out.println("GET STATE" + req.getRemoteAddr() ) ;
+
         resp.getWriter().println( stateController.getCurrentStateJSON() );
 
     }
@@ -28,24 +31,38 @@ public class StateAPI extends HttpServlet {
     protected void doPost( HttpServletRequest req, HttpServletResponse resp )
             throws ServletException, IOException {
 
+        /*
+        // Read from request
+        StringBuilder buffer = new StringBuilder();
+        BufferedReader reader = req.getReader();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            buffer.append(line);
+        }
+
+        System.out.println("Reader: " + buffer.toString());
+        */
+
+
         // Verify user identity
         String user = "";
         String APIkey = "";
         try {
             user = req.getSession().getAttribute("user").toString();
-        } catch( NullPointerException e ) {
+
+
+        } catch( Exception e ) {
             // If null, do nothing
         }
 
         try {
             APIkey = req.getParameter("apikey");
-        } catch( NullPointerException e ) {
+        } catch( Exception e ) {
             // If null, do nothing
         }
 
+
         if( user.equals("admin") || accountController.verifyAPIKey(APIkey) ) {
-
-
 
             String lights = req.getParameter("lights");
             String heater = req.getParameter("heater");
@@ -61,6 +78,7 @@ public class StateAPI extends HttpServlet {
 
             resp.getWriter().println(stateController.getCurrentStateJSON());
         } else {
+            System.out.println("Invalid credentials");
             resp.getWriter().println("Invalid credentials");
         }
     }
@@ -69,7 +87,7 @@ public class StateAPI extends HttpServlet {
         if( input == null ) {
             return false;
         }
-        if( input.contains("on") || input.contains("true")) {
+        if( input.contains("on") || input.contains("true") || input.contains("True")) {
             return true;
         } else {
             return false;

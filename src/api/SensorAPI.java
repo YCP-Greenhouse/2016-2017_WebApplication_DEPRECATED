@@ -151,7 +151,6 @@ public class SensorAPI extends HttpServlet {
             // Update latest sensor values
             sensorController.updateLatestSensor( sensorList );
 
-            // Check for sensor bounds
 
             sensorController.addSensorData(sensorList);
 

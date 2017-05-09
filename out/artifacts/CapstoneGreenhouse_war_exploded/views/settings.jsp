@@ -14,6 +14,7 @@
     <script src="../js/schedule.js"></script>
     <script src="../js/rangeslider.js"></script>
 
+
 </head>
 <body>
     <div class="container" id="container">

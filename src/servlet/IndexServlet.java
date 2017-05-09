@@ -1,9 +1,9 @@
 package servlet;
 
+
 import controller.SensorController;
 import controller.StateController;
 import model.StateModel;
-import sun.management.Sensor;
 
 import java.io.IOException;
 
@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 public class IndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    SensorController sensorController = new SensorController();
-    StateController stateController = new StateController();
     StateModel stateModel = new StateModel();
+    StateController stateController = new StateController();
+    SensorController sensorController = new SensorController();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp )

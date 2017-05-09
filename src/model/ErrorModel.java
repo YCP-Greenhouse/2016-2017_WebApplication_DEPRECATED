@@ -1,10 +1,5 @@
 package model;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
-
 public class ErrorModel {
     String message, time;
     int code;

@@ -22,6 +22,9 @@ var waterOverride = false;
 // Query API every 3 seconds
 var isPaused = false;
 
+// Automation Values
+var lightVal = 0;
+
 window.setInterval( function() {
 
     getAutomationValues();
@@ -86,13 +89,11 @@ $(document).ready( function() {
 
     } else {
         $('#nav-list').addClass('nav');
-        $('#nav-list').html('<ul><a href="index.html"><li class="nav-li"><img width="40" height="40" src="images/home.png"><span class="nav-item">HOME</span></li></a><a href="#"><li class="nav-active"><img width="40" height="40" src="images/gear.png"><span class="nav-item" style="letter-spacing: 1.5px;">SETTINGS</span></li></a><a href="sensors.html"><li class="nav-li"><img width="35" height="35" src="images/sensors.png"><span class="nav-item">SENSORS</span></li></a><a href="history.html"><li class="nav-li"><img width="35" height="35" src="images/history.png"><span class="nav-item">HISTORY</span></li></a><a href="/documentation"><li class="nav-li"><img style="margin-top:22px;" width="40" height="30" src="images/learn.png"><span class="nav-item">LEARN</span></li></a></ul>');
+        $('#nav-list').html('<ul><a href="index.html"><li class="nav-li"><img width="40" height="40" src="images/home.png"><span class="nav-item">HOME</span></li></a><a href="/settings"><li class="nav-active"><img width="40" height="40" src="images/gear.png"><span class="nav-item" style="letter-spacing: 1.5px;">SETTINGS</span></li></a><a href="sensors.html"><li class="nav-li"><img width="35" height="35" src="images/sensors.png"><span class="nav-item">SENSORS</span></li></a><a href="history.html"><li class="nav-li"><img width="35" height="35" src="images/history.png"><span class="nav-item">HISTORY</span></li></a></ul>');
     }
 
     // Get automation values
     getAutomationValues();
-
-
 
     // Get state values
     $.ajax({
@@ -118,6 +119,7 @@ $(document).ready( function() {
                 $('#water-switch').trigger('click');
             }
 
+            // Set switch statuses
             lightSwitch = data.lights;
             shadeSwitch = data.shades;
             fanSwitch = data.fans;
@@ -367,6 +369,7 @@ $(document).ready( function() {
 
 // Update light slider bar
 function updateOutput(el, val) {
+    lightVal = val;
     el.textContent = val;
 }
 
@@ -417,7 +420,7 @@ function updateAutomationValues() {
         success: function (response) {
             var data = JSON.parse(response);
 
-            // Set values
+            // Set values to be displayed
             light = data.ShadeLim;
             templow = data.TempLow;
             temphigh = data.TempHigh;
@@ -433,7 +436,8 @@ function updateAutomationValues() {
     });
 }
 
-function submitAutomationValues() {
+/*
+function () {
     $.ajax({
         type: 'POST',
         url: '/api/automation',
@@ -443,8 +447,10 @@ function submitAutomationValues() {
             light: $('#light-val').val()
         }
     });
-}
+} */
 
+
+var automationData;
 function getAutomationValues() {
 
     // Get automation values
@@ -455,29 +461,22 @@ function getAutomationValues() {
             var data = JSON.parse(response);
             var now = new Date();
 
+            light = data.ShadeLim;
+
             // Check if there is an active light schedule
-            if( data.LightSchedules.length > 0  && !lightOverride ) {
+            if (data.LightSchedules.length > 0 && !lightOverride) {
                 var start = data.LightSchedules[0].start.split(":")[0];
-                var end =  data.LightSchedules[0].end.split(":")[0];
+                var end = data.LightSchedules[0].end.split(":")[0];
 
                 // Disabled manual control if there is an active schedule
                 if (now.getHours() >= start && now.getHours() < end) {
                     lightSchedule.active = true;
                     lightSchedule.type = data.LightSchedules[0].type;
 
-                    // Set switch before disabling it
-                    if( lightSchedule.type == 'blocked' ) {
-                        // If schedule type is blocked and switch is on, turn it off
-                        if( lightSwitch ) {
-                            $('#light-switch').trigger('click');
-                            lightSwitch = !lightSwitch;
-                        }
-                    } else {
-                        // If schedule is constant or sensor and switch is off, turn it on
-                        if( !lightSwitch ) {
-                            $('#light-switch').trigger('click');
-                            lightSwitch = !lightSwitch;
-                        }
+                    // If a schedule is in effect, turn off button
+                    if (lightSwitch) {
+                        $('#light-switch').trigger('click');
+                        lightSwitch = !lightSwitch;
                     }
 
                     $('#light-switch-label').addClass("disabled");
@@ -494,28 +493,19 @@ function getAutomationValues() {
             }
 
             // Check if there is an active water schedule
-            if( data.WaterSchedules.length > 0 && !waterOverride ) {
+            if (data.WaterSchedules.length > 0 && !waterOverride) {
                 var start = data.WaterSchedules[0].start.split(":")[0];
-                var end =  data.WaterSchedules[0].end.split(":")[0]
+                var end = data.WaterSchedules[0].end.split(":")[0]
 
                 // Disabled manual control if there is an active schedule
                 if (now.getHours() >= start && now.getHours() < end) {
                     waterSchedule.active = true;
                     waterSchedule.type = data.WaterSchedules[0].type;
 
-                    // Set switch before disabling it
-                    if( waterSchedule.type == 'blocked' ) {
-                        // If schedule type is blocked and switch is on, turn it off
-                        if( waterSwitch ) {
-                            $('#water-switch').trigger('click');
-                            waterSwitch = !waterSwitch;
-                        }
-                    } else {
-                        // If schedule is constant or sensor and switch is off, turn it on
-                        if( !waterSwitch ) {
-                            $('#water-switch').trigger('click');
-                            waterSwitch = !waterSwitch;
-                        }
+                    // If water schedule is in effect, turn off switch
+                    if (waterSwitch) {
+                        $('#water-switch').trigger('click');
+                        waterSwitch = !waterSwitch;
                     }
 
                     $('#water-switch-label').addClass("disabled");
@@ -537,8 +527,6 @@ function getAutomationValues() {
             temphigh = data.TempHigh;
             humidity = data.humidity;
             moisture = data.moisture;
-
-            postManualControls();
 
             $('#temperature-low').html(templow + "&deg;");
             $('#temperature-high').html(temphigh + "&deg;");

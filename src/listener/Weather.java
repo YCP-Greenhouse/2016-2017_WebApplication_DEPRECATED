@@ -30,7 +30,7 @@ public class Weather implements ServletContextListener {
             startTimer();
 
             // Checks for connection timeouts. TODO: Make separate listener for this
-            notificationController.connectionChecker();
+            //notificationController.connectionChecker();
         } catch( IOException i ) {
             i.printStackTrace();
         }
